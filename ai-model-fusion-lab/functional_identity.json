@@ -1,0 +1,421 @@
+{
+ "circuit_id": "e4-math-4L-convergence-01",
+ "source_model": "e4-math-4L",
+ "capability_hypothesis": "math (HYPOTHESIS \u2014 causal support is depth-4-local and interference exists)",
+ "input_signature": "residual stream d=64 at layer-0 attention input (post-LN1), ctx<=32, vocab=141",
+ "output_signature": "per-head attention outputs (d_head=16) + module attn output (d=64) added to the residual stream",
+ "functional_operations": [
+  "single-layer multi-head attention: softmax(QK^T/sqrt(16)) V",
+  "per-head value-output projection rows (o.W slices)",
+  "module-level qkv/o projections + biases (attn member)"
+ ],
+ "topology": {
+  "members": [
+   {
+    "level": "HEAD",
+    "layer": 0,
+    "module": "attn",
+    "index": 0
+   },
+   {
+    "level": "HEAD",
+    "layer": 0,
+    "module": "attn",
+    "index": 1
+   },
+   {
+    "level": "HEAD",
+    "layer": 0,
+    "module": "attn",
+    "index": 2
+   },
+   {
+    "level": "HEAD",
+    "layer": 0,
+    "module": "attn",
+    "index": 3
+   },
+   {
+    "level": "MODULE",
+    "layer": 0,
+    "module": "attn"
+   }
+  ],
+  "all_at_layer": 0,
+  "tensor_shapes": {
+   "L0.h0": {
+    "qkv.W.q": [
+     64,
+     16
+    ],
+    "qkv.b.q": [
+     16
+    ],
+    "qkv.W.k": [
+     64,
+     16
+    ],
+    "qkv.b.k": [
+     16
+    ],
+    "qkv.W.v": [
+     64,
+     16
+    ],
+    "qkv.b.v": [
+     16
+    ],
+    "o.W": [
+     16,
+     64
+    ]
+   },
+   "L0.h1": {
+    "qkv.W.q": [
+     64,
+     16
+    ],
+    "qkv.b.q": [
+     16
+    ],
+    "qkv.W.k": [
+     64,
+     16
+    ],
+    "qkv.b.k": [
+     16
+    ],
+    "qkv.W.v": [
+     64,
+     16
+    ],
+    "qkv.b.v": [
+     16
+    ],
+    "o.W": [
+     16,
+     64
+    ]
+   },
+   "L0.h2": {
+    "qkv.W.q": [
+     64,
+     16
+    ],
+    "qkv.b.q": [
+     16
+    ],
+    "qkv.W.k": [
+     64,
+     16
+    ],
+    "qkv.b.k": [
+     16
+    ],
+    "qkv.W.v": [
+     64,
+     16
+    ],
+    "qkv.b.v": [
+     16
+    ],
+    "o.W": [
+     16,
+     64
+    ]
+   },
+   "L0.h3": {
+    "qkv.W.q": [
+     64,
+     16
+    ],
+    "qkv.b.q": [
+     16
+    ],
+    "qkv.W.k": [
+     64,
+     16
+    ],
+    "qkv.b.k": [
+     16
+    ],
+    "qkv.W.v": [
+     64,
+     16
+    ],
+    "qkv.b.v": [
+     16
+    ],
+    "o.W": [
+     16,
+     64
+    ]
+   },
+   "L0.attn": {
+    "qkv.W.all": [
+     64,
+     192
+    ],
+    "qkv.b.all": [
+     192
+    ],
+    "o.W.all": [
+     64,
+     64
+    ],
+    "o.b.all": [
+     64
+    ]
+   }
+  }
+ },
+ "parameter_statistics": {
+  "n_params": 33216,
+  "fp16_max_rel_error": 0.000414
+ },
+ "location": {
+  "layer": 0,
+  "model": "e4-math-4L",
+  "wrong_location_effect": 19.72,
+  "random_location_effect": 16.11
+ },
+ "causal_evidence": {
+  "e4_battery": {
+   "level_names": {
+    "1": "NODE",
+    "2": "COMPONENT",
+    "3": "COMPONENT_GROUP",
+    "4": "PATH",
+    "5": "SUBGRAPH",
+    "6": "ACTIVATION_SUBSPACE",
+    "7": "ENTIRE_CIRCUIT"
+   },
+   "baseline": 70.83,
+   "full_circuit": 25.0,
+   "effect": 45.83,
+   "effect_direction": "degrades",
+   "significant": true,
+   "floor": 5.0,
+   "per_member_effect": {
+    "L0.h0": 58.33,
+    "L0.h1": 54.16,
+    "L0.h2": 54.16,
+    "L0.h3": 37.5,
+    "L0.attn": 45.83
+   },
+   "max_single": 58.33,
+   "leave_one_out_effect": {
+    "L0.h0": 45.83,
+    "L0.h1": 45.83,
+    "L0.h2": 45.83,
+    "L0.h3": 45.83,
+    "L0.attn": 45.83
+   },
+   "joint_vs_sum": -204.15,
+   "other_domain_effects": {
+    "code": 68.75,
+    "reason": 6.25
+   },
+   "specificity": 8.33,
+   "effect_specific": true
+  },
+  "minimal_unit": {
+   "minimal_unit": [
+    "L0.h2"
+   ],
+   "rho": 0.8,
+   "full_circuit_effect": 45.83,
+   "minimal_effect": 54.16,
+   "retention_pct": 118.2,
+   "target_effect": 36.66,
+   "n_members_full": 5,
+   "n_members_minimal": 1,
+   "search_steps": [
+    {
+     "kept": [
+      "L0.h0",
+      "L0.h1",
+      "L0.h2",
+      "L0.h3",
+      "L0.attn"
+     ],
+     "effect": 45.83
+    },
+    {
+     "kept": [
+      "L0.h1",
+      "L0.h2",
+      "L0.h3",
+      "L0.attn"
+     ],
+     "effect": 45.83,
+     "removed": "L0.h0"
+    },
+    {
+     "kept": [
+      "L0.h1",
+      "L0.h2",
+      "L0.h3"
+     ],
+     "effect": 50.0,
+     "removed": "L0.attn"
+    },
+    {
+     "kept": [
+      "L0.h1",
+      "L0.h2"
+     ],
+     "effect": 50.0,
+     "removed": "L0.h3"
+    },
+    {
+     "kept": [
+      "L0.h2"
+     ],
+     "effect": 54.16,
+     "removed": "L0.h1"
+    }
+   ],
+   "verified": true
+  }
+ },
+ "transfer_evidence": {
+  "e4_class": "CAPABILITY_TRANSFER",
+  "e4_gain": 3.33,
+  "e5_A_gain": 2.5,
+  "interference": {
+   "micro-code": -20.8,
+   "micro-know": -47.9,
+   "micro-agent": -18.7
+  }
+ },
+ "specificity": {
+  "target_delta": -2.5,
+  "other_deltas": {
+   "code": -10.0,
+   "reason": 7.5,
+   "lang": 15.0,
+   "know": 0.0,
+   "multi": 0.0,
+   "agent": 0.0
+  },
+  "worst_regression": -10.0,
+  "class": "NO_TARGET_EFFECT"
+ },
+ "minimality": {
+  "curve": [
+   {
+    "fraction": 1.0,
+    "kept": [
+     "L0.h0",
+     "L0.h1",
+     "L0.h2",
+     "L0.attn",
+     "L0.h3"
+    ],
+    "real_calib": 22.5,
+    "random_calib": [
+     22.5,
+     22.5,
+     22.5
+    ],
+    "random_mean": 22.5,
+    "shuffled_calib": 17.5
+   },
+   {
+    "fraction": 0.75,
+    "kept": [
+     "L0.h0",
+     "L0.h1",
+     "L0.h2",
+     "L0.attn"
+    ],
+    "real_calib": 22.5,
+    "random_calib": [
+     22.5,
+     22.5,
+     22.5
+    ],
+    "random_mean": 22.5,
+    "shuffled_calib": 20.0
+   },
+   {
+    "fraction": 0.5,
+    "kept": [
+     "L0.h0",
+     "L0.h1"
+    ],
+    "real_calib": 20.0,
+    "random_calib": [
+     22.5,
+     25.0,
+     20.0
+    ],
+    "random_mean": 22.5,
+    "shuffled_calib": 17.5
+   },
+   {
+    "fraction": 0.25,
+    "kept": [
+     "L0.h0"
+    ],
+    "real_calib": 22.5,
+    "random_calib": [
+     12.5,
+     22.5,
+     22.5
+    ],
+    "random_mean": 19.17,
+    "shuffled_calib": 22.5
+   },
+   {
+    "fraction": 0.1,
+    "kept": [
+     "L0.h0"
+    ],
+    "real_calib": 22.5,
+    "random_calib": [
+     12.5,
+     22.5,
+     22.5
+    ],
+    "random_mean": 19.17,
+    "shuffled_calib": 22.5
+   }
+  ],
+  "heldout_10pct": {
+   "kept_real": [
+    "L0.h0"
+   ],
+   "real": 22.5,
+   "random_seeds": [
+    22.5,
+    25.0,
+    25.0
+   ],
+   "note": "one-shot held-out (seed 9001); subsets chosen on calibration split only"
+  }
+ },
+ "reconstruction": {
+  "steps_best": 600,
+  "surrogate_acc_target": 19.17,
+  "agreement_pct": 13.33,
+  "destroy": 14.17,
+  "restore": 19.17
+ },
+ "known_failures": {
+  "wrong_location": "effect reduced at relocated layers",
+  "surrogate_wrong_location": "not measured (not pre-registered)",
+  "cross_depth_e4": "2L->8L FAILED_TRANSFER in E4"
+ },
+ "implementation_representation": {
+  "pack_path": "fusionlab_data/e4_circuits/e4-math-4L-convergence-01_4L.npz",
+  "surrogate_path": "fusionlab_data/e5_circuits/surrogate_4L.npz"
+ },
+ "compatibility_assumptions": [
+  "same d_model=64",
+  "same heads=4",
+  "same mlp_hidden=256",
+  "same residual/LN layout"
+ ]
+}

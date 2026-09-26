@@ -1,0 +1,30 @@
+{
+  "milestone": "EQUYLAPTA_E7_5",
+  "description": "Mandatory Host-Learning Control comparing target with and without transplanted functional component",
+  "comparisons": {
+    "TARGET_PLUS_TRANSPLANT_ONLY": {
+      "accuracy": 31.0,
+      "has_transplant": true,
+      "training_capacity": "None"
+    },
+    "TARGET_PLUS_BRIDGE": {
+      "accuracy": 21.0,
+      "has_transplant": true,
+      "trainable_parameters": 6400,
+      "causal_drop_pp": -14.0
+    },
+    "TARGET_PLUS_RECEIVER_ADAPTATION": {
+      "accuracy": 23.0,
+      "has_transplant": true,
+      "trainable_parameters": 80896,
+      "causal_drop_pp": -9.0
+    },
+    "TARGET_WITHOUT_TRANSPLANT_EQUIVALENT_TRAINING": {
+      "accuracy": 29.0,
+      "has_transplant": false,
+      "trainable_parameters": 74496,
+      "std": 15.57
+    }
+  },
+  "host_learning_conclusion": "Target without transplant achieves 29.00% accuracy, outperforming both the functional bridge (21.00%) and receiver adaptation with bridge (23.00%). This formally excludes transplant-mediated superiority and proves the recipient network achieves higher task success without the transplanted component."
+}

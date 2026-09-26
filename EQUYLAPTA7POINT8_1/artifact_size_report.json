@@ -1,0 +1,8 @@
+{
+  "milestone": "EQUYLAPTA_7.8.1",
+  "timestamp": "2026-09-26 15:05:48",
+  "total_workspace_size_mb": 42.81,
+  "workspace_limit_mb": 120.0,
+  "headroom_mb": 77.19,
+  "status": "PASS_STRICTLY_UNDER_LIMIT"
+}

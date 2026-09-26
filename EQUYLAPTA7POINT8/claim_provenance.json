@@ -1,0 +1,33 @@
+{
+  "milestone": "EQUYLAPTA_7.8",
+  "claims": {
+    "CLAIM_NATIVE_LOCALIZATION": {
+      "statement": "Donor specialist L0_head_2 demonstrates native causal drop of +25.0 pp with specificity ratio 3.0x.",
+      "verifying_key": "native_localization"
+    },
+    "CLAIM_GLOBAL_MINIMALITY": {
+      "statement": "Exhaustive 16-subset search proves L0_head_2+L0_mlp is the minimal 2-node nucleus recovering 50.0% of donor capability.",
+      "verifying_key": "exhaustive_subset_search.minimal_nucleus_50pct"
+    },
+    "CLAIM_PATH_PATCHING_MEDIATION": {
+      "statement": "Intra-layer mediator L0_mlp accounts for 100.0% of the total causal effect of source L0_head_2.",
+      "verifying_key": "conditional_mediation"
+    },
+    "CLAIM_NON_EQUIVALENCE_PRINCIPLE": {
+      "statement": "Recipient model reorganizes computation, routing transferred signal through Recipient_L0_mlp (+10.0 pp drop) while bypassing higher-layer heads.",
+      "verifying_key": "recipient_pathway_discovery"
+    },
+    "CLAIM_ACTIVATION_PATCHING_LIFT": {
+      "statement": "Direct donor activation patching at Layer 0 yields +10.0 pp accuracy lift over baseline.",
+      "verifying_key": "activation_patch_battery.validation"
+    },
+    "CLAIM_OVERSIZED_CONTROL_SATURATION": {
+      "statement": "Expanding from 4 nodes to 8 nodes provides 0.0 pp additional causal gain, proving saturation of transferable neighborhood.",
+      "verifying_key": "conditions.Condition_F_Oversized_Donor_Circuit"
+    },
+    "CLAIM_SCIENTIFIC_LEVEL_B": {
+      "statement": "Causal drop verified across seeds, but exact donor agreement remains below 90.0% predeclared threshold, confirming Level B.",
+      "verifying_key": "scientific_classification"
+    }
+  }
+}

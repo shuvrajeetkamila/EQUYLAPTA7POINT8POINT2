@@ -1,0 +1,205 @@
+{
+  "milestone": "EQUYLAPTA_7.6",
+  "depth_sweep": [
+    {
+      "depth": "2L",
+      "layers": 2,
+      "baseline": {
+        "mean": 21.0,
+        "std": 6.52,
+        "ci95_low": 15.29,
+        "ci95_high": 26.71,
+        "min": 10.0,
+        "max": 25.0,
+        "raw_seeds": [
+          10.0,
+          25.0,
+          25.0,
+          25.0,
+          20.0
+        ]
+      },
+      "translated_active": {
+        "mean": 24.0,
+        "std": 6.52,
+        "ci95_low": 18.29,
+        "ci95_high": 29.71,
+        "min": 20.0,
+        "max": 35.0,
+        "raw_seeds": [
+          20.0,
+          20.0,
+          25.0,
+          35.0,
+          20.0
+        ]
+      },
+      "translated_ablated": {
+        "mean": 20.0,
+        "std": 7.91,
+        "ci95_low": 13.07,
+        "ci95_high": 26.93,
+        "min": 10.0,
+        "max": 30.0,
+        "raw_seeds": [
+          10.0,
+          15.0,
+          20.0,
+          25.0,
+          30.0
+        ]
+      },
+      "causal_drop_pp": 4.0
+    },
+    {
+      "depth": "4L",
+      "layers": 4,
+      "baseline": {
+        "mean": 34.0,
+        "std": 6.52,
+        "ci95_low": 28.29,
+        "ci95_high": 39.71,
+        "min": 30.0,
+        "max": 45.0,
+        "raw_seeds": [
+          35.0,
+          30.0,
+          30.0,
+          30.0,
+          45.0
+        ]
+      },
+      "translated_active": {
+        "mean": 21.0,
+        "std": 9.62,
+        "ci95_low": 12.57,
+        "ci95_high": 29.43,
+        "min": 5.0,
+        "max": 30.0,
+        "raw_seeds": [
+          25.0,
+          5.0,
+          25.0,
+          30.0,
+          20.0
+        ]
+      },
+      "translated_ablated": {
+        "mean": 35.0,
+        "std": 15.41,
+        "ci95_low": 21.49,
+        "ci95_high": 48.51,
+        "min": 15.0,
+        "max": 55.0,
+        "raw_seeds": [
+          45.0,
+          30.0,
+          30.0,
+          15.0,
+          55.0
+        ]
+      },
+      "causal_drop_pp": -14.0
+    },
+    {
+      "depth": "6L",
+      "layers": 6,
+      "baseline": {
+        "mean": 29.0,
+        "std": 11.4,
+        "ci95_low": 19.01,
+        "ci95_high": 38.99,
+        "min": 15.0,
+        "max": 45.0,
+        "raw_seeds": [
+          45.0,
+          35.0,
+          25.0,
+          25.0,
+          15.0
+        ]
+      },
+      "translated_active": {
+        "mean": 30.0,
+        "std": 9.35,
+        "ci95_low": 21.8,
+        "ci95_high": 38.2,
+        "min": 20.0,
+        "max": 45.0,
+        "raw_seeds": [
+          30.0,
+          30.0,
+          20.0,
+          45.0,
+          25.0
+        ]
+      },
+      "translated_ablated": {
+        "mean": 29.0,
+        "std": 11.4,
+        "ci95_low": 19.01,
+        "ci95_high": 38.99,
+        "min": 15.0,
+        "max": 45.0,
+        "raw_seeds": [
+          45.0,
+          35.0,
+          25.0,
+          25.0,
+          15.0
+        ]
+      },
+      "causal_drop_pp": 1.0
+    },
+    {
+      "depth": "8L",
+      "layers": 8,
+      "baseline": {
+        "mean": 36.0,
+        "std": 19.49,
+        "ci95_low": 18.91,
+        "ci95_high": 53.09,
+        "min": 15.0,
+        "max": 55.0,
+        "raw_seeds": [
+          55.0,
+          50.0,
+          15.0,
+          15.0,
+          45.0
+        ]
+      },
+      "translated_active": {
+        "mean": 31.0,
+        "std": 16.73,
+        "ci95_low": 16.33,
+        "ci95_high": 45.67,
+        "min": 20.0,
+        "max": 60.0,
+        "raw_seeds": [
+          60.0,
+          25.0,
+          30.0,
+          20.0,
+          20.0
+        ]
+      },
+      "translated_ablated": {
+        "mean": 36.0,
+        "std": 19.49,
+        "ci95_low": 18.91,
+        "ci95_high": 53.09,
+        "min": 15.0,
+        "max": 55.0,
+        "raw_seeds": [
+          55.0,
+          45.0,
+          15.0,
+          15.0,
+          50.0
+        ]
+      },
+      "causal_drop_pp": -5.0
+    }
+  ]
+}

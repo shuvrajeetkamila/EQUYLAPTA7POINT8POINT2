@@ -1,0 +1,249 @@
+{
+  "sweep": {
+    "2L": {
+      "depth": 2,
+      "target_baseline": {
+        "seeds": [
+          10.0,
+          25.0,
+          25.0,
+          25.0,
+          20.0
+        ],
+        "mean": 21.0,
+        "std": 6.52,
+        "min": 10.0,
+        "max": 25.0,
+        "n_seeds": 5,
+        "ci95": [
+          15.29,
+          26.71
+        ]
+      },
+      "target_reconstructed": {
+        "seeds": [
+          10.0,
+          25.0,
+          25.0,
+          25.0,
+          20.0
+        ],
+        "mean": 21.0,
+        "std": 6.52,
+        "min": 10.0,
+        "max": 25.0,
+        "n_seeds": 5,
+        "ci95": [
+          15.29,
+          26.71
+        ]
+      },
+      "target_ablated": {
+        "seeds": [
+          10.0,
+          15.0,
+          20.0,
+          25.0,
+          30.0
+        ],
+        "mean": 20.0,
+        "std": 7.91,
+        "min": 10.0,
+        "max": 30.0,
+        "n_seeds": 5,
+        "ci95": [
+          13.07,
+          26.93
+        ]
+      },
+      "delta_pp": 0.0,
+      "causal_effect_pp": 1.0
+    },
+    "4L": {
+      "depth": 4,
+      "target_baseline": {
+        "seeds": [
+          35.0,
+          30.0,
+          30.0,
+          30.0,
+          45.0
+        ],
+        "mean": 34.0,
+        "std": 6.52,
+        "min": 30.0,
+        "max": 45.0,
+        "n_seeds": 5,
+        "ci95": [
+          28.29,
+          39.71
+        ]
+      },
+      "target_reconstructed": {
+        "seeds": [
+          35.0,
+          30.0,
+          30.0,
+          30.0,
+          45.0
+        ],
+        "mean": 34.0,
+        "std": 6.52,
+        "min": 30.0,
+        "max": 45.0,
+        "n_seeds": 5,
+        "ci95": [
+          28.29,
+          39.71
+        ]
+      },
+      "target_ablated": {
+        "seeds": [
+          45.0,
+          30.0,
+          30.0,
+          15.0,
+          55.0
+        ],
+        "mean": 35.0,
+        "std": 15.41,
+        "min": 15.0,
+        "max": 55.0,
+        "n_seeds": 5,
+        "ci95": [
+          21.49,
+          48.51
+        ]
+      },
+      "delta_pp": 0.0,
+      "causal_effect_pp": -1.0
+    },
+    "6L": {
+      "depth": 6,
+      "target_baseline": {
+        "seeds": [
+          45.0,
+          35.0,
+          25.0,
+          25.0,
+          15.0
+        ],
+        "mean": 29.0,
+        "std": 11.4,
+        "min": 15.0,
+        "max": 45.0,
+        "n_seeds": 5,
+        "ci95": [
+          19.01,
+          38.99
+        ]
+      },
+      "target_reconstructed": {
+        "seeds": [
+          45.0,
+          35.0,
+          25.0,
+          25.0,
+          15.0
+        ],
+        "mean": 29.0,
+        "std": 11.4,
+        "min": 15.0,
+        "max": 45.0,
+        "n_seeds": 5,
+        "ci95": [
+          19.01,
+          38.99
+        ]
+      },
+      "target_ablated": {
+        "seeds": [
+          45.0,
+          35.0,
+          25.0,
+          25.0,
+          15.0
+        ],
+        "mean": 29.0,
+        "std": 11.4,
+        "min": 15.0,
+        "max": 45.0,
+        "n_seeds": 5,
+        "ci95": [
+          19.01,
+          38.99
+        ]
+      },
+      "delta_pp": 0.0,
+      "causal_effect_pp": 0.0
+    },
+    "8L": {
+      "depth": 8,
+      "target_baseline": {
+        "seeds": [
+          55.0,
+          50.0,
+          15.0,
+          15.0,
+          45.0
+        ],
+        "mean": 36.0,
+        "std": 19.49,
+        "min": 15.0,
+        "max": 55.0,
+        "n_seeds": 5,
+        "ci95": [
+          18.91,
+          53.09
+        ]
+      },
+      "target_reconstructed": {
+        "seeds": [
+          55.0,
+          50.0,
+          15.0,
+          15.0,
+          45.0
+        ],
+        "mean": 36.0,
+        "std": 19.49,
+        "min": 15.0,
+        "max": 55.0,
+        "n_seeds": 5,
+        "ci95": [
+          18.91,
+          53.09
+        ]
+      },
+      "target_ablated": {
+        "seeds": [
+          55.0,
+          45.0,
+          15.0,
+          15.0,
+          50.0
+        ],
+        "mean": 36.0,
+        "std": 19.49,
+        "min": 15.0,
+        "max": 55.0,
+        "n_seeds": 5,
+        "ci95": [
+          18.91,
+          53.09
+        ]
+      },
+      "delta_pp": 0.0,
+      "causal_effect_pp": 0.0
+    }
+  },
+  "deltas_sequence": [
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "monotonicity": "MONOTONIC",
+  "linear_slope_pp_per_layer": 0.0,
+  "primary_failure_point": "Stage_F_Downstream_Layer_Attenuation"
+}

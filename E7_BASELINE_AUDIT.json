@@ -1,0 +1,64 @@
+{
+  "milestone": "EQUYLAPTA7_BASELINE_AUDIT",
+  "audit_source": "EQUYLAPTA6.5_CORRECTED",
+  "evidence_level": 3,
+  "scientific_status": "FUNCTIONAL TRANSFER NOT DEMONSTRATED",
+  "canonical_metrics_4L": {
+    "source_accuracy": 46.4,
+    "target_baseline_accuracy": 29.6,
+    "target_translated_accuracy": 20.0,
+    "delta_percentage_points": -9.6,
+    "token_level_agreement_pct": 17.5,
+    "behavioral_choice_agreement_pct": 25.6,
+    "layer0_residual_linear_cka": 0.4631,
+    "logit_cosine_similarity": 0.2365
+  },
+  "controls_summary_4L": {
+    "control1_random_target_intervention": 25.6,
+    "control2_random_translator_unoptimized": 26.4,
+    "control3_shuffled_parameters": 27.2,
+    "control4_target_local_trained": 21.6,
+    "control5_structurally_matched_unrelated": 23.2,
+    "control6_source_randomized_values": 29.6,
+    "control7_topology_preserved_random": 30.4,
+    "observation": "Translated condition (20.00%) was outperformed by all 7 controls, confirming lack of functional transfer at 4L."
+  },
+  "independent_reconstruction": {
+    "total_items": 60,
+    "matching_predictions": 23,
+    "agreement_pct": 38.33,
+    "converged": false,
+    "observation": "Independent target realizations diverged, demonstrating optimization ambiguity."
+  },
+  "depth_results": {
+    "2L": { "base": 22.4, "trans": 31.2, "delta": 8.8, "tok_agr": 12.5, "beh_agr": 29.6 },
+    "4L": { "base": 29.6, "trans": 20.8, "delta": -8.8, "tok_agr": 17.5, "beh_agr": 29.6 },
+    "6L": { "base": 28.8, "trans": 24.8, "delta": -4.0, "tok_agr": 5.0, "beh_agr": 32.8 },
+    "8L": { "base": 35.2, "trans": 29.6, "delta": -5.6, "tok_agr": 25.0, "beh_agr": 35.2 },
+    "monotonicity": "NON_MONOTONIC",
+    "primary_failure_point": "Stage_F_Target_Execution_Downstream_Drift"
+  },
+  "known_limitations": [
+    "Single-layer transplantation fails in deep architectures (>=4L) due to downstream layer drift.",
+    "Contiguous layer assumption transfers structural parameters rather than distributed causal computation.",
+    "Exact next-token argmax prediction conflates vocabulary/basis differences with functional divergence.",
+    "Surrogate optimization at a single layer does not enforce end-to-end task consistency."
+  ],
+  "reusable_modules": [
+    "models/synthetic.py (MicroTransformer, load_model, parameter management)",
+    "benchmarking/harness.py (score_item, eval_suite, micro_suite)",
+    "demo/run_equylapta6_5.py (linear_cka, stats_summary, cohens_d)",
+    "semantic_report_validator.py (logical and mathematical assertion engine)",
+    "report_integrity_check.py (headline claim tracing engine)"
+  ],
+  "missing_modules_for_e7": [
+    "Hierarchical candidate unit discovery (Layer, Sub-layer, Unit group, Activation subspace, Distributed circuit)",
+    "Causal discovery battery (Ablation, Restoration, Amplification, Inversion, Matched Random, Location Control)",
+    "Minimality test curve (100%, 75%, 50%, 25%, 10%, 5%, 1%)",
+    "Redundancy and distributed synergy evaluation (A, B, A+B, A+B+C)",
+    "Compositionality test across specialist units (order dependence, additivity, synergy, interference)",
+    "Architecture-independent functional signature representation",
+    "3-method target reconstruction comparison (Direct Structural, Functional Signature Reconstruction, Behavioral Distillation)",
+    "Functional information budget and compression ratio measurement"
+  ]
+}

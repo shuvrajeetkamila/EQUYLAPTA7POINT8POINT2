@@ -1,0 +1,45 @@
+{
+  "milestone": "EQUYLAPTA_7.6",
+  "historical_contradictions_identified": [
+    {
+      "check_id": "HIST-DEPTH-01",
+      "description": "Historical depth sweep prose claimed positive transfer at all depths, contradicted by data.",
+      "underlying_values": {
+        "2L": 3.34,
+        "4L": -0.83,
+        "6L": -8.34,
+        "8L": -11.66
+      },
+      "classification": "CONTRADICTED",
+      "resolution": "Flagged and corrected in E7.5/E7.6. Depth transfer exhibits non-monotonic instability."
+    },
+    {
+      "check_id": "HIST-RECON-02",
+      "description": "Discrepancy between reported 95.00% / 83.33% and actual independent reconstruction.",
+      "underlying_value": "38.33% (converged=False)",
+      "classification": "CONTRADICTED",
+      "resolution": "Historical 95.00% and 83.33% were legacy batch prints. Verified value is 38.33%."
+    }
+  ],
+  "claims_verified": [
+    {
+      "claim_id": "CLM-E75-GRAD",
+      "json_key": "gradient_check.max_relative_error",
+      "value": 0.003487289770555717,
+      "status": "SUPPORTED"
+    },
+    {
+      "claim_id": "CLM-E75-CDROP",
+      "json_key": "conditions.condition_a_functional.causal_drop",
+      "value": -14.0,
+      "status": "SUPPORTED"
+    },
+    {
+      "claim_id": "CLM-E75-THRESH",
+      "json_key": "threshold_met",
+      "value": false,
+      "status": "SUPPORTED"
+    }
+  ],
+  "overall_status": "CONSISTENCY_AUDIT_PASSED"
+}

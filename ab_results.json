@@ -1,0 +1,685 @@
+{
+  "status": "COMPLETED",
+  "target_model": "e6-base-4L",
+  "target_functional_unit_id": "L0_head_0",
+  "target_parameter_count": 1536,
+  "alignment_method": "Orthogonal_Procrustes",
+  "alignment_matrix_rank": 16,
+  "alignment_train_error": 47.6525,
+  "alignment_val_error": 48.6524,
+  "random_alignment_null_error": 48.4227,
+  "target_baseline_accuracy": {
+    "seeds": [
+      35.0,
+      30.0,
+      30.0,
+      30.0,
+      45.0
+    ],
+    "mean": 34.0,
+    "std": 6.52,
+    "min": 30.0,
+    "max": 45.0,
+    "n_seeds": 5,
+    "ci95": [
+      28.29,
+      39.71
+    ]
+  },
+  "method_1_structural": {
+    "reconstructed_accuracy": {
+      "seeds": [
+        25.0,
+        30.0,
+        25.0,
+        40.0,
+        15.0
+      ],
+      "mean": 27.0,
+      "std": 9.08,
+      "min": 15.0,
+      "max": 40.0,
+      "n_seeds": 5,
+      "ci95": [
+        19.04,
+        34.96
+      ]
+    },
+    "ablated_accuracy": {
+      "seeds": [
+        45.0,
+        30.0,
+        30.0,
+        15.0,
+        55.0
+      ],
+      "mean": 35.0,
+      "std": 15.41,
+      "min": 15.0,
+      "max": 55.0,
+      "n_seeds": 5,
+      "ci95": [
+        21.49,
+        48.51
+      ]
+    },
+    "delta_pp": -7.0,
+    "causal_drop_pp": -8.0
+  },
+  "method_2_functional_signature": {
+    "mean_reconstructed_accuracy": 33.6,
+    "delta_pp": -0.4,
+    "mean_causal_drop_pp": -1.2,
+    "causal_effect_demonstrated": false,
+    "all_initialization_hashes_distinct": true,
+    "runs": [
+      {
+        "run_id": "ab_recon_1",
+        "seed": 3001,
+        "target_initialization_hash": "4007f2bce399036e68fe768f546ea4c8bf0b9b71fddec49610125c541061d282",
+        "alignment_hash": "c0ee96e9d9df0bb3",
+        "target_final_unit_hash": "e36d9b8c4e47e680",
+        "target_finalization_hash": "c5901c7851f51e04271b537d8f40fe774293ad7e6d822e6bc092f1cdc7a06350",
+        "reconstructed_accuracy": {
+          "seeds": [
+            40.0,
+            35.0,
+            25.0,
+            10.0,
+            55.0
+          ],
+          "mean": 33.0,
+          "std": 16.81,
+          "min": 10.0,
+          "max": 55.0,
+          "n_seeds": 5,
+          "ci95": [
+            18.27,
+            47.73
+          ]
+        },
+        "ablated_accuracy": {
+          "seeds": [
+            45.0,
+            30.0,
+            30.0,
+            15.0,
+            55.0
+          ],
+          "mean": 35.0,
+          "std": 15.41,
+          "min": 15.0,
+          "max": 55.0,
+          "n_seeds": 5,
+          "ci95": [
+            21.49,
+            48.51
+          ]
+        },
+        "restored_accuracy": {
+          "seeds": [
+            40.0,
+            35.0,
+            25.0,
+            10.0,
+            55.0
+          ],
+          "mean": 33.0,
+          "std": 16.81,
+          "min": 10.0,
+          "max": 55.0,
+          "n_seeds": 5,
+          "ci95": [
+            18.27,
+            47.73
+          ]
+        },
+        "reconstruction_gain": -1.0,
+        "causal_drop": -2.0,
+        "restoration_error": 0.0,
+        "optimization_meta": {
+          "optimizer": "Adam",
+          "learning_rate": 0.05,
+          "steps": 30,
+          "initial_loss": 6.4669,
+          "final_loss": 0.8961,
+          "validation_initial_loss": 5.6532,
+          "validation_final_loss": 0.8722,
+          "loss_history": [
+            6.4669,
+            45.2719,
+            6.6544,
+            11.0422,
+            24.1076,
+            14.9187,
+            2.7631,
+            3.5659,
+            11.1418,
+            12.0431,
+            6.0622,
+            1.4983,
+            2.6005,
+            5.9214,
+            6.4465,
+            3.889,
+            1.5399,
+            1.5809,
+            2.9682,
+            3.4692,
+            2.5136,
+            1.3613,
+            1.1249,
+            1.5573,
+            1.7903,
+            1.512,
+            1.0794,
+            0.8534,
+            0.854,
+            0.9159
+          ],
+          "loss_decreased": true,
+          "trainable_parameters": 1536
+        }
+      },
+      {
+        "run_id": "ab_recon_2",
+        "seed": 3032,
+        "target_initialization_hash": "9d7a029937b2dd26b5cce9dac66b80d81ad443d1eb9ca33de976f70785a9358f",
+        "alignment_hash": "c0ee96e9d9df0bb3",
+        "target_final_unit_hash": "dd3977e8d46fd106",
+        "target_finalization_hash": "5991319ce46c4fe54474ad05a4d2e46f46b0d91c3a455f4d5ee391013993c8da",
+        "reconstructed_accuracy": {
+          "seeds": [
+            40.0,
+            35.0,
+            25.0,
+            15.0,
+            55.0
+          ],
+          "mean": 34.0,
+          "std": 15.17,
+          "min": 15.0,
+          "max": 55.0,
+          "n_seeds": 5,
+          "ci95": [
+            20.71,
+            47.29
+          ]
+        },
+        "ablated_accuracy": {
+          "seeds": [
+            45.0,
+            30.0,
+            30.0,
+            15.0,
+            55.0
+          ],
+          "mean": 35.0,
+          "std": 15.41,
+          "min": 15.0,
+          "max": 55.0,
+          "n_seeds": 5,
+          "ci95": [
+            21.49,
+            48.51
+          ]
+        },
+        "restored_accuracy": {
+          "seeds": [
+            40.0,
+            35.0,
+            25.0,
+            15.0,
+            55.0
+          ],
+          "mean": 34.0,
+          "std": 15.17,
+          "min": 15.0,
+          "max": 55.0,
+          "n_seeds": 5,
+          "ci95": [
+            20.71,
+            47.29
+          ]
+        },
+        "reconstruction_gain": 0.0,
+        "causal_drop": -1.0,
+        "restoration_error": 0.0,
+        "optimization_meta": {
+          "optimizer": "Adam",
+          "learning_rate": 0.05,
+          "steps": 30,
+          "initial_loss": 6.4421,
+          "final_loss": 0.8936,
+          "validation_initial_loss": 5.6275,
+          "validation_final_loss": 0.8745,
+          "loss_history": [
+            6.4421,
+            44.727,
+            6.7151,
+            11.1005,
+            23.9998,
+            14.6206,
+            2.7017,
+            3.7609,
+            11.1843,
+            11.8705,
+            5.8968,
+            1.4744,
+            2.6948,
+            5.9983,
+            6.3825,
+            3.7394,
+            1.483,
+            1.6546,
+            3.03,
+            3.4343,
+            2.4506,
+            1.3403,
+            1.1273,
+            1.5558,
+            1.7912,
+            1.5117,
+            1.0665,
+            0.839,
+            0.8496,
+            0.9148
+          ],
+          "loss_decreased": true,
+          "trainable_parameters": 1536
+        }
+      },
+      {
+        "run_id": "ab_recon_3",
+        "seed": 3063,
+        "target_initialization_hash": "efbb4b402386d30622eab6a7e6ece29834d1c48d896e127a312cdd9fac9c29c8",
+        "alignment_hash": "c0ee96e9d9df0bb3",
+        "target_final_unit_hash": "58cdc9bc7d9dc438",
+        "target_finalization_hash": "c0e8cfde4ff11dd8e3ca7620defc5cbc65789c5aff1c2b26fb0ba3b4606b64e3",
+        "reconstructed_accuracy": {
+          "seeds": [
+            40.0,
+            35.0,
+            25.0,
+            15.0,
+            55.0
+          ],
+          "mean": 34.0,
+          "std": 15.17,
+          "min": 15.0,
+          "max": 55.0,
+          "n_seeds": 5,
+          "ci95": [
+            20.71,
+            47.29
+          ]
+        },
+        "ablated_accuracy": {
+          "seeds": [
+            40.0,
+            30.0,
+            30.0,
+            20.0,
+            55.0
+          ],
+          "mean": 35.0,
+          "std": 13.23,
+          "min": 20.0,
+          "max": 55.0,
+          "n_seeds": 5,
+          "ci95": [
+            23.4,
+            46.6
+          ]
+        },
+        "restored_accuracy": {
+          "seeds": [
+            40.0,
+            35.0,
+            25.0,
+            15.0,
+            55.0
+          ],
+          "mean": 34.0,
+          "std": 15.17,
+          "min": 15.0,
+          "max": 55.0,
+          "n_seeds": 5,
+          "ci95": [
+            20.71,
+            47.29
+          ]
+        },
+        "reconstruction_gain": 0.0,
+        "causal_drop": -1.0,
+        "restoration_error": 0.0,
+        "optimization_meta": {
+          "optimizer": "Adam",
+          "learning_rate": 0.05,
+          "steps": 30,
+          "initial_loss": 6.5216,
+          "final_loss": 0.9144,
+          "validation_initial_loss": 5.6922,
+          "validation_final_loss": 0.8931,
+          "loss_history": [
+            6.5216,
+            45.4218,
+            6.7514,
+            11.0363,
+            24.3328,
+            15.0868,
+            2.7647,
+            3.5483,
+            11.2176,
+            12.1626,
+            6.1174,
+            1.4948,
+            2.62,
+            5.9809,
+            6.4917,
+            3.9005,
+            1.556,
+            1.6098,
+            2.984,
+            3.475,
+            2.5365,
+            1.3991,
+            1.1417,
+            1.5421,
+            1.7773,
+            1.5334,
+            1.1211,
+            0.872,
+            0.8337,
+            0.8953
+          ],
+          "loss_decreased": true,
+          "trainable_parameters": 1536
+        }
+      },
+      {
+        "run_id": "ab_recon_4",
+        "seed": 3094,
+        "target_initialization_hash": "32ac4d39a7185775071da9341e9afff7f02c25a2a43b3f473561525cc53d3391",
+        "alignment_hash": "c0ee96e9d9df0bb3",
+        "target_final_unit_hash": "fcaedc019ef00f6f",
+        "target_finalization_hash": "9e730406fad88f6700bdac68efb2f036e763567c7c059532ce4f3da6886bc7be",
+        "reconstructed_accuracy": {
+          "seeds": [
+            40.0,
+            35.0,
+            25.0,
+            15.0,
+            55.0
+          ],
+          "mean": 34.0,
+          "std": 15.17,
+          "min": 15.0,
+          "max": 55.0,
+          "n_seeds": 5,
+          "ci95": [
+            20.71,
+            47.29
+          ]
+        },
+        "ablated_accuracy": {
+          "seeds": [
+            40.0,
+            30.0,
+            30.0,
+            15.0,
+            55.0
+          ],
+          "mean": 34.0,
+          "std": 14.75,
+          "min": 15.0,
+          "max": 55.0,
+          "n_seeds": 5,
+          "ci95": [
+            21.07,
+            46.93
+          ]
+        },
+        "restored_accuracy": {
+          "seeds": [
+            40.0,
+            35.0,
+            25.0,
+            15.0,
+            55.0
+          ],
+          "mean": 34.0,
+          "std": 15.17,
+          "min": 15.0,
+          "max": 55.0,
+          "n_seeds": 5,
+          "ci95": [
+            20.71,
+            47.29
+          ]
+        },
+        "reconstruction_gain": 0.0,
+        "causal_drop": 0.0,
+        "restoration_error": 0.0,
+        "optimization_meta": {
+          "optimizer": "Adam",
+          "learning_rate": 0.05,
+          "steps": 30,
+          "initial_loss": 6.4262,
+          "final_loss": 0.904,
+          "validation_initial_loss": 5.6117,
+          "validation_final_loss": 0.8798,
+          "loss_history": [
+            6.4262,
+            45.6148,
+            6.574,
+            11.0858,
+            24.4808,
+            15.0499,
+            2.667,
+            3.5451,
+            11.3083,
+            12.2375,
+            6.0703,
+            1.359,
+            2.594,
+            6.124,
+            6.6042,
+            3.8265,
+            1.4144,
+            1.5968,
+            3.0907,
+            3.5418,
+            2.4955,
+            1.326,
+            1.1267,
+            1.5916,
+            1.8266,
+            1.5236,
+            1.0691,
+            0.8497,
+            0.8675,
+            0.9305
+          ],
+          "loss_decreased": true,
+          "trainable_parameters": 1536
+        }
+      },
+      {
+        "run_id": "ab_recon_5",
+        "seed": 3125,
+        "target_initialization_hash": "690290abeb232d6edcd4115dc60dacd70aa597774a661de26b9f639af8b58fdb",
+        "alignment_hash": "c0ee96e9d9df0bb3",
+        "target_final_unit_hash": "29acdb7cdb1d722b",
+        "target_finalization_hash": "917f182469b9f841763198ea5c816512681804391db45c39e0d6d0581d580694",
+        "reconstructed_accuracy": {
+          "seeds": [
+            40.0,
+            35.0,
+            25.0,
+            10.0,
+            55.0
+          ],
+          "mean": 33.0,
+          "std": 16.81,
+          "min": 10.0,
+          "max": 55.0,
+          "n_seeds": 5,
+          "ci95": [
+            18.27,
+            47.73
+          ]
+        },
+        "ablated_accuracy": {
+          "seeds": [
+            45.0,
+            30.0,
+            30.0,
+            15.0,
+            55.0
+          ],
+          "mean": 35.0,
+          "std": 15.41,
+          "min": 15.0,
+          "max": 55.0,
+          "n_seeds": 5,
+          "ci95": [
+            21.49,
+            48.51
+          ]
+        },
+        "restored_accuracy": {
+          "seeds": [
+            40.0,
+            35.0,
+            25.0,
+            10.0,
+            55.0
+          ],
+          "mean": 33.0,
+          "std": 16.81,
+          "min": 10.0,
+          "max": 55.0,
+          "n_seeds": 5,
+          "ci95": [
+            18.27,
+            47.73
+          ]
+        },
+        "reconstruction_gain": -1.0,
+        "causal_drop": -2.0,
+        "restoration_error": 0.0,
+        "optimization_meta": {
+          "optimizer": "Adam",
+          "learning_rate": 0.05,
+          "steps": 30,
+          "initial_loss": 6.4365,
+          "final_loss": 0.9391,
+          "validation_initial_loss": 5.6243,
+          "validation_final_loss": 0.9163,
+          "loss_history": [
+            6.4365,
+            45.3521,
+            6.8594,
+            10.794,
+            24.3378,
+            15.24,
+            2.7446,
+            3.3802,
+            11.1475,
+            12.2622,
+            6.2333,
+            1.447,
+            2.4609,
+            5.9268,
+            6.5883,
+            3.9906,
+            1.5316,
+            1.5177,
+            2.9254,
+            3.4973,
+            2.6061,
+            1.4339,
+            1.0967,
+            1.4703,
+            1.7667,
+            1.5875,
+            1.1586,
+            0.8459,
+            0.7903,
+            0.8922
+          ],
+          "loss_decreased": true,
+          "trainable_parameters": 1536
+        }
+      }
+    ]
+  },
+  "method_3_distillation": {
+    "reconstructed_accuracy": {
+      "seeds": [
+        30.0,
+        35.0,
+        25.0,
+        10.0,
+        35.0
+      ],
+      "mean": 27.0,
+      "std": 10.37,
+      "min": 10.0,
+      "max": 35.0,
+      "n_seeds": 5,
+      "ci95": [
+        17.91,
+        36.09
+      ]
+    },
+    "ablated_accuracy": {
+      "seeds": [
+        45.0,
+        30.0,
+        30.0,
+        15.0,
+        55.0
+      ],
+      "mean": 35.0,
+      "std": 15.41,
+      "min": 15.0,
+      "max": 55.0,
+      "n_seeds": 5,
+      "ci95": [
+        21.49,
+        48.51
+      ]
+    },
+    "delta_pp": -7.0,
+    "causal_drop_pp": -8.0,
+    "loss_trajectory": [
+      6.4466,
+      19.2506,
+      67.3777,
+      238.3929,
+      844.2196,
+      2989.9908,
+      10589.9751,
+      37507.886,
+      132846.733,
+      470521.3458,
+      1666509.6203,
+      5902504.5742,
+      20905706.1357,
+      74044593.6378,
+      262253845.2957,
+      928860245.1639,
+      3289871124.6887,
+      11652185676.6762,
+      41270136584.8519,
+      146172076055.2858,
+      517717598054.1378,
+      1833671092483.221,
+      6494563229282.655,
+      23002681250919.543,
+      81471736645459.02
+    ]
+  }
+}

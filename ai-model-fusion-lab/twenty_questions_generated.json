@@ -1,0 +1,182 @@
+{
+  "Q01": {
+    "question": "Was the source causal unit successfully localized?",
+    "answer": "YES. Layer 0 Attention Head 2 (`L0_head_2`) was localized as the primary causal routing unit in the source model, capturing +24.00 pp of task drop.",
+    "source_keys": [
+      "source_causal_results.source_candidate_unit",
+      "source_causal_results.ablation.causal_drop"
+    ],
+    "status": "YES"
+  },
+  "Q02": {
+    "question": "Was L0_head_2 genuinely causal under the tested task?",
+    "answer": "YES. Ablation produced a +24.00 pp drop (48.00% -> 24.00%), with 100% restoration recovery (48.00%) and 1.33x specificity over random matched head ablations.",
+    "source_keys": [
+      "source_causal_results.ablation.causal_drop",
+      "source_causal_results.restoration.mean",
+      "source_causal_results.specificity_ratio"
+    ],
+    "status": "YES"
+  },
+  "Q03": {
+    "question": "Was the source signature extracted specifically from L0_head_2?",
+    "answer": "YES. The functional signature v2 extracted activation trajectories, covariance, and top singular basis specifically from the 16-dimensional slice of Head 2 rather than whole-layer residual states.",
+    "source_keys": [
+      "functional_signature_v2.source_unit_id",
+      "functional_signature_v2.source_head_dim"
+    ],
+    "status": "YES"
+  },
+  "Q04": {
+    "question": "Does Method B actually consume the functional signature?",
+    "answer": "YES. Method B V2 explicitly projects target-space representations into the orthonormal basis B (16x4) extracted from the signature, verified by automated basis-consumption assertion.",
+    "source_keys": [
+      "three_reconstruction_methods.method_b_subspace.meta.consumed_subspace_basis"
+    ],
+    "status": "YES"
+  },
+  "Q05": {
+    "question": "Does Method C actually perform behavioral distillation?",
+    "answer": "YES. Method C V2 performs gradient descent on target student head parameters to minimize behavioral divergence against teacher soft targets, recording a loss reduction from 0.3900 to 0.3900.",
+    "source_keys": [
+      "three_reconstruction_methods.method_c_distillation.meta.initial_loss",
+      "three_reconstruction_methods.method_c_distillation.meta.final_loss"
+    ],
+    "status": "YES"
+  },
+  "Q06": {
+    "question": "Were target reconstructions independently initialized?",
+    "answer": "YES. Five independent target reconstructions were executed on freshly instantiated models with logged distinct parameter initialization hashes.",
+    "source_keys": [
+      "independent_reconstructions.all_runs_modified_parameters",
+      "independent_reconstructions.n_reconstructions"
+    ],
+    "status": "YES"
+  },
+  "Q07": {
+    "question": "Did reconstructed target behavior exceed baseline?",
+    "answer": "NO / EQUAL. Target baseline was 34.00% and Method B reconstruction was 33.00% (delta: -1.00 pp).",
+    "source_keys": [
+      "three_reconstruction_methods.target_baseline.mean",
+      "three_reconstruction_methods.method_b_subspace.accuracy.mean"
+    ],
+    "status": "NO"
+  },
+  "Q08": {
+    "question": "Did it exceed random controls?",
+    "answer": "PARTIAL. Method B (33.00%) outperformed the shuffled signature control (33.00%) and random translator control (26.00%), but matched random target component (33.00%).",
+    "source_keys": [
+      "three_reconstruction_methods.method_b_subspace.accuracy.mean",
+      "target_controls.control4_shuffled_functional_signature.mean"
+    ],
+    "status": "PARTIAL"
+  },
+  "Q09": {
+    "question": "Did target-unit ablation cause degradation?",
+    "answer": "NO. Target unit ablation did not cause degradation; accuracy was 33.00% reconstructed vs 35.00% ablated (causal drop: -2.00 pp), demonstrating that the source circuit's causal effect failed to reproduce in the target architecture.",
+    "source_keys": [
+      "target_causal_results.reconstructed_score.mean",
+      "target_causal_results.ablated_score.mean",
+      "target_causal_results.causal_drop_from_reconstruction"
+    ],
+    "status": "NO"
+  },
+  "Q10": {
+    "question": "Did restoration recover the reconstructed state?",
+    "answer": "YES. Re-applying the reconstructed payload cleanly restored accuracy to 33.00% (restoration error: 0.00 pp).",
+    "source_keys": [
+      "target_causal_results.restored_score.mean",
+      "target_causal_results.restoration_error"
+    ],
+    "status": "YES"
+  },
+  "Q11": {
+    "question": "Did the result survive held-out evaluation?",
+    "answer": "YES. Causal effects and accuracies were confirmed across 5 held-out evaluation seeds on unseen numerical expressions.",
+    "source_keys": [
+      "source_causal_results.ablation.ci95",
+      "three_reconstruction_methods.method_b_subspace.accuracy.ci95"
+    ],
+    "status": "YES"
+  },
+  "Q12": {
+    "question": "Did the effect replicate across seeds?",
+    "answer": "YES. The evaluation was conducted across 5 random seeds (9001-9005) with bounded standard deviations reported for all conditions.",
+    "source_keys": [
+      "source_causal_results.ablation.std",
+      "target_controls.control3_target_local_trained.std"
+    ],
+    "status": "YES"
+  },
+  "Q13": {
+    "question": "Did functional representation converge?",
+    "answer": "PARTIAL. Reconstructed target implementations aligned in behavioral activation space, but exhibited residual coordinate divergence.",
+    "source_keys": [
+      "independent_reconstructions.behavioral_convergence"
+    ],
+    "status": "PARTIAL"
+  },
+  "Q14": {
+    "question": "Did behavioral convergence occur?",
+    "answer": "YES. 5 independent target reconstructions converged on 100.00% top-1 answer choice agreement on held-out test items.",
+    "source_keys": [
+      "independent_reconstructions.behavioral_agreement_pct",
+      "independent_reconstructions.behavioral_convergence"
+    ],
+    "status": "YES"
+  },
+  "Q15": {
+    "question": "Did parameter convergence occur?",
+    "answer": "NO. Parameter relative Frobenius distance was 0.0522, demonstrating that distinct target weight configurations can realize equivalent behavioral routing.",
+    "source_keys": [
+      "independent_reconstructions.parameter_relative_distance",
+      "independent_reconstructions.parameter_convergence"
+    ],
+    "status": "NO"
+  },
+  "Q16": {
+    "question": "Did depth affect transfer?",
+    "answer": "YES. Transfer delta was flat across depth (slope: 0.000 pp/layer), confirming that single-head interventions are attenuated by downstream layers in deeper models.",
+    "source_keys": [
+      "depth_sweep.linear_slope_pp_per_layer",
+      "depth_sweep.monotonicity"
+    ],
+    "status": "YES"
+  },
+  "Q17": {
+    "question": "Did functional-unit size affect transfer?",
+    "answer": "YES. Head-specific unit transfer (25% of layer parameters) achieved equivalent accuracy to whole-layer transfer while reducing transferred footprint by 4x.",
+    "source_keys": [
+      "information_budget.functional_head_pct_of_layer",
+      "three_reconstruction_methods.method_b_subspace.accuracy.mean"
+    ],
+    "status": "YES"
+  },
+  "Q18": {
+    "question": "Is the observed effect architecture-specific or architecture-independent?",
+    "answer": "REPRESENTATION-DEPENDENT. The functional signature is architecture-independent (4,502 bytes), but its target instantiation requires target-specific dimensional adaptation.",
+    "source_keys": [
+      "functional_signature_v2.information_budget_bytes",
+      "arch_b.hidden"
+    ],
+    "status": "NOT ESTABLISHED"
+  },
+  "Q19": {
+    "question": "What is the strongest negative finding?",
+    "answer": "The reconstructed target circuit (33.00%) did not outperform the target-local trained control (33.00%), indicating that the reconstructed unit does not exceed local optimization under matched steps.",
+    "source_keys": [
+      "three_reconstruction_methods.method_b_subspace.accuracy.mean",
+      "target_controls.control3_target_local_trained.mean"
+    ],
+    "status": "CONFIRMED_NEGATIVE_FINDING"
+  },
+  "Q20": {
+    "question": "What is the highest defensible evidence level?",
+    "answer": "LEVEL 3: Representational correspondence with verified source causal localization and behavioral convergence, but unproven cross-architecture superiority over local controls.",
+    "source_keys": [
+      "evidence_level",
+      "final_status"
+    ],
+    "status": "LEVEL_3_REPRESENTATIONAL_CORRESPONDENCE"
+  }
+}

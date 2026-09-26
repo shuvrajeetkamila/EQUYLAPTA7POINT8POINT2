@@ -1,0 +1,339 @@
+==============================================================================
+EQUYLAPTA5 — FUNCTIONAL IDENTITY TRANSFER — REPORT
+AI Model Fusion Lab — built by EQUYLAPTA [AI MODEL]
+Generated 2026-09-19 17:32:56  |  smoke=False
+==============================================================================
+
+1. EXECUTIVE SUMMARY
+------------------------------------------------------------------------------
+  Question: when an EQUYLAPTA4 circuit transfer succeeds, WHAT is
+  being transferred?  Object: e4-math-4L-convergence-01 (E4's strongest
+  reproducible result, +3.33 held-out, reproduced).
+  Verdict per factor (see sections 7-19):
+      1 correct_location_advantage                 YES  condition met
+      2 wrong_location_degradation                 YES  condition met
+      3 random_control_separation                  YES  condition met
+      4 topology_control_separation                YES  condition met
+      5 weight_control_separation                  YES  condition met
+      6 representation_scrambling_effect           YES  condition met
+      7 reconstruction_agreement                    NO  not met
+      8 destroyed_function_degradation             YES  condition met
+      9 function_restoration_recovery              YES  condition met
+     10 heldout_replication                        YES  condition met
+     11 capability_specificity                      NO  not met
+     12 cross_seed_replication                     YES  condition met
+  FINAL CLASSIFICATION: PARTIAL_FUNCTIONAL_EVIDENCE
+  One-paragraph verdict: the E4 gain decomposes into a site-level
+  intervention benefit (reproducible without source weights, but with
+  catastrophic collateral damage when the values are random), a small
+  marginal advantage for the real organized weights (+0.84, inside
+  seed noise) with a qualitatively cleaner capability profile, strict
+  dependence on the layer-0/2 region and on source-basis alignment,
+  and NO demonstrable transfer of the circuit's actual function
+  (13.3% agreement).  The functional-identity hypothesis SURVIVES
+  only in weakened form: what transfers is the intervention, not the
+  function.
+
+2. ORIGINAL EQUYLAPTA4 RESULT (the primary experimental object)
+------------------------------------------------------------------------------
+  E4 D4: e4-math-4L -> e4-base-4L, aligned transfer 21.67 -> 25.00
+  (+3.33), beat random / trained param-matched / shuffled / raw
+  controls, reproduced (3.33 -> 3.33).  E4 ALSO recorded interference
+  (know -47.9, code -20.8, agent -18.7); per the milestone instruction
+  this circuit is treated as 'the strongest candidate functional
+  circuit discovered so far', NOT as a proven math circuit.
+  Recovery from artifacts: pack True,
+  members ['HEAD0@L0', 'HEAD1@L0', 'HEAD2@L0', 'HEAD3@L0', 'MODULE@L0']
+
+3. RESEARCH QUESTION
+------------------------------------------------------------------------------
+  FUNCTION vs STRUCTURE/TOPOLOGY vs WEIGHTS vs LOCATION vs
+  REPRESENTATION vs CAPACITY — separated experimentally, factor by
+  factor, on the same fixed pair of models and the same fixed circuit.
+
+4. EXPERIMENTAL DESIGN (pre-registered)
+------------------------------------------------------------------------------
+  All cells: RAW insertion (snapshot -> insert -> held-out math,
+  seeds 9001-9003 -> capability vector -> restore).  No refit inside
+  matrix cells; the A-ladder (with refit/calibration) is reported
+  separately as the reference.  Wrong locations = layers 1,2,3
+  (predefined ascending).  Random locations = seeds 21/22/23 with the
+  documented resample rule (not all-zero).  Reconstruction trains
+  random-init tensors at the CORRECT sites on the train corpus only;
+  equivalence probes and minimality subsets use the calibration split
+  (seed 400); held-out is touched once per cell/subset.
+
+5. MODEL INFORMATION
+------------------------------------------------------------------------------
+  source e4-math-4L: 4 layers, d64, 4 heads, mlp 256, 211,136 params,
+  math 52.5% held-out; target e4-base-4L: same init/depth, math 27.5%
+  (deficit +25.0).  NumPy/torch micro-transformer, deterministic.
+
+6. CANDIDATE CIRCUIT
+------------------------------------------------------------------------------
+  e4-math-4L-convergence-01: 5 members, all at layer 0 (heads h0-h3 +
+  module attn), 33,216 params, fp16 pack 67.5 KB, E4 battery: effect
+  45.83, specificity +8.33, L5, minimal unit L0.h2 (retains 118%).
+
+7. EXPERIMENT A — REAL CIRCUIT @ CORRECT LOCATION
+------------------------------------------------------------------------------
+  matrix cell: 24.17 (std 3.12, seeds [25.0, 20.0, 27.5]), gain 2.5
+  full 15-ladder re-run: verdict INSUFFICIENT_EVIDENCE+INTERFERENCE, delta 3.33
+  arm-by-arm E4 vs E5 (determinism check, same recipe):
+    TARGET_BASELINE            E5  21.67 | E4 21.67
+    RAW_STRUCTURE              E5  24.17 | E4 24.17
+    ALIGNED_STRUCTURE          E5   25.0 | E4 25.0
+    REFITTED_STRUCTURE         E5   22.5 | E4 22.5
+    CALIBRATED_STRUCTURE       E5   22.5 | E4 22.5
+    RANDOM_STRUCTURE_CONTROL   E5   20.0 | E4 20.0
+    CAPACITY_CONTROL           E5   20.0 | E4 20.0
+    SHUFFLED_CIRCUIT_CONTROL   E5   17.5 | E4 17.5
+
+8. EXPERIMENT B — REAL CIRCUIT @ WRONG LOCATION
+------------------------------------------------------------------------------
+  layer 1: 15.83 (gain -5.84)
+  layer 2: 23.33 (gain 1.66)
+  layer 3: 20.0 (gain -1.67)
+  Interpretation rule (pre-declared): collapse here is evidence FOR
+  location dependence, NOT proof of no transferable function.
+
+9. EXPERIMENT C — REAL CIRCUIT @ RANDOM LOCATION
+------------------------------------------------------------------------------
+  seed 21: 13.33 (gain -8.34)  sites [1, 3, 1, 2, 1]
+  seed 22: 20.83 (gain -0.84)  sites [3, 1, 2, 0, 3]
+  seed 23: 14.17 (gain -7.5)  sites [0, 2, 1, 2, 1]
+
+10. EXPERIMENT D — RANDOM CIRCUIT @ CORRECT LOCATION
+------------------------------------------------------------------------------
+  23.33 (gain 1.66) — tests 'is perturbing
+  this site enough?'.  If D ~= A, the E4 result was NOT functional
+  transfer.
+
+11. EXPERIMENT E — RANDOM CIRCUIT @ WRONG LOCATION
+------------------------------------------------------------------------------
+  layer 1: 19.17 (gain -2.5)
+  layer 2: 16.67 (gain -5.0)
+  layer 3: 20.83 (gain -0.84)
+
+12. EXPERIMENT F — TOPOLOGY ONLY (sites+shapes kept, values ~
+    N(mean, std) of the real tensors)
+------------------------------------------------------------------------------
+  17.5 (gain -4.17) — tests whether the
+  structural footprint alone reproduces the effect.
+
+13. EXPERIMENT G — WEIGHT STATISTICS ONLY (real values, permuted
+    within tensors: distribution kept, organization destroyed)
+------------------------------------------------------------------------------
+  20.83 (gain -0.84) — the E4 shuffled arm
+  re-run inside the matrix methodology.
+
+14. EXPERIMENT H — REPRESENTATION SCRAMBLING (fixed column
+    permutation per 2-D tensor: W -> W Pi^T; magnitudes kept, source
+    basis alignment destroyed)
+------------------------------------------------------------------------------
+  15.0 (gain -6.67) — tests dependence on
+  cross-model representation-geometry alignment.
+
+15. FUNCTIONAL RECONSTRUCTION (Experiment I — the centerpiece)
+------------------------------------------------------------------------------
+  matched budget (150 steps): 25.0 (gain 3.33); loss 16.98 -> 11.61
+  best-effort  (600 steps): 19.17 (gain -2.5); loss 16.69 -> 7.70
+  The surrogate starts from N(0,0.02) random tensors at the correct
+  sites and is trained on the train corpus ONLY — no source weight is
+  copied.  If I ~= A, the FUNCTION (not the specific weights) carries
+  the effect; if I << A, the original weights matter.
+
+16. FUNCTIONAL EQUIVALENCE (spec 14, on the source model)
+------------------------------------------------------------------------------
+  real 60.0 | ablated 22.5 | surrogate 32.5 (calibration split)
+  next-token top-1 agreement real-vs-surrogate: 13.33% over 60 texts
+  declared threshold: match if agreement>=90 AND |surro-real|<=2 -> match: False
+  NOTE: agreement is computed on identical inputs through the same
+  model, so the two forwards are deterministic; the agreement number
+  is the exact behavioral overlap, not an estimate.
+
+17. FUNCTION DESTRUCTION (Experiment J)
+------------------------------------------------------------------------------
+  surrogate shuffled (function destroyed, scale/placement kept): 14.17 (gain -7.5)
+
+18. FUNCTION RESTORATION (Experiment K)
+------------------------------------------------------------------------------
+  surrogate re-inserted: 19.17 (gain -2.5) — causal sequence: present 19.17 -> destroyed 14.17 -> restored 19.17
+
+19. LOCATION x FUNCTION MATRIX (spec 17)
+------------------------------------------------------------------------------
+| Circuit                | Correct loc  | Wrong loc (mean)  | Random loc   |
+| Real circuit           | 24.17        | 19.72             | 16.11        |
+| Random circuit         | 23.33        | 18.89             | —            |
+| Surrogate (reconstr.)  | 19.17        | not pre-registere | —            |
+| Surrogate destroyed    | 14.17        | —                 | —            |
+| Surrogate restored     | 19.17        | —                 | —            |
+  Wrong-location per-layer values in results_e5.json (no averaging
+  hiding a single good/bad layer).  NOTE B-L2 (23.33) nearly matches
+  the correct location — the effect is tied to the layer-0/2 region,
+  not to layer 0 alone; random placement (C mean 16.1) mostly hurts.
+
+  THE VECTOR LENS (capability vector at held-out seed 9001) — the
+  math means alone FLATTER the random control:
+    baseline : math 27.5  code 75.0  know 100.0  lang 70.0  agent 72.5
+    A real   : math 25.0  code 65.0  know 100.0  lang 85.0  agent 72.5   (benign; lang +15)
+    D random : math 20.0  code 27.5  know  22.5  lang 35.0  agent 17.5   (catastrophic collateral damage)
+  The random payload's math mean (23.33 over 3 seeds) is bought by
+  wrecking every other capability; the real circuit's small edge is
+  QUALITATIVELY cleaner.  The real weights therefore carry something
+  random values do not — benignity/specificity of the intervention —
+  even though the raw math-mean separation is only +0.84.
+
+20. CAPABILITY SPECIFICITY (7 domains, held-out seed 9001)
+------------------------------------------------------------------------------
+  A_real_correct         NO_TARGET_EFFECT       target -2.5 worst-other -10.0
+  D_random_correct       INTERFERENCE           target -7.5 worst-other -77.5
+  I_recon_best           INTERFERENCE           target -5.0 worst-other -75.0
+  J_function_destroyed   INTERFERENCE           target -15.0 worst-other -80.0
+
+21. NEGATIVE TRANSFER
+------------------------------------------------------------------------------
+  A condition: NO_TARGET_EFFECT (worst regression -10.0) — matches the E4 interference finding;
+  the effect is NOT a clean capability-specific improvement.
+
+22. MINIMALITY (real vs random vs shuffled subsets, calibration)
+------------------------------------------------------------------------------
+  1.00: real 22.5 | random 22.5 [22.5, 22.5, 22.5] | shuffled 17.5  kept ['L0.h0', 'L0.h1', 'L0.h2', 'L0.attn', 'L0.h3']
+  0.75: real 22.5 | random 22.5 [22.5, 22.5, 22.5] | shuffled 20.0  kept ['L0.h0', 'L0.h1', 'L0.h2', 'L0.attn']
+  0.50: real 20.0 | random 22.5 [22.5, 25.0, 20.0] | shuffled 17.5  kept ['L0.h0', 'L0.h1']
+  0.25: real 22.5 | random 19.17 [12.5, 22.5, 22.5] | shuffled 22.5  kept ['L0.h0']
+  0.10: real 22.5 | random 19.17 [12.5, 22.5, 22.5] | shuffled 22.5  kept ['L0.h0']
+  held-out 10%: real 22.5 vs random [22.5, 25.0, 25.0]
+  Interpretation: a fraction counts as 'the functional core' only if
+  real > matched random subsets by more than seed noise.
+
+23. RANDOM CONTROLS (summary)
+------------------------------------------------------------------------------
+  untrained random values @ correct site (D): 23.33
+  trained random sites, matched budget (E4 CAPACITY, ladder): 20.0
+  stats-matched values (F): 17.5  shuffled values (G): 20.83
+
+24. HELD-OUT RESULTS
+------------------------------------------------------------------------------
+  EVERY number in sections 7-23 is held-out (seeds 9001-9003) except
+  the minimality curve and equivalence probes (calibration, seed 400,
+  declared).  No benchmark leakage: reconstruction/subset search never
+  saw held-out suites.
+
+25. SEED REPRODUCIBILITY
+------------------------------------------------------------------------------
+  A_real_correct         mean  24.17 std  3.12 min  20.0 max  27.5 n=3
+  D_random_correct       mean  23.33 std  2.36 min  20.0 max  25.0 n=3
+  I_recon_best           mean  19.17 std  3.12 min  15.0 max  22.5 n=3
+  B_real_wrong_L1        mean  15.83 std  4.25 min  10.0 max  20.0 n=3
+  F_topology_only        mean   17.5 std   5.4 min  12.5 max  25.0 n=3
+
+26. EVIDENCE LADDER (extended, spec 26)
+------------------------------------------------------------------------------
+  L0-L7 as in E4; NEW: L8 reconstruction, L9 destroy->loss,
+  L10 restore->recovery, L11 location-controlled transfer,
+  L12 cross-architecture (NOT claimed).
+  L8_functional_reconstruction: not achieved
+  L9_function_destroy_loss: ACHIEVED
+  L10_function_restore_recovery: ACHIEVED
+  L11_transfer_with_location_control: ACHIEVED
+  L12_cross_architecture: not achieved
+
+27. EQUYLAPTA4 vs EQUYLAPTA5
+------------------------------------------------------------------------------
+  transfer_gain: E4 3.33 | E5 2.5
+  random_control_separation: E4 4.170000000000002 | E5 0.8400000000000034
+  param_matched_separation: E4 5.0 | E5 5.0
+  location_sensitivity: E4 NOT_MEASURED | E5 4.450000000000003
+  topology_sensitivity: E4 SHUFFLED only | E5 6.670000000000002
+  weight_sensitivity: E4 6.670000000000002 | E5 3.3400000000000034
+  functional_reconstruction: E4 NOT_TESTED | E5 19.17
+  capability_specificity: E4 {'micro-code': -20.8, 'micro-know': -47.9, 'micro-agent': -18.7} | E5 {'target_delta': -2.5, 'other_deltas': {'code': -10.0, 'reason': 7.5, 'lang': 15.0, 'know': 0.0, 'multi': 0.0, 'agent': 0.0}, 'worst_regression': -10.0, 'class': 'NO_TARGET_EFFECT'}
+  minimality: E4 real subsets only | E5 real vs random vs shuffled subsets
+  reproducibility: E4 {'first_gain': 3.33, 'second_gain': 3.33, 'second_class': 'CAPABILITY_TRANSFER', 'reproduced': True, 'criterion': 'positive + beats_random + |d1-d2| <= 5.0'} | E5 A-ladder re-run of the same fixed recipe
+  NEW EVIDENCE in E5: location controls (B/C/E), content controls
+  separated from capacity (D/F/G/H), functional reconstruction (I),
+  destroy/restore causal sequence (J/K), random-subset minimality.
+
+28. FAILURE ANALYSIS
+------------------------------------------------------------------------------
+  pre-registered reading.  See sections 7-19 for the numbers.)
+
+29. WHAT ACTUALLY APPEARS TO TRANSFER
+------------------------------------------------------------------------------
+  Evidence-based answer, factor by factor:
+   1. A SITE-LEVEL INTERVENTION BENEFIT: inserting small/organized
+      changes at the layer-0 attention region lifts 3-seed math mean
+      even with RANDOM values (D +1.67) — but randomly.
+   2. THE REAL ORGANIZED WEIGHTS add a small marginal advantage
+      (A-D = +0.84,
+      within seed noise) AND, more importantly, a qualitatively
+      cleaner capability profile (section 19 vector lens).
+   3. SOURCE-BASIS ALIGNMENT is required (H collapses to 15.0).
+   4. The 150-step surrogate reproduces the GAIN (25.0) WITHOUT any
+      source weight — but destroys the 'functional transfer'
+      interpretation, because it does NOT reproduce the circuit's
+      function (13.3% agreement).  What transfers reproducibly is the
+      intervention effect at that site, not a model-independent
+      functional component.
+   5. Destroy/restore (J 14.17 -> K 19.17, exact) proves the trained
+      surrogate's own arrangement causally matters — the sequence is
+      real, but it is evidence about the SURROGATE's function (a
+      target-adapted mild regularizer), not the source circuit's.
+
+30. WHAT DOES NOT APPEAR TO TRANSFER
+------------------------------------------------------------------------------
+   * The FUNCTION of the circuit: surrogate agreement 13.3%; source
+     with surrogate inserted scores 32.5 vs 60.0 with the real circuit.
+     L8 (functional reconstruction) NOT achieved.
+   * Topology alone: F (sites+shapes, matched random values) = 17.5,
+     BELOW baseline — the structural footprint has no positive effect.
+   * Weight statistics alone: G (values permuted) = 20.83 ~= baseline.
+   * A special minimal core: real subsets never beat matched random
+     subsets at any fraction (10% held-out: real 22.5 vs random
+     [22.5, 25.0, 25.0]).
+   * Capability-specific improvement: at the vector seed the A
+     intervention LOWERS math (-2.5) while raising lang (+15) —
+     mixed, non-specific; consistent with E4's interference finding.
+   * More surrogate training helps: 600 steps (19.17) is WORSE than
+     150 steps (25.0) — overfitting the train corpus destroys the
+     transfer benefit; the effect lives at mild-intervention scale.
+
+31. REMAINING UNCERTAINTY
+------------------------------------------------------------------------------
+   * 3 held-out seeds per cell: A-D separation (+0.84) is inside seed
+     noise (A std 3.12); the marginal weight contribution could be zero.
+   * The B-L2 exception (23.33 at layer 2) shows a second working
+     region; 'location matters' is really 'placement region matters'.
+   * Minimality used calibration subsets of 5 members — resolution is
+     coarse (fractions move one member at a time).
+   * Equivalence measured on the source only; a target-side reference
+     function does not exist by construction.
+   * One model pair, one depth, one capability; the surrogate's
+     'benign intervention' reading needs replication on other pairs.
+   STRONGEST ALTERNATIVE EXPLANATION for the original E4 result: a
+   mild layer-0 intervention acts as a regularizer/noise-injection
+   that slightly helps this target's math suite; the circuit's
+   organization adds at most a small cleanliness advantage — not a
+   transferred capability.
+
+32. DIFFERENT-ARCHITECTURE READINESS
+------------------------------------------------------------------------------
+  functional_identity.json now stores BOTH representations:
+  implementation (pack tensors, exact slices) and functional
+  (signatures, operations, statistics, causal/transfer/specificity/
+  minimality evidence, known failures, compatibility assumptions).
+  Cross-architecture transfer justified as the NEXT experiment: NOT YET
+
+33. NEXT MILESTONE RECOMMENDATION
+------------------------------------------------------------------------------
+  If reconstruction held: translate the FUNCTIONAL representation to a
+  different micro-architecture (different head count or MLP shape) via
+  a learned projector.  If location dominated: map the target-side
+  location search space before any cross-family attempt.
+
+34. ARTIFACT SIZE
+------------------------------------------------------------------------------
+  FINAL DELIVERABLE SIZE: 30.81 MB  (limit 120 MB; target <60 MB)
+  STATUS: PASS
+  details in RELEASE_SIZE_REPORT.txt

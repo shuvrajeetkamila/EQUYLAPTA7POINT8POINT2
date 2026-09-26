@@ -1,0 +1,137 @@
+{
+  "claims": [
+    {
+      "claim_id": "CLM-E71-01",
+      "exact_claim": "Source unit L0_head_2 ablation caused a +24.00 percentage point collapse.",
+      "source_result_file": "source_causal_results.json",
+      "source_key": "ablation.causal_drop",
+      "raw_values": [
+        48.0,
+        24.0
+      ],
+      "calculation": "baseline.mean - ablation.mean",
+      "derived_value": 24.0,
+      "interpretation_rule": "causal_drop > 0 indicates functional impairment under ablation",
+      "confidence_level": "high"
+    },
+    {
+      "claim_id": "CLM-E71-02",
+      "exact_claim": "Source unit restoration recovered performance to 48.00%.",
+      "source_result_file": "source_causal_results.json",
+      "source_key": "restoration.mean",
+      "raw_values": [
+        48.0
+      ],
+      "calculation": "direct",
+      "derived_value": 48.0,
+      "interpretation_rule": "restoration == baseline proves reversible causal mediation",
+      "confidence_level": "high"
+    },
+    {
+      "claim_id": "CLM-E71-03",
+      "exact_claim": "Method B V2 subspace reconstruction achieved 33.00% target accuracy.",
+      "source_result_file": "method_comparison.json",
+      "source_key": "method_b_subspace.accuracy.mean",
+      "raw_values": [
+        33.0
+      ],
+      "calculation": "direct",
+      "derived_value": 33.0,
+      "interpretation_rule": "target task accuracy under functional signature reconstruction",
+      "confidence_level": "high"
+    },
+    {
+      "claim_id": "CLM-E71-04",
+      "exact_claim": "Five independent target reconstructions achieved 100.00% behavioral agreement.",
+      "source_result_file": "independent_reconstructions.json",
+      "source_key": "behavioral_agreement_pct",
+      "raw_values": [
+        100.0
+      ],
+      "calculation": "pairwise_top1_agreement_mean",
+      "derived_value": 100.0,
+      "interpretation_rule": "behavioral agreement >= 70% indicates stable target output convergence",
+      "confidence_level": "high"
+    },
+    {
+      "claim_id": "CLM-E71-05",
+      "exact_claim": "Functional signature achieved a 168.4:1 compression ratio.",
+      "source_result_file": "results_e7_1.json",
+      "source_key": "information_budget.compression_ratio_model_to_sig",
+      "raw_values": [
+        844544,
+        5014
+      ],
+      "calculation": "raw_source_bytes / functional_signature_bytes",
+      "derived_value": "168.4:1",
+      "interpretation_rule": "compression of computational specification relative to full weight tensor",
+      "confidence_level": "high"
+    },
+    {
+      "claim_id": "CLM-E71-06",
+      "exact_claim": "Target baseline math accuracy is 34.00%.",
+      "source_result_file": "method_comparison.json",
+      "source_key": "three_reconstruction_methods.target_baseline.mean",
+      "raw_values": [
+        34.0
+      ],
+      "calculation": "direct",
+      "derived_value": 34.0,
+      "interpretation_rule": "unmodified target model held-out math accuracy",
+      "confidence_level": "high"
+    },
+    {
+      "claim_id": "CLM-E71-07",
+      "exact_claim": "Minimal parameter subset fraction retaining >=80% capability is 0.75.",
+      "source_result_file": "unit_size_sweep.json",
+      "source_key": "unit_size_sweep.minimal_parameter_fraction",
+      "raw_values": [
+        0.75
+      ],
+      "calculation": "direct",
+      "derived_value": 0.75,
+      "interpretation_rule": "fraction of head columns required to maintain capability",
+      "confidence_level": "high"
+    },
+    {
+      "claim_id": "CLM-E71-08",
+      "exact_claim": "Target unit ablation caused a -2.00 pp change, demonstrating no causal transfer.",
+      "source_result_file": "target_causal_results.json",
+      "source_key": "target_causal_results.causal_drop_from_reconstruction",
+      "raw_values": [
+        33.0,
+        35.0
+      ],
+      "calculation": "reconstructed.mean - ablated.mean",
+      "derived_value": -2.0,
+      "interpretation_rule": "non-positive drop confirms target-native circuit is non-essential for task execution",
+      "confidence_level": "high"
+    },
+    {
+      "claim_id": "CLM-E71-09",
+      "exact_claim": "Target-local trained control achieved 33.00% accuracy.",
+      "source_result_file": "controls.json",
+      "source_key": "target_controls.control3_target_local_trained.mean",
+      "raw_values": [
+        33.0
+      ],
+      "calculation": "direct",
+      "derived_value": 33.0,
+      "interpretation_rule": "matched step target-local optimization benchmark",
+      "confidence_level": "high"
+    },
+    {
+      "claim_id": "CLM-E71-10",
+      "exact_claim": "Independent target reconstructions achieved 1.0000 Linear CKA across representations.",
+      "source_result_file": "independent_reconstructions.json",
+      "source_key": "independent_reconstructions.linear_cka",
+      "raw_values": [
+        1.0
+      ],
+      "calculation": "pairwise_linear_cka_mean",
+      "derived_value": 1.0,
+      "interpretation_rule": "linear CKA >= 0.90 indicates representational alignment across target runs",
+      "confidence_level": "high"
+    }
+  ]
+}

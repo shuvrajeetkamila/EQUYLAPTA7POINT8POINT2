@@ -1,0 +1,103 @@
+{
+  "target_baseline": {
+    "seeds": [
+      35.0,
+      30.0,
+      30.0,
+      30.0,
+      45.0
+    ],
+    "mean": 34.0,
+    "std": 6.52,
+    "min": 30.0,
+    "max": 45.0,
+    "n_seeds": 5,
+    "ci95": [
+      28.29,
+      39.71
+    ]
+  },
+  "method_a_structural": {
+    "accuracy": {
+      "seeds": [
+        55.0,
+        30.0,
+        25.0,
+        20.0,
+        35.0
+      ],
+      "mean": 33.0,
+      "std": 13.51,
+      "min": 20.0,
+      "max": 55.0,
+      "n_seeds": 5,
+      "ci95": [
+        21.16,
+        44.84
+      ]
+    },
+    "delta_pp": -1.0
+  },
+  "method_b_subspace": {
+    "accuracy": {
+      "seeds": [
+        55.0,
+        30.0,
+        25.0,
+        20.0,
+        35.0
+      ],
+      "mean": 33.0,
+      "std": 13.51,
+      "min": 20.0,
+      "max": 55.0,
+      "n_seeds": 5,
+      "ci95": [
+        21.16,
+        44.84
+      ]
+    },
+    "target_ablated": {
+      "seeds": [
+        45.0,
+        30.0,
+        30.0,
+        15.0,
+        55.0
+      ],
+      "mean": 35.0,
+      "std": 15.41,
+      "min": 15.0,
+      "max": 55.0,
+      "n_seeds": 5,
+      "ci95": [
+        21.49,
+        48.51
+      ]
+    },
+    "delta_pp": -1.0,
+    "causal_drop": -2.0
+  },
+  "method_c_distillation": {
+    "accuracy": {
+      "seeds": [
+        55.0,
+        30.0,
+        25.0,
+        20.0,
+        35.0
+      ],
+      "mean": 33.0,
+      "std": 13.51,
+      "min": 20.0,
+      "max": 55.0,
+      "n_seeds": 5,
+      "ci95": [
+        21.16,
+        44.84
+      ]
+    },
+    "delta_pp": -1.0
+  },
+  "superior_method": "METHOD_B_SUBSPACE"
+}

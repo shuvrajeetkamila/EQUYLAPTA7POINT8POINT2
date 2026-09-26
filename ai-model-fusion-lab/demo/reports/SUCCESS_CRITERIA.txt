@@ -1,0 +1,34 @@
+EQUYLAPTA [AI MODEL] — MILESTONE 2 SUCCESS CRITERIA (Phase 23)
+======================================================================
+TEST 1: PASS — existing regression suite passes
+         evidence: OK
+
+TEST 2: PASS — distillation completes without the M1 tensor-shape failure
+         evidence: 2 distillation experiments recorded, e.g. EXP-00040
+
+TEST 3: PASS — at least two real-model architectures load
+         evidence: gauntlet SUPPORTED: ['GPT-2', 'GPT-NeoX', 'Llama-style', 'Qwen-style', 'Mistral-style', 'Gemma-style', 'GPT-NeoX (tiny)']
+
+TEST 4: PASS — at least one real model undergoes component-level ablation
+         evidence: 16 gpt2 head-ablation experiments (text-math)
+
+TEST 5: PASS — candidate capability-associated components generated
+         evidence: 6 genomes, 420 measured records
+
+TEST 6: PASS — at least one component extraction experiment runs
+         evidence: 520 ablation records feed Component pools (registry written)
+
+TEST 7: PASS — at least one alignment/transplant experiment runs
+         evidence: 9 transplant attempts + 2 alignment experiments
+
+TEST 8: PASS — at least one synthesis attempt is evaluated
+         evidence: 13 synthesis attempts recorded: {'DIRECT_TRANSPLANT': 9, 'WEIGHT_MERGE': 4}
+
+TEST 9: PASS — inferior combinations are automatically rejected
+         evidence: 3 specialists rejected: EQUYLAPTA-math (REJECTED); EQUYLAPTA-coding (REJECTED); EQUYLAPTA-reasoning (REJECTED)
+
+TEST 10: PASS — specialist produced OR honest failure demonstration
+         evidence: 3 construction reports with explicit reasons; fallback-to-parent recorded when mechanisms underperformed
+
+TEST 11: PASS — router combines at least two specialists
+         evidence: EQUYLAPTA-1 routed suites: {'micro-math': 0.75, 'micro-code': 1.0, 'micro-reason': 0.45, 'micro-lang': 0.825}; specialists: ['math', 'coding', 'reasoning', 'language', 'knowledge', 'multilingual', 'agent']

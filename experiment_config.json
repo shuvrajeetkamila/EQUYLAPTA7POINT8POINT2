@@ -1,0 +1,14 @@
+{
+  "milestone": "EQUYLAPTA E7.4",
+  "seeds": [
+    9001,
+    9002,
+    9003,
+    9004,
+    9005
+  ],
+  "bridge_architecture": "W_in(16x16) -> W_comp(16x64, frozen) -> W_out(64xd_tgt)",
+  "adapter_epochs": 15,
+  "adapter_lr": 0.003,
+  "predeclared_threshold": 90.0
+}

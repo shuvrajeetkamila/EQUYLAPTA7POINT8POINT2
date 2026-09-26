@@ -1,0 +1,11 @@
+# AI Model Fusion Lab — required (the synthetic micro path runs on this alone)
+numpy>=1.24
+
+# Optional: real open-weight model path + faster micro training [REQUIRES EXTERNAL MODEL]
+# Install with:  pip install -r requirements.txt
+#                pip install torch --index-url https://download.pytorch.org/whl/cpu
+#                pip install transformers safetensors huggingface_hub
+torch>=2.0
+transformers>=4.40
+safetensors>=0.4
+huggingface_hub>=0.23

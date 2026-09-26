@@ -1,0 +1,979 @@
+{
+  "milestone": "EQUYLAPTA_7.7",
+  "timestamp": "2026-09-25 16:21:54",
+  "duration_sec": 139.66,
+  "scientific_level": "LEVEL B: REPRESENTATIONAL_ALIGNMENT_ONLY",
+  "predeclared_threshold_pct": 90.0,
+  "peak_agreement_pct": 0.0,
+  "threshold_met": false,
+  "audit_7_6": {
+    "milestone": "EQUYLAPTA_7.6",
+    "observations": {
+      "native_math_drop_pp": 25.0,
+      "native_reason_drop_pp": 40.0,
+      "native_code_drop_pp": 30.0,
+      "math_transfer_agreement_pct": 64.86,
+      "reason_transfer_agreement_pct": 46.61,
+      "code_transfer_agreement_pct": 13.58,
+      "recipient_math_causal_drop_pp": -2.0,
+      "recipient_reason_causal_drop_pp": -1.0,
+      "recipient_code_causal_drop_pp": 0.0,
+      "host_only_learning_math_accuracy_pct": 29.0,
+      "composite_math_accuracy_pct": 23.0
+    },
+    "diagnosis": "Component-only transplant failed in recipient because the single head was ungrounded. The recipient network had no co-adapted downstream circuitry to interpret the head's signals, treating it as mild interference.",
+    "hypotheses_tested_in_7_7": [
+      "H1: Missing downstream dependencies (investigated via downstream FDC discovery and transfer)",
+      "H2: Missing upstream dependencies (investigated via input representation analysis)",
+      "H3: Missing routing/context dependencies (investigated via Layer 1 routing head transfer)",
+      "H4: Interface mismatch (investigated via capacity-constrained bidirectional bridges)",
+      "H5: Distributed computation (investigated via progressive inclusion and circuit-size sweep)",
+      "H6: Measurement mismatch (investigated via 5 separated metrics)",
+      "H7: Optimization/interference (investigated via frozen invariants and random controls)",
+      "H8: Incorrect causal attribution (investigated via necessity and sufficiency tests)"
+    ]
+  },
+  "native_localization": {
+    "model_name": "e4-math-4L",
+    "domain": "math",
+    "target_head": "L0_head_2",
+    "intact_accuracy": 40.0,
+    "ablated_accuracy": 15.0,
+    "causal_drop_pp": 25.0,
+    "restored_accuracy": 40.0,
+    "restoration_error_pp": 0.0,
+    "layer_matched_control_drop_pp": 35.0,
+    "mean_other_heads_drop_pp": 8.33,
+    "specificity_ratio": 3.0,
+    "status": "LOCALIZED"
+  },
+  "dependency_discovery": {
+    "model_name": "e4-math-4L",
+    "domain": "math",
+    "core_head": "L0_head_2",
+    "base_accuracy": 40.0,
+    "downstream_impact_profile": {
+      "layer_0": {
+        "attn_perturbation_norm": 1173.7623,
+        "mlp_perturbation_norm": 493.538,
+        "resid_perturbation_norm": 1303.6262
+      },
+      "layer_1": {
+        "attn_perturbation_norm": 408.7503,
+        "mlp_perturbation_norm": 308.7181,
+        "resid_perturbation_norm": 1421.5798
+      },
+      "layer_2": {
+        "attn_perturbation_norm": 744.5859,
+        "mlp_perturbation_norm": 422.5604,
+        "resid_perturbation_norm": 1750.9651
+      },
+      "layer_3": {
+        "attn_perturbation_norm": 1233.3736,
+        "mlp_perturbation_norm": 1422.8148,
+        "resid_perturbation_norm": 2499.8898
+      }
+    },
+    "candidate_dependencies": [
+      {
+        "component_id": "L0_mlp",
+        "type": "MLP_direct_downstream",
+        "layer": 0,
+        "causal_drop_pp": 20.0,
+        "perturbation_received": 493.538,
+        "relationship": "immediate_downstream_consumer"
+      },
+      {
+        "component_id": "L2_head_3",
+        "type": "Attention_routing_head",
+        "layer": 2,
+        "causal_drop_pp": 20.0,
+        "perturbation_received": 744.5859,
+        "relationship": "downstream_routing_node"
+      },
+      {
+        "component_id": "L1_head_1",
+        "type": "Attention_routing_head",
+        "layer": 1,
+        "causal_drop_pp": 15.0,
+        "perturbation_received": 408.7503,
+        "relationship": "downstream_routing_node"
+      },
+      {
+        "component_id": "L3_mlp",
+        "type": "MLP_execution_block",
+        "layer": 3,
+        "causal_drop_pp": 15.0,
+        "perturbation_received": 1422.8148,
+        "relationship": "downstream_execution_block"
+      },
+      {
+        "component_id": "L1_head_0",
+        "type": "Attention_routing_head",
+        "layer": 1,
+        "causal_drop_pp": 10.0,
+        "perturbation_received": 408.7503,
+        "relationship": "downstream_routing_node"
+      },
+      {
+        "component_id": "L3_head_0",
+        "type": "Attention_routing_head",
+        "layer": 3,
+        "causal_drop_pp": 10.0,
+        "perturbation_received": 1233.3736,
+        "relationship": "downstream_routing_node"
+      }
+    ],
+    "strongest_immediate_dependency": "L0_mlp",
+    "strongest_routing_head": "L1_head_1",
+    "strongest_execution_head": "L2_head_3"
+  },
+  "minimal_circuit_search": {
+    "model_name": "e4-math-4L",
+    "domain": "math",
+    "intact_accuracy": 40.0,
+    "null_circuit_accuracy": 25.0,
+    "progressive_inclusion": [
+      {
+        "circuit_name": "Circuit_0_Component_Only",
+        "elements": 1,
+        "parameter_count": 1024,
+        "nodes": [
+          "L0_head_2"
+        ],
+        "accuracy": 20.0,
+        "causal_recovery_pp": -5.0,
+        "percent_capability_recovered": -33.33
+      },
+      {
+        "circuit_name": "Circuit_1_Plus_Immediate_MLP",
+        "elements": 2,
+        "parameter_count": 33792,
+        "nodes": [
+          "L0_head_2",
+          "L0_mlp"
+        ],
+        "accuracy": 15.0,
+        "causal_recovery_pp": -10.0,
+        "percent_capability_recovered": -66.67
+      },
+      {
+        "circuit_name": "Circuit_2_Plus_Routing_Head",
+        "elements": 3,
+        "parameter_count": 34816,
+        "nodes": [
+          "L0_head_2",
+          "L0_mlp",
+          "L1_head_1"
+        ],
+        "accuracy": 20.0,
+        "causal_recovery_pp": -5.0,
+        "percent_capability_recovered": -33.33
+      },
+      {
+        "circuit_name": "Circuit_3_Minimal_FDC",
+        "elements": 4,
+        "parameter_count": 35840,
+        "nodes": [
+          "L0_head_2",
+          "L0_mlp",
+          "L1_head_1",
+          "L2_head_3"
+        ],
+        "accuracy": 40.0,
+        "causal_recovery_pp": 15.0,
+        "percent_capability_recovered": 100.0
+      }
+    ],
+    "necessity_evaluations": {
+      "L0_head_2": {
+        "node_tested": "L0_head_2",
+        "accuracy_without_node": 15.0,
+        "causal_necessity_drop_pp": 25.0,
+        "is_necessary": true
+      },
+      "L0_mlp": {
+        "node_tested": "L0_mlp",
+        "accuracy_without_node": 20.0,
+        "causal_necessity_drop_pp": 20.0,
+        "is_necessary": true
+      },
+      "L1_head_1": {
+        "node_tested": "L1_head_1",
+        "accuracy_without_node": 25.0,
+        "causal_necessity_drop_pp": 15.0,
+        "is_necessary": true
+      },
+      "L2_head_3": {
+        "node_tested": "L2_head_3",
+        "accuracy_without_node": 20.0,
+        "causal_necessity_drop_pp": 20.0,
+        "is_necessary": true
+      }
+    },
+    "sufficiency_evaluations": {
+      "Host_Null_Subcircuit": 25.0,
+      "Plus_Core_Component": 20.0,
+      "Plus_MLP_Dependency": 15.0,
+      "Plus_Routing_Head": 20.0,
+      "Full_Minimal_FDC": 40.0,
+      "Full_Intact_Model": 40.0
+    },
+    "minimal_fdc_elements": 4,
+    "minimal_fdc_nodes": [
+      "L0_head_2",
+      "L0_mlp",
+      "L1_head_1",
+      "L2_head_3"
+    ],
+    "minimal_fdc_params": 35840
+  },
+  "gradient_check": {
+    "status": "PASS",
+    "max_relative_error": 0.0008963119527826321,
+    "tolerance": 0.05,
+    "gradient_check_passed": true
+  },
+  "conditions": {
+    "Condition_A_Host_Baseline": {
+      "math_performance": {
+        "mean": 34.0,
+        "std": 6.52,
+        "ci95_low": 28.29,
+        "ci95_high": 39.71,
+        "min": 30.0,
+        "max": 45.0,
+        "raw_seeds": [
+          35.0,
+          30.0,
+          30.0,
+          30.0,
+          45.0
+        ]
+      },
+      "lang_performance": {
+        "mean": 37.0,
+        "std": 12.55,
+        "ci95_low": 26.0,
+        "ci95_high": 48.0,
+        "min": 25.0,
+        "max": 55.0,
+        "raw_seeds": [
+          45.0,
+          55.0,
+          30.0,
+          30.0,
+          25.0
+        ]
+      }
+    },
+    "Condition_H_Host_Only_Adaptation": {
+      "math_performance": {
+        "mean": 29.0,
+        "std": 6.52,
+        "ci95_low": 23.29,
+        "ci95_high": 34.71,
+        "min": 25.0,
+        "max": 40.0,
+        "raw_seeds": [
+          25.0,
+          25.0,
+          25.0,
+          30.0,
+          40.0
+        ]
+      },
+      "lang_performance": {
+        "mean": 37.0,
+        "std": 12.55,
+        "ci95_low": 26.0,
+        "ci95_high": 48.0,
+        "min": 25.0,
+        "max": 55.0,
+        "raw_seeds": [
+          45.0,
+          55.0,
+          30.0,
+          30.0,
+          25.0
+        ]
+      }
+    },
+    "Condition_B_Component_Only_7_6": {
+      "condition_name": "Condition_B_Component_Only_7_6",
+      "elements": [
+        "L0_head_2"
+      ],
+      "element_count": 1,
+      "bridge_parameters": 6400,
+      "donor_weights_frozen": true,
+      "math_performance": {
+        "mean": 33.0,
+        "std": 8.37,
+        "ci95_low": 25.67,
+        "ci95_high": 40.33,
+        "min": 25.0,
+        "max": 45.0,
+        "raw_seeds": [
+          45.0,
+          35.0,
+          35.0,
+          25.0,
+          25.0
+        ]
+      },
+      "lang_performance": {
+        "mean": 27.0,
+        "std": 13.04,
+        "ci95_low": 15.57,
+        "ci95_high": 38.43,
+        "min": 10.0,
+        "max": 40.0,
+        "raw_seeds": [
+          25.0,
+          20.0,
+          40.0,
+          40.0,
+          10.0
+        ]
+      },
+      "heldout_math_accuracy": 30.0,
+      "causal_ablation": {
+        "condition": "Condition_B_Component_Only_7_6",
+        "active_accuracy": 30.0,
+        "full_circuit_ablated_accuracy": 20.0,
+        "full_circuit_causal_drop_pp": 10.0,
+        "node_ablations": {
+          "L0_head_2": {
+            "active_accuracy": 30.0,
+            "ablated_accuracy": 20.0,
+            "causal_drop_pp": 10.0
+          }
+        },
+        "causal_necessity_demonstrated": true
+      },
+      "restoration": {
+        "condition": "Condition_B_Component_Only_7_6",
+        "active_accuracy": 30.0,
+        "ablated_accuracy": 20.0,
+        "restored_accuracy": 30.0,
+        "restoration_recovery_error_pp": 0.0,
+        "restoration_exact": true
+      },
+      "capability_metrics": {
+        "metric_1_representation_alignment": {
+          "cosine_similarity": -0.2829,
+          "pearson_r": -0.265
+        },
+        "metric_2_behavioral_agreement_pct": 0.0,
+        "predeclared_90pct_threshold_met": false,
+        "metric_3_causal_activity_norm": 22.4289,
+        "metric_4_capability_gain": {
+          "recipient_accuracy": 30.0,
+          "baseline_accuracy": 34.0,
+          "host_only_accuracy": 29.0,
+          "delta_vs_baseline_pp": -4.0,
+          "delta_vs_host_learning_pp": 1.0,
+          "outperformed_host_learning": true
+        }
+      }
+    },
+    "Condition_C_Dependency_Expanded": {
+      "condition_name": "Condition_C_Dependency_Expanded",
+      "elements": [
+        "L0_head_2",
+        "L0_mlp"
+      ],
+      "element_count": 2,
+      "bridge_parameters": 18688,
+      "donor_weights_frozen": true,
+      "math_performance": {
+        "mean": 24.0,
+        "std": 7.42,
+        "ci95_low": 17.5,
+        "ci95_high": 30.5,
+        "min": 15.0,
+        "max": 35.0,
+        "raw_seeds": [
+          20.0,
+          25.0,
+          25.0,
+          35.0,
+          15.0
+        ]
+      },
+      "lang_performance": {
+        "mean": 25.0,
+        "std": 10.61,
+        "ci95_low": 15.7,
+        "ci95_high": 34.3,
+        "min": 10.0,
+        "max": 40.0,
+        "raw_seeds": [
+          10.0,
+          25.0,
+          25.0,
+          25.0,
+          40.0
+        ]
+      },
+      "heldout_math_accuracy": 15.0,
+      "causal_ablation": {
+        "condition": "Condition_C_Dependency_Expanded",
+        "active_accuracy": 25.0,
+        "full_circuit_ablated_accuracy": 15.0,
+        "full_circuit_causal_drop_pp": 10.0,
+        "node_ablations": {
+          "L0_head_2": {
+            "active_accuracy": 25.0,
+            "ablated_accuracy": 20.0,
+            "causal_drop_pp": 5.0
+          },
+          "L0_mlp": {
+            "active_accuracy": 25.0,
+            "ablated_accuracy": 30.0,
+            "causal_drop_pp": -5.0
+          }
+        },
+        "causal_necessity_demonstrated": true
+      },
+      "restoration": {
+        "condition": "Condition_C_Dependency_Expanded",
+        "active_accuracy": 25.0,
+        "ablated_accuracy": 15.0,
+        "restored_accuracy": 25.0,
+        "restoration_recovery_error_pp": 0.0,
+        "restoration_exact": true
+      },
+      "capability_metrics": {
+        "metric_1_representation_alignment": {
+          "cosine_similarity": 0.1886,
+          "pearson_r": 0.144
+        },
+        "metric_2_behavioral_agreement_pct": 0.0,
+        "predeclared_90pct_threshold_met": false,
+        "metric_3_causal_activity_norm": 19.2954,
+        "metric_4_capability_gain": {
+          "recipient_accuracy": 25.0,
+          "baseline_accuracy": 34.0,
+          "host_only_accuracy": 29.0,
+          "delta_vs_baseline_pp": -9.0,
+          "delta_vs_host_learning_pp": -4.0,
+          "outperformed_host_learning": false
+        }
+      }
+    },
+    "Condition_D_Minimal_FDC": {
+      "condition_name": "Condition_D_Minimal_FDC",
+      "elements": [
+        "L0_head_2",
+        "L0_mlp",
+        "L1_head_1",
+        "L2_head_3"
+      ],
+      "element_count": 4,
+      "bridge_parameters": 31488,
+      "donor_weights_frozen": true,
+      "math_performance": {
+        "mean": 25.0,
+        "std": 3.54,
+        "ci95_low": 21.9,
+        "ci95_high": 28.1,
+        "min": 20.0,
+        "max": 30.0,
+        "raw_seeds": [
+          20.0,
+          25.0,
+          25.0,
+          30.0,
+          25.0
+        ]
+      },
+      "lang_performance": {
+        "mean": 25.0,
+        "std": 10.61,
+        "ci95_low": 15.7,
+        "ci95_high": 34.3,
+        "min": 10.0,
+        "max": 40.0,
+        "raw_seeds": [
+          10.0,
+          25.0,
+          25.0,
+          25.0,
+          40.0
+        ]
+      },
+      "heldout_math_accuracy": 15.0,
+      "causal_ablation": {
+        "condition": "Condition_D_Minimal_FDC",
+        "active_accuracy": 25.0,
+        "full_circuit_ablated_accuracy": 20.0,
+        "full_circuit_causal_drop_pp": 5.0,
+        "node_ablations": {
+          "L0_head_2": {
+            "active_accuracy": 25.0,
+            "ablated_accuracy": 10.0,
+            "causal_drop_pp": 15.0
+          },
+          "L0_mlp": {
+            "active_accuracy": 25.0,
+            "ablated_accuracy": 20.0,
+            "causal_drop_pp": 5.0
+          },
+          "L1_head_1": {
+            "active_accuracy": 25.0,
+            "ablated_accuracy": 25.0,
+            "causal_drop_pp": 0.0
+          },
+          "L2_head_3": {
+            "active_accuracy": 25.0,
+            "ablated_accuracy": 25.0,
+            "causal_drop_pp": 0.0
+          }
+        },
+        "causal_necessity_demonstrated": false
+      },
+      "restoration": {
+        "condition": "Condition_D_Minimal_FDC",
+        "active_accuracy": 25.0,
+        "ablated_accuracy": 20.0,
+        "restored_accuracy": 25.0,
+        "restoration_recovery_error_pp": 0.0,
+        "restoration_exact": true
+      },
+      "capability_metrics": {
+        "metric_1_representation_alignment": {
+          "cosine_similarity": 0.1746,
+          "pearson_r": 0.1284
+        },
+        "metric_2_behavioral_agreement_pct": 0.0,
+        "predeclared_90pct_threshold_met": false,
+        "metric_3_causal_activity_norm": 17.0072,
+        "metric_4_capability_gain": {
+          "recipient_accuracy": 25.0,
+          "baseline_accuracy": 34.0,
+          "host_only_accuracy": 29.0,
+          "delta_vs_baseline_pp": -9.0,
+          "delta_vs_host_learning_pp": -4.0,
+          "outperformed_host_learning": false
+        }
+      }
+    },
+    "Condition_E_Oversized_Circuit": {
+      "condition_name": "Condition_E_Oversized_Circuit",
+      "elements": [
+        "L0_head_2",
+        "L0_mlp",
+        "L1_head_1",
+        "L2_head_3"
+      ],
+      "element_count": 4,
+      "bridge_parameters": 31488,
+      "donor_weights_frozen": true,
+      "math_performance": {
+        "mean": 25.0,
+        "std": 3.54,
+        "ci95_low": 21.9,
+        "ci95_high": 28.1,
+        "min": 20.0,
+        "max": 30.0,
+        "raw_seeds": [
+          20.0,
+          25.0,
+          25.0,
+          30.0,
+          25.0
+        ]
+      },
+      "lang_performance": {
+        "mean": 25.0,
+        "std": 10.61,
+        "ci95_low": 15.7,
+        "ci95_high": 34.3,
+        "min": 10.0,
+        "max": 40.0,
+        "raw_seeds": [
+          10.0,
+          25.0,
+          25.0,
+          25.0,
+          40.0
+        ]
+      },
+      "heldout_math_accuracy": 15.0,
+      "causal_ablation": {
+        "condition": "Condition_E_Oversized_Circuit",
+        "active_accuracy": 25.0,
+        "full_circuit_ablated_accuracy": 20.0,
+        "full_circuit_causal_drop_pp": 5.0,
+        "node_ablations": {
+          "L0_head_2": {
+            "active_accuracy": 25.0,
+            "ablated_accuracy": 10.0,
+            "causal_drop_pp": 15.0
+          },
+          "L0_mlp": {
+            "active_accuracy": 25.0,
+            "ablated_accuracy": 20.0,
+            "causal_drop_pp": 5.0
+          },
+          "L1_head_1": {
+            "active_accuracy": 25.0,
+            "ablated_accuracy": 25.0,
+            "causal_drop_pp": 0.0
+          },
+          "L2_head_3": {
+            "active_accuracy": 25.0,
+            "ablated_accuracy": 25.0,
+            "causal_drop_pp": 0.0
+          }
+        },
+        "causal_necessity_demonstrated": false
+      },
+      "restoration": {
+        "condition": "Condition_E_Oversized_Circuit",
+        "active_accuracy": 25.0,
+        "ablated_accuracy": 20.0,
+        "restored_accuracy": 25.0,
+        "restoration_recovery_error_pp": 0.0,
+        "restoration_exact": true
+      },
+      "capability_metrics": {
+        "metric_1_representation_alignment": {
+          "cosine_similarity": 0.1746,
+          "pearson_r": 0.1284
+        },
+        "metric_2_behavioral_agreement_pct": 0.0,
+        "predeclared_90pct_threshold_met": false,
+        "metric_3_causal_activity_norm": 17.0072,
+        "metric_4_capability_gain": {
+          "recipient_accuracy": 25.0,
+          "baseline_accuracy": 34.0,
+          "host_only_accuracy": 29.0,
+          "delta_vs_baseline_pp": -9.0,
+          "delta_vs_host_learning_pp": -4.0,
+          "outperformed_host_learning": false
+        }
+      }
+    },
+    "Condition_F_Random_Matched_Circuit": {
+      "condition_name": "Condition_F_Random_Matched_Circuit",
+      "elements": [
+        "L0_head_2",
+        "L0_mlp",
+        "L1_head_1",
+        "L2_head_3"
+      ],
+      "element_count": 4,
+      "bridge_parameters": 31488,
+      "donor_weights_frozen": true,
+      "math_performance": {
+        "mean": 27.0,
+        "std": 8.37,
+        "ci95_low": 19.67,
+        "ci95_high": 34.33,
+        "min": 20.0,
+        "max": 40.0,
+        "raw_seeds": [
+          20.0,
+          20.0,
+          40.0,
+          30.0,
+          25.0
+        ]
+      },
+      "lang_performance": {
+        "mean": 24.0,
+        "std": 12.45,
+        "ci95_low": 13.09,
+        "ci95_high": 34.91,
+        "min": 5.0,
+        "max": 40.0,
+        "raw_seeds": [
+          5.0,
+          25.0,
+          25.0,
+          25.0,
+          40.0
+        ]
+      },
+      "heldout_math_accuracy": 20.0,
+      "causal_ablation": {
+        "condition": "Condition_F_Random_Matched_Circuit",
+        "active_accuracy": 10.0,
+        "full_circuit_ablated_accuracy": 20.0,
+        "full_circuit_causal_drop_pp": -10.0,
+        "node_ablations": {
+          "L0_head_2": {
+            "active_accuracy": 10.0,
+            "ablated_accuracy": 15.0,
+            "causal_drop_pp": -5.0
+          },
+          "L0_mlp": {
+            "active_accuracy": 10.0,
+            "ablated_accuracy": 10.0,
+            "causal_drop_pp": 0.0
+          },
+          "L1_head_1": {
+            "active_accuracy": 10.0,
+            "ablated_accuracy": 20.0,
+            "causal_drop_pp": -10.0
+          },
+          "L2_head_3": {
+            "active_accuracy": 10.0,
+            "ablated_accuracy": 20.0,
+            "causal_drop_pp": -10.0
+          }
+        },
+        "causal_necessity_demonstrated": false
+      },
+      "restoration": {
+        "condition": "Condition_F_Random_Matched_Circuit",
+        "active_accuracy": 10.0,
+        "ablated_accuracy": 20.0,
+        "restored_accuracy": 10.0,
+        "restoration_recovery_error_pp": 0.0,
+        "restoration_exact": true
+      },
+      "capability_metrics": {
+        "metric_1_representation_alignment": {
+          "cosine_similarity": 0.1089,
+          "pearson_r": 0.0495
+        },
+        "metric_2_behavioral_agreement_pct": 0.0,
+        "predeclared_90pct_threshold_met": false,
+        "metric_3_causal_activity_norm": 23.3344,
+        "metric_4_capability_gain": {
+          "recipient_accuracy": 10.0,
+          "baseline_accuracy": 34.0,
+          "host_only_accuracy": 29.0,
+          "delta_vs_baseline_pp": -24.0,
+          "delta_vs_host_learning_pp": -19.0,
+          "outperformed_host_learning": false
+        }
+      }
+    },
+    "Condition_G_Shuffled_Dependency_Circuit": {
+      "condition_name": "Condition_G_Shuffled_Dependency_Circuit",
+      "elements": [
+        "L0_head_2",
+        "L0_mlp",
+        "L1_head_1",
+        "L2_head_3"
+      ],
+      "element_count": 4,
+      "bridge_parameters": 31488,
+      "donor_weights_frozen": true,
+      "math_performance": {
+        "mean": 25.0,
+        "std": 3.54,
+        "ci95_low": 21.9,
+        "ci95_high": 28.1,
+        "min": 20.0,
+        "max": 30.0,
+        "raw_seeds": [
+          20.0,
+          25.0,
+          25.0,
+          30.0,
+          25.0
+        ]
+      },
+      "lang_performance": {
+        "mean": 25.0,
+        "std": 10.61,
+        "ci95_low": 15.7,
+        "ci95_high": 34.3,
+        "min": 10.0,
+        "max": 40.0,
+        "raw_seeds": [
+          10.0,
+          25.0,
+          25.0,
+          25.0,
+          40.0
+        ]
+      },
+      "heldout_math_accuracy": 15.0,
+      "causal_ablation": {
+        "condition": "Condition_G_Shuffled_Dependency_Circuit",
+        "active_accuracy": 25.0,
+        "full_circuit_ablated_accuracy": 20.0,
+        "full_circuit_causal_drop_pp": 5.0,
+        "node_ablations": {
+          "L0_head_2": {
+            "active_accuracy": 25.0,
+            "ablated_accuracy": 10.0,
+            "causal_drop_pp": 15.0
+          },
+          "L0_mlp": {
+            "active_accuracy": 25.0,
+            "ablated_accuracy": 20.0,
+            "causal_drop_pp": 5.0
+          },
+          "L1_head_1": {
+            "active_accuracy": 25.0,
+            "ablated_accuracy": 25.0,
+            "causal_drop_pp": 0.0
+          },
+          "L2_head_3": {
+            "active_accuracy": 25.0,
+            "ablated_accuracy": 25.0,
+            "causal_drop_pp": 0.0
+          }
+        },
+        "causal_necessity_demonstrated": false
+      },
+      "restoration": {
+        "condition": "Condition_G_Shuffled_Dependency_Circuit",
+        "active_accuracy": 25.0,
+        "ablated_accuracy": 20.0,
+        "restored_accuracy": 25.0,
+        "restoration_recovery_error_pp": 0.0,
+        "restoration_exact": true
+      },
+      "capability_metrics": {
+        "metric_1_representation_alignment": {
+          "cosine_similarity": 0.1741,
+          "pearson_r": 0.1277
+        },
+        "metric_2_behavioral_agreement_pct": 0.0,
+        "predeclared_90pct_threshold_met": false,
+        "metric_3_causal_activity_norm": 17.0358,
+        "metric_4_capability_gain": {
+          "recipient_accuracy": 25.0,
+          "baseline_accuracy": 34.0,
+          "host_only_accuracy": 29.0,
+          "delta_vs_baseline_pp": -9.0,
+          "delta_vs_host_learning_pp": -4.0,
+          "outperformed_host_learning": false
+        }
+      }
+    }
+  },
+  "depth_sweep": [
+    {
+      "depth": "2L",
+      "layers": 2,
+      "baseline_accuracy": 25.0,
+      "translated_active_accuracy": 30.0,
+      "translated_ablated_accuracy": 20.0,
+      "causal_drop_pp": 10.0
+    },
+    {
+      "depth": "4L",
+      "layers": 4,
+      "baseline_accuracy": 15.0,
+      "translated_active_accuracy": 35.0,
+      "translated_ablated_accuracy": 15.0,
+      "causal_drop_pp": 20.0
+    },
+    {
+      "depth": "6L",
+      "layers": 6,
+      "baseline_accuracy": 20.0,
+      "translated_active_accuracy": 40.0,
+      "translated_ablated_accuracy": 20.0,
+      "causal_drop_pp": 20.0
+    },
+    {
+      "depth": "8L",
+      "layers": 8,
+      "baseline_accuracy": 20.0,
+      "translated_active_accuracy": 25.0,
+      "translated_ablated_accuracy": 20.0,
+      "causal_drop_pp": 5.0
+    }
+  ],
+  "circuit_size_sweep": [
+    {
+      "circuit_elements": 1,
+      "condition": "Condition_B_Component_Only_7_6",
+      "bridge_parameters": 6400,
+      "math_accuracy": 33.0,
+      "causal_drop_pp": 10.0,
+      "behavioral_agreement_pct": 0.0
+    },
+    {
+      "circuit_elements": 2,
+      "condition": "Condition_C_Dependency_Expanded",
+      "bridge_parameters": 18688,
+      "math_accuracy": 24.0,
+      "causal_drop_pp": 10.0,
+      "behavioral_agreement_pct": 0.0
+    },
+    {
+      "circuit_elements": 4,
+      "condition": "Condition_D_Minimal_FDC",
+      "bridge_parameters": 31488,
+      "math_accuracy": 25.0,
+      "causal_drop_pp": 5.0,
+      "behavioral_agreement_pct": 0.0
+    }
+  ],
+  "collateral_interference": {
+    "reason": {
+      "domain": "reason",
+      "baseline_accuracy": 5.0,
+      "fdc_active_accuracy": 5.0,
+      "shift_pp": 0.0
+    },
+    "code": {
+      "domain": "code",
+      "baseline_accuracy": 0.0,
+      "fdc_active_accuracy": 0.0,
+      "shift_pp": 0.0
+    },
+    "lang": {
+      "domain": "lang",
+      "baseline_accuracy": 30.0,
+      "fdc_active_accuracy": 30.0,
+      "shift_pp": 0.0
+    },
+    "know": {
+      "domain": "know",
+      "baseline_accuracy": 25.0,
+      "fdc_active_accuracy": 25.0,
+      "shift_pp": 0.0
+    },
+    "multi": {
+      "domain": "multi",
+      "baseline_accuracy": 25.0,
+      "fdc_active_accuracy": 25.0,
+      "shift_pp": 0.0
+    },
+    "agent": {
+      "domain": "agent",
+      "baseline_accuracy": 40.0,
+      "fdc_active_accuracy": 40.0,
+      "shift_pp": 0.0
+    }
+  },
+  "order_effects": {
+    "Forward_L0_to_L2": {
+      "accuracy": 25.0
+    },
+    "Reverse_L2_to_L0": {
+      "accuracy": 25.0
+    },
+    "Simultaneous": {
+      "accuracy": 25.0
+    },
+    "order_variance": 0.0
+  },
+  "second_capability_replication": {
+    "capability": "Logical Reasoning",
+    "donor_model": "logic-owl",
+    "core_head": "L0_head_0",
+    "native_causal_drop_pp": 40.0,
+    "target_baseline_accuracy": 10.0,
+    "component_only_active": 25.0,
+    "component_only_ablated": 10.0,
+    "component_only_causal_drop_pp": 15.0,
+    "fdc_active": 10.0,
+    "fdc_ablated": 10.0,
+    "fdc_causal_drop_pp": 0.0,
+    "conclusion": "Replication confirms that adding downstream dependencies does not produce positive recipient causal necessity. Recipient causal drop remains negative or zero across capabilities."
+  }
+}

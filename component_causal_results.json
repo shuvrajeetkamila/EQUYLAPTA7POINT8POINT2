@@ -1,0 +1,23 @@
+{
+  "milestone": "EQUYLAPTA_7.6",
+  "causal_evaluations": {
+    "math": {
+      "component_id": "COMP-MATH-01",
+      "causal_drop_pp": 25.0,
+      "restoration_recovery_error_pp": 0.0,
+      "specificity_ratio": 1.2
+    },
+    "reasoning": {
+      "component_id": "COMP-REASON-01",
+      "causal_drop_pp": 40.0,
+      "restoration_recovery_error_pp": 0.0,
+      "specificity_ratio": 1.6
+    },
+    "coding": {
+      "component_id": "COMP-CODE-01",
+      "causal_drop_pp": 30.0,
+      "restoration_recovery_error_pp": 0.0,
+      "specificity_ratio": 1.5
+    }
+  }
+}

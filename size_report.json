@@ -1,0 +1,20 @@
+{
+  "workspace_path": "/home/user",
+  "total_bytes": 43795023,
+  "total_mb": 41.77,
+  "hard_limit_mb": 120.0,
+  "target_range_mb": "20-50 MB",
+  "within_limit": true,
+  "extension_breakdown_mb": {
+    ".npz": 35.01,
+    ".json": 3.03,
+    ".py": 1.57,
+    ".jsonl": 0.85,
+    ".md": 0.54,
+    ".txt": 0.43,
+    ".pyc": 0.29,
+    ".log": 0.02,
+    ".html": 0.01,
+    ".svg": 0.01
+  }
+}

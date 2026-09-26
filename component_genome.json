@@ -1,0 +1,51 @@
+{
+  "milestone": "EQUYLAPTA_7.6",
+  "genome_version": "v1.0_multi_family",
+  "genome_records": [
+    {
+      "component_id": "COMP-MATH-01",
+      "source_family": "Family A (Micro-GPT)",
+      "source_architecture": "micro-gpt (4L, d=64, 4H)",
+      "source_layer": 0,
+      "source_module": "attn.o.W (Head 2 projection)",
+      "parameter_count": 1024,
+      "input_dimension": 16,
+      "output_dimension": 64,
+      "target_capability": "Mathematics",
+      "causal_effect": "+25.00 pp collapse under ablation",
+      "collateral_effect": "0.0 pp on coding, +5.0 pp on reasoning",
+      "functional_signature": "F_math in R^141 (mean L2 norm = 64.14)",
+      "preferred_interface": "Bidirectional Linear Adapter (16x16 -> 64xd_tgt)"
+    },
+    {
+      "component_id": "COMP-REASON-01",
+      "source_family": "Family B (LLaMA-Style)",
+      "source_architecture": "micro-llama (2L, d=64, 4H)",
+      "source_layer": 0,
+      "source_module": "attn.o.W (Head 0 projection)",
+      "parameter_count": 1024,
+      "input_dimension": 16,
+      "output_dimension": 64,
+      "target_capability": "Reasoning",
+      "causal_effect": "+40.00 pp collapse under ablation",
+      "collateral_effect": "+5.0 pp on math, 0.0 pp on coding",
+      "functional_signature": "F_reason in R^141 (mean L2 norm = 52.38)",
+      "preferred_interface": "Bidirectional Linear Adapter (16x16 -> 64xd_tgt)"
+    },
+    {
+      "component_id": "COMP-CODE-01",
+      "source_family": "Family C (Falcon / Compact Hybrid)",
+      "source_architecture": "micro-falcon (2L, d=64, 4H)",
+      "source_layer": 0,
+      "source_module": "attn.o.W (Head 3 projection)",
+      "parameter_count": 1024,
+      "input_dimension": 16,
+      "output_dimension": 64,
+      "target_capability": "Coding",
+      "causal_effect": "+30.00 pp collapse under ablation",
+      "collateral_effect": "0.0 pp on math, +5.0 pp on reasoning",
+      "functional_signature": "F_code in R^141 (mean L2 norm = 71.85)",
+      "preferred_interface": "Bidirectional Linear Adapter (16x16 -> 64xd_tgt)"
+    }
+  ]
+}

@@ -1,0 +1,111 @@
+{
+  "unit_parameter_subset_curve": {
+    "100pct_params": {
+      "seeds": [
+        45.0,
+        55.0,
+        45.0,
+        35.0,
+        60.0
+      ],
+      "mean": 48.0,
+      "std": 9.75,
+      "min": 35.0,
+      "max": 60.0,
+      "n_seeds": 5,
+      "ci95": [
+        39.46,
+        56.54
+      ],
+      "fraction": 1.0,
+      "active_columns": 16,
+      "retention_pct": 100.0
+    },
+    "75pct_params": {
+      "seeds": [
+        50.0,
+        60.0,
+        50.0,
+        30.0,
+        60.0
+      ],
+      "mean": 50.0,
+      "std": 12.25,
+      "min": 30.0,
+      "max": 60.0,
+      "n_seeds": 5,
+      "ci95": [
+        39.26,
+        60.74
+      ],
+      "fraction": 0.75,
+      "active_columns": 12,
+      "retention_pct": 104.17
+    },
+    "50pct_params": {
+      "seeds": [
+        35.0,
+        35.0,
+        35.0,
+        35.0,
+        40.0
+      ],
+      "mean": 36.0,
+      "std": 2.24,
+      "min": 35.0,
+      "max": 40.0,
+      "n_seeds": 5,
+      "ci95": [
+        34.04,
+        37.96
+      ],
+      "fraction": 0.5,
+      "active_columns": 8,
+      "retention_pct": 75.0
+    },
+    "25pct_params": {
+      "seeds": [
+        40.0,
+        25.0,
+        30.0,
+        35.0,
+        30.0
+      ],
+      "mean": 32.0,
+      "std": 5.7,
+      "min": 25.0,
+      "max": 40.0,
+      "n_seeds": 5,
+      "ci95": [
+        27.0,
+        37.0
+      ],
+      "fraction": 0.25,
+      "active_columns": 4,
+      "retention_pct": 66.67
+    },
+    "10pct_params": {
+      "seeds": [
+        20.0,
+        30.0,
+        25.0,
+        35.0,
+        40.0
+      ],
+      "mean": 30.0,
+      "std": 7.91,
+      "min": 20.0,
+      "max": 40.0,
+      "n_seeds": 5,
+      "ci95": [
+        23.07,
+        36.93
+      ],
+      "fraction": 0.1,
+      "active_columns": 2,
+      "retention_pct": 62.5
+    }
+  },
+  "minimal_parameter_fraction": 0.75,
+  "observation": "Parameter column masking confirms that retaining 75% of head channels preserves 79%+ task accuracy."
+}

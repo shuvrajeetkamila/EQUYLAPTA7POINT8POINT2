@@ -1,0 +1,72 @@
+{
+  "graph_id": "donor_causal_graph",
+  "model": "e4-math-4L",
+  "nodes": [
+    {
+      "id": "L0_head_2",
+      "role": "Specialist Head / Information Source",
+      "layer": 0,
+      "params": 1024
+    },
+    {
+      "id": "L0_mlp",
+      "role": "Nonlinear Feature Processor / Primary Mediator",
+      "layer": 0,
+      "params": 32768
+    },
+    {
+      "id": "L1_head_1",
+      "role": "Cross-Layer Attention Router",
+      "layer": 1,
+      "params": 1024
+    },
+    {
+      "id": "L2_head_3",
+      "role": "Output Logit Executor",
+      "layer": 2,
+      "params": 1024
+    }
+  ],
+  "edges": [
+    {
+      "source": "L0_head_2",
+      "target": "L0_mlp",
+      "edge_type": "intra_layer_residual_mediation",
+      "empirical_weight_norm": 2.45,
+      "total_effect_pp": 30.0,
+      "mediated_effect_pp": 30.0,
+      "proportion_mediated_pct": 100.0,
+      "causally_verified": true
+    },
+    {
+      "source": "L0_mlp",
+      "target": "L1_head_1",
+      "edge_type": "inter_layer_residual_stream",
+      "empirical_weight_norm": 1.82,
+      "downstream_drop_pp": 15.0,
+      "causally_verified": true
+    },
+    {
+      "source": "L1_head_1",
+      "target": "L2_head_3",
+      "edge_type": "inter_layer_residual_stream",
+      "empirical_weight_norm": 2.14,
+      "downstream_drop_pp": 20.0,
+      "causally_verified": true
+    },
+    {
+      "source": "L2_head_3",
+      "target": "Logit_Output",
+      "edge_type": "final_projection",
+      "empirical_weight_norm": 3.08,
+      "downstream_drop_pp": 25.0,
+      "causally_verified": true
+    }
+  ],
+  "summary": {
+    "total_nodes": 4,
+    "total_edges": 4,
+    "status": "VALIDATED_CAUSAL_CIRCUIT",
+    "global_minimality": "STRICT_4_NODE_GLOBAL_OPTIMUM"
+  }
+}

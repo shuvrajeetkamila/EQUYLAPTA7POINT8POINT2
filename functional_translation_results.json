@@ -1,0 +1,32 @@
+{
+  "milestone": "EQUYLAPTA_7.6",
+  "transfers": {
+    "Family_A_to_Family_B_Math": {
+      "source": "e4-math-4L",
+      "recipient": "e6-base-4L",
+      "domain": "math",
+      "bridge_params": 6400,
+      "trainable_fraction_pct": 1.34,
+      "functional_agreement_pct": 64.86,
+      "pearson_r": 0.5033
+    },
+    "Family_B_to_Family_B_Reasoning": {
+      "source": "logic-owl",
+      "recipient": "e6-base-4L",
+      "domain": "reason",
+      "bridge_params": 6400,
+      "trainable_fraction_pct": 1.34,
+      "functional_agreement_pct": 46.61,
+      "pearson_r": 0.4623
+    },
+    "Family_C_to_Family_B_Coding": {
+      "source": "code-smith",
+      "recipient": "e6-base-4L",
+      "domain": "code",
+      "bridge_params": 6400,
+      "trainable_fraction_pct": 1.34,
+      "functional_agreement_pct": 13.58,
+      "pearson_r": 0.1546
+    }
+  }
+}

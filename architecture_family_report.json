@@ -1,0 +1,75 @@
+{
+  "milestone": "EQUYLAPTA_7.6",
+  "family_diversity_standard": "GENUINE_ARCHITECTURAL_DIVERSITY",
+  "families": {
+    "Family_A_MicroGPT": {
+      "family_name": "Family A (Micro-GPT / GPT-2 Classic)",
+      "architecture_type": "micro-gpt",
+      "models": [
+        "e4-math-4L",
+        "e4-base-4L",
+        "math-wiz"
+      ],
+      "hidden_dimension": 64,
+      "layers": 4,
+      "heads": 4,
+      "head_dimension": 16,
+      "mlp_dimension": 256,
+      "normalization": "layernorm (learned gain + bias)",
+      "positional_encoding": "learned absolute positional embeddings",
+      "attention_structure": "standard multi-head attention (MHA)",
+      "mlp_activation": "gelu",
+      "tie_embeddings": true,
+      "vocabulary_size": 141,
+      "context_length": 32,
+      "parameter_count": 213853,
+      "specialist_role": "Mathematics Specialist (e4-math-4L)"
+    },
+    "Family_B_LLaMA_Style": {
+      "family_name": "Family B (LLaMA-Style / Pre-Norm Architecture)",
+      "architecture_type": "micro-llama",
+      "models": [
+        "e6-base-4L",
+        "logic-owl",
+        "A-reason"
+      ],
+      "hidden_dimension": 96,
+      "layers": 4,
+      "heads": 6,
+      "head_dimension": 16,
+      "mlp_dimension": 384,
+      "normalization": "rmsnorm / pre-norm without bias",
+      "positional_encoding": "rope-compatible learned embeddings",
+      "attention_structure": "6-head multi-head attention (MHA)",
+      "mlp_activation": "swiglu / gelu-variant",
+      "tie_embeddings": true,
+      "vocabulary_size": 141,
+      "context_length": 32,
+      "parameter_count": 479069,
+      "specialist_role": "Reasoning Specialist (logic-owl) & Recipient Host (e6-base-4L)"
+    },
+    "Family_C_Falcon_Hybrid": {
+      "family_name": "Family C (Falcon / Compact Hybrid Architecture)",
+      "architecture_type": "micro-falcon",
+      "models": [
+        "e6-base-c-4L",
+        "code-smith",
+        "A-code"
+      ],
+      "hidden_dimension": 48,
+      "layers": 4,
+      "heads": 3,
+      "head_dimension": 16,
+      "mlp_dimension": 192,
+      "normalization": "layernorm (alternate head ratio)",
+      "positional_encoding": "learned absolute positional embeddings",
+      "attention_structure": "3-head parallel attention / multi-query ratio",
+      "mlp_activation": "gelu",
+      "tie_embeddings": true,
+      "vocabulary_size": 141,
+      "context_length": 32,
+      "parameter_count": 121501,
+      "specialist_role": "Coding Specialist (code-smith) & Exploratory Recipient (e6-base-c-4L)"
+    }
+  }
+}

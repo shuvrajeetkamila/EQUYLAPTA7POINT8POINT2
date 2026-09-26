@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>AI Model Fusion Lab</title>
+<style>
+  :root { --bg:#0b1020; --panel:#121a33; --edge:#24325c; --ink:#e8ecff; --dim:#8fa0d0;
+          --acc:#5b8cff; --ok:#3ddc97; --warn:#ffb454; --bad:#ff6b81; }
+  * { box-sizing:border-box; margin:0; padding:0; }
+  body { background:var(--bg); color:var(--ink); font:14px/1.5 ui-monospace,Menlo,Consolas,monospace; padding:18px; }
+  h1 { font-size:20px; letter-spacing:1px; margin-bottom:2px; }
+  h1 span { color:var(--acc); }
+  .sub { color:var(--dim); margin-bottom:14px; font-size:12px; }
+  .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(340px,1fr)); gap:12px; }
+  .panel { background:var(--panel); border:1px solid var(--edge); border-radius:10px; padding:14px; }
+  .panel h2 { font-size:13px; color:var(--acc); margin-bottom:8px; text-transform:uppercase; letter-spacing:1px; }
+  button { background:var(--acc); border:0; color:#fff; padding:7px 14px; border-radius:6px;
+           font:inherit; cursor:pointer; margin:2px 4px 2px 0; }
+  button.sec { background:#1d2a52; color:var(--ink); }
+  button:disabled { opacity:.45; cursor:default; }
+  .bar { height:10px; background:#0a0f22; border:1px solid var(--edge); border-radius:6px; overflow:hidden; margin:8px 0; }
+  .bar i { display:block; height:100%; background:linear-gradient(90deg,var(--acc),#8f6bff); width:0%; transition:width .6s; }
+  pre { background:#0a0f22; border:1px solid var(--edge); border-radius:8px; padding:10px;
+        overflow:auto; max-height:260px; font-size:12px; color:#b9c7f5; white-space:pre-wrap; }
+  table { width:100%; border-collapse:collapse; font-size:12px; }
+  th,td { padding:4px 6px; border-bottom:1px solid var(--edge); text-align:left; }
+  th { color:var(--dim); font-weight:normal; }
+  .pill { display:inline-block; padding:1px 8px; border-radius:10px; font-size:11px; }
+  .ok { background:#123d2e; color:var(--ok); } .warn{ background:#3d2f12; color:var(--warn); }
+  .bad { background:#3d1219; color:var(--bad); }
+  .row { display:flex; gap:8px; margin:6px 0; }
+  input { flex:1; background:#0a0f22; border:1px solid var(--edge); color:var(--ink);
+          padding:7px 10px; border-radius:6px; font:inherit; }
+  .tags span { display:inline-block; background:#1d2a52; border-radius:5px; padding:2px 8px;
+               margin:2px; font-size:11px; }
+</style>
+</head>
+<body>
+<h1>EQUYLAPTA <span>[AI MODEL]</span> — FUSION LAB</h1>
+<div class="sub">Milestone-2: capability genomes · component extraction/alignment/synthesis · evolutionary search · every number measured locally, never assumed · statuses: [WORKING] [PARTIAL] [RESEARCH EXPERIMENT]</div>
+
+<div class="grid">
+  <div class="panel">
+    <h2>Pipeline control</h2>
+    <button id="runBtn" onclick="run(false)">▶ Run full pipeline</button>
+    <button class="sec" onclick="run(true)">⚡ Quick run</button>
+    <div class="bar"><i id="progBar"></i></div>
+    <div>stage: <span id="stage">idle</span></div>
+    <pre id="log">Press "Run full pipeline" to execute: train → inspect → autopsy →
+compat → benchmark → ablate → localize → extract → merge → specialist
+→ distill → route → super-model → leaderboard.</pre>
+  </div>
+
+  <div class="panel">
+    <h2>Router playground</h2>
+    <div class="row"><input id="q" value="Write a Python program proving this mathematical theorem.">
+    <button onclick="route()">Route</button></div>
+    <pre id="routeOut">Router activates only the needed specialists (rule + learned).</pre>
+    <h2 style="margin-top:10px">Specialists</h2>
+    <div class="tags" id="specTags">
+      <span>reasoning</span><span>coding</span><span>math</span><span>language</span>
+      <span>knowledge</span><span>multilingual</span><span>agent</span>
+    </div>
+  </div>
+
+  <div class="panel">
+    <h2>Capability Genome</h2>
+    <div class="tags" id="genomeModel">no genome loaded — run the M2 pipeline</div>
+    <table id="genomeTable"><tr><th>component</th><th>capability</th><th>Δ on removal</th><th>conf</th><th>status</th></tr></table>
+    <div style="margin-top:8px">
+      <button class="sec" onclick="genomeAction('discover')">DISCOVER COMPONENTS</button>
+      <button class="sec" onclick="genomeAction('extract')">EXTRACT</button>
+      <button class="sec" onclick="genomeAction('align')">ALIGN</button>
+      <button class="sec" onclick="genomeAction('synthesize')">SYNTHESIZE</button>
+      <button class="sec" onclick="genomeAction('test')">TEST</button>
+      <button onclick="genomeAction('pipeline')">BUILD SPECIALIST + SUPER MODEL</button>
+    </div>
+    <pre id="genomeOut">Genome = measured component→capability map. Buttons run
+demo/run_milestone2.py stages on the server (micro scale, ~5-35 min).</pre>
+  </div>
+
+  <div class="panel">
+    <h2>Registered models</h2>
+    <table id="models"><tr><th>model</th><th>arch</th><th>L×H×d</th><th>params</th><th>license</th></tr></table>
+  </div>
+
+  <div class="panel">
+    <h2>Experiment history</h2>
+    <table id="exps"><tr><th>id</th><th>type</th><th>results</th></tr></table>
+  </div>
+
+  <div class="panel">
+    <h2>Transfer Lab (M3) — component map</h2>
+    <div class="tags" id="tlLineage">loading component map…</div>
+    <div id="tlMap" style="margin-top:8px"></div>
+    <div class="sub" style="margin-top:6px">Cell value = components in library for
+    that model×capability (measured only — empty means never extracted).
+    Lineage links show which models share weights (same-init fine-tunes).</div>
+  </div>
+
+  <div class="panel">
+    <h2>Transfer Lab (M3) — run an A→B transfer</h2>
+    <div class="row">
+      <select id="tlSource"></select>
+      <span style="color:var(--dim)">→</span>
+      <select id="tlTarget"></select>
+      <select id="tlCap"><option>math</option><option>coding</option><option>reasoning</option></select>
+      <label style="font-size:12px"><input type="checkbox" id="tlQuick" checked> quick</label>
+      <button onclick="tlRun()">Run transfer</button>
+    </div>
+    <div class="bar"><i id="tlBar"></i></div>
+    <pre id="tlLog">Select a source (with a genome) and a target, then run.
+The ladder: DIRECT → ALIGNED → REFITTED → CALIBRATED → ADAPTER (+controls).
+Verdict vocabulary: SPECIALIZED_TRANSFER_EVIDENCE | PARTIAL_TRANSFER |
+INSUFFICIENT_EVIDENCE | NO_EVIDENCE_OF_SPECIALIZED_TRANSFER | NO_TRANSFER.</pre>
+    <table id="tlArms" style="margin-top:8px"><tr><th>arm</th><th>held-out</th></tr></table>
+  </div>
+</div>
+
+<script>
+async function run(quick){
+  document.getElementById("runBtn").disabled = true;
+  await fetch("/api/run" + (quick ? "-quick" : ""), {method:"POST"});
+  poll();
+}
+async function poll(){
+  try {
+    const s = await (await fetch("/api/state")).json();
+    const p = s.pipeline || {};
+    document.getElementById("stage").textContent = p.stage || "idle";
+    document.getElementById("progBar").style.width = Math.round((p.progress||0)*100) + "%";
+    if (p.log_tail) document.getElementById("log").textContent = p.log_tail.join("\n");
+    document.getElementById("runBtn").disabled = !!p.running;
+    if (s.models) {
+      const t = document.getElementById("models");
+      t.innerHTML = "<tr><th>model</th><th>arch</th><th>L×H×d</th><th>params</th><th>license</th></tr>";
+      for (const [k,v] of Object.entries(s.models).slice(0,14)) {
+        const sp=v.spec||{};
+        t.innerHTML += `<tr><td>${k}</td><td>${sp.arch||"?"}</td><td>${sp.layers||"?"}×${sp.heads||"?"}×${sp.hidden||"?"}</td><td>${(v.param_count||0).toLocaleString()}</td><td>${v.license||"?"}</td></tr>`;
+      }
+    }
+    if (s.experiments && s.experiments.length) {
+      const t = document.getElementById("exps");
+      t.innerHTML = "<tr><th>id</th><th>type</th><th>results</th></tr>";
+      for (const e of s.experiments) {
+        const r = Object.entries(e.results||{}).slice(0,3).map(([k,v])=>`${k}:${v}`).join(" ");
+        t.innerHTML += `<tr><td>${e.id}</td><td>${e.type}</td><td>${r}</td></tr>`;
+      }
+    }
+  } catch(e){}
+  setTimeout(poll, 2000);
+}
+async function route(){
+  const q = document.getElementById("q").value;
+  const r = await (await fetch("/api/route", {method:"POST",
+      headers:{"Content-Type":"application/json"}, body:JSON.stringify({query:q})})).json();
+  if (r.error) { document.getElementById("routeOut").textContent = "error: "+r.error; return; }
+  document.getElementById("routeOut").textContent =
+    "activate: " + r.activate.join(" + ") + "\n\nconfidence:\n" +
+    Object.entries(r.confidence).map(([k,v])=>`  ${k.padEnd(12)} ${v.toFixed(2)}`).join("\n");
+}
+async function genomeAction(action){
+  const out = document.getElementById("genomeOut");
+  out.textContent = "starting '" + action + "' on the server ...";
+  const r = await (await fetch("/api/genome/" + action, {method:"POST"})).json();
+  if (r.error) { out.textContent = "error: " + r.error; return; }
+  out.textContent = r.message || JSON.stringify(r).slice(0, 800);
+  if (action !== "pipeline") pollGenome();
+}
+async function pollGenome(){
+  try {
+    const g = await (await fetch("/api/genome")).json();
+    if (!g.genome) { document.getElementById("genomeModel").textContent = "no genome files found"; return; }
+    document.getElementById("genomeModel").innerHTML =
+      "<span>" + g.genome.model_name + "</span> <span>" + g.genome.arch + "</span>";
+    const t = document.getElementById("genomeTable");
+    t.innerHTML = "<tr><th>component</th><th>capability</th><th>delta</th><th>conf</th><th>status</th></tr>";
+    const recs = (g.genome.records||[]).filter(r => r.intervention==="ablate" && Math.abs(r.delta)>=4)
+      .sort((a,b)=>Math.abs(b.delta)-Math.abs(a.delta)).slice(0, 10);
+    for (const r of recs) {
+      t.innerHTML += `<tr><td>${r.component.path}</td><td>${r.capability}</td><td>${r.delta>0?"+":""}${r.delta}</td><td>${r.confidence}</td><td>${r.status}</td></tr>`;
+    }
+    if (!recs.length) t.innerHTML += "<tr><td colspan=5>no significant candidates yet</td></tr>";
+  } catch(e){}
+}
+pollGenome();
+poll();
+
+// ---------------- Transfer Lab (M3) ----------------
+let tlModels = [];
+async function tlLoadMap(){
+  try {
+    const c = await (await fetch("/api/components")).json();
+    const models = new Set();
+    (c.genomes||[]).forEach(g => models.add(g.name));
+    Object.keys(c.lineage||{}).forEach(m => models.add(m));
+    ["math-wiz","weak-base","nomath-base","A-math","A-code","A-reason"].forEach(m => models.add(m));
+    tlModels = [...models].filter(Boolean).sort();
+    const selS = document.getElementById("tlSource"), selT = document.getElementById("tlTarget");
+    selS.innerHTML = tlModels.map(m=>`<option>${m}</option>`).join("");
+    selT.innerHTML = tlModels.map(m=>`<option>${m}</option>`).join("");
+    selT.value = tlModels.includes("nomath-base") ? "nomath-base" : tlModels[0];
+    // lineage tags
+    const lin = c.lineage||{};
+    const groups = {};
+    Object.entries(lin).forEach(([m,l]) => { (groups[l] = groups[l] || []).push(m); });
+    document.getElementById("tlLineage").innerHTML =
+      Object.entries(groups).map(([l,ms]) =>
+        `<span>${l}: ${ms.join(" + ")}</span>`).join("") ||
+      "<span>no lineage.json yet — run the M3 canonical pipeline</span>";
+    // component map: genomes × library counts per capability
+    const lib = c.library||{};
+    const caps = [...new Set([].concat(...Object.keys(lib).map(k =>
+                  Array.isArray(lib[k]) ? [k] : [])))];
+    const capList = caps.length ? caps : ["math","coding","reasoning"];
+    const counts = {};
+    Object.entries(lib).forEach(([cap, ids]) => counts[cap] = (ids||[]).length);
+    let html = "<table><tr><th>capability</th><th>components in library</th></tr>";
+    for (const cap of capList)
+      html += `<tr><td>${cap}</td><td>${counts[cap]||0}</td></tr>`;
+    html += "</table>";
+    if (c.matrix && c.matrix.length) {
+      html += "<table style='margin-top:8px'><tr><th>source→target</th><th>capability</th><th>base→transferred</th><th>verdict</th></tr>";
+      for (const r of c.matrix)
+        html += `<tr><td>${r.source} → ${r.target}</td><td>${r.capability}</td>` +
+                `<td>${r.baseline??"?"} → ${r.transferred??"?"}</td>` +
+                `<td>${r.status||"?"}</td></tr>`;
+      html += "</table>";
+    }
+    if (c.headline)
+      html += `<pre style="max-height:220px;overflow:auto;margin-top:8px">${c.headline.replace(/</g,"&lt;")}</pre>`;
+    document.getElementById("tlMap").innerHTML = html;
+  } catch(e){
+    document.getElementById("tlLineage").textContent = "component map unavailable: " + e;
+  }
+}
+async function tlRun(){
+  const body = {
+    source: document.getElementById("tlSource").value,
+    target: document.getElementById("tlTarget").value,
+    capability: document.getElementById("tlCap").value,
+    quick: document.getElementById("tlQuick").checked,
+  };
+  const r = await (await fetch("/api/transfer", {method:"POST",
+    headers:{"Content-Type":"application/json"},
+    body: JSON.stringify(body)})).json();
+  if (r.error) { document.getElementById("tlLog").textContent = "ERROR: " + r.error; return; }
+  tlPoll();
+}
+let tlPolling = false;
+async function tlPoll(){
+  if (tlPolling) return; tlPolling = true;
+  while (true) {
+    try {
+      const s = await (await fetch("/api/transfer/status")).json();
+      document.getElementById("tlLog").textContent =
+        (s.log_tail||[]).join("\n") || "started…";
+      document.getElementById("tlBar").style.width =
+        s.running ? "60%" : (s.last ? "100%" : "0%");
+      if (s.last && s.last.arms) {
+        const t = document.getElementById("tlArms");
+        t.innerHTML = "<tr><th>arm</th><th>held-out mean ± std</th></tr>";
+        for (const [arm, a] of Object.entries(s.last.arms))
+          t.innerHTML += `<tr><td>${arm}${arm===s.last.verdict.final_arm?" ◀":""}</td>` +
+            `<td>${a.mean} ± ${a.std}</td></tr>`;
+        t.innerHTML += `<tr><td colspan=2><b>verdict: ${s.last.verdict.status||"?"}</b> ` +
+          `(delta ${s.last.verdict.delta})</td></tr>`;
+      }
+      if (!s.running) break;
+    } catch(e){ break; }
+    await new Promise(r => setTimeout(r, 2000));
+  }
+  tlPolling = false;
+  tlLoadMap();
+}
+tlLoadMap();
+</script>
+</body>
+</html>

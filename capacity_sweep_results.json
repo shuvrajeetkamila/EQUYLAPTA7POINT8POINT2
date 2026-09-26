@@ -1,0 +1,158 @@
+{
+  "milestone": "EQUYLAPTA_E7_5",
+  "description": "Component capacity sweep across 25%, 50%, 100%, 150%",
+  "capacities_evaluated": [
+    {
+      "capacity": "25%",
+      "d_comp": 16,
+      "bridge_parameters": 1792,
+      "functional_agreement_pct": 39.24,
+      "pearson_r": 0.3142,
+      "task_performance": {
+        "mean": 24.0,
+        "std": 10.84,
+        "ci95_low": 14.5,
+        "ci95_high": 33.5,
+        "min": 15.0,
+        "max": 40.0,
+        "raw_seeds": [
+          30.0,
+          15.0,
+          20.0,
+          40.0,
+          15.0
+        ]
+      },
+      "causal_drop_pp": -11.0,
+      "random_control_performance": {
+        "mean": 35.0,
+        "std": 15.41,
+        "ci95_low": 21.49,
+        "ci95_high": 48.51,
+        "min": 15.0,
+        "max": 55.0,
+        "raw_seeds": [
+          45.0,
+          30.0,
+          30.0,
+          15.0,
+          55.0
+        ]
+      }
+    },
+    {
+      "capacity": "50%",
+      "d_comp": 32,
+      "bridge_parameters": 3328,
+      "functional_agreement_pct": 39.75,
+      "pearson_r": 0.3163,
+      "task_performance": {
+        "mean": 25.0,
+        "std": 11.18,
+        "ci95_low": 15.2,
+        "ci95_high": 34.8,
+        "min": 10.0,
+        "max": 40.0,
+        "raw_seeds": [
+          30.0,
+          10.0,
+          25.0,
+          40.0,
+          20.0
+        ]
+      },
+      "causal_drop_pp": -10.0,
+      "random_control_performance": {
+        "mean": 35.0,
+        "std": 15.41,
+        "ci95_low": 21.49,
+        "ci95_high": 48.51,
+        "min": 15.0,
+        "max": 55.0,
+        "raw_seeds": [
+          45.0,
+          30.0,
+          30.0,
+          15.0,
+          55.0
+        ]
+      }
+    },
+    {
+      "capacity": "100%",
+      "d_comp": 64,
+      "bridge_parameters": 6400,
+      "functional_agreement_pct": 40.72,
+      "pearson_r": 0.3233,
+      "task_performance": {
+        "mean": 22.0,
+        "std": 9.75,
+        "ci95_low": 13.46,
+        "ci95_high": 30.54,
+        "min": 10.0,
+        "max": 35.0,
+        "raw_seeds": [
+          25.0,
+          10.0,
+          25.0,
+          35.0,
+          15.0
+        ]
+      },
+      "causal_drop_pp": -13.0,
+      "random_control_performance": {
+        "mean": 35.0,
+        "std": 15.41,
+        "ci95_low": 21.49,
+        "ci95_high": 48.51,
+        "min": 15.0,
+        "max": 55.0,
+        "raw_seeds": [
+          45.0,
+          30.0,
+          30.0,
+          15.0,
+          55.0
+        ]
+      }
+    },
+    {
+      "capacity": "150%",
+      "d_comp": 96,
+      "bridge_parameters": 9472,
+      "functional_agreement_pct": 40.59,
+      "pearson_r": 0.322,
+      "task_performance": {
+        "mean": 22.0,
+        "std": 9.75,
+        "ci95_low": 13.46,
+        "ci95_high": 30.54,
+        "min": 10.0,
+        "max": 35.0,
+        "raw_seeds": [
+          25.0,
+          10.0,
+          25.0,
+          35.0,
+          15.0
+        ]
+      },
+      "causal_drop_pp": -13.0,
+      "random_control_performance": {
+        "mean": 35.0,
+        "std": 15.41,
+        "ci95_low": 21.49,
+        "ci95_high": 48.51,
+        "min": 15.0,
+        "max": 55.0,
+        "raw_seeds": [
+          45.0,
+          30.0,
+          30.0,
+          15.0,
+          55.0
+        ]
+      }
+    }
+  ]
+}

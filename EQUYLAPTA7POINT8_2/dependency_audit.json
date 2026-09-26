@@ -1,0 +1,100 @@
+{
+  "milestone": "EQUYLAPTA_7.8.2",
+  "primary_circuit": "Condition_E_Recipient_Reconstructed_FDC",
+  "nodes": {
+    "L0_head_2": {
+      "type": "AttentionHead",
+      "shape": [
+        16,
+        64
+      ],
+      "recipient_slot": "L0.attn.o.W[:16, :]",
+      "adapters": {
+        "W_in": {
+          "shape": [
+            16,
+            16
+          ],
+          "params": 256,
+          "trainable": true
+        },
+        "W_out": {
+          "shape": [
+            64,
+            96
+          ],
+          "params": 6144,
+          "trainable": true
+        }
+      },
+      "frozen_weights": {
+        "shape": [
+          16,
+          64
+        ],
+        "params": 1024,
+        "frozen": true
+      }
+    },
+    "L0_mlp": {
+      "type": "MLPBlock",
+      "in_dim": 64,
+      "hidden_dim": 256,
+      "out_dim": 64,
+      "recipient_slot": "L0.mlp.1.W[:, :256], L0.mlp.2.W[:256, :]",
+      "adapters": {
+        "W_in": {
+          "shape": [
+            96,
+            64
+          ],
+          "params": 6144,
+          "trainable": true
+        },
+        "W_out": {
+          "shape": [
+            64,
+            96
+          ],
+          "params": 6144,
+          "trainable": true
+        }
+      },
+      "frozen_weights": {
+        "W_mlp1": {
+          "shape": [
+            64,
+            256
+          ],
+          "params": 16384,
+          "frozen": true
+        },
+        "b_mlp1": {
+          "shape": [
+            256
+          ],
+          "params": 256,
+          "frozen": true
+        },
+        "W_mlp2": {
+          "shape": [
+            256,
+            64
+          ],
+          "params": 16384,
+          "frozen": true
+        },
+        "b_mlp2": {
+          "shape": [
+            64
+          ],
+          "params": 64,
+          "frozen": true
+        }
+      }
+    }
+  },
+  "total_donor_frozen_params": 34112,
+  "total_adapter_trainable_params": 18688,
+  "recipient_native_params": 479069
+}

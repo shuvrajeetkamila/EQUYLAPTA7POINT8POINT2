@@ -1,0 +1,27 @@
+[
+ {
+  "gate": 0.2,
+  "heldout_math": 21.7,
+  "guard_ce_damage": -0.0041
+ },
+ {
+  "gate": 0.4,
+  "heldout_math": 26.7,
+  "guard_ce_damage": -0.0035
+ },
+ {
+  "gate": 0.6,
+  "heldout_math": 26.7,
+  "guard_ce_damage": -0.0063
+ },
+ {
+  "gate": 0.8,
+  "heldout_math": 49.2,
+  "guard_ce_damage": -0.0073
+ },
+ {
+  "gate": 1.0,
+  "heldout_math": 51.7,
+  "guard_ce_damage": -0.0206
+ }
+]

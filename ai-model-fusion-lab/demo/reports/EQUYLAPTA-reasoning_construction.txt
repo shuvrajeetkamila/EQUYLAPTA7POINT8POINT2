@@ -1,0 +1,10 @@
+SPECIALIST CONSTRUCTION REPORT — EQUYLAPTA-reasoning [REJECTED]
+
+Sources: code-smith, generalist, logic-owl, math-wiz, polyglot, weak-base
+Components considered: L0.attn.head0 (logic-owl), L1 (logic-owl), L1.mlp (logic-owl), L0.attn (logic-owl)
+Parent scores on micro-reason: math-wiz=10%, code-smith=10%, logic-owl=45%, polyglot=18%, generalist=12%, weak-base=25%
+Best parent: logic-owl (45%)
+  attempt EXP-00586 WEIGHT_MERGE accuracy=30% coef=0.7
+Specialist score: 45.0%
+Chosen: {'model': 'logic-owl', 'mechanism': 'PARENT_FALLBACK'}
+Reason: best attempt did not beat best parent

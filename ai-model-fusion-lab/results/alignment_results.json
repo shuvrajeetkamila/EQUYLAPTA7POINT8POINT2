@@ -1,0 +1,18 @@
+{
+  "aa": {
+    "train_error": 0.4021,
+    "frozen_val_error": 0.4373,
+    "frozen_test_error": 2.1759,
+    "random_alignment_null_error": 1.4297,
+    "learned_vs_null_ratio": 3.56,
+    "rank": 16
+  },
+  "ab": {
+    "train_error": 47.6525,
+    "frozen_val_error": 62.9651,
+    "frozen_test_error": 41.8719,
+    "random_alignment_null_error": 48.5119,
+    "learned_vs_null_ratio": 1.02,
+    "rank": 16
+  }
+}

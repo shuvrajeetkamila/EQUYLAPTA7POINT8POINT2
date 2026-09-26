@@ -1,0 +1,85 @@
+{
+  "milestone": "EQUYLAPTA_E7.5_AUDIT",
+  "audit_date": "2026-09-24",
+  "status": "COMPLETED",
+  "overall_verdict": "E7.5_RESULTS_VERIFIED_AND_HISTORICAL_INCONSISTENCIES_IDENTIFIED",
+  "e7_5_headline_claims_audit": {
+    "claim_1_gradient_check": {
+      "claim": "Analytical two-branch gradient engine matches finite differences with relative error < 0.05.",
+      "reported_value": 0.003487,
+      "json_source_value": 0.00348729,
+      "source_file": "gradient_check_results.json",
+      "status": "SUPPORTED"
+    },
+    "claim_2_frozen_invariant": {
+      "claim": "Transplanted component W_comp remained 100% frozen (0 modified parameters, norm delta = 0.000000).",
+      "reported_value": 0.0,
+      "json_source_value": 0.0,
+      "source_file": "claim_provenance.json",
+      "status": "SUPPORTED"
+    },
+    "claim_3_causal_drop_target_b": {
+      "claim": "Causal drop in Target B Condition A is -14.00 pp (ablating W_comp increases accuracy from 21.00% to 35.00%).",
+      "reported_value": -14.0,
+      "json_source_value": -14.0,
+      "source_file": "e7_5_results.json",
+      "status": "SUPPORTED"
+    },
+    "claim_4_host_learning_superiority": {
+      "claim": "Target without transplant achieves 29.00% accuracy, outperforming the bridged model (21.00%).",
+      "reported_value": 29.0,
+      "json_source_value": 29.0,
+      "source_file": "host_learning_control_results.json",
+      "status": "SUPPORTED"
+    },
+    "claim_5_90_percent_threshold": {
+      "claim": "Predeclared 90.0% functional agreement threshold was NOT met (observed peak: 40.86% in Condition A, 62.15% in Stage 2).",
+      "reported_value": false,
+      "json_source_value": false,
+      "source_file": "functional_effect_results.json",
+      "status": "SUPPORTED"
+    },
+    "claim_6_evidence_level": {
+      "claim": "Scientific classification is strictly Level B: Representational Alignment Only.",
+      "reported_value": "LEVEL B: REPRESENTATIONAL_ALIGNMENT_ONLY",
+      "json_source_value": "LEVEL B: REPRESENTATIONAL_ALIGNMENT_ONLY",
+      "source_file": "e7_5_results.json",
+      "status": "SUPPORTED"
+    }
+  },
+  "historical_inconsistencies_audit": {
+    "inconsistency_1_depth_sweep": {
+      "area": "Historical E6 / E6.5 Depth Sweep",
+      "prose_claim": "Claimed positive transfer across all four depths (2L, 4L, 6L, 8L).",
+      "underlying_json_values": {
+        "2L_delta": "+3.34 pp (positive)",
+        "4L_delta": "-0.83 pp (negative)",
+        "6L_delta": "-8.34 pp (negative)",
+        "8L_delta": "-11.66 pp (negative)"
+      },
+      "source_file": "equylapta6_results.json",
+      "classification": "CONTRADICTED",
+      "forensic_finding": "Prose asserted universal positive depth transfer, directly contradicting the underlying JSON and table where 3 out of 4 depths exhibited negative deltas. E7.5 and E7.6 strictly maintain non-monotonic instability."
+    },
+    "inconsistency_2_independent_reconstruction": {
+      "area": "Historical E6 Independent Reconstruction Agreement",
+      "conflicting_values": {
+        "report_prose_1": "95.00%",
+        "report_prose_2": "83.33%",
+        "source_json_equylapta6": "95.00% (57/60 matching items)",
+        "source_script_run_equylapta6": "83.33% (50/60 matching items hardcoded print)",
+        "independent_reconstruction_json": "38.33% (23/60 matching items, converged: false)"
+      },
+      "classification": "CONTRADICTED",
+      "forensic_finding": "The discrepancy originates from distinct evaluation batches: 95.00% in equylapta6_results.json reflected a small 57/60 batch, 83.33% was a hardcoded legacy print in run_equylapta6.py line 1557 from an earlier 50/60 run, while independent_reconstruction.json recorded the authoritative rigorous evaluation of 38.33% (23/60, converged=False). E7.6 adopts 38.33% as the verified empirical reality."
+    }
+  },
+  "remediation_mandates_for_e7_6": [
+    "Move beyond single-component A->B transfer toward cross-family multi-component composition",
+    "Establish genuine family diversity across Family A (Micro-GPT), Family B (LLaMA-style), and Family C (Compact Hybrid)",
+    "Extract and characterize three capability specialists: Mathematics, Reasoning, and Coding",
+    "Construct the EQUYLAPTA Functional Component Genome (component_genome.json)",
+    "Evaluate all 8 compositional configurations (Baseline through +All Three)",
+    "Calculate the 3x3 capability interaction matrix and evaluate surgical ablation/restoration on the composite model"
+  ]
+}

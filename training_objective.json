@@ -1,0 +1,50 @@
+{
+  "milestone": "EQUYLAPTA_7.8.2",
+  "objective_name": "True_Multi_Branch_Causal_Functional_Effect_Reconstruction_Loss",
+  "mathematical_definition": "L_functional(theta) = 0.5 * mean( ((Y_recip_intact(x, theta) - Y_recip_ablated(x, theta)) - Delta_donor_target(x))^2 ) + 0.5 * lambda_reg * sum(||W - W0||_F^2)",
+  "loss_components": {
+    "causal_effect_discrepancy": "0.5 * (1/V) * sum_v ( Delta_recip(x, theta)_v - Delta_target(x)_v )^2",
+    "adapter_regularization": "0.5 * lambda_reg * ( ||W_in_head - W_in_head_0||_F^2 + ||W_out_head - W_out_head_0||_F^2 + ||W_in_mlp - W_in_mlp_0||_F^2 + ||W_out_mlp - W_out_mlp_0||_F^2 )"
+  },
+  "coefficients": {
+    "lambda_reg": 0.0001,
+    "vocab_normalizer_V": 141
+  },
+  "reduction_method": "mean_over_batch_and_vocab",
+  "differentiability_status": "EXACT_ANALYTICALLY_DIFFERENTIABLE_MULTI_BRANCH_BACKPROP",
+  "trainable_parameters": [
+    "head_bridges.L0_head_2.W_in",
+    "head_bridges.L0_head_2.W_out",
+    "mlp_bridges.L0_mlp.W_in",
+    "mlp_bridges.L0_mlp.W_out"
+  ],
+  "frozen_parameters": [
+    "donor_W_comp (L0_head_2)",
+    "donor_W_mlp1, b_mlp1, W_mlp2, b_mlp2 (L0_mlp)",
+    "all_recipient_native_weights (except designated transplanted slots)"
+  ],
+  "optimizer": {
+    "family": "Adam",
+    "learning_rate": 0.003,
+    "beta1": 0.9,
+    "beta2": 0.999,
+    "epsilon": 1e-8,
+    "gradient_clipping": [-5.0, 5.0]
+  },
+  "training_schedule": {
+    "epochs": 15,
+    "items_per_epoch": 20,
+    "total_optimization_steps": 300
+  },
+  "seeds": {
+    "characterization_seed": 777,
+    "validation_seed": 888,
+    "heldout_seed": 999,
+    "replication_seeds": [9001, 9002, 9003, 9004, 9005]
+  },
+  "datasets": {
+    "characterization_split": "micro_suite_math_n20_seed777",
+    "validation_split": "micro_suite_math_n20_seed888",
+    "heldout_split": "micro_suite_math_n20_seed999"
+  }
+}

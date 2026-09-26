@@ -1,0 +1,51 @@
+{
+  "milestone": "EQUYLAPTA_E7_4_AUDIT",
+  "audit_date": "2026-09-24",
+  "status": "COMPLETED",
+  "overall_verdict": "OPTIMIZATION_OBJECTIVE_MISMATCH_IDENTIFIED",
+  "audit_findings": {
+    "1_what_e7_4_actually_implemented": "E7.4 implemented a bidirectional synthetic interface bridge (W_in in R^{16x16}, W_comp in R^{16x64} strictly frozen, W_out in R^{64xd_tgt}), a common behavioral functional effect space based on last-token logit deltas in R^{141}, and 5 disentangled freezing/adaptation conditions evaluated across 5 seeds, 4 depths (2L, 4L, 6L, 8L), and 4 capacities. It also implemented a 7-intervention causal pathway battery.",
+    "2_what_e7_4_claimed_to_implement": "E7.4 claimed that bridge parameters (W_in, W_out) were trained to directly minimize functional perturbation discrepancy L_func = 0.5 * ||Delta L_tgt - Delta L_src||^2 by differentiating the complete functional effect expression F_tgt = Y_intact(x, theta) - Y_ablated(x, theta).",
+    "3_do_implementation_and_claim_match": false,
+    "3_mismatch_details": "Critical mismatch in loss and gradient computation: (a) The optimization routine in train_bidirectional_bridge added grads_task from standard language modeling cross-entropy loss (G_eff = grads_task + lambda * grads_func), meaning the bridge was primarily optimized on ordinary task loss rather than pure functional-effect matching. (b) The backward pass for grads_func only differentiated through the intact forward path (target_model.backward(arr, dlogits_func) on intact state); it did not differentiate through the ablated branch -dY_ablated/dtheta. While dY_ablated/dtheta_bridge is 0 when the component is masked, for receiver adaptation (Condition 5) the receiver parameters appear in both branches, so omitting the ablated branch gradient produced an incomplete and biased gradient.",
+    "4_experiments_genuinely_executed": [
+      "Master experiment runner (demo/run_equylapta7_4.py) ran 268.7s with 5 evaluation seeds (9001-9005)",
+      "Source causal indispensability verification (+24.00 pp collapse, 100% restoration recovery)",
+      "5 disentangled interface conditions evaluated on Arch B (34.00% baseline)",
+      "7 causal pathway interventions on Condition 4",
+      "A->A control and A->C exploratory pipeline",
+      "Corrected depth sweep across 2L, 4L, 6L, 8L",
+      "Capacity sweep across 25%, 50%, 100%, 150%",
+      "Collateral capability tests across 6 domains"
+    ],
+    "5_valid_metrics": [
+      "Causal drop under physical ablation (Y_active - Y_ablated)",
+      "Restoration recovery error",
+      "Downstream task accuracy on held-out math evaluation items",
+      "Random component comparison (+7.00 pp advantage over Gaussian noise)",
+      "Parameter norm invariance verification for W_comp (0.000000 delta)"
+    ],
+    "6_proxy_metrics": [
+      "Common functional effect cosine similarity (40.78% in Condition 4) is a representational/behavioral direction proxy, not proof of causal execution",
+      "Pearson r correlation of logit deltas (0.1741 in Condition 4) captures linear correlation of perturbation profiles but does not ensure functional execution",
+      "CKA and Procrustes distance are purely representational diagnostics"
+    ],
+    "7_causal_mediation_demonstrated": false,
+    "7_causal_mediation_details": "Causal mediation completely failed in Target B: ablating W_comp increased accuracy by +5.00 pp (from 30.00% active to 35.00% ablated; causal drop: -5.00 pp). Similarly, in Target A (A->A control), ablating the bridged head increased accuracy by +1.00 pp (from 18.00% intact to 19.00% ablated; causal drop: -1.00 pp). Component removal relieved representational interference.",
+    "8_transplanted_component_caused_observed_behavior": false,
+    "8_component_causality_details": "The transplanted component did not cause the target model's math accuracy. The target network bypassed the component. Active insertion introduced representational distraction, and ablated knockout restored native baseline performance.",
+    "9_receiver_adaptation_learned_around_transplant": true,
+    "9_receiver_adaptation_details": "In Condition 5 (Bridge + Layer 0 MLP training), functional agreement collapsed from 40.78% to 3.53%, and causal drop was -10.00 pp. The trainable Layer 0 MLP optimized around the frozen interface to fit local training tokens rather than routing causal computation through the bridge.",
+    "10_bridge_optimization_optimized_claimed_objective": false,
+    "10_bridge_optimization_details": "The bridge optimization was contaminated by cross-entropy task loss (grads_task) and failed to evaluate the complete two-branch gradient of the functional effect expression. Bridge optimization must be repaired to purely optimize L_func = 0.5 * ||(Y_intact - Y_ablated) - F_src||^2 with full differentiation."
+  },
+  "scientific_classification": "LEVEL B: REPRESENTATIONAL_ALIGNMENT_ONLY",
+  "remediation_mandates_for_e7_5": [
+    "Eliminate cross-entropy task loss contamination from Condition A; train purely on functional-effect matching",
+    "Implement exact analytical two-branch gradient engine: grad_theta = grad_intact(+D) + grad_ablated(-D)",
+    "Implement mandatory finite-difference gradient verification test in tests/test_functional_effect_gradient.py",
+    "Evaluate 3 separate optimization conditions: Condition A (Pure Functional-Effect), Condition B (Intact-Output Control), Condition C (Random Component Control)",
+    "Implement mandatory Host-Learning Control: target allowed equivalent training capacity with NO transplanted functional component",
+    "Retain strict frozen component requirement (0 parameters modified, requires_grad=False)"
+  ]
+}

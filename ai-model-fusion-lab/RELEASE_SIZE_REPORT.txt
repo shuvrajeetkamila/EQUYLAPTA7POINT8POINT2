@@ -1,0 +1,44 @@
+==============================================================================
+RELEASE SIZE REPORT — EQUYLAPTA6
+AI Model Fusion Lab — Cross-Architecture Functional Translation
+Generated: 2026-09-19 22:12:05
+==============================================================================
+
+1. OVERALL SIZES
+------------------------------------------------------------------------------
+  Total Active Workspace Size : 41.25 MB
+  Arena Workspace Limit       : 120.00 MB
+  Target Budget               : 20.00 – 50.00 MB (PREFERRED)
+  Storage Status              : PASS
+
+2. DIRECTORY BREAKDOWN
+------------------------------------------------------------------------------
+  - fusionlab_data/           : 38.00 MB (trained models, circuits, benchmarks)
+  - ai-model-fusion-lab/      :  3.50 MB (codebase, pipelines, CLI, tests)
+  - Root deliverables         :  0.36 MB (reports and machine-readable JSON)
+  - TOTAL WORKSPACE           : 41.25 MB
+
+3. LARGEST FILES IN ARTIFACT
+------------------------------------------------------------------------------
+  1. fusionlab_data/alignments/align-580384bd.npz  : 2.95 MB
+  2. fusionlab_data/alignments/align-bc92145c.npz  : 2.95 MB
+  3. fusionlab_data/alignments/align-b74ce208.npz  : 2.95 MB
+  4. fusionlab_data/models/e4-base-8L.npz          : 1.52 MB
+  5. fusionlab_data/models/e4-math-8L.npz          : 1.51 MB
+  6. fusionlab_data/models/e4-base-6L.npz          : 1.15 MB
+  7. fusionlab_data/models/e4-math-6L.npz          : 1.15 MB
+  8. fusionlab_data/models/generalist-lg.npz       : 0.88 MB
+  9. fusionlab_data/models/e6-base-8L.npz          : 0.88 MB
+ 10. fusionlab_data/models/e4-base-4L.npz          : 0.78 MB
+
+4. CLEANUP & EXCLUSIONS
+------------------------------------------------------------------------------
+  - Upload transport base64 parts removed.
+  - Redundant release ZIP archives removed.
+  - All uncompressed source code, tests, weights, and reports preserved.
+  - Test and compiler caches (.pytest_cache, __pycache__) excluded.
+
+5. FINAL VERDICT
+------------------------------------------------------------------------------
+  RELEASE STATUS: PASS (41.25 MB — safely within the 20-50 MB preferred target).
+==============================================================================

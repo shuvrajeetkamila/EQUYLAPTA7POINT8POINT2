@@ -1,0 +1,53 @@
+{
+  "milestone": "EQUYLAPTA7",
+  "raw_project_size_mb": 40.24,
+  "workspace_total_size_mb": 41.89,
+  "zip_status": "OMITTED_PER_USER_INSTRUCTION_NO_ZIP_NEEDED",
+  "arena_limit_mb": 120.0,
+  "target_budget": "20.0 - 50.0 MB",
+  "status": "PASS",
+  "satisfies_120mb_limit": true,
+  "in_preferred_budget": true,
+  "largest_files": [
+    {
+      "file": "fusionlab_data/models/e6-base-8L.npz",
+      "size_mb": 3.251
+    },
+    {
+      "file": "fusionlab_data/alignments/align-580384bd.npz",
+      "size_mb": 2.879
+    },
+    {
+      "file": "fusionlab_data/alignments/align-bc92145c.npz",
+      "size_mb": 2.879
+    },
+    {
+      "file": "fusionlab_data/alignments/align-b74ce208.npz",
+      "size_mb": 2.877
+    },
+    {
+      "file": "fusionlab_data/models/e6-base-6L.npz",
+      "size_mb": 2.453
+    },
+    {
+      "file": "fusionlab_data/models/e6-base-4L.npz",
+      "size_mb": 1.656
+    },
+    {
+      "file": "fusionlab_data/models/e4-base-8L.npz",
+      "size_mb": 1.48
+    },
+    {
+      "file": "fusionlab_data/models/e4-math-8L.npz",
+      "size_mb": 1.479
+    },
+    {
+      "file": "fusionlab_data/models/e4-base-6L.npz",
+      "size_mb": 1.121
+    },
+    {
+      "file": "fusionlab_data/models/e4-math-6L.npz",
+      "size_mb": 1.119
+    }
+  ]
+}

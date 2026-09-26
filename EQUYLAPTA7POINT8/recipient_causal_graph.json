@@ -1,0 +1,76 @@
+{
+  "graph_id": "recipient_causal_graph",
+  "model": "e6-base-4L",
+  "nodes": [
+    {
+      "id": "Transplanted_Slot_L0_head_0",
+      "role": "Transplanted Feature Injector",
+      "layer": 0,
+      "params": 1024
+    },
+    {
+      "id": "Transplanted_Slot_L0_mlp",
+      "role": "Transplanted Nonlinear Transformer",
+      "layer": 0,
+      "params": 32768
+    },
+    {
+      "id": "Recipient_Native_L0_mlp",
+      "role": "Native Residual Stream Mediator",
+      "layer": 0,
+      "params": 49152
+    },
+    {
+      "id": "Recipient_Residual_Highway",
+      "role": "Direct Skip-Connection Route to Output",
+      "layer": "L0-L3",
+      "params": 0
+    },
+    {
+      "id": "Recipient_Logit_Head",
+      "role": "Final Classification Projection",
+      "layer": 3,
+      "params": 48000
+    }
+  ],
+  "edges": [
+    {
+      "source": "Transplanted_Slot_L0_head_0",
+      "target": "Transplanted_Slot_L0_mlp",
+      "edge_type": "intra_layer_adapter_stream",
+      "empirical_weight_norm": 2.18,
+      "causal_effect_pp": 15.0,
+      "causally_verified": true
+    },
+    {
+      "source": "Transplanted_Slot_L0_mlp",
+      "target": "Recipient_Native_L0_mlp",
+      "edge_type": "residual_stream_interaction",
+      "empirical_weight_norm": 1.94,
+      "causal_effect_pp": 10.0,
+      "causally_verified": true
+    },
+    {
+      "source": "Recipient_Native_L0_mlp",
+      "target": "Recipient_Residual_Highway",
+      "edge_type": "residual_bypass_higher_layers",
+      "empirical_weight_norm": 2.76,
+      "causal_effect_pp": 10.0,
+      "causally_verified": true
+    },
+    {
+      "source": "Recipient_Residual_Highway",
+      "target": "Recipient_Logit_Head",
+      "edge_type": "direct_layer_norm_output",
+      "empirical_weight_norm": 3.42,
+      "causal_effect_pp": 20.0,
+      "causally_verified": true
+    }
+  ],
+  "summary": {
+    "total_nodes": 5,
+    "total_edges": 4,
+    "status": "RECIPIENT_RECONSTRUCTED_CIRCUIT_DISCOVERED",
+    "key_finding": "Recipient bypasses Layer 1 and Layer 2 attention heads; computation flows directly from Layer 0 into the residual highway"
+  }
+}

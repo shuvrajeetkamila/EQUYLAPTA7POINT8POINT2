@@ -1,0 +1,38 @@
+{
+  "milestone": "EQUYLAPTA_7.6",
+  "components_identified": [
+    {
+      "component_id": "COMP-MATH-01",
+      "model": "e4-math-4L",
+      "layer": 0,
+      "head": 2,
+      "params": 1024,
+      "target_domain": "math",
+      "base_acc": 40.0,
+      "ablated_acc": 15.0,
+      "causal_drop_pp": 25.0
+    },
+    {
+      "component_id": "COMP-REASON-01",
+      "model": "logic-owl",
+      "layer": 0,
+      "head": 0,
+      "params": 1024,
+      "target_domain": "reason",
+      "base_acc": 50.0,
+      "ablated_acc": 10.0,
+      "causal_drop_pp": 40.0
+    },
+    {
+      "component_id": "COMP-CODE-01",
+      "model": "code-smith",
+      "layer": 0,
+      "head": 3,
+      "params": 1024,
+      "target_domain": "code",
+      "base_acc": 100.0,
+      "ablated_acc": 70.0,
+      "causal_drop_pp": 30.0
+    }
+  ]
+}

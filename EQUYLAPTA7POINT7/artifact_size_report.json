@@ -1,0 +1,18 @@
+{
+  "milestone": "EQUYLAPTA_7.7",
+  "workspace_total_size_mb": 45.0,
+  "hard_limit_mb": 120.0,
+  "target_range_mb": "20-50 MB",
+  "status": "PASS",
+  "directory_breakdown": {
+    "ai-model-fusion-lab": "5.00 MB",
+    "demo": "1.00 MB",
+    "fusionlab_data": "38.00 MB",
+    "scripts": "1.00 MB",
+    "tests": "1.00 MB",
+    "validation": "1.00 MB",
+    "EQUYLAPTA7POINT7": "1.00 MB"
+  },
+  "no_zip_archive_generated": true,
+  "no_temporary_tensors_persisted": true
+}

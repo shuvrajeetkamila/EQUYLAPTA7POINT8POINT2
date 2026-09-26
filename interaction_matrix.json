@@ -1,0 +1,18 @@
+{
+  "milestone": "EQUYLAPTA_7.6",
+  "description": "Pairwise capability interference delta (pp) when secondary component is added",
+  "matrix": {
+    "Math_impact_on": {
+      "Reasoning": "+0.00 pp",
+      "Coding": "+0.00 pp"
+    },
+    "Reasoning_impact_on": {
+      "Math": "-2.00 pp",
+      "Coding": "+0.00 pp"
+    },
+    "Coding_impact_on": {
+      "Math": "+3.00 pp",
+      "Reasoning": "+0.00 pp"
+    }
+  }
+}

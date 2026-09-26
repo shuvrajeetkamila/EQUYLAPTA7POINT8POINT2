@@ -1,0 +1,44 @@
+{
+  "impl1_math": {
+    "seeds": [
+      24.0,
+      16.0,
+      28.0,
+      16.0,
+      16.0
+    ],
+    "mean": 20.0,
+    "std": 5.06,
+    "min": 16.0,
+    "max": 28.0,
+    "n_seeds": 5,
+    "ci95": [
+      15.57,
+      24.43
+    ]
+  },
+  "impl2_math": {
+    "seeds": [
+      28.0,
+      20.0,
+      28.0,
+      20.0,
+      12.0
+    ],
+    "mean": 21.6,
+    "std": 5.99,
+    "min": 12.0,
+    "max": 28.0,
+    "n_seeds": 5,
+    "ci95": [
+      16.35,
+      26.85
+    ]
+  },
+  "convergence": {
+    "total_items": 60,
+    "matching_predictions": 23,
+    "agreement_pct": 38.33,
+    "converged": false
+  }
+}

@@ -1,0 +1,316 @@
+{
+  "baseline": {
+    "seeds": [
+      45.0,
+      55.0,
+      45.0,
+      35.0,
+      60.0
+    ],
+    "mean": 48.0,
+    "std": 9.75,
+    "min": 35.0,
+    "max": 60.0,
+    "n_seeds": 5,
+    "ci95": [
+      39.46,
+      56.54
+    ]
+  },
+  "levels": {
+    "level_a_whole_layer": {
+      "layer_0": {
+        "seeds": [
+          25.0,
+          20.0,
+          20.0,
+          35.0,
+          35.0
+        ],
+        "mean": 27.0,
+        "std": 7.58,
+        "min": 20.0,
+        "max": 35.0,
+        "n_seeds": 5,
+        "ci95": [
+          20.35,
+          33.65
+        ],
+        "causal_drop": 21.0
+      },
+      "layer_1": {
+        "seeds": [
+          20.0,
+          20.0,
+          40.0,
+          30.0,
+          50.0
+        ],
+        "mean": 32.0,
+        "std": 13.04,
+        "min": 20.0,
+        "max": 50.0,
+        "n_seeds": 5,
+        "ci95": [
+          20.57,
+          43.43
+        ],
+        "causal_drop": 16.0
+      },
+      "layer_2": {
+        "seeds": [
+          30.0,
+          60.0,
+          35.0,
+          25.0,
+          45.0
+        ],
+        "mean": 39.0,
+        "std": 13.87,
+        "min": 25.0,
+        "max": 60.0,
+        "n_seeds": 5,
+        "ci95": [
+          26.84,
+          51.16
+        ],
+        "causal_drop": 9.0
+      },
+      "layer_3": {
+        "seeds": [
+          40.0,
+          25.0,
+          30.0,
+          45.0,
+          45.0
+        ],
+        "mean": 37.0,
+        "std": 9.08,
+        "min": 25.0,
+        "max": 45.0,
+        "n_seeds": 5,
+        "ci95": [
+          29.04,
+          44.96
+        ],
+        "causal_drop": 11.0
+      }
+    },
+    "level_b_sublayer_block": {
+      "L0_attn": {
+        "seeds": [
+          20.0,
+          15.0,
+          10.0,
+          35.0,
+          0.0
+        ],
+        "mean": 16.0,
+        "std": 12.94,
+        "min": 0.0,
+        "max": 35.0,
+        "n_seeds": 5,
+        "ci95": [
+          4.66,
+          27.34
+        ],
+        "causal_drop": 32.0
+      },
+      "L0_mlp": {
+        "seeds": [
+          35.0,
+          45.0,
+          40.0,
+          15.0,
+          55.0
+        ],
+        "mean": 38.0,
+        "std": 14.83,
+        "min": 15.0,
+        "max": 55.0,
+        "n_seeds": 5,
+        "ci95": [
+          25.0,
+          51.0
+        ],
+        "causal_drop": 10.0
+      },
+      "L1_attn": {
+        "seeds": [
+          30.0,
+          25.0,
+          45.0,
+          30.0,
+          60.0
+        ],
+        "mean": 38.0,
+        "std": 14.4,
+        "min": 25.0,
+        "max": 60.0,
+        "n_seeds": 5,
+        "ci95": [
+          25.37,
+          50.63
+        ],
+        "causal_drop": 10.0
+      },
+      "L1_mlp": {
+        "seeds": [
+          40.0,
+          45.0,
+          40.0,
+          30.0,
+          50.0
+        ],
+        "mean": 41.0,
+        "std": 7.42,
+        "min": 30.0,
+        "max": 50.0,
+        "n_seeds": 5,
+        "ci95": [
+          34.5,
+          47.5
+        ],
+        "causal_drop": 7.0
+      }
+    },
+    "level_c_unit_groups": {
+      "L0_head_0": {
+        "seeds": [
+          40.0,
+          20.0,
+          30.0,
+          30.0,
+          30.0
+        ],
+        "mean": 30.0,
+        "std": 7.07,
+        "min": 20.0,
+        "max": 40.0,
+        "n_seeds": 5,
+        "ci95": [
+          23.8,
+          36.2
+        ],
+        "causal_drop": 18.0
+      },
+      "L0_head_1": {
+        "seeds": [
+          25.0,
+          20.0,
+          30.0,
+          30.0,
+          35.0
+        ],
+        "mean": 28.0,
+        "std": 5.7,
+        "min": 20.0,
+        "max": 35.0,
+        "n_seeds": 5,
+        "ci95": [
+          23.0,
+          33.0
+        ],
+        "causal_drop": 20.0
+      },
+      "L0_head_2": {
+        "seeds": [
+          20.0,
+          35.0,
+          15.0,
+          30.0,
+          20.0
+        ],
+        "mean": 24.0,
+        "std": 8.22,
+        "min": 15.0,
+        "max": 35.0,
+        "n_seeds": 5,
+        "ci95": [
+          16.8,
+          31.2
+        ],
+        "causal_drop": 24.0
+      },
+      "L0_head_3": {
+        "seeds": [
+          15.0,
+          40.0,
+          20.0,
+          30.0,
+          30.0
+        ],
+        "mean": 27.0,
+        "std": 9.75,
+        "min": 15.0,
+        "max": 40.0,
+        "n_seeds": 5,
+        "ci95": [
+          18.46,
+          35.54
+        ],
+        "causal_drop": 21.0
+      }
+    },
+    "level_d_activation_subspace": {
+      "subspace_top_1": {
+        "rank": 1,
+        "variance_explained_pct": 45.62,
+        "singular_values": [
+          2661.414
+        ],
+        "interpretation": "Subspace of rank 1 captures 45.62% of Layer 0 attention output variance."
+      },
+      "subspace_top_2": {
+        "rank": 2,
+        "variance_explained_pct": 70.12,
+        "singular_values": [
+          2661.414,
+          1950.223
+        ],
+        "interpretation": "Subspace of rank 2 captures 70.12% of Layer 0 attention output variance."
+      },
+      "subspace_top_4": {
+        "rank": 4,
+        "variance_explained_pct": 96.5,
+        "singular_values": [
+          2661.414,
+          1950.223,
+          1860.358,
+          797.236
+        ],
+        "interpretation": "Subspace of rank 4 captures 96.5% of Layer 0 attention output variance."
+      }
+    },
+    "level_e_distributed_circuit": {
+      "circuit_definition": [
+        "L0.head_3",
+        "L1.mlp"
+      ],
+      "stats": {
+        "seeds": [
+          10.0,
+          30.0,
+          20.0,
+          30.0,
+          40.0
+        ],
+        "mean": 26.0,
+        "std": 11.4,
+        "min": 10.0,
+        "max": 40.0,
+        "n_seeds": 5,
+        "ci95": [
+          16.01,
+          35.99
+        ],
+        "causal_drop": 22.0
+      }
+    }
+  },
+  "best_causal_unit": {
+    "unit": "L0_head_2",
+    "causal_drop": 24.0,
+    "retained_accuracy": 24.0
+  }
+}

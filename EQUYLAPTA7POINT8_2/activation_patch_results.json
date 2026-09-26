@@ -1,0 +1,23 @@
+{
+  "validation_seed_888": {
+    "baseline": 15.0,
+    "donor_patch": 25.0,
+    "random_patch": 20.0,
+    "shuffled_patch": 20.0,
+    "zero_patch": 15.0,
+    "donor_lift_over_baseline_pp": 10.0,
+    "donor_lift_over_random_pp": 5.0,
+    "donor_lift_over_shuffled_pp": 5.0
+  },
+  "heldout_seed_999": {
+    "baseline": 35.0,
+    "donor_patch": 25.0,
+    "random_patch": 20.0,
+    "shuffled_patch": 45.0,
+    "zero_patch": 25.0,
+    "donor_lift_over_baseline_pp": -10.0,
+    "donor_lift_over_random_pp": 5.0,
+    "donor_lift_over_shuffled_pp": -20.0
+  },
+  "heldout_effect_retained": false
+}

@@ -1,0 +1,43 @@
+{
+  "milestone": "EQUYLAPTA_7.7",
+  "title": "Dependency-Aware Surgical Circuit Transfer: From Component Transplant to Functional Dependency-Circuit Transplant",
+  "donor_capability": "Mathematics",
+  "donor_family": "Family A (Micro-GPT)",
+  "donor_model": "e4-math-4L",
+  "donor_core_component": "L0_head_2",
+  "recipient_family": "Family B (LLaMA-Style)",
+  "recipient_model": "e6-base-4L",
+  "predeclared_threshold_pct": 90.0,
+  "eval_seeds": [9001, 9002, 9003, 9004, 9005],
+  "splits": {
+    "discovery_seed": 777,
+    "validation_seed": 888,
+    "heldout_seed": 999,
+    "items_per_split": 20
+  },
+  "training": {
+    "epochs": 15,
+    "learning_rate": 0.003,
+    "weight_decay": 0.0001
+  },
+  "conditions": [
+    "Condition_A_Host_Baseline",
+    "Condition_B_Component_Only_7_6",
+    "Condition_C_Dependency_Expanded",
+    "Condition_D_Minimal_FDC",
+    "Condition_E_Oversized_Circuit",
+    "Condition_F_Random_Matched_Circuit",
+    "Condition_G_Shuffled_Dependency_Circuit",
+    "Condition_H_Host_Only_Adaptation"
+  ],
+  "depth_sweep": ["2L", "4L", "6L", "8L"],
+  "circuit_sizes": [1, 2, 3, 4, 7],
+  "second_capability_replication": {
+    "capability": "Logical Reasoning",
+    "donor_family": "Family B (LLaMA-Style)",
+    "donor_model": "logic-owl",
+    "donor_core_component": "L0_head_0",
+    "recipient_family": "Family B (LLaMA-Style)",
+    "recipient_model": "e6-base-4L"
+  }
+}

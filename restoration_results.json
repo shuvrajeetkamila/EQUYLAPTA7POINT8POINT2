@@ -1,0 +1,20 @@
+{
+  "milestone": "EQUYLAPTA_7.6",
+  "composite_restorations": {
+    "math_component": {
+      "active": 23.0,
+      "restored": 23.0,
+      "recovery_error_pp": 0.0
+    },
+    "reason_component": {
+      "active": 11.0,
+      "restored": 11.0,
+      "recovery_error_pp": 0.0
+    },
+    "code_component": {
+      "active": 0.0,
+      "restored": 0.0,
+      "recovery_error_pp": 0.0
+    }
+  }
+}

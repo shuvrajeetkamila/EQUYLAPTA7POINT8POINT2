@@ -1,0 +1,78 @@
+{
+  "audit_version": "EQUYLAPTA7.2_PREFLIGHT_AUDIT",
+  "audit_timestamp": "2026-09-21T17:00:00Z",
+  "e7_1_status": "ANALYZED",
+  "audit_summary": {
+    "items_audited": 7,
+    "items_remediated_in_e7_1": 5,
+    "critical_architectural_defects_remaining_for_e7_2": 2
+  },
+  "audit_records": [
+    {
+      "check_id": "PREFLIGHT-01",
+      "area": "source_functional_signature",
+      "target_component": "L0_head_2",
+      "e7_1_status": "REMEDIATED",
+      "e7_1_implementation": "Extracted specifically from 16-dimensional Head 2 activation output slice rather than whole-layer residual activations.",
+      "e7_2_requirement": "Preserve L0_head_2 candidate, extract comprehensive functional representation v3 separating implementation representation from functional representation."
+    },
+    {
+      "check_id": "PREFLIGHT-02",
+      "area": "target_initialization_independence",
+      "target_component": "fresh_target_models",
+      "e7_1_status": "REMEDIATED",
+      "e7_1_implementation": "Initialized 5 fresh target model instances with distinct seeded initializations, verifying distinct SHA-256 parameter hashes.",
+      "e7_2_requirement": "Maintain 5 fresh model instances with logged initialization, alignment, and finalization SHA-256 hashes."
+    },
+    {
+      "check_id": "PREFLIGHT-03",
+      "area": "functional_signature_usage_and_alignment",
+      "target_component": "method_b_reconstruction",
+      "e7_1_status": "DEFECT_PERSISTING",
+      "e7_1_defect_analysis": "E7.1 verified consumption of top_subspace_basis B (16x4) via projection P_subspace = B @ B.T, but applied it directly to target coordinates without learning an alignment mapping between source and target functional spaces. This implicitly assumed identical coordinate semantics across different architectures.",
+      "e7_2_requirement": "MANDATORY FIX: Implement genuine learned alignment bridge (Source Functional Space -> Paired Probes -> Learned Alignment Map via Orthogonal Procrustes / Regularized Linear Regression -> Target Functional Space). Do NOT assume coordinate equivalence."
+    },
+    {
+      "check_id": "PREFLIGHT-04",
+      "area": "optimization_gradient_integrity",
+      "target_component": "gradient_descent_engine",
+      "e7_1_status": "DEFECT_PERSISTING",
+      "e7_1_defect_analysis": "E7.1 used heuristic directional updates with scaled noise perturbations rather than exact mathematical derivatives of the loss function. This disqualified the optimization from being true gradient descent.",
+      "e7_2_requirement": "MANDATORY FIX: Implement true exact loss functions and numerical central finite-difference gradients (or analytical autodiff). Require formal gradient correctness check against central difference with relative error < 5%, saved to gradient_check.json and optimization_integrity.json."
+    },
+    {
+      "check_id": "PREFLIGHT-05",
+      "area": "exact_target_unit_causality",
+      "target_component": "target_functional_unit_id",
+      "e7_1_status": "REMEDIATED",
+      "e7_1_implementation": "Explicitly defined target_functional_unit_id as L0_head_0, executing 4-step sequence (Baseline -> Reconstructed -> Ablate exact unit -> Restore exact unit).",
+      "e7_2_requirement": "Retain explicit target unit ID, parameter mask, activation mask, and exact 4-step sequence for both A->A and A->B reconstructions."
+    },
+    {
+      "check_id": "PREFLIGHT-06",
+      "area": "target_local_trained_control",
+      "target_component": "control_3",
+      "e7_1_status": "PARTIALLY_REMEDIATED",
+      "e7_1_implementation": "Control 3 was trained for 30 steps with tracked cross-entropy loss, but utilized approximate gradients.",
+      "e7_2_requirement": "Train genuine target-local circuit on target data using true finite-difference/analytical gradients starting from clean baseline."
+    },
+    {
+      "check_id": "PREFLIGHT-07",
+      "area": "same_architecture_control_bridge",
+      "target_component": "architecture_a_to_architecture_a",
+      "e7_1_status": "MISSING_IN_E7_1",
+      "e7_1_defect_analysis": "E7.1 leaped directly to cross-architecture transfer (A->B) without establishing whether the functional signature could reconstruct the function in a separately initialized model of the SAME architecture (A->A). Consequently, E7.1 could not determine whether transfer failure was caused by architectural incompatibility or an invalid functional representation.",
+      "e7_2_requirement": "MANDATORY SCIENTIFIC CONTROL: Execute Phase B (A->A Functional Reconstruction) before Phase C (A->B Cross-Architecture Translation). If A->A fails, do not attribute A->B failure to architecture mismatch."
+    }
+  ],
+  "preflight_verdict": "READY_FOR_E7_2_IMPLEMENTATION",
+  "required_actions": [
+    "Build Architecture A -> Architecture A pipeline using e4-math-4L as source and e4-base-4L as target.",
+    "Implement paired functional probes dataset with train/val/held-out splits and cryptographic hashes.",
+    "Implement Orthogonal Procrustes learned alignment bridge and null random alignment control.",
+    "Implement exact central finite-difference gradient optimization engine with formal gradient_check.json validation.",
+    "Execute full A->A validation before A->B cross-architecture experiments.",
+    "Execute exact causal ablation and restoration on all reconstructed target units.",
+    "Run comprehensive depth (2L, 4L, 6L, 8L) and parameter subset (100% to 1%) sweeps."
+  ]
+}

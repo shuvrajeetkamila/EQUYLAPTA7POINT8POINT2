@@ -1,0 +1,98 @@
+[
+  {
+    "audit_id": "AUDIT-01",
+    "area": "Method B Functional Reconstruction",
+    "claim": "Method B performs functional signature reconstruction using top subspace basis and covariance.",
+    "source_file": "ai-model-fusion-lab/demo/run_equylapta7.py",
+    "function": "reconstruct_method_b_subspace",
+    "actual_behavior": "Used behavioral calibration error multiplied by random normal noise: `grad_qkv[:16, :16] += float(err) * 0.01 * rng.normal(0, 0.05, (16, 16))`. The extracted `top_subspace_basis`, covariance, and eigenvalues were completely ignored.",
+    "claimed_behavior": "Reconstructs target-native circuit by projecting onto the extracted architecture-independent functional subspace basis.",
+    "mismatch": "Severe implementation defect: functional signature basis was extracted but never consumed during optimization.",
+    "correction_required": "Rewrite Method B as METHOD_B_FUNCTIONAL_SIGNATURE_RECONSTRUCTION_V2. Must project target representations into the functional subspace basis, align covariance/singular values via Procrustes/least-squares, and optimize target-native parameters with an automated assertion verifying the basis is consumed.",
+    "corrected_function": "reconstruct_method_b_functional_signature_v2"
+  },
+  {
+    "audit_id": "AUDIT-02",
+    "area": "Method C Behavioral Distillation",
+    "claim": "Method C performs behavioral/task distillation from source teacher outputs into target student.",
+    "source_file": "ai-model-fusion-lab/demo/run_equylapta7.py",
+    "function": "reconstruct_method_c_distillation",
+    "actual_behavior": "Added random Gaussian perturbation to target attention weights: `target_model.params['L0.attn.qkv.W'] + rng.normal(0, 0.005, ...)`. No teacher evaluation, no loss computation, and zero gradient steps were executed.",
+    "claimed_behavior": "Genuinely trains a compact target-native student circuit to minimize cross-entropy / KL divergence against source functional outputs.",
+    "mismatch": "Complete fabrication of optimization: labeled random perturbation as 'behavioral distillation'.",
+    "correction_required": "Implement genuine target-native student training: evaluate source teacher output distribution, compute cross-entropy/KL loss on target student, backpropagate gradients into target functional unit parameters with learning rate, loss curve tracking, and early stopping.",
+    "corrected_function": "reconstruct_method_c_distillation_v2"
+  },
+  {
+    "audit_id": "AUDIT-03",
+    "area": "Target Causal Ablation",
+    "claim": "Target causal ablation confirms causal dependence of the reconstructed functional unit.",
+    "source_file": "ai-model-fusion-lab/demo/run_equylapta7.py",
+    "function": "main (Stage 7)",
+    "actual_behavior": "Modified arbitrary slices of QKV weights (`[:16, :16]`) and then blindly set `tgt_b.head_mask[0, 0] = 0.0` (ablating Head 0) without verifying whether Head 0 constituted the reconstructed functional unit.",
+    "claimed_behavior": "Ablates and restores the exact target-native parameter group / head constituting the reconstructed unit.",
+    "mismatch": "Causal disconnect: the parameters ablated were disconnected from the parameters modified by the reconstruction.",
+    "correction_required": "Explicitly identify `target_functional_unit_id` (e.g. Target Layer 0 Head 0), parameterize that exact head, and perform the A-B-A sequence (baseline -> reconstructed -> ablated -> restored) strictly on that designated unit.",
+    "corrected_function": "run_target_unit_causal_battery"
+  },
+  {
+    "audit_id": "AUDIT-04",
+    "area": "Independent Reconstructions",
+    "claim": "Five independent target reconstructions start from fresh initializations and demonstrate functional convergence.",
+    "source_file": "ai-model-fusion-lab/demo/run_equylapta7.py",
+    "function": "run_independent_reconstructions",
+    "actual_behavior": "Reconstructions were executed in a loop on the same target model instance with superficial seed variations, producing artificial 100% agreement and Linear CKA = 1.0000.",
+    "claimed_behavior": "Independently initialized fresh target models reconstruct the function, proving behavioral convergence across distinct initializations.",
+    "mismatch": "Artificial uniformity caused by lack of true model resetting and superficial optimization.",
+    "correction_required": "Instantiate a fresh target model per reconstruction seed, compute SHA-256 target initialization hashes to prove distinct starting states, execute genuine optimization, and report real parameter, representational, and behavioral convergence metrics.",
+    "corrected_function": "run_independent_reconstructions_v2"
+  },
+  {
+    "audit_id": "AUDIT-05",
+    "area": "Source Functional Signature Specificity",
+    "claim": "Functional signature captures the causal computation of source unit L0_head_2.",
+    "source_file": "ai-model-fusion-lab/demo/run_equylapta7.py",
+    "function": "extract_e7_functional_signature",
+    "actual_behavior": "Collected `acts['hiddens'][0][0, -1]`, which is the whole Layer 0 residual hidden state, rather than the specific output of Head 2.",
+    "claimed_behavior": "Extracts head-specific activation trajectory, attention routing, and intervention response curve specifically from L0_head_2.",
+    "mismatch": "Coarse-graining: whole-layer activations were mislabeled as head-specific signature.",
+    "correction_required": "Extract activations directly from `acts['attn_out'][0]` sliced to Head 2's head dimension (`e=16`), along with Head 2's attention routing matrix and a 10-point intervention strength sweep (-1.0 to +1.25).",
+    "corrected_function": "extract_head_specific_functional_signature_v2"
+  },
+  {
+    "audit_id": "AUDIT-06",
+    "area": "Target-Local Trained Control",
+    "claim": "Control 3 is a genuinely target-local trained component.",
+    "source_file": "ai-model-fusion-lab/demo/run_equylapta7.py",
+    "function": "run_target_controls",
+    "actual_behavior": "Perturbed weights using Gaussian noise: `v + rng.normal(0, 0.008, v.shape)`. Zero training steps were executed.",
+    "claimed_behavior": "Trained on target training texts for the same step budget as the reconstruction methods.",
+    "mismatch": "Mislabeled random perturbation as 'trained'.",
+    "correction_required": "Genuinely train the target-local control on target training data using supervised gradient descent for the exact same step budget (30 steps).",
+    "corrected_function": "train_target_local_control_v2"
+  },
+  {
+    "audit_id": "AUDIT-07",
+    "area": "Depth Sweep Measurements",
+    "claim": "Depth sweep independently measures transfer across 2L, 4L, 6L, 8L.",
+    "source_file": "ai-model-fusion-lab/demo/run_equylapta7.py",
+    "function": "run_depth_sweep_e7",
+    "actual_behavior": "Reconstruction delta evaluated to exactly `[0.0, 0.0, 0.0, 0.0]` pp across all depths because target models were evaluated without applying the reconstructed payload correctly to evaluation passes.",
+    "claimed_behavior": "Separately extracts, reconstructs, and evaluates causal transfer at depths 2, 4, 6, and 8.",
+    "mismatch": "Degenerate zero-deltas due to evaluation payload disconnection.",
+    "correction_required": "Properly inject the reconstructed target head into each depth model, evaluate baseline vs reconstructed vs ablated on held-out seeds, and measure genuine depth degradation slope.",
+    "corrected_function": "run_depth_sweep_v2"
+  },
+  {
+    "audit_id": "AUDIT-08",
+    "area": "Minimality vs Magnitude Scaling",
+    "claim": "Minimality curve identifies the smallest functional unit.",
+    "source_file": "ai-model-fusion-lab/demo/run_equylapta7.py",
+    "function": "run_minimality_curve",
+    "actual_behavior": "Scaled head mask scalar fraction from 1.0 down to 0.01 (magnitude scaling), rather than selecting parameter subsets or activation subspaces.",
+    "claimed_behavior": "Identifies the minimal parameter subset or activation dimensions retaining function.",
+    "mismatch": "Conflated intervention magnitude scaling with parameter subset selection.",
+    "correction_required": "Label the magnitude sweep explicitly as an intervention response curve, and implement a genuine unit-size sweep that evaluates parameter subsets (columns of Q, K, V, O) and activation subspace ranks.",
+    "corrected_function": "run_unit_size_and_magnitude_sweep_v2"
+  }
+]

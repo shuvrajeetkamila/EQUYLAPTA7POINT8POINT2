@@ -1,0 +1,586 @@
+{
+  "source_causal": {
+    "baseline": {
+      "seeds": [
+        45.0,
+        55.0,
+        45.0,
+        35.0,
+        60.0
+      ],
+      "mean": 48.0,
+      "std": 9.75,
+      "min": 35.0,
+      "max": 60.0,
+      "n_seeds": 5,
+      "ci95": [
+        39.46,
+        56.54
+      ]
+    },
+    "ablation": {
+      "seeds": [
+        20.0,
+        35.0,
+        15.0,
+        30.0,
+        20.0
+      ],
+      "mean": 24.0,
+      "std": 8.22,
+      "min": 15.0,
+      "max": 35.0,
+      "n_seeds": 5,
+      "ci95": [
+        16.8,
+        31.2
+      ]
+    },
+    "restoration": {
+      "seeds": [
+        45.0,
+        55.0,
+        45.0,
+        35.0,
+        60.0
+      ],
+      "mean": 48.0,
+      "std": 9.75,
+      "min": 35.0,
+      "max": 60.0,
+      "n_seeds": 5,
+      "ci95": [
+        39.46,
+        56.54
+      ]
+    },
+    "amplification": {
+      "seeds": [
+        45.0,
+        35.0,
+        30.0,
+        30.0,
+        45.0
+      ],
+      "mean": 37.0,
+      "std": 7.58,
+      "min": 30.0,
+      "max": 45.0,
+      "n_seeds": 5,
+      "ci95": [
+        30.35,
+        43.65
+      ]
+    },
+    "inversion": {
+      "seeds": [
+        25.0,
+        35.0,
+        25.0,
+        40.0,
+        25.0
+      ],
+      "mean": 30.0,
+      "std": 7.07,
+      "min": 25.0,
+      "max": 40.0,
+      "n_seeds": 5,
+      "ci95": [
+        23.8,
+        36.2
+      ]
+    },
+    "random_head_ablation": {
+      "seeds": [
+        25.0,
+        20.0,
+        30.0,
+        30.0,
+        35.0
+      ],
+      "mean": 28.0,
+      "std": 5.7,
+      "min": 20.0,
+      "max": 35.0,
+      "n_seeds": 5,
+      "ci95": [
+        23.0,
+        33.0
+      ]
+    },
+    "causal_drop": 24.0,
+    "specificity_ratio": 1.2
+  },
+  "aa_causal_radii": {
+    "radius_1": {
+      "transplanted": {
+        "seeds": [
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          5.0
+        ],
+        "mean": 13.0,
+        "std": 4.47,
+        "min": 5.0,
+        "max": 15.0,
+        "n_seeds": 5,
+        "ci95": [
+          9.08,
+          16.92
+        ]
+      },
+      "ablated": {
+        "seeds": [
+          15.0,
+          20.0,
+          15.0,
+          15.0,
+          10.0
+        ],
+        "mean": 15.0,
+        "std": 3.54,
+        "min": 10.0,
+        "max": 20.0,
+        "n_seeds": 5,
+        "ci95": [
+          11.9,
+          18.1
+        ]
+      },
+      "restored": {
+        "seeds": [
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          5.0
+        ],
+        "mean": 13.0,
+        "std": 4.47,
+        "min": 5.0,
+        "max": 15.0,
+        "n_seeds": 5,
+        "ci95": [
+          9.08,
+          16.92
+        ]
+      },
+      "destroyed": {
+        "seeds": [
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          5.0
+        ],
+        "mean": 13.0,
+        "std": 4.47,
+        "min": 5.0,
+        "max": 15.0,
+        "n_seeds": 5,
+        "ci95": [
+          9.08,
+          16.92
+        ]
+      },
+      "causal_drop_pp": -2.0,
+      "destruction_drop_pp": 0.0,
+      "restoration_error_pp": 0.0,
+      "causal_mediation_supported": false
+    },
+    "radius_2": {
+      "transplanted": {
+        "seeds": [
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          10.0
+        ],
+        "mean": 14.0,
+        "std": 2.24,
+        "min": 10.0,
+        "max": 15.0,
+        "n_seeds": 5,
+        "ci95": [
+          12.04,
+          15.96
+        ]
+      },
+      "ablated": {
+        "seeds": [
+          15.0,
+          20.0,
+          10.0,
+          20.0,
+          20.0
+        ],
+        "mean": 17.0,
+        "std": 4.47,
+        "min": 10.0,
+        "max": 20.0,
+        "n_seeds": 5,
+        "ci95": [
+          13.08,
+          20.92
+        ]
+      },
+      "restored": {
+        "seeds": [
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          10.0
+        ],
+        "mean": 14.0,
+        "std": 2.24,
+        "min": 10.0,
+        "max": 15.0,
+        "n_seeds": 5,
+        "ci95": [
+          12.04,
+          15.96
+        ]
+      },
+      "destroyed": {
+        "seeds": [
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          10.0
+        ],
+        "mean": 14.0,
+        "std": 2.24,
+        "min": 10.0,
+        "max": 15.0,
+        "n_seeds": 5,
+        "ci95": [
+          12.04,
+          15.96
+        ]
+      },
+      "causal_drop_pp": -3.0,
+      "destruction_drop_pp": 0.0,
+      "restoration_error_pp": 0.0,
+      "causal_mediation_supported": false
+    },
+    "radius_3": {
+      "transplanted": {
+        "seeds": [
+          15.0,
+          15.0,
+          20.0,
+          15.0,
+          40.0
+        ],
+        "mean": 21.0,
+        "std": 10.84,
+        "min": 15.0,
+        "max": 40.0,
+        "n_seeds": 5,
+        "ci95": [
+          11.5,
+          30.5
+        ]
+      },
+      "ablated": {
+        "seeds": [
+          20.0,
+          20.0,
+          20.0,
+          25.0,
+          30.0
+        ],
+        "mean": 23.0,
+        "std": 4.47,
+        "min": 20.0,
+        "max": 30.0,
+        "n_seeds": 5,
+        "ci95": [
+          19.08,
+          26.92
+        ]
+      },
+      "restored": {
+        "seeds": [
+          15.0,
+          15.0,
+          20.0,
+          15.0,
+          40.0
+        ],
+        "mean": 21.0,
+        "std": 10.84,
+        "min": 15.0,
+        "max": 40.0,
+        "n_seeds": 5,
+        "ci95": [
+          11.5,
+          30.5
+        ]
+      },
+      "destroyed": {
+        "seeds": [
+          15.0,
+          15.0,
+          15.0,
+          10.0,
+          35.0
+        ],
+        "mean": 18.0,
+        "std": 9.75,
+        "min": 10.0,
+        "max": 35.0,
+        "n_seeds": 5,
+        "ci95": [
+          9.46,
+          26.54
+        ]
+      },
+      "causal_drop_pp": -2.0,
+      "destruction_drop_pp": 3.0,
+      "restoration_error_pp": 0.0,
+      "causal_mediation_supported": false
+    }
+  },
+  "ab_causal_radii": {
+    "radius_1": {
+      "transplanted": {
+        "seeds": [
+          35.0,
+          10.0,
+          30.0,
+          30.0,
+          25.0
+        ],
+        "mean": 26.0,
+        "std": 9.62,
+        "min": 10.0,
+        "max": 35.0,
+        "n_seeds": 5,
+        "ci95": [
+          17.57,
+          34.43
+        ]
+      },
+      "ablated": {
+        "seeds": [
+          35.0,
+          10.0,
+          30.0,
+          30.0,
+          25.0
+        ],
+        "mean": 26.0,
+        "std": 9.62,
+        "min": 10.0,
+        "max": 35.0,
+        "n_seeds": 5,
+        "ci95": [
+          17.57,
+          34.43
+        ]
+      },
+      "restored": {
+        "seeds": [
+          35.0,
+          10.0,
+          30.0,
+          30.0,
+          25.0
+        ],
+        "mean": 26.0,
+        "std": 9.62,
+        "min": 10.0,
+        "max": 35.0,
+        "n_seeds": 5,
+        "ci95": [
+          17.57,
+          34.43
+        ]
+      },
+      "destroyed": {
+        "seeds": [
+          35.0,
+          10.0,
+          30.0,
+          30.0,
+          25.0
+        ],
+        "mean": 26.0,
+        "std": 9.62,
+        "min": 10.0,
+        "max": 35.0,
+        "n_seeds": 5,
+        "ci95": [
+          17.57,
+          34.43
+        ]
+      },
+      "causal_drop_pp": 0.0,
+      "destruction_drop_pp": 0.0,
+      "restoration_error_pp": 0.0,
+      "causal_mediation_supported": false
+    },
+    "radius_2": {
+      "transplanted": {
+        "seeds": [
+          25.0,
+          10.0,
+          25.0,
+          35.0,
+          30.0
+        ],
+        "mean": 25.0,
+        "std": 9.35,
+        "min": 10.0,
+        "max": 35.0,
+        "n_seeds": 5,
+        "ci95": [
+          16.8,
+          33.2
+        ]
+      },
+      "ablated": {
+        "seeds": [
+          25.0,
+          10.0,
+          25.0,
+          35.0,
+          30.0
+        ],
+        "mean": 25.0,
+        "std": 9.35,
+        "min": 10.0,
+        "max": 35.0,
+        "n_seeds": 5,
+        "ci95": [
+          16.8,
+          33.2
+        ]
+      },
+      "restored": {
+        "seeds": [
+          25.0,
+          10.0,
+          25.0,
+          35.0,
+          30.0
+        ],
+        "mean": 25.0,
+        "std": 9.35,
+        "min": 10.0,
+        "max": 35.0,
+        "n_seeds": 5,
+        "ci95": [
+          16.8,
+          33.2
+        ]
+      },
+      "destroyed": {
+        "seeds": [
+          25.0,
+          10.0,
+          25.0,
+          35.0,
+          30.0
+        ],
+        "mean": 25.0,
+        "std": 9.35,
+        "min": 10.0,
+        "max": 35.0,
+        "n_seeds": 5,
+        "ci95": [
+          16.8,
+          33.2
+        ]
+      },
+      "causal_drop_pp": 0.0,
+      "destruction_drop_pp": 0.0,
+      "restoration_error_pp": 0.0,
+      "causal_mediation_supported": false
+    },
+    "radius_3": {
+      "transplanted": {
+        "seeds": [
+          30.0,
+          10.0,
+          25.0,
+          30.0,
+          20.0
+        ],
+        "mean": 23.0,
+        "std": 8.37,
+        "min": 10.0,
+        "max": 30.0,
+        "n_seeds": 5,
+        "ci95": [
+          15.67,
+          30.33
+        ]
+      },
+      "ablated": {
+        "seeds": [
+          30.0,
+          10.0,
+          25.0,
+          30.0,
+          20.0
+        ],
+        "mean": 23.0,
+        "std": 8.37,
+        "min": 10.0,
+        "max": 30.0,
+        "n_seeds": 5,
+        "ci95": [
+          15.67,
+          30.33
+        ]
+      },
+      "restored": {
+        "seeds": [
+          30.0,
+          10.0,
+          25.0,
+          30.0,
+          20.0
+        ],
+        "mean": 23.0,
+        "std": 8.37,
+        "min": 10.0,
+        "max": 30.0,
+        "n_seeds": 5,
+        "ci95": [
+          15.67,
+          30.33
+        ]
+      },
+      "destroyed": {
+        "seeds": [
+          35.0,
+          10.0,
+          30.0,
+          35.0,
+          20.0
+        ],
+        "mean": 26.0,
+        "std": 10.84,
+        "min": 10.0,
+        "max": 35.0,
+        "n_seeds": 5,
+        "ci95": [
+          16.5,
+          35.5
+        ]
+      },
+      "causal_drop_pp": 0.0,
+      "destruction_drop_pp": -3.0,
+      "restoration_error_pp": 0.0,
+      "causal_mediation_supported": false
+    }
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "milestone": "EQUYLAPTA_7.8.2",
+  "condition": "Condition_E_Recipient_Reconstructed_FDC",
+  "declared_parameters": [
+    "head_bridges.L0_head_2.W_in",
+    "head_bridges.L0_head_2.W_out",
+    "mlp_bridges.L0_mlp.W_in",
+    "mlp_bridges.L0_mlp.W_out"
+  ],
+  "initial_norms": {
+    "head_bridges.L0_head_2.W_in": 4.0,
+    "head_bridges.L0_head_2.W_out": 8.0,
+    "mlp_bridges.L0_mlp.W_in": 8.0,
+    "mlp_bridges.L0_mlp.W_out": 8.0
+  },
+  "final_norms": {
+    "head_bridges.L0_head_2.W_in": 4.094071388244629,
+    "head_bridges.L0_head_2.W_out": 9.030940055847168,
+    "mlp_bridges.L0_mlp.W_in": 8.977237701416016,
+    "mlp_bridges.L0_mlp.W_out": 8.733515739440918
+  },
+  "update_norms": {
+    "head_bridges.L0_head_2.W_in": 0.8078019618988037,
+    "head_bridges.L0_head_2.W_out": 3.794865846633911,
+    "mlp_bridges.L0_mlp.W_in": 3.787221670150757,
+    "mlp_bridges.L0_mlp.W_out": 4.199306488037109
+  },
+  "cumulative_grad_norms": {
+    "head_bridges.L0_head_2.W_in": 349.21090478729457,
+    "head_bridges.L0_head_2.W_out": 203.66147048259154,
+    "mlp_bridges.L0_mlp.W_in": 998.8603749424219,
+    "mlp_bridges.L0_mlp.W_out": 1149.9388747811317
+  },
+  "all_declared_parameters_updated": true
+}

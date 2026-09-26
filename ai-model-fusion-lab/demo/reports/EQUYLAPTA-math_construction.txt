@@ -1,0 +1,11 @@
+SPECIALIST CONSTRUCTION REPORT — EQUYLAPTA-math [REJECTED]
+
+Sources: code-smith, generalist, logic-owl, math-wiz, polyglot, weak-base
+Components considered: L0 (math-wiz), L0.attn (math-wiz), L0 (generalist), L1 (math-wiz)
+Parent scores on micro-math: math-wiz=75%, code-smith=20%, logic-owl=25%, polyglot=28%, generalist=38%, weak-base=22%
+Best parent: math-wiz (75%)
+  attempt EXP-00579 transplant generalist:L0 A=38% B=75% C=22% gain=-52.5
+  attempt EXP-00580 WEIGHT_MERGE accuracy=57% coef=0.3
+Specialist score: 75.0%
+Chosen: {'model': 'math-wiz', 'mechanism': 'PARENT_FALLBACK'}
+Reason: best attempt did not beat best parent

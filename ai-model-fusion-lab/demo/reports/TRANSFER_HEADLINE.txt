@@ -1,0 +1,31 @@
+TRANSFER RUN XFER-10b111fe — A-math -> nomath-base [NO_EVIDENCE_OF_SPECIALIZED_TRANSFER+INTERFERENCE]
+
+component: math_head_205d6f [HEAD L0 heads [3]] capability=math
+held-out: micro-math (n=40, seeds=[1, 2, 3])
+
+| system | held-out mean ± std |
+|---|---|
+| TARGET_BASELINE | 20.8 ± 7.2 |
+| DIRECT_TRANSFER | 21.7 ± 7.2 |
+| ALIGNED_INSERT | 21.7 ± 7.2 |
+| REFITTED_TRANSFER | 21.7 ± 7.2 |
+| CALIBRATED  <-- final | 25.0 ± 7.1 |
+| ADAPTER_TRANSFER | 21.7 ± 7.2 |
+| ADAPTER_REFITTED | 18.3 ± 5.1 |
+| RANDOM_HARVEST_CONTROL | 33.3 ± 8.2 |
+| CAPACITY_CONTROL | 30.8 ± 5.1 |
+
+refit: 4,144 trainable params (150 steps, loss 14.58->11.54)
+calibration: residual_gate g=2.0 calib-loss 9.613->8.896
+adapter: task_arithmetic (1-g)*W_t + g*W_s gate=1.0 guard=general-text CE damage penalty (probe split)
+  gate 0.0: {'target_ce': 12.5956, 'guard_damage': 0.0, 'score': 12.5956}
+  gate 0.1: {'target_ce': 12.5549, 'guard_damage': 0.0001, 'score': 12.555}
+  gate 0.2: {'target_ce': 12.51, 'guard_damage': 0.0004, 'score': 12.5104}
+  gate 0.3: {'target_ce': 12.4722, 'guard_damage': 0.0008, 'score': 12.4731}
+  gate 0.4: {'target_ce': 12.4694, 'guard_damage': 0.0015, 'score': 12.4708}
+  gate 0.5: {'target_ce': 12.4578, 'guard_damage': 0.0023, 'score': 12.4601}
+  gate 0.6: {'target_ce': 12.4377, 'guard_damage': 0.0028, 'score': 12.4405}
+  gate 0.8: {'target_ce': 12.414, 'guard_damage': 0.0044, 'score': 12.4184}
+  gate 1.0: {'target_ce': 12.3917, 'guard_damage': 0.0058, 'score': 12.3975}
+adapter+refit: gate 1.0, 4,144 params, loss 14.90->11.43
+verdict: {'baseline': 20.83, 'calibrated': 25.0, 'delta': 4.17, 'final_arm': 'CALIBRATED', 'random_control': 33.33, 'capacity_control': 30.83, 'positive': True, 'beats_random': False, 'beats_capacity': False, 'consistent_across_seeds': False, 'sig_floor': 14.14, 'n_per_seed': 40, 'std': 7.07, 'non_target_regressions': {'micro-code': -29.2, 'micro-lang': -18.0, 'micro-know': -34.7}, 'status': 'NO_EVIDENCE_OF_SPECIALIZED_TRANSFER+INTERFERENCE'}

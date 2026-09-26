@@ -1,0 +1,25 @@
+{
+  "milestone": "EQUYLAPTA_7.8.1",
+  "recipient_total_params": 479069,
+  "donor_frozen_params": 33792,
+  "adapter_trainable_params": 12544,
+  "zero_source_weight_copy_verified": true,
+  "source_weight_copy": "FALSE_STRICTLY_ISOLATED_SLOTS",
+  "provenance_groups": {
+    "DONOR_DERIVED": {
+      "frozen": true,
+      "count": 33792,
+      "source": "e4-math-4L.L0.attn.o.W, e4-math-4L.L0.mlp"
+    },
+    "TRANSLATOR_ADAPTER": {
+      "trainable": true,
+      "count": 12544,
+      "loss": "Two_Branch_Causal_Functional_Loss"
+    },
+    "RECIPIENT_NATIVE": {
+      "frozen": true,
+      "count": 479069,
+      "source": "e6-base-4L"
+    }
+  }
+}

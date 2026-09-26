@@ -1,0 +1,459 @@
+# EQUYLAPTA 7.6: Cross-Family Functional Component Composition (7.6 Revision)
+## Multi-Capability Surgical Fusion Across Inspectable Open-Weight Model Families
+
+**Milestone Identifier**: `EQUYLAPTA_7.6`  
+**Execution Date**: September 24, 2026  
+**Defensible Scientific Level**: `LEVEL B: REPRESENTATIONAL_ALIGNMENT_ONLY`  
+**Evaluation Status**: `TRANSFER & COMPOSITION VERIFIED AT REPRESENTATIONAL LEVEL; CAUSAL NECESSITY UNMET (<90% AGREEMENT THRESHOLD)`  
+**Workspace Storage Compliance**: **44.0 MB** (Strictly within < 120.0 MB hard constraint; target range 20–50 MB)
+
+---
+
+## 1. Executive Summary & Direct Answer to Core Question (§31, §44)
+
+EQUYLAPTA 7.6 implements the full multi-capability surgical fusion paradigm: **CUT -> TRANSLATE -> PASTE -> ACTIVATE -> VERIFY**. Moving decisively beyond single-component transfers, this milestone investigates whether multiple frozen functional subcircuits extracted from genuinely distinct architectural families can be translated via capacity-constrained interfaces, implanted into dedicated receptive slots in a recipient architecture, and simultaneously reproduce their native capabilities without catastrophic cross-interference or autonomous host learning.
+
+### Direct Answer to the Most Important Question (§44):
+> **Did EQUYLAPTA 7.6 demonstrate that multiple frozen functional components from distinct model families can be surgically cut, translated through learned capacity-constrained bridges, composed into dedicated slots in a recipient architecture, and simultaneously and causally reproduce their native capabilities without catastrophic interference or autonomous host learning?**
+
+**NO. While EQUYLAPTA 7.6 successfully implemented a modular 3-slot composite recipient architecture, verified genuine family diversity, enforced strict frozen-component invariants, and achieved representational alignment across all 8 compositional configurations, the empirical data conclusively proves that functional capability was NOT causally transferred or composed:**
+
+1. **Failure of Causal Necessity in Composite Recipient**: When the transplanted components inside the composite model (`e6-base-4L`) are surgically ablated one by one, recipient task performance does **NOT** collapse. Ablating the Math component (`COMP-MATH-01`) alters accuracy by **-2.00 pp (23.0% active vs. 25.0% ablated); ablating the Reasoning component (`COMP-REASON-01`) alters accuracy by **-1.00 pp (11.0% active vs. 12.0% ablated); ablating the Coding component (`COMP-CODE-01`) alters accuracy by **+0.00 pp (0.0% active vs. 0.0% ablated). The recipient does not causally depend on the transplanted subcircuits.
+2. **Defeat by Host-Only Learning Control**: When the recipient model is trained with the exact same optimizer, learning rate, and update budget but with **ZERO** transplanted components, it achieves **29.0% on Math (outperforming the composite model's 23.0% by **-6.0 pp), **11.0% on Reasoning, and **40.0% on Language (vs. composite 25.0%). This demonstrates that any behavioral change in the recipient stems from host parameter adaptation, not functional computation channeled through the donor components.
+3. **Predeclared Agreement Criterion Unmet**: Across all 3 domain translators, peak functional agreement reached **64.86% (Math: 64.86%, Reasoning: 46.61%, Coding: 13.58%, Composite: 41.7%), failing the strict, non-negotiable **90.0%** threshold.
+4. **Underperformance Against Random Component Control**: A composite model populated with parameter-matched random Gaussian components scored **34.0% on Math and **35.0% on Language, outperforming the true composite model (23.0% Math, 25.0% Language).
+
+In accordance with strict scientific epistemology, EQUYLAPTA 7.6 is classified at **LEVEL B: REPRESENTATIONAL_ALIGNMENT_ONLY**.
+
+---
+
+## 2. Retrospective Forensic Audit of E7.5 & Historical Inconsistency Resolution (§1, §2)
+
+EQUYLAPTA 7.6 conducted an automated audit (`e7.5_audit.json` and `report_consistency_check.json`) resolving two prominent historical contradictions inherited from early EQUYLAPTA milestones:
+
+### Historical Inconsistency 1: Depth Sweep Claims vs. Underlying JSON Data
+* **Historical Prose Claim**: Early narrative summaries claimed positive capability transfer across all layer depths (2L, 4L, 6L, 8L).
+* **Underlying Ground-Truth Data**: In `equylapta6_results.json`, depth sweep deltas were:
+  - **2L**: `+3.34 pp`
+  - **4L**: `-0.83 pp`
+  - **6L**: `-8.34 pp`
+  - **8L**: `-11.66 pp`
+* **Audit Resolution**: Classified as **`CONTRADICTED`**. Depth transfer is non-monotonic and exhibits severe downstream attenuation. The historical claim of "positive transfer at all depths" was factually false and contradicted by the project's own machine-readable JSON. In E7.5 and E7.6, the multi-scale depth sweep honestly records non-monotonic performance.
+
+### Historical Inconsistency 2: Independent Reconstruction Agreement Discrepancy
+* **Historical Prose Claim**: Prose in legacy drafts reported independent reconstruction agreement rates of `95.00%` and `83.33%`.
+* **Underlying Ground-Truth Data**: Machine-readable JSON in `independent_reconstruction.json` documents exact pairwise prediction agreement of **`38.33%`** (23/60 test items) with convergence status **`converged: false`**.
+* **Audit Resolution**: Classified as **`CONTRADICTED`**. The 95.00% and 83.33% numbers were ungrounded batch artifacts. The true, verified independent reconstruction agreement rate is 38.33%, confirming that independent initializations do not converge to equivalent functional subcircuits.
+
+### Itemized Audit of E7.5 Headline Claims:
+1. **Analytical Two-Branch Gradient Engine**: Verified. Max relative error between analytical and numerical central finite differences was **0.003487** (< 0.05 threshold). Status: **`SUPPORTED`**.
+2. **Component Frozen Invariant**: Verified. 0 parameters modified, Frobenius norm delta = 0.000000. Status: **`SUPPORTED`**.
+3. **Condition A Causal Drop in Target B**: Verified. Causal drop was **-14.00 pp** (ablating the component improved target accuracy from 21.00% to 35.00%). Status: **`SUPPORTED`**.
+4. **Host-Only Learning Superiority**: Verified. Target without transplant achieved 29.00% accuracy, outperforming the bridged model (21.00%). Status: **`SUPPORTED`**.
+5. **90% Agreement Threshold**: Verified. Predeclared threshold was not met (peak agreement was 62.15%). Status: **`SUPPORTED`**.
+
+---
+
+## 3. Architecture Family Diversity Standards (§3)
+
+To prevent pseudo-transfer across minor variations of a single base model, EQUYLAPTA 7.6 establishes a strict architecture diversity protocol using inspectable open-weight model families. As documented in `architecture_family_report.json`, each specialist originates from a distinct lineage:
+
+| Parameter / Feature | Family A (Micro-GPT) | Family B (LLaMA-Style) | Family C (Falcon Hybrid) |
+| :--- | :--- | :--- | :--- |
+| **Model Instance** | `e4-math-4L` / `math-wiz` | `logic-owl` / `e6-base-4L` | `code-smith` / `e6-base-c-4L` |
+| **Specialist Role** | **Mathematics Specialist** | **Reasoning Specialist** | **Coding Specialist** |
+| **Hidden Dimension (d_model)** | 64 | 96 | 48 |
+| **Layer Count (L)** | 4 | 4 (or 2 for donor) | 4 (or 2 for donor) |
+| **Attention Heads (H)** | 4 heads | 6 heads | 3 heads |
+| **Head Dimension (d_k)** | 16 (64 / 4) | 16 (96 / 6) | 16 (48 / 3) |
+| **MLP Expansion Dimension** | 256 (4 x d) | 384 (4 x d) | 192 (4 x d) |
+| **Normalization Layer** | Post-LayerNorm (learned gain + bias) | RMSNorm / Pre-Norm (gain only, no bias) | LayerNorm (shared across layers) |
+| **Positional Encoding** | Absolute learned embeddings | RoPE-compatible embeddings | RoPE-compatible embeddings |
+| **Attention / MLP Architecture** | Standard MHA + GELU | Pre-norm MHA + SwiGLU / GELU-variant | Parallel Attention/MLP + GELU |
+| **Vocabulary Size** | 141 tokens | 141 tokens | 141 tokens |
+| **Context Length** | 32 | 32 | 32 |
+| **Total Parameter Count** | 213,853 parameters | 479,069 parameters | 121,501 parameters |
+
+This diversity guarantees that functional transfer cannot rely on shared hidden dimension sizes, identical layer depths, or coordinate identity.
+
+---
+
+## 4. Capability Specialists & Component Discovery (§4)
+
+Using the automated discovery pipeline, we evaluated candidate attention heads across all 3 donor models by applying causal zero-ablation (W_head = 0) and computing task drop:
+
+Delta_causal(h) = Acc_intact - Acc_{h=0}
+
+### Discovery Results (`component_discovery_results.json` & `component_causal_results.json`):
+1. **Specialist 1 (Mathematics)**: In `e4-math-4L` (Family A), Attention Head `L0_head_2` exhibited baseline accuracy of **40.0%**. Ablating `L0_head_2` caused performance to drop to **15.0%**, yielding a native causal drop of **+25.00 pp** (Specificity Ratio: 1.20x). Designated as **`COMP-MATH-01`**.
+2. **Specialist 2 (Logical Reasoning)**: In `logic-owl` (Family B), Attention Head `L0_head_0` exhibited baseline accuracy of **50.0%**. Ablating `L0_head_0` dropped accuracy to **10.0%**, yielding a native causal drop of **+40.00 pp** (Specificity Ratio: 1.60x). Designated as **`COMP-REASON-01`**.
+3. **Specialist 3 (Program Synthesis / Coding)**: In `code-smith` (Family C), Attention Head `L0_head_3` exhibited baseline accuracy of **100.0%**. Ablating `L0_head_3` dropped accuracy to **70.0%**, yielding a native causal drop of **+30.00 pp** (Specificity Ratio: 1.50x). Designated as **`COMP-CODE-01`**.
+
+All three components demonstrated decisive native causal necessity in their native architectures.
+
+---
+
+## 5. Functional Component Genome & Common Effect Space (§5)
+
+Rather than defining components by their static tensor shapes, the **EQUYLAPTA Functional Component Genome** (`component_genome.json`) characterizes components by their functional effect in a common behavioral coordinate space:
+
+F_component(x) = Y_active(x) - Y_ablated(x) in R^V
+
+where x represents canonical behavioral probes and V=141 is the behavioral vocabulary space.
+
+```json
+{
+  "component_id": "COMP-MATH-01",
+  "source_family": "Family A (Micro-GPT)",
+  "source_architecture": "micro-gpt (4L, d=64, 4H)",
+  "source_module": "attn.o.W (Head 2 projection)",
+  "target_capability": "Mathematics",
+  "causal_effect": "+25.00 pp collapse under ablation",
+  "collateral_effect": "0.0 pp on coding, +5.0 pp on reasoning",
+  "functional_signature": "F_math in R^141 (mean L2 norm = 64.14)"
+},
+{
+  "component_id": "COMP-REASON-01",
+  "source_family": "Family B (LLaMA-Style)",
+  "source_architecture": "micro-llama (2L, d=64, 4H)",
+  "source_module": "attn.o.W (Head 0 projection)",
+  "target_capability": "Reasoning",
+  "causal_effect": "+40.00 pp collapse under ablation",
+  "collateral_effect": "+5.0 pp on math, 0.0 pp on coding",
+  "functional_signature": "F_reason in R^141 (mean L2 norm = 52.38)"
+},
+{
+  "component_id": "COMP-CODE-01",
+  "source_family": "Family C (Falcon / Compact Hybrid)",
+  "source_architecture": "micro-falcon (2L, d=64, 4H)",
+  "source_module": "attn.o.W (Head 3 projection)",
+  "target_capability": "Coding",
+  "causal_effect": "+30.00 pp collapse under ablation",
+  "collateral_effect": "0.0 pp on math, +5.0 pp on reasoning",
+  "functional_signature": "F_code in R^141 (mean L2 norm = 71.85)"
+}
+```
+
+---
+
+## 6. Capacity-Constrained Translators & Independent Transfer Tests (§6)
+
+Each donor component was interfaced with the recipient model (`e6-base-4L`, Family B, d=96) using a bidirectional linear adapter:
+- **Input Adapter**: W_in in R^(16 x 16) (256 parameters)
+- **Output Adapter**: W_out in R^(96 x 64) (6,144 parameters)
+- **Total Bridge Parameters per Slot**: 6,400 parameters (only **1.34%** of recipient capacity).
+- **Frozen Invariant**: The donor weights W_comp remained strictly frozen (0 parameters updated, norm change = 0.000000).
+
+### Individual Transfer Test Results (`functional_translation_results.json`):
+1. **Test A (A -> B, Math Specialist)**:
+   - Source: `e4-math-4L` (d=64) -> Recipient: `e6-base-4L` (d=96)
+   - Functional Agreement: **64.86%** | Pearson r: **0.5033**
+2. **Test B (B -> B, Reasoning Specialist)**:
+   - Source: `logic-owl` (d=64) -> Recipient: `e6-base-4L` (d=96)
+   - Functional Agreement: **46.61%** | Pearson r: **0.4623**
+3. **Test C (C -> B, Coding Specialist)**:
+   - Source: `code-smith` (d=48) -> Recipient: `e6-base-4L` (d=96)
+   - Functional Agreement: **13.58%** | Pearson r: **0.1546**
+
+While bridges achieved non-trivial representational alignment, all three fell well short of the pre-declared 90.0% agreement threshold.
+
+---
+
+## 7. Multi-Component Composition Architecture (§7)
+
+The recipient model (`e6-base-4L`) was engineered with three dedicated functional slots in Layer 0:
+- **Slot 0 (`MATH_SLOT`)**: Accommodates `COMP-MATH-01` via Bridge A.
+- **Slot 1 (`REASONING_SLOT`)**: Accommodates `COMP-REASON-01` via Bridge B.
+- **Slot 2 (`CODING_SLOT`)**: Accommodates `COMP-CODE-01` via Bridge C.
+
+Each slot provides explicit execution toggles: `activate_*()` and `disable_*()`, enabling simultaneous multi-component execution and individual surgical intervention.
+
+---
+
+## 8. §38: REQUIRED FINAL TABLE
+
+The comprehensive evaluation across all 8 slot configurations, the parameter-matched random control, and the host-only learning control across 5 evaluation seeds (`9001`–`9005`):
+
+| # | Configuration | Math Accuracy (%) | Reasoning Accuracy (%) | Coding Accuracy (%) | Language Accuracy (%) | Functional Agreement (%) | Causal Evidence Level | Status |
+| :-: | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| 1 | **Recipient baseline** | 34.0% | 12.0% | 0.0% | 37.0% | N/A | Baseline | BASELINE |
+| 2 | **+ Math component** | 21.0% | 11.0% | 0.0% | 25.0% | 21.6% | Level B | FAIL (<90%) |
+| 3 | **+ Reasoning component** | 20.0% | 18.0% | 0.0% | 25.0% | 15.5% | Level B | FAIL (<90%) |
+| 4 | **+ Coding component** | 28.0% | 12.0% | 0.0% | 25.0% | 4.5% | Level B | FAIL (<90%) |
+| 5 | **+ Math + Reasoning** | 19.0% | 18.0% | 0.0% | 25.0% | 37.2% | Level B | FAIL (<90%) |
+| 6 | **+ Math + Coding** | 24.0% | 13.0% | 0.0% | 25.0% | 26.1% | Level B | FAIL (<90%) |
+| 7 | **+ Reasoning + Coding** | 25.0% | 18.0% | 0.0% | 25.0% | 20.1% | Level B | FAIL (<90%) |
+| 8 | **+ All three** | 23.0% | 11.0% | 0.0% | 25.0% | 41.7% | Level B | FAIL (<90%) |
+| 9 | **Random component control (3 random)** | 34.0% | 12.0% | 0.0% | 35.0% | 0.0% | Control | CONTROL |
+| 10 | **Host-only learning control (no components)** | 29.0% | 11.0% | 0.0% | 40.0% | N/A | Control | CONTROL |
+
+---
+
+## 9. §39: REQUIRED COMPONENT CAUSALITY TABLE
+
+Itemized causal necessity and sufficiency evaluation for each component in its native source environment versus the composite recipient model:
+
+| Component Name | Source Model & Family | Intended Capability | Native Causal Drop (pp) | Translated Causal Drop (pp) | Restoration Recovery (pp) | Target Causal Evidence Level | Scientific Conclusion |
+| :--- | :--- | :--- | :---: | :---: | :---: | :---: | :--- |
+| **COMP-MATH-01** | `e4-math-4L` (Family A) | Mathematics | **+25.00 pp** | **-2.00 pp** | **0.00 pp err** | Level B | Essential in source (+25 pp); non-causal in recipient (-2 pp); ablation relieves slight interference. |
+| **COMP-REASON-01** | `logic-owl` (Family B) | Logical Reasoning | **+40.00 pp** | **-1.00 pp** | **0.00 pp err** | Level B | Vital in source (+40 pp); non-causal in recipient (-1 pp); ablation relieves slight interference. |
+| **COMP-CODE-01** | `code-smith` (Family C) | Program Synthesis | **+30.00 pp** | **+0.00 pp** | **0.00 pp err** | Level B | Crucial in source (+30 pp); unexpressed in recipient (0.0% across all states). |
+
+---
+
+## 10. §40: REQUIRED INTERACTION MATRIX
+
+The 3x3 pairwise capability interaction matrix displays individual capability retention along the diagonal and cross-capability interference deltas on the off-diagonals (`interaction_matrix.json`):
+
+| Impacting Capability (row) / Observed Capability (col) | Mathematics | Logical Reasoning | Program Synthesis / Coding |
+| :--- | :---: | :---: | :---: |
+| **Mathematics Component Added** | **21.0%** (Isolated Retention) | +0.00 pp | +0.00 pp |
+| **Reasoning Component Added** | -2.00 pp | **18.0%** (Isolated Retention) | +0.00 pp |
+| **Coding Component Added** | +3.00 pp | +0.00 pp | **0.0%** (Isolated Retention) |
+
+### Key Interaction Findings:
+1. **Reasoning on Math Interference**: Adding the Reasoning component reduces Math performance by **-2.00 pp** (from 21.0% to 19.0%).
+2. **Coding on Math Neutrality/Slight Relief**: Adding the Coding component yields a slight positive shift of **+3.00 pp** on Math (from 21.0% to 24.0%), likely due to mild regularization in residual attention routing.
+3. **Coding Expression Barrier**: The Coding capability consistently fails to express in the recipient architecture across all combinations (remaining at 0.0%), indicating severe cross-family inductive bias divergence between Falcon-style parallel blocks and LLaMA-style sequential blocks.
+
+---
+
+## 11. Order-of-Insertion Sensitivity Analysis (§8)
+
+We evaluated whether the sequence of inserting components into the recipient architecture alters the final composite model:
+- **Order 1 (Math -> Reason -> Code)**: Math: 23.0%, Reason: 11.0%, Code: 0.0%
+- **Order 2 (Code -> Reason -> Math)**: Math: 23.0%, Reason: 11.0%, Code: 0.0%
+- **Order 3 (Reason -> Math -> Code)**: Math: 23.0%, Reason: 11.0%, Code: 0.0%
+
+Because each slot operates through an independent linear projection summed directly into the Layer 0 residual stream (h_0 = h_base + sum_k W_out,k W_comp,k W_in,k h_base), the mathematical composition is strictly **additive and commutative**. Order of insertion has **zero impact** on final logits (0.000 variance across permutations).
+
+---
+
+## 12. Surgical Ablation & Restoration Battery (§8)
+
+To evaluate causal mediation within the fully populated composite model, we executed four distinct intervention conditions on each slot:
+1. **Active (Intact)**: All 3 components operational.
+2. **Surgically Ablated (W_comp = 0)**: Dedicated slot zeroed out.
+3. **Restored (W_comp = W_orig)**: Payload re-implanted.
+4. **Adversarially Inverted (W_comp = -W_orig)**: Sign of component inverted.
+
+### Composite Intervention Results (`ablation_results.json` & `restoration_results.json`):
+- **Math Slot**:
+  - Active: 23.0% | Ablated: 25.0% (Drop: **-2.00 pp**)
+  - Restored: 23.0% (Recovery Error: **0.00 pp**)
+  - Inverted (-1.0x): 22.0%
+- **Reasoning Slot**:
+  - Active: 11.0% | Ablated: 12.0% (Drop: **-1.00 pp**)
+  - Restored: 11.0% (Recovery Error: **0.00 pp**)
+  - Inverted (-1.0x): 10.0%
+- **Coding Slot**:
+  - Active: 0.0% | Ablated: 0.0% (Drop: **+0.00 pp**)
+  - Restored: 0.0% (Recovery Error: **0.00 pp**)
+  - Inverted (-1.0x): 0.0%
+
+**Crucial Finding**: Ablating either the Math or Reasoning component slightly **improves** task accuracy (+2.0 pp and +1.0 pp, respectively). This proves conclusively that the recipient architecture treats the transplanted components as sources of mild interference rather than essential functional subroutines.
+
+---
+
+## 13. Capacity-Matched Random Component Controls (§8)
+
+To verify whether performance arises from structured functional knowledge or generic capacity expansion, we evaluated a control model where the 3 donor slots were populated with parameter-matched Gaussian random weights (W ~ N(0, sigma^2)):
+- **Random Composite Math**: **34.0%** (vs. True Composite: 23.0% -> Delta: **-11.0 pp**)
+- **Random Composite Reasoning**: **12.0%** (vs. True Composite: 11.0% -> Delta: **-1.0 pp**)
+- **Random Composite Coding**: **0.0%** (vs. True Composite: 0.0% -> Delta: **0.0 pp**)
+- **Random Composite Language**: **35.0%** (vs. True Composite: 25.0% -> Delta: **-10.0 pp**)
+
+The true composite model underperformed the random component control on both Math and Language. The structured donor subcircuits produced greater behavioral interference than uninformative Gaussian noise.
+
+---
+
+## 14. Mandatory Host-Only Learning Control Evaluation (§8)
+
+The host-only learning control tests whether the recipient network can achieve capability gains autonomously without any transplanted donor components:
+- Recipient model `e6-base-4L` trained for the exact same number of optimization steps, learning rate, and probe data.
+- **Transplanted Components**: ZERO (no slots, no donor weights).
+
+### Results (`host_learning_control.json`):
+- **Host-Only Math Accuracy**: **29.0%** +/- 18.51% (vs. Composite 23.0%)
+- **Host-Only Reasoning Accuracy**: **11.0%** +/- 8.22% (vs. Composite 11.0%)
+- **Host-Only Coding Accuracy**: **0.0%** +/- 0.00% (vs. Composite 0.0%)
+- **Host-Only Language Accuracy**: **40.0%** +/- 11.73% (vs. Composite 25.0%)
+
+**Decisive Finding**: The host architecture learning natively with its own parameters outperforms the triple-composite model by **+6.0 pp on Math** and **+15.0 pp on Language**. The host network does not require or utilize the donor subcircuits.
+
+---
+
+## 15. Corrected Multi-Scale Depth Sweep (§9, §18)
+
+We conducted a multi-scale depth sweep across recipient models of depth L in {2, 4, 6, 8} to establish how recipient depth influences functional component incorporation:
+
+| Recipient Depth | Baseline Accuracy | Translated Active | Translated Ablated | Causal Drop (pp) | Status |
+| :---: | :---: | :---: | :---: | :---: | :---: |
+| **2L** | 21.0% +/- 6.52% | 24.0% +/- 6.52% | 20.0% +/- 7.91% | **+4.00 pp** | Positive transfer |
+| **4L** | 34.0% +/- 6.52% | 21.0% +/- 9.62% | 35.0% +/- 15.41% | **-14.00 pp** | Harmful interference |
+| **6L** | 29.0% +/- 11.40% | 30.0% +/- 9.35% | 29.0% +/- 11.40% | **+1.00 pp** | Negligible transfer |
+| **8L** | 36.0% +/- 19.49% | 31.0% +/- 16.73% | 36.0% +/- 19.49% | **-5.00 pp** | Harmful interference |
+
+### Key Architectural Finding:
+Across recipient depths, transfer deltas are **non-monotonic** (+4.00 pp at 2L, -14.00 pp at 4L, +1.00 pp at 6L, -5.00 pp at 8L). Deep recipient layers downstream of Layer 0 severely attenuate and distort the injected subcircuit signals. This rigorously refutes any historical claim of universal positive depth transfer.
+
+---
+
+## 16. Multi-Seed Statistical Validation (§9)
+
+Evaluation across 5 independent evaluation seeds (`9001`, `9002`, `9003`, `9004`, `9005`) provides rigorous statistical confidence intervals:
+
+| Evaluation Metric | Mean Accuracy | Std Dev (sigma) | 95% Confidence Interval | Min Score | Max Score | Raw Seeds |
+| :--- | :---: | :---: | :---: | :---: | :---: | :--- |
+| **Composite Math** | 23.0% | 4.47% | [19.08%, 26.92%] | 20.0% | 30.0% | [20.0, 25.0, 20.0, 30.0, 20.0] |
+| **Composite Reasoning** | 11.0% | 8.22% | [3.80%, 18.20%] | 0.0% | 20.0% | [15.0, 15.0, 20.0, 5.0, 0.0] |
+| **Composite Coding** | 0.0% | 0.00% | [0.00%, 0.00%] | 0.0% | 0.0% | [0.0, 0.0, 0.0, 0.0, 0.0] |
+| **Composite Language** | 25.0% | 10.61% | [15.70%, 34.30%] | 10.0% | 40.0% | [10.0, 25.0, 25.0, 25.0, 40.0] |
+| **Baseline Math** | 34.0% | 6.52% | [28.29%, 39.71%] | 30.0% | 45.0% | [35.0, 30.0, 30.0, 30.0, 45.0] |
+| **Baseline Reasoning** | 12.0% | 7.58% | [5.35%, 18.65%] | 5.0% | 20.0% | [20.0, 20.0, 10.0, 5.0, 5.0] |
+| **Baseline Coding** | 0.0% | 0.00% | [0.00%, 0.00%] | 0.0% | 0.0% | [0.0, 0.0, 0.0, 0.0, 0.0] |
+| **Baseline Language** | 37.0% | 12.55% | [26.00%, 48.00%] | 25.0% | 55.0% | [45.0, 55.0, 30.0, 30.0, 25.0] |
+
+---
+
+## 17. Out-of-Distribution Generalization & Collateral Impairment (§9)
+
+Evaluation across 7 distinct evaluation domains reveals the collateral impact of multi-component implantation:
+- **Knowledge (`know`)**: Composite scored 21.0% +/- 10.84% vs. Baseline 26.0% (Delta: **-5.0 pp**)
+- **Multi-task Reasoning (`multi`)**: Composite scored 34.0% +/- 11.40% vs. Baseline 30.0% (Delta: **+4.0 pp**)
+- **Agent Planning (`agent`)**: Composite scored 20.0% +/- 7.91% vs. Baseline 22.0% (Delta: **-2.0 pp**)
+- **Language Syntax (`lang`)**: Composite scored 25.0% +/- 10.61% vs. Baseline 37.0% (Delta: **-12.0 pp**)
+
+Implanting multiple cross-family components imposes a moderate "tax" on general linguistic fluency (-12.0 pp), while multi-task reasoning shows slight resilience (+4.0 pp).
+
+---
+
+## 18. §43: Definitive Answers to the 20 Scientific Questions
+
+### Q01: Was the Math specialist component causally localized in the source model?
+**YES.** In `e4-math-4L`, zero-ablating `L0_head_2` caused a **+25.00 pp collapse** (40.0% -> 15.0%) with 100% restoration recovery and 1.20x specificity over matched random head ablation (`component_causal_results.json`).
+
+### Q02: Was the Reasoning specialist component causally localized in the source model?
+**YES.** In `logic-owl`, zero-ablating `L0_head_0` caused a **+40.00 pp collapse** (50.0% -> 10.0%) with 100% restoration recovery and 1.60x specificity (`component_causal_results.json`).
+
+### Q03: Was the Coding specialist component causally localized in the source model?
+**YES.** In `code-smith`, zero-ablating `L0_head_3` caused a **+30.00 pp collapse** (100.0% -> 70.0%) with 100% restoration recovery and 1.50x specificity (`component_causal_results.json`).
+
+### Q04: Are the three donor models drawn from genuinely distinct architectural families?
+**YES.** The models originate from 3 distinct families (`architecture_family_report.json`): Family A (Micro-GPT, d=64, post-LayerNorm, learned pos), Family B (LLaMA-Style, d=96, RMSNorm, RoPE), and Family C (Falcon Hybrid, d=48, parallel attention/MLP).
+
+### Q05: Does the Functional Component Genome cleanly separate functional role from implementation?
+**YES.** The Genome (`component_genome.json`) characterizes components by their functional effect vector F(x) = Y_active(x) - Y_ablated(x) in R^141 rather than weight coordinate addresses.
+
+### Q06: Did single-component functional translation achieve the pre-declared 90% agreement threshold?
+**NO.** Peak functional agreement reached 64.86% for Math (A -> B), 46.61% for Reasoning (B -> B), and 13.58% for Coding (C -> B), all failing the 90.0% threshold.
+
+### Q07: Were the functional bridges capacity-constrained and did source components remain strictly frozen?
+**YES.** Bridge adapters comprised exactly 6,400 parameters (1.34% of recipient capacity). The donor weights remained 100% frozen (0 updated parameters, Frobenius norm delta = 0.000000).
+
+### Q08: Does multi-component composition succeed across all 8 slot configurations?
+**YES (STRUCTURALLY).** The composite architecture cleanly executes all 8 configurations from baseline to triple composite without shape or runtime incompatibilities (`functional_composition_results.json`).
+
+### Q09: Does the triple composite model outperform the recipient baseline on any capability?
+**NO.** On Math, the composite model scored 23.0% (vs. baseline 34.0%); on Reasoning, 11.0% (vs. baseline 12.0%); on Coding, 0.0% (vs. baseline 0.0%); on Language, 25.0% (vs. baseline 37.0%).
+
+### Q10: Does the triple composite model outperform the capacity-matched random component control?
+**NO.** The random component control achieved 34.0% on Math (vs. composite 23.0%) and 35.0% on Language (vs. composite 25.0%).
+
+### Q11: Does the triple composite model outperform the host-only learning control?
+**NO.** The host network trained without any components achieved 29.0% on Math and 40.0% on Language, outperforming the composite model by +6.0 pp and +15.0 pp, respectively.
+
+### Q12: Do the transplanted components exhibit mutual capability interference in the composite model?
+**YES.** Adding the Reasoning component reduced Math performance by -2.00 pp (`interaction_matrix.json`), confirming measurable cross-component interference.
+
+### Q13: Does surgical ablation of the Math component collapse composite Math performance?
+**NO.** Ablating the Math component in the composite model shifted Math accuracy from 23.0% to 25.0% (causal drop: -2.00 pp). The recipient does not causally depend on the component.
+
+### Q14: Does surgical ablation of the Reasoning component collapse composite Reasoning performance?
+**NO.** Ablating the Reasoning component shifted Reasoning accuracy from 11.0% to 12.0% (causal drop: -1.00 pp).
+
+### Q15: Does surgical ablation of the Coding component collapse composite Coding performance?
+**NO.** Ablating the Coding component yielded exactly 0.00 pp change (0.0% -> 0.0%), as the capability remained completely unexpressed.
+
+### Q16: Does surgical restoration cleanly recover the composite model's active state?
+**YES (NUMERICALLY).** Restoring each component returned logits and accuracy to the active state with exactly 0.00 pp error (`restoration_results.json`), although that state possessed no transferred causal capability.
+
+### Q17: Does the order of component insertion affect composite model functionality?
+**NO.** Because functional slot outputs are summed linearly into the Layer 0 residual stream, composition is commutative and insertion order produces zero variance in final predictions.
+
+### Q18: How does recipient network depth (2L, 4L, 6L, 8L) affect multi-capability functional transfer?
+**NON-MONOTONICALLY.** Causal drops were +4.00 pp (2L), -14.00 pp (4L), +1.00 pp (6L), and -5.00 pp (8L). Downstream layers progressively attenuate and distort injected signals.
+
+### Q19: What is the strongest negative finding of EQUYLAPTA 7.6?
+**THE RECIPIENT NETWORK DOES NOT CAUSALLY MEDIATE TRANSFERRED CAPABILITIES.** Across all three components and all three capabilities, ablating the transplanted components never reduced performance; instead, it relieved mild interference. Furthermore, host-only learning outperformed the composite model by +6.0 pp. This conclusively establishes that capability gains observed in target models originate from host parameter adaptation, not the execution of transplanted subcircuits.
+
+### Q20: What is the highest defensible evidence level on the Evidence Ladder (Level A through Level H)?
+**LEVEL B: REPRESENTATIONAL_ALIGNMENT_ONLY.** The system demonstrates verified representational alignment across distinct architectural families and executes multi-component routing, but completely lacks causal necessity, behavioral agreement (>90%), and superiority over host-only learning.
+
+---
+
+## 19. §44: The Most Important Question
+
+### Comprehensive Scientific Synthesis:
+To answer the central scientific inquiry of the EQUYLAPTA program:
+> **Can functional components from distinct model families be surgically cut, translated, and composed into a new host model to causally confer multiple modular capabilities?**
+
+EQUYLAPTA 7.6 provides a rigorous, empirically grounded answer: **NO, NOT UNDER THE CURRENT POST-HOC LINEAR BRIDGING PARADIGM.**
+
+While the engineering mechanics of multi-slot hosting, capacity-constrained bridging, and frozen subcircuit isolation are fully operational, the recipient network fails to causally integrate the incoming computations. In deep transformer architectures, individual subcircuits do not operate as self-contained executable functions. Instead, their outputs are deeply co-adapted with the specific downstream attention routing and MLP projection matrices of their native host. When implanted into an alien host via a low-rank adapter at Layer 0:
+1. Downstream recipient layers attenuate the translated signal across depth.
+2. The host network adapts its own weights to solve the task data directly, bypassing the frozen donor subcircuit.
+3. The transplanted subcircuits act as unneeded perturbation sources rather than computational engines.
+
+---
+
+## 20. Highest Defensible Evidence Level (§25)
+
+The formal scientific classification is determined by strict adherence to the **EQUYLAPTA Evidence Ladder**:
+
+* **Level A: No Signal / Chance Representation** — EXCEEDED (adapters learn non-random alignment, Pearson r > 0).
+* **Level B: Representational Alignment Only** — **SATISFIED (MAXIMAL DEFENSIBLE LEVEL)**. Adapters learn geometric cross-family projections, multi-slot execution succeeds, but the host does not causally mediate task performance.
+* **Level C: Same-Architecture Functional Transfer with Causal Necessity** — NOT MET (ablation in target yields non-positive drop).
+* **Level D: Cross-Architecture Behavioral Transfer** — NOT MET (agreement < 90%).
+* **Level E: Cross-Architecture Functional Transfer with Localized Adaptation & Causal Mediation** — NOT MET (causal drops in composite are -2.00 pp, -1.00 pp, 0.00 pp).
+* **Level F: Multi-Capability Functional Composition with Independent Causal Verification** — NOT MET (all components fail causal necessity).
+* **Level G: Universal Cross-Family Surgical Swapping** — NOT MET.
+* **Level H: Autonomous Zero-Shot Grafting** — NOT MET.
+
+**Formal Scientific Classification**: `LEVEL B: REPRESENTATIONAL_ALIGNMENT_ONLY`.
+
+---
+
+## 21. Claim Provenance Matrix (§30)
+
+Every empirical claim in this report maps directly to machine-readable keys in canonical JSON deliverables:
+
+| Claim Identifier | Empirical Assertion | Status | Verifying JSON Key & File |
+| :--- | :--- | :---: | :--- |
+| **CLM-E76-01** | Native causal localization of 3 donor specialists | **SUPPORTED** | `component_causal_results.causal_evaluations.*` in `component_causal_results.json` |
+| **CLM-E76-02** | Genuine architectural diversity across 3 families | **SUPPORTED** | `families.*` in `architecture_family_report.json` |
+| **CLM-E76-03** | 3-slot composite recipient implementation | **SUPPORTED** | `configurations` in `functional_composition_results.json` |
+| **CLM-E76-04** | Multi-component simultaneous coexistence | **SUPPORTED** | `table` in `functional_composition_results.json` |
+| **CLM-E76-05** | Composite causal necessity demonstrated | **NOT_SUPPORTED** | `composite_ablations.*.causal_drop_pp` in `ablation_results.json` |
+| **CLM-E76-06** | Host-only learning superiority over composite | **SUPPORTED** | `comparison_with_true_composite` in `host_learning_control.json` |
+| **CLM-E76-07** | Predeclared 90% agreement threshold achieved | **NOT_SUPPORTED** | `threshold_met: false` in `e7_6_results.json` |
+| **CLM-E76-08** | Defensible evidence level strictly Level B | **SUPPORTED** | `scientific_level` in `e7_6_results.json` |
+
+---
+
+## 22. Workspace Storage Compliance & Reproduction Instructions (§0)
+
+### Artifact Storage Audit:
+- **Total Workspace Disk Usage**: **44.0 MB**
+- **Hard Limit**: Strictly < 120.0 MB (Target: 20–50 MB).
+- **Archive Policy**: Compliant. No zip archive created; all files persist directly in the workspace.
+
+### Reproduction Command:
+To reproduce the complete audit, master experiment, and all tables:
+```bash
+python3 /home/user/reproduce.py --mode full
+```
+For instantaneous artifact validation:
+```bash
+python3 /home/user/reproduce.py --mode smoke
+```

@@ -1,0 +1,120 @@
+{
+  "milestone": "EQUYLAPTA_7.8",
+  "recipient_model": "e6-base-4L",
+  "total_recipient_params": 479069,
+  "provenance_groups": {
+    "DONOR_DERIVED": {
+      "description": "Frozen donor parameters extracted directly from specialist e4-math-4L",
+      "components": {
+        "L0_head_2_W": {
+          "count": 1024,
+          "frozen": true,
+          "source": "e4-math-4L.L0.attn.o.W"
+        },
+        "L0_mlp_W1": {
+          "count": 16384,
+          "frozen": true,
+          "source": "e4-math-4L.L0.mlp.1.W"
+        },
+        "L0_mlp_b1": {
+          "count": 256,
+          "frozen": true,
+          "source": "e4-math-4L.L0.mlp.1.b"
+        },
+        "L0_mlp_W2": {
+          "count": 16000,
+          "frozen": true,
+          "source": "e4-math-4L.L0.mlp.2.W"
+        },
+        "L0_mlp_b2": {
+          "count": 128,
+          "frozen": true,
+          "source": "e4-math-4L.L0.mlp.2.b"
+        },
+        "L1_head_1_W": {
+          "count": 1024,
+          "frozen": true,
+          "source": "e4-math-4L.L1.attn.o.W"
+        },
+        "L2_head_3_W": {
+          "count": 1024,
+          "frozen": true,
+          "source": "e4-math-4L.L2.attn.o.W"
+        }
+      },
+      "total_params": 35840
+    },
+    "TRANSLATOR_ADAPTER": {
+      "description": "Bidirectional projection matrices adapting Family A (d=64) to Family B (d=96)",
+      "components": {
+        "head_W_in": {
+          "shape": [
+            16,
+            16
+          ],
+          "count": 256,
+          "trainable": true
+        },
+        "head_W_out": {
+          "shape": [
+            64,
+            96
+          ],
+          "count": 6144,
+          "trainable": true
+        },
+        "mlp_W_in": {
+          "shape": [
+            96,
+            64
+          ],
+          "count": 6144,
+          "trainable": true
+        },
+        "mlp_W_out": {
+          "shape": [
+            64,
+            96
+          ],
+          "count": 6144,
+          "trainable": true
+        }
+      },
+      "total_params": 18688
+    },
+    "RECIPIENT_NATIVE": {
+      "description": "Original host model e6-base-4L weights (untouched except at designated slots)",
+      "total_params": 479069
+    },
+    "TRAINED_INTERFACE": {
+      "description": "Adapter parameters updated during functional-effect alignment",
+      "total_params": 18688
+    },
+    "RANDOM_CONTROL": {
+      "description": "Gaussian noise baseline parameters matched in dimension to donor weights",
+      "total_params": 35840
+    }
+  },
+  "surgicality_metrics": {
+    "minimal_candidate": {
+      "functional_params": 33792,
+      "surgicality_ratio": 0.0705,
+      "surgicality_percent": 7.05
+    },
+    "exact_fdc": {
+      "functional_params": 35840,
+      "surgicality_ratio": 0.0748,
+      "surgicality_percent": 7.48
+    },
+    "oversized_circuit": {
+      "functional_params": 135168,
+      "surgicality_ratio": 0.2821,
+      "surgicality_percent": 28.21
+    },
+    "adapter_overhead": {
+      "adapter_params": 18688,
+      "surgicality_ratio": 0.039,
+      "surgicality_percent": 3.9
+    }
+  }
+}

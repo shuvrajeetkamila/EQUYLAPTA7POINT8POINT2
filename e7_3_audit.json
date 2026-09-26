@@ -1,0 +1,41 @@
+{
+  "milestone_audited": "EQUYLAPTA E7.3",
+  "audit_date": "2026-09-24",
+  "auditor": "Senior AI Research Engineer (Mechanistic Interpretability & Model Fusion)",
+  "overall_verdict": "CLASSIFICATION_DOWNGRADE_REQUIRED",
+  "original_classification": "LEVEL E: FUNCTIONAL_TRANSFER_WITH_LOCALIZED_RECEIVER_COADAPTATION",
+  "corrected_classification": "LEVEL B: REPRESENTATIONAL_ALIGNMENT_ONLY",
+  "audit_evaluations": {
+    "1_aa_causal_transfer_demonstrated": {
+      "demonstrated": false,
+      "evidence": "Target A unmodified baseline was 13.00%. Transplant without adaptation was 11.00% (causal drop: -2.00 pp). Radius 3 co-adaptation raised accuracy to 21.00%, but ablating the transplanted head yielded 23.00% (causal drop: -2.00 pp). Host learned independently rather than relying causally on the transplanted head."
+    },
+    "2_ab_causal_transfer_demonstrated": {
+      "demonstrated": false,
+      "evidence": "Target B baseline was 34.00%. Method 2 no-adaptation was 35.00% (causal drop: 0.00 pp). After Radius 1 co-adaptation, accuracy dropped to 26.00% with ablation drop exactly 0.00 pp. Zero causal mediation was observed."
+    },
+    "3_coadaptation_induced_necessity": {
+      "demonstrated": false,
+      "evidence": "Ablating the transplanted unit in the co-adapted host produced 0.00 pp change in A->B and -2.00 pp in A->A. The component never became causally necessary."
+    },
+    "4_functional_agreement_metric_soundness": {
+      "sound": false,
+      "vulnerability": "E7.3 compared raw residual coordinate slices out_s[:16] vs out_t[:16]. Comparing arbitrary hidden coordinate indices between 64-d and 96-d spaces without a shared semantic projection is mathematically invalid."
+    },
+    "5_depth_sweep_validity": {
+      "valid": false,
+      "vulnerability": "At 2L, shallow MLP adaptation memorized training items (32% acc) while functional agreement was negative (-3.49%), confounding local task fitting with component transfer."
+    },
+    "6_conclusions_vs_evidence": {
+      "overreach_detected": true,
+      "details": "Level E requires verified causal mediation by the transplanted component. Because causal drop was 0.00 pp and agreement was 11.50%, assigning Level E was an overreach. The result must be downgraded to Level B."
+    }
+  },
+  "remediation_mandate_for_e7_4": [
+    "Define a common behavioral functional effect space (logits / probability perturbation vectors F(x) = O(intact) - O(ablated)).",
+    "Implement bidirectional synthetic interface bridge: Input Adapter W_in (target -> component) + Frozen Component + Output Adapter W_out (component -> target).",
+    "Test 5 distinct adapter/receiver conditions to isolate the precise interface bottleneck.",
+    "Perform necessity and sufficiency tests on the full causal pathway (input bridge -> component -> output bridge -> downstream behavior).",
+    "Enforce strict 90% threshold evaluation in the behavioral effect space."
+  ]
+}

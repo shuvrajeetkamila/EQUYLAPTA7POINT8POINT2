@@ -1,0 +1,43 @@
+{
+  "milestone": "EQUYLAPTA_7.8",
+  "title": "Causal Path-Patching & Recipient-Side Circuit Reconstruction: From Dependency-Expanded Transfer to Verified Causal Functional Transfer",
+  "donor_model": "e4-math-4L",
+  "donor_family": "Family A (Micro-GPT)",
+  "donor_capability": "Mathematics",
+  "recipient_model": "e6-base-4L",
+  "recipient_family": "Family B (LLaMA-Style)",
+  "candidate_nodes": {
+    "A": "L0_head_2",
+    "B": "L0_mlp",
+    "C": "L1_head_1",
+    "D": "L2_head_3"
+  },
+  "subsets_count": 16,
+  "predeclared_threshold_pct": 90.0,
+  "eval_seeds": [9001, 9002, 9003, 9004, 9005],
+  "splits": {
+    "discovery_seed": 777,
+    "validation_seed": 888,
+    "heldout_seed": 999,
+    "items_per_split": 20
+  },
+  "training": {
+    "epochs": 15,
+    "learning_rate": 0.003,
+    "weight_decay": 0.0001
+  },
+  "conditions": [
+    "Condition_A_Component_Only_7_6",
+    "Condition_B_Donor_FDC_7_7",
+    "Condition_C_Recipient_Reconstructed_Circuit",
+    "Condition_D_Minimal_Candidate_Circuit",
+    "Condition_E_Exact_FDC",
+    "Condition_F_Oversized_Donor_Circuit",
+    "Condition_G_Random_Matched_Circuit",
+    "Condition_H_Shuffled_Dependency_Circuit",
+    "Condition_I_Path_Scrambled_Control",
+    "Condition_J_Host_Only_Adaptation"
+  ],
+  "depth_sweep": ["2L", "4L", "6L", "8L"],
+  "circuit_sizes": [1, 2, 4, 8]
+}

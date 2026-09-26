@@ -1,0 +1,128 @@
+{
+  "control1_random_target_intervention": {
+    "seeds": [
+      28.0,
+      28.0,
+      24.0,
+      24.0,
+      24.0
+    ],
+    "mean": 25.6,
+    "std": 1.96,
+    "min": 24.0,
+    "max": 28.0,
+    "n_seeds": 5,
+    "ci95": [
+      23.88,
+      27.32
+    ]
+  },
+  "control2_random_translator_unoptimized": {
+    "seeds": [
+      28.0,
+      32.0,
+      24.0,
+      32.0,
+      16.0
+    ],
+    "mean": 26.4,
+    "std": 5.99,
+    "min": 16.0,
+    "max": 32.0,
+    "n_seeds": 5,
+    "ci95": [
+      21.15,
+      31.65
+    ]
+  },
+  "control3_shuffled_parameters": {
+    "seeds": [
+      28.0,
+      32.0,
+      24.0,
+      32.0,
+      20.0
+    ],
+    "mean": 27.2,
+    "std": 4.66,
+    "min": 20.0,
+    "max": 32.0,
+    "n_seeds": 5,
+    "ci95": [
+      23.11,
+      31.29
+    ]
+  },
+  "control4_target_local_trained": {
+    "seeds": [
+      16.0,
+      16.0,
+      28.0,
+      32.0,
+      16.0
+    ],
+    "mean": 21.6,
+    "std": 6.97,
+    "min": 16.0,
+    "max": 32.0,
+    "n_seeds": 5,
+    "ci95": [
+      15.49,
+      27.71
+    ]
+  },
+  "control5_structurally_matched_unrelated": {
+    "seeds": [
+      0.0,
+      20.0,
+      28.0,
+      44.0,
+      24.0
+    ],
+    "mean": 23.2,
+    "std": 14.18,
+    "min": 0.0,
+    "max": 44.0,
+    "n_seeds": 5,
+    "ci95": [
+      10.77,
+      35.63
+    ]
+  },
+  "control6_source_randomized_values": {
+    "seeds": [
+      32.0,
+      32.0,
+      24.0,
+      28.0,
+      32.0
+    ],
+    "mean": 29.6,
+    "std": 3.2,
+    "min": 24.0,
+    "max": 32.0,
+    "n_seeds": 5,
+    "ci95": [
+      26.8,
+      32.4
+    ]
+  },
+  "control7_topology_preserved_random": {
+    "seeds": [
+      36.0,
+      32.0,
+      24.0,
+      28.0,
+      32.0
+    ],
+    "mean": 30.4,
+    "std": 4.08,
+    "min": 24.0,
+    "max": 36.0,
+    "n_seeds": 5,
+    "ci95": [
+      26.82,
+      33.98
+    ]
+  }
+}

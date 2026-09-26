@@ -1,0 +1,538 @@
+{
+ "specialists": [
+  {
+   "specialist": "EQUYLAPTA-math",
+   "capability": "math",
+   "primary_suite": "micro-math",
+   "secondary_suites": [
+    "micro-code",
+    "micro-reason",
+    "micro-lang"
+   ],
+   "sources": [
+    "code-smith",
+    "generalist",
+    "logic-owl",
+    "math-wiz",
+    "polyglot",
+    "weak-base"
+   ],
+   "attempts": [
+    {
+     "A_donor": 37.5,
+     "B_recipient": 75.0,
+     "C_transplanted": 22.5,
+     "gain": -52.5,
+     "toward_donor": null,
+     "secondary_before": {
+      "micro-code": 52.5,
+      "micro-reason": 10.0,
+      "micro-lang": 67.5
+     },
+     "secondary_after": {
+      "micro-code": 27.500000000000004,
+      "micro-reason": 25.0,
+      "micro-lang": 50.0
+     },
+     "copied_tensors": [
+      "L0.attn.o.W",
+      "L0.attn.o.b",
+      "L0.attn.qkv.W",
+      "L0.attn.qkv.b",
+      "L0.ln1.b",
+      "L0.ln1.g",
+      "L0.ln2.b",
+      "L0.ln2.g",
+      "L0.mlp.1.W",
+      "L0.mlp.1.b",
+      "L0.mlp.2.W",
+      "L0.mlp.2.b"
+     ],
+     "seconds": 0.5,
+     "experiment_id": "EXP-00579",
+     "mechanism": "DIRECT_TRANSPLANT",
+     "component_desc": "generalist:L0",
+     "succeeded": false
+    },
+    {
+     "mechanism": "WEIGHT_MERGE",
+     "succeeded": true,
+     "accuracy": 57.49999999999999,
+     "coef": 0.3,
+     "state": {
+      "We": "<ndarray shape=(141, 64) not serialized>",
+      "Wp": "<ndarray shape=(32, 64) not serialized>",
+      "L0.ln1.g": "<ndarray shape=(64,) not serialized>",
+      "L0.ln1.b": "<ndarray shape=(64,) not serialized>",
+      "L0.attn.qkv.W": "<ndarray shape=(64, 192) not serialized>",
+      "L0.attn.qkv.b": "<ndarray shape=(192,) not serialized>",
+      "L0.attn.o.W": "<ndarray shape=(64, 64) not serialized>",
+      "L0.attn.o.b": "<ndarray shape=(64,) not serialized>",
+      "L0.ln2.g": "<ndarray shape=(64,) not serialized>",
+      "L0.ln2.b": "<ndarray shape=(64,) not serialized>",
+      "L0.mlp.1.W": "<ndarray shape=(64, 256) not serialized>",
+      "L0.mlp.1.b": "<ndarray shape=(256,) not serialized>",
+      "L0.mlp.2.W": "<ndarray shape=(256, 64) not serialized>",
+      "L0.mlp.2.b": "<ndarray shape=(64,) not serialized>",
+      "L1.ln1.g": "<ndarray shape=(64,) not serialized>",
+      "L1.ln1.b": "<ndarray shape=(64,) not serialized>",
+      "L1.attn.qkv.W": "<ndarray shape=(64, 192) not serialized>",
+      "L1.attn.qkv.b": "<ndarray shape=(192,) not serialized>",
+      "L1.attn.o.W": "<ndarray shape=(64, 64) not serialized>",
+      "L1.attn.o.b": "<ndarray shape=(64,) not serialized>",
+      "L1.ln2.g": "<ndarray shape=(64,) not serialized>",
+      "L1.ln2.b": "<ndarray shape=(64,) not serialized>",
+      "L1.mlp.1.W": "<ndarray shape=(64, 256) not serialized>",
+      "L1.mlp.1.b": "<ndarray shape=(256,) not serialized>",
+      "L1.mlp.2.W": "<ndarray shape=(256, 64) not serialized>",
+      "L1.mlp.2.b": "<ndarray shape=(64,) not serialized>",
+      "lnf.g": "<ndarray shape=(64,) not serialized>",
+      "lnf.b": "<ndarray shape=(64,) not serialized>"
+     },
+     "experiment_id": "EXP-00580",
+     "models": [
+      "math-wiz",
+      "generalist"
+     ],
+     "recipient": "math-wiz",
+     "component": null
+    }
+   ],
+   "status": "REJECTED",
+   "parent_primary": {
+    "math-wiz": 75.0,
+    "code-smith": 20.0,
+    "logic-owl": 25.0,
+    "polyglot": 27.500000000000004,
+    "generalist": 37.5,
+    "weak-base": 22.5
+   },
+   "best_parent": "math-wiz",
+   "best_parent_score": 75.0,
+   "reason": "best attempt did not beat best parent",
+   "specialist_score": 75.0,
+   "chosen": {
+    "model": "math-wiz",
+    "mechanism": "PARENT_FALLBACK"
+   },
+   "rendered": "SPECIALIST CONSTRUCTION REPORT \u2014 EQUYLAPTA-math [REJECTED]\n\nSources: code-smith, generalist, logic-owl, math-wiz, polyglot, weak-base\nComponents considered: L0 (math-wiz), L0.attn (math-wiz), L0 (generalist), L1 (math-wiz)\nParent scores on micro-math: math-wiz=75%, code-smith=20%, logic-owl=25%, polyglot=28%, generalist=38%, weak-base=22%\nBest parent: math-wiz (75%)\n  attempt EXP-00579 transplant generalist:L0 A=38% B=75% C=22% gain=-52.5\n  attempt EXP-00580 WEIGHT_MERGE accuracy=57% coef=0.3\nSpecialist score: 75.0%\nChosen: {'model': 'math-wiz', 'mechanism': 'PARENT_FALLBACK'}\nReason: best attempt did not beat best parent"
+  },
+  {
+   "specialist": "EQUYLAPTA-coding",
+   "capability": "coding",
+   "primary_suite": "micro-code",
+   "secondary_suites": [
+    "micro-math",
+    "micro-reason",
+    "micro-lang"
+   ],
+   "sources": [
+    "code-smith",
+    "generalist",
+    "logic-owl",
+    "math-wiz",
+    "polyglot",
+    "weak-base"
+   ],
+   "attempts": [
+    {
+     "A_donor": 100.0,
+     "B_recipient": 100.0,
+     "C_transplanted": 30.0,
+     "gain": -70.0,
+     "toward_donor": null,
+     "secondary_before": {
+      "micro-math": 20.0,
+      "micro-reason": 10.0,
+      "micro-lang": 75.0
+     },
+     "secondary_after": {
+      "micro-math": 20.0,
+      "micro-reason": 20.0,
+      "micro-lang": 17.5
+     },
+     "copied_tensors": [
+      "L0.attn.o.W",
+      "L0.attn.o.b",
+      "L0.attn.qkv.W",
+      "L0.attn.qkv.b",
+      "L0.ln1.b",
+      "L0.ln1.g",
+      "L0.ln2.b",
+      "L0.ln2.g",
+      "L0.mlp.1.W",
+      "L0.mlp.1.b",
+      "L0.mlp.2.W",
+      "L0.mlp.2.b"
+     ],
+     "seconds": 0.5,
+     "experiment_id": "EXP-00581",
+     "mechanism": "DIRECT_TRANSPLANT",
+     "component_desc": "generalist:L0",
+     "succeeded": false
+    },
+    {
+     "A_donor": 100.0,
+     "B_recipient": 100.0,
+     "C_transplanted": 65.0,
+     "gain": -35.0,
+     "toward_donor": null,
+     "secondary_before": {
+      "micro-math": 20.0,
+      "micro-reason": 10.0,
+      "micro-lang": 75.0
+     },
+     "secondary_after": {
+      "micro-math": 15.0,
+      "micro-reason": 25.0,
+      "micro-lang": 5.0
+     },
+     "copied_tensors": [
+      "L0.attn.o.W",
+      "L0.attn.o.b",
+      "L0.attn.qkv.W",
+      "L0.attn.qkv.b"
+     ],
+     "seconds": 0.5,
+     "experiment_id": "EXP-00582",
+     "mechanism": "DIRECT_TRANSPLANT",
+     "component_desc": "generalist:L0.attn",
+     "succeeded": false
+    },
+    {
+     "A_donor": 100.0,
+     "B_recipient": 100.0,
+     "C_transplanted": 85.0,
+     "gain": -15.0,
+     "toward_donor": null,
+     "secondary_before": {
+      "micro-math": 20.0,
+      "micro-reason": 10.0,
+      "micro-lang": 75.0
+     },
+     "secondary_after": {
+      "micro-math": 35.0,
+      "micro-reason": 15.0,
+      "micro-lang": 50.0
+     },
+     "copied_tensors": [
+      "L1.attn.o.W",
+      "L1.attn.o.b",
+      "L1.attn.qkv.W",
+      "L1.attn.qkv.b"
+     ],
+     "seconds": 0.5,
+     "experiment_id": "EXP-00583",
+     "mechanism": "DIRECT_TRANSPLANT",
+     "component_desc": "logic-owl:L1.attn",
+     "succeeded": false
+    },
+    {
+     "A_donor": 100.0,
+     "B_recipient": 100.0,
+     "C_transplanted": 67.5,
+     "gain": -32.5,
+     "toward_donor": null,
+     "secondary_before": {
+      "micro-math": 20.0,
+      "micro-reason": 10.0,
+      "micro-lang": 75.0
+     },
+     "secondary_after": {
+      "micro-math": 17.5,
+      "micro-reason": 22.5,
+      "micro-lang": 75.0
+     },
+     "copied_tensors": [
+      "o.rows",
+      "qkv.cols"
+     ],
+     "seconds": 0.5,
+     "experiment_id": "EXP-00584",
+     "mechanism": "DIRECT_TRANSPLANT",
+     "component_desc": "logic-owl:L0.attn.head0",
+     "succeeded": false
+    },
+    {
+     "mechanism": "WEIGHT_MERGE",
+     "succeeded": true,
+     "accuracy": 80.0,
+     "coef": 0.5,
+     "state": {
+      "We": "<ndarray shape=(141, 64) not serialized>",
+      "Wp": "<ndarray shape=(32, 64) not serialized>",
+      "L0.ln1.g": "<ndarray shape=(64,) not serialized>",
+      "L0.ln1.b": "<ndarray shape=(64,) not serialized>",
+      "L0.attn.qkv.W": "<ndarray shape=(64, 192) not serialized>",
+      "L0.attn.qkv.b": "<ndarray shape=(192,) not serialized>",
+      "L0.attn.o.W": "<ndarray shape=(64, 64) not serialized>",
+      "L0.attn.o.b": "<ndarray shape=(64,) not serialized>",
+      "L0.ln2.g": "<ndarray shape=(64,) not serialized>",
+      "L0.ln2.b": "<ndarray shape=(64,) not serialized>",
+      "L0.mlp.1.W": "<ndarray shape=(64, 256) not serialized>",
+      "L0.mlp.1.b": "<ndarray shape=(256,) not serialized>",
+      "L0.mlp.2.W": "<ndarray shape=(256, 64) not serialized>",
+      "L0.mlp.2.b": "<ndarray shape=(64,) not serialized>",
+      "L1.ln1.g": "<ndarray shape=(64,) not serialized>",
+      "L1.ln1.b": "<ndarray shape=(64,) not serialized>",
+      "L1.attn.qkv.W": "<ndarray shape=(64, 192) not serialized>",
+      "L1.attn.qkv.b": "<ndarray shape=(192,) not serialized>",
+      "L1.attn.o.W": "<ndarray shape=(64, 64) not serialized>",
+      "L1.attn.o.b": "<ndarray shape=(64,) not serialized>",
+      "L1.ln2.g": "<ndarray shape=(64,) not serialized>",
+      "L1.ln2.b": "<ndarray shape=(64,) not serialized>",
+      "L1.mlp.1.W": "<ndarray shape=(64, 256) not serialized>",
+      "L1.mlp.1.b": "<ndarray shape=(256,) not serialized>",
+      "L1.mlp.2.W": "<ndarray shape=(256, 64) not serialized>",
+      "L1.mlp.2.b": "<ndarray shape=(64,) not serialized>",
+      "lnf.g": "<ndarray shape=(64,) not serialized>",
+      "lnf.b": "<ndarray shape=(64,) not serialized>"
+     },
+     "experiment_id": "EXP-00585",
+     "models": [
+      "code-smith",
+      "logic-owl"
+     ],
+     "recipient": "code-smith",
+     "component": null
+    }
+   ],
+   "status": "REJECTED",
+   "parent_primary": {
+    "math-wiz": 52.5,
+    "code-smith": 100.0,
+    "logic-owl": 100.0,
+    "polyglot": 87.5,
+    "generalist": 100.0,
+    "weak-base": 85.0
+   },
+   "best_parent": "code-smith",
+   "best_parent_score": 100.0,
+   "reason": "best attempt did not beat best parent",
+   "specialist_score": 100.0,
+   "chosen": {
+    "model": "code-smith",
+    "mechanism": "PARENT_FALLBACK"
+   },
+   "rendered": "SPECIALIST CONSTRUCTION REPORT \u2014 EQUYLAPTA-coding [REJECTED]\n\nSources: code-smith, generalist, logic-owl, math-wiz, polyglot, weak-base\nComponents considered: L0 (generalist), L0.attn (generalist), L1.attn (logic-owl), L0.attn.head0 (logic-owl)\nParent scores on micro-code: math-wiz=52%, code-smith=100%, logic-owl=100%, polyglot=88%, generalist=100%, weak-base=85%\nBest parent: code-smith (100%)\n  attempt EXP-00581 transplant generalist:L0 A=100% B=100% C=30% gain=-70.0\n  attempt EXP-00582 transplant generalist:L0.attn A=100% B=100% C=65% gain=-35.0\n  attempt EXP-00583 transplant logic-owl:L1.attn A=100% B=100% C=85% gain=-15.0\n  attempt EXP-00584 transplant logic-owl:L0.attn.head0 A=100% B=100% C=68% gain=-32.5\n  attempt EXP-00585 WEIGHT_MERGE accuracy=80% coef=0.5\nSpecialist score: 100.0%\nChosen: {'model': 'code-smith', 'mechanism': 'PARENT_FALLBACK'}\nReason: best attempt did not beat best parent"
+  },
+  {
+   "specialist": "EQUYLAPTA-reasoning",
+   "capability": "reasoning",
+   "primary_suite": "micro-reason",
+   "secondary_suites": [
+    "micro-code",
+    "micro-lang"
+   ],
+   "sources": [
+    "code-smith",
+    "generalist",
+    "logic-owl",
+    "math-wiz",
+    "polyglot",
+    "weak-base"
+   ],
+   "attempts": [
+    {
+     "mechanism": "WEIGHT_MERGE",
+     "succeeded": true,
+     "accuracy": 30.0,
+     "coef": 0.7,
+     "state": {
+      "We": "<ndarray shape=(141, 64) not serialized>",
+      "Wp": "<ndarray shape=(32, 64) not serialized>",
+      "L0.ln1.g": "<ndarray shape=(64,) not serialized>",
+      "L0.ln1.b": "<ndarray shape=(64,) not serialized>",
+      "L0.attn.qkv.W": "<ndarray shape=(64, 192) not serialized>",
+      "L0.attn.qkv.b": "<ndarray shape=(192,) not serialized>",
+      "L0.attn.o.W": "<ndarray shape=(64, 64) not serialized>",
+      "L0.attn.o.b": "<ndarray shape=(64,) not serialized>",
+      "L0.ln2.g": "<ndarray shape=(64,) not serialized>",
+      "L0.ln2.b": "<ndarray shape=(64,) not serialized>",
+      "L0.mlp.1.W": "<ndarray shape=(64, 256) not serialized>",
+      "L0.mlp.1.b": "<ndarray shape=(256,) not serialized>",
+      "L0.mlp.2.W": "<ndarray shape=(256, 64) not serialized>",
+      "L0.mlp.2.b": "<ndarray shape=(64,) not serialized>",
+      "L1.ln1.g": "<ndarray shape=(64,) not serialized>",
+      "L1.ln1.b": "<ndarray shape=(64,) not serialized>",
+      "L1.attn.qkv.W": "<ndarray shape=(64, 192) not serialized>",
+      "L1.attn.qkv.b": "<ndarray shape=(192,) not serialized>",
+      "L1.attn.o.W": "<ndarray shape=(64, 64) not serialized>",
+      "L1.attn.o.b": "<ndarray shape=(64,) not serialized>",
+      "L1.ln2.g": "<ndarray shape=(64,) not serialized>",
+      "L1.ln2.b": "<ndarray shape=(64,) not serialized>",
+      "L1.mlp.1.W": "<ndarray shape=(64, 256) not serialized>",
+      "L1.mlp.1.b": "<ndarray shape=(256,) not serialized>",
+      "L1.mlp.2.W": "<ndarray shape=(256, 64) not serialized>",
+      "L1.mlp.2.b": "<ndarray shape=(64,) not serialized>",
+      "lnf.g": "<ndarray shape=(64,) not serialized>",
+      "lnf.b": "<ndarray shape=(64,) not serialized>"
+     },
+     "experiment_id": "EXP-00586",
+     "models": [
+      "logic-owl",
+      "weak-base"
+     ],
+     "recipient": "logic-owl",
+     "component": null
+    }
+   ],
+   "status": "REJECTED",
+   "parent_primary": {
+    "math-wiz": 10.0,
+    "code-smith": 10.0,
+    "logic-owl": 45.0,
+    "polyglot": 17.5,
+    "generalist": 12.5,
+    "weak-base": 25.0
+   },
+   "best_parent": "logic-owl",
+   "best_parent_score": 45.0,
+   "reason": "best attempt did not beat best parent",
+   "specialist_score": 45.0,
+   "chosen": {
+    "model": "logic-owl",
+    "mechanism": "PARENT_FALLBACK"
+   },
+   "rendered": "SPECIALIST CONSTRUCTION REPORT \u2014 EQUYLAPTA-reasoning [REJECTED]\n\nSources: code-smith, generalist, logic-owl, math-wiz, polyglot, weak-base\nComponents considered: L0.attn.head0 (logic-owl), L1 (logic-owl), L1.mlp (logic-owl), L0.attn (logic-owl)\nParent scores on micro-reason: math-wiz=10%, code-smith=10%, logic-owl=45%, polyglot=18%, generalist=12%, weak-base=25%\nBest parent: logic-owl (45%)\n  attempt EXP-00586 WEIGHT_MERGE accuracy=30% coef=0.7\nSpecialist score: 45.0%\nChosen: {'model': 'logic-owl', 'mechanism': 'PARENT_FALLBACK'}\nReason: best attempt did not beat best parent"
+  }
+ ],
+ "router": {},
+ "created": "2026-09-17 17:46:00",
+ "note": "statuses: PROMISING | REJECTED \u2014 construction reports attached",
+ "evolution_math": {
+  "best_fitness": 64.75,
+  "best_individual": {
+   "components": [
+    [
+     "math-wiz",
+     "L1.mlp.chan[32:64]"
+    ],
+    [
+     "math-wiz",
+     "L1.attn.head1"
+    ]
+   ],
+   "capability": "micro-math",
+   "coefficient": 0.79,
+   "blend_with": "generalist"
+  },
+  "best_metrics": {
+   "primary": 45.0,
+   "secondary": {
+    "micro-code": 100.0,
+    "micro-lang": 70.0
+   },
+   "latency_ms": 0.5,
+   "fitness": 64.75
+  }
+ },
+ "super_model": {
+  "name": "EQUYLAPTA-1",
+  "type": "routed multi-specialist ensemble (NOT a single fused model)",
+  "routing": {
+   "micro-math": 0.75,
+   "micro-code": 1.0,
+   "micro-reason": 0.45,
+   "micro-lang": 0.825
+  },
+  "mixed_task_routing": [
+   {
+    "query": "Write Python code to calculate the probability distribution and explain the mathematical reasoning.",
+    "expected": [
+     "coding",
+     "math",
+     "reasoning"
+    ],
+    "routed": [
+     "coding",
+     "reasoning"
+    ],
+    "correct": true
+   },
+   {
+    "query": "Translate this technical Japanese semiconductor document and explain it.",
+    "expected": [
+     "knowledge",
+     "language",
+     "multilingual"
+    ],
+    "routed": [
+     "knowledge",
+     "language",
+     "multilingual"
+    ],
+    "correct": true
+   },
+   {
+    "query": "Use a tool to retrieve data and calculate a result.",
+    "expected": [
+     "agent",
+     "math",
+     "reasoning"
+    ],
+    "routed": [
+     "agent"
+    ],
+    "correct": false
+   },
+   {
+    "query": "What is 12 + 14 ?",
+    "expected": [
+     "math"
+    ],
+    "routed": [
+     "math"
+    ],
+    "correct": true
+   },
+   {
+    "query": "def add ( a , b ) : return",
+    "expected": [
+     "coding"
+    ],
+    "routed": [
+     "coding"
+    ],
+    "correct": true
+   }
+  ],
+  "specialists": {
+   "math": {
+    "model": "math-wiz",
+    "score": 75.0,
+    "provenance": "PARENT_FALLBACK (REJECTED)"
+   },
+   "coding": {
+    "model": "code-smith",
+    "score": 100.0,
+    "provenance": "PARENT_FALLBACK (REJECTED)"
+   },
+   "reasoning": {
+    "model": "logic-owl",
+    "score": 45.0,
+    "provenance": "PARENT_FALLBACK (REJECTED)"
+   },
+   "language": {
+    "model": "polyglot",
+    "score": null,
+    "provenance": "direct source polyglot"
+   },
+   "knowledge": {
+    "model": "polyglot",
+    "score": null,
+    "provenance": "direct source polyglot"
+   },
+   "multilingual": {
+    "model": "polyglot",
+    "score": null,
+    "provenance": "direct source polyglot"
+   },
+   "agent": {
+    "model": "generalist",
+    "score": null,
+    "provenance": "direct source generalist"
+   }
+  }
+ }
+}

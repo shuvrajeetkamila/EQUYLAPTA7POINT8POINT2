@@ -1,0 +1,132 @@
+{
+  "model": "e4-base-4L",
+  "epsilon": 0.0001,
+  "tolerance": 0.05,
+  "max_relative_error": 0.003487289770555717,
+  "mean_relative_error": 0.00033552289729040326,
+  "max_absolute_error": 3.881295405072649e-07,
+  "gradient_check_passed": true,
+  "status": "PASS",
+  "detailed_evaluations": [
+    {
+      "parameter_group": "INPUT_TRANSLATOR",
+      "name": "W_in[0,0]",
+      "analytical_gradient": -6.518902955576777e-05,
+      "numerical_gradient": -6.507227479080058e-05,
+      "absolute_error": 1.1675476496719739e-07,
+      "relative_error": 0.0008963119596635086
+    },
+    {
+      "parameter_group": "INPUT_TRANSLATOR",
+      "name": "W_in[1,2]",
+      "analytical_gradient": -0.002293206285685301,
+      "numerical_gradient": -0.002293594415225808,
+      "absolute_error": 3.881295405072649e-07,
+      "relative_error": 8.461879331931033e-05
+    },
+    {
+      "parameter_group": "INPUT_TRANSLATOR",
+      "name": "W_in[2,3]",
+      "analytical_gradient": -0.0016421470791101456,
+      "numerical_gradient": -0.001641927578066582,
+      "absolute_error": 2.1950104356349698e-07,
+      "relative_error": 6.683801876544394e-05
+    },
+    {
+      "parameter_group": "INPUT_TRANSLATOR",
+      "name": "W_in[3,1]",
+      "analytical_gradient": 0.0029726477805525064,
+      "numerical_gradient": 0.0029727887457253743,
+      "absolute_error": 1.4096517286787957e-07,
+      "relative_error": 2.3709810414228797e-05
+    },
+    {
+      "parameter_group": "INPUT_TRANSLATOR",
+      "name": "W_in[0,3]",
+      "analytical_gradient": -0.001188028254546225,
+      "numerical_gradient": -0.001187909115241137,
+      "absolute_error": 1.1913930508811177e-07,
+      "relative_error": 5.014412694673611e-05
+    },
+    {
+      "parameter_group": "OUTPUT_TRANSLATOR",
+      "name": "W_out[0,0]",
+      "analytical_gradient": 7.998306682566181e-05,
+      "numerical_gradient": 7.998945034115579e-05,
+      "absolute_error": 6.38351549397953e-09,
+      "relative_error": 3.990382602608466e-05
+    },
+    {
+      "parameter_group": "OUTPUT_TRANSLATOR",
+      "name": "W_out[5,8]",
+      "analytical_gradient": 2.068204412353225e-05,
+      "numerical_gradient": 2.0689314428334882e-05,
+      "absolute_error": 7.2703048026312445e-09,
+      "relative_error": 0.00017573280300951414
+    },
+    {
+      "parameter_group": "OUTPUT_TRANSLATOR",
+      "name": "W_out[12,15]",
+      "analytical_gradient": -5.871426037629135e-05,
+      "numerical_gradient": -5.870269548235996e-05,
+      "absolute_error": 1.1564893931392817e-08,
+      "relative_error": 9.849424086002407e-05
+    },
+    {
+      "parameter_group": "OUTPUT_TRANSLATOR",
+      "name": "W_out[20,2]",
+      "analytical_gradient": 0.00010421849583508447,
+      "numerical_gradient": 0.00010421538271243591,
+      "absolute_error": 3.1131226485570096e-09,
+      "relative_error": 1.4935780451100014e-05
+    },
+    {
+      "parameter_group": "OUTPUT_TRANSLATOR",
+      "name": "W_out[30,10]",
+      "analytical_gradient": 0.00019031095143873245,
+      "numerical_gradient": 0.00019031138082103993,
+      "absolute_error": 4.293823074874581e-10,
+      "relative_error": 1.1281059231028182e-06
+    },
+    {
+      "parameter_group": "RECIPIENT_RECEIVER",
+      "name": "L0.mlp.1.W[0,0]",
+      "analytical_gradient": -1.2100009882942686e-10,
+      "numerical_gradient": -1.2184697695261093e-10,
+      "absolute_error": 8.468781231840694e-13,
+      "relative_error": 0.003487289770555717
+    },
+    {
+      "parameter_group": "RECIPIENT_RECEIVER",
+      "name": "L0.mlp.1.W[2,5]",
+      "analytical_gradient": 4.102739694644697e-07,
+      "numerical_gradient": 4.1021797070328603e-07,
+      "absolute_error": 5.5998761183673196e-11,
+      "relative_error": 6.825022701895625e-05
+    },
+    {
+      "parameter_group": "RECIPIENT_RECEIVER",
+      "name": "L0.mlp.1.W[8,10]",
+      "analytical_gradient": -4.105313564650714e-06,
+      "numerical_gradient": -4.105383255570416e-06,
+      "absolute_error": 6.969091970177033e-11,
+      "relative_error": 8.487820367467107e-06
+    },
+    {
+      "parameter_group": "RECIPIENT_RECEIVER",
+      "name": "L0.mlp.1.W[14,3]",
+      "analytical_gradient": -8.070445619523525e-05,
+      "numerical_gradient": -8.070581952734912e-05,
+      "absolute_error": 1.3633321138684096e-09,
+      "relative_error": 8.446377454999002e-06
+    },
+    {
+      "parameter_group": "RECIPIENT_RECEIVER",
+      "name": "L0.mlp.1.W[15,20]",
+      "analytical_gradient": -1.526296546217054e-05,
+      "numerical_gradient": -1.526322651601575e-05,
+      "absolute_error": 2.6105384520747066e-10,
+      "relative_error": 8.551798579856182e-06
+    }
+  ]
+}

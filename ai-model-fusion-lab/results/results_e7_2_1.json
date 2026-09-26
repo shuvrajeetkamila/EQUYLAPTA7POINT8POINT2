@@ -1,0 +1,140 @@
+{
+  "milestone": "EQUYLAPTA7.2.1",
+  "status": "COMPLETED",
+  "validation_procrustes_corrected": true,
+  "refitting_on_validation_prevented": true,
+  "source_causal_results": {
+    "baseline": {
+      "seeds": [
+        45.0,
+        55.0,
+        45.0,
+        35.0,
+        60.0
+      ],
+      "mean": 48.0,
+      "std": 9.75,
+      "min": 35.0,
+      "max": 60.0,
+      "n_seeds": 5,
+      "ci95": [
+        39.46,
+        56.54
+      ]
+    },
+    "ablation": {
+      "seeds": [
+        20.0,
+        35.0,
+        15.0,
+        30.0,
+        20.0
+      ],
+      "mean": 24.0,
+      "std": 8.22,
+      "min": 15.0,
+      "max": 35.0,
+      "n_seeds": 5,
+      "ci95": [
+        16.8,
+        31.2
+      ]
+    },
+    "restoration": {
+      "seeds": [
+        45.0,
+        55.0,
+        45.0,
+        35.0,
+        60.0
+      ],
+      "mean": 48.0,
+      "std": 9.75,
+      "min": 35.0,
+      "max": 60.0,
+      "n_seeds": 5,
+      "ci95": [
+        39.46,
+        56.54
+      ]
+    },
+    "amplification": {
+      "seeds": [
+        45.0,
+        35.0,
+        30.0,
+        30.0,
+        45.0
+      ],
+      "mean": 37.0,
+      "std": 7.58,
+      "min": 30.0,
+      "max": 45.0,
+      "n_seeds": 5,
+      "ci95": [
+        30.35,
+        43.65
+      ]
+    },
+    "inversion": {
+      "seeds": [
+        25.0,
+        35.0,
+        25.0,
+        40.0,
+        25.0
+      ],
+      "mean": 30.0,
+      "std": 7.07,
+      "min": 25.0,
+      "max": 40.0,
+      "n_seeds": 5,
+      "ci95": [
+        23.8,
+        36.2
+      ]
+    },
+    "random_head_ablation": {
+      "seeds": [
+        25.0,
+        20.0,
+        30.0,
+        30.0,
+        35.0
+      ],
+      "mean": 28.0,
+      "std": 5.7,
+      "min": 20.0,
+      "max": 35.0,
+      "n_seeds": 5,
+      "ci95": [
+        23.0,
+        33.0
+      ]
+    },
+    "causal_drop": 24.0,
+    "specificity_ratio": 1.2
+  },
+  "alignment_results": {
+    "aa": {
+      "train_error": 0.4021,
+      "frozen_val_error": 0.4373,
+      "frozen_test_error": 2.1759,
+      "random_alignment_null_error": 1.4297,
+      "learned_vs_null_ratio": 3.56
+    },
+    "ab": {
+      "train_error": 47.6525,
+      "frozen_val_error": 62.9651,
+      "frozen_test_error": 41.8719,
+      "random_alignment_null_error": 48.5119,
+      "learned_vs_null_ratio": 1.02
+    }
+  },
+  "anti_cheating_checks": {
+    "source_parameters_copied": 0,
+    "target_parameters_copied": 0,
+    "validation_transform_refitted": false,
+    "test_labels_accessed_during_alignment": false
+  }
+}

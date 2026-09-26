@@ -1,0 +1,68 @@
+{
+  "architecture": "e4-math-4L",
+  "layer": 0,
+  "component": "L0_head_2",
+  "parameter_count": 4096,
+  "tensor_dimensions": [
+    16,
+    64
+  ],
+  "causal_drop": 24.0,
+  "restoration_effect": 48.0,
+  "functional_signature": {
+    "version": "v4.0_surgical_coadaptation",
+    "task": "arithmetic_operand_binding",
+    "input": {
+      "context_dimension": 16,
+      "representation": "attention_context_slice"
+    },
+    "transformation": {
+      "top_eigenvalues": [
+        2766.6977,
+        534.7538,
+        73.821,
+        18.7477
+      ],
+      "covariance_trace": 3400.8192
+    },
+    "output": {
+      "head_output_dimension": 64
+    },
+    "context_dependence": {
+      "token_regime": "arithmetic_expressions",
+      "intervention_response_curve": {
+        "strength_-1.00": 30.0,
+        "strength_-0.75": 30.0,
+        "strength_-0.50": 27.0,
+        "strength_-0.25": 24.0,
+        "strength_+0.00": 24.0,
+        "strength_+0.25": 34.0,
+        "strength_+0.50": 32.0,
+        "strength_+0.75": 41.0,
+        "strength_+1.00": 48.0,
+        "strength_+1.25": 41.0
+      }
+    },
+    "causal_effect": {
+      "baseline_mean": 48.0,
+      "ablation_drop_pp": 24.0,
+      "restoration_error_pp": 0.0,
+      "specificity_ratio": 1.2
+    }
+  },
+  "task_contribution": "arithmetic_operand_routing_and_binding",
+  "collateral_effects": {
+    "code": -15.0,
+    "reason": -10.0,
+    "lang": -55.0,
+    "know": -25.0,
+    "multi": -15.0,
+    "agent": -50.0
+  },
+  "selection_rationale": "Predeclared strongest causally validated unit from E7.1/E7.2.",
+  "identity_stripping": {
+    "raw_accuracy": 48.0,
+    "svd_rank4_accuracy": 48.0,
+    "capability_retention_pct": 100.0
+  }
+}

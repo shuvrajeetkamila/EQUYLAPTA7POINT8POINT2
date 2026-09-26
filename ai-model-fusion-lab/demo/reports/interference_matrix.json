@@ -1,0 +1,163 @@
+{
+ "baseline": {
+  "micro-math": 20.8,
+  "micro-code": 100.0,
+  "micro-reason": 21.7,
+  "micro-lang": 79.2
+ },
+ "singles": {
+  "math": {
+   "vec": {
+    "micro-math": 20.0,
+    "micro-code": 100.0,
+    "micro-reason": 21.7,
+    "micro-lang": 79.2
+   },
+   "gates": {
+    "math_head_205d6f": 1.0
+   }
+  },
+  "coding": {
+   "vec": {
+    "micro-math": 19.2,
+    "micro-code": 100.0,
+    "micro-reason": 19.2,
+    "micro-lang": 83.3
+   },
+   "gates": {
+    "coding_module_attn_373b65": 0.0
+   }
+  },
+  "reasoning": {
+   "vec": {
+    "micro-math": 19.2,
+    "micro-code": 100.0,
+    "micro-reason": 23.3,
+    "micro-lang": 79.2
+   },
+   "gates": {
+    "reasoning_head_515c4f": 0.2
+   }
+  }
+ },
+ "pairs": {
+  "math+coding": {
+   "vec": {
+    "micro-math": 25.8,
+    "micro-code": 100.0,
+    "micro-reason": 20.8,
+    "micro-lang": 82.5
+   },
+   "gates": {
+    "math_head_205d6f": 1.0,
+    "coding_module_attn_373b65": 0.0
+   }
+  },
+  "math+reasoning": {
+   "vec": {
+    "micro-math": 20.0,
+    "micro-code": 100.0,
+    "micro-reason": 21.7,
+    "micro-lang": 79.2
+   },
+   "gates": {
+    "math_head_205d6f": 1.0,
+    "reasoning_head_515c4f": 0.0
+   }
+  },
+  "coding+reasoning": {
+   "vec": {
+    "micro-math": 20.0,
+    "micro-code": 86.7,
+    "micro-reason": 10.8,
+    "micro-lang": 83.3
+   },
+   "gates": {
+    "coding_module_attn_373b65": 0.0,
+    "reasoning_head_515c4f": 0.2
+   }
+  }
+ },
+ "triple": {
+  "vec": {
+   "micro-math": 25.8,
+   "micro-code": 100.0,
+   "micro-reason": 20.8,
+   "micro-lang": 82.5
+  },
+  "gates": {
+   "math_head_205d6f": 1.0,
+   "coding_module_attn_373b65": 0.0,
+   "reasoning_head_515c4f": 0.0
+  }
+ },
+ "scaling_study": [
+  {
+   "gate": 0.2,
+   "score": 11.689737742542917,
+   "K": 1,
+   "vec": {
+    "micro-math": 20.8,
+    "micro-code": 100.0,
+    "micro-reason": 21.7,
+    "micro-lang": 79.2
+   },
+   "components": [
+    "math_channel_group_1c45d4"
+   ]
+  },
+  {
+   "gate": 0.2,
+   "score": 11.682409941308116,
+   "K": 2,
+   "vec": {
+    "micro-math": 20.0,
+    "micro-code": 100.0,
+    "micro-reason": 21.7,
+    "micro-lang": 79.2
+   },
+   "components": [
+    "math_channel_group_1c45d4",
+    "math_channel_group_f05b7a"
+   ]
+  },
+  {
+   "gate": 0.2,
+   "score": 11.674322594708773,
+   "K": 4,
+   "vec": {
+    "micro-math": 20.0,
+    "micro-code": 100.0,
+    "micro-reason": 21.7,
+    "micro-lang": 79.2
+   },
+   "components": [
+    "math_channel_group_1c45d4",
+    "math_channel_group_f05b7a",
+    "math_channel_group_ded708",
+    "math_channel_group_a2b156"
+   ]
+  },
+  {
+   "gate": 0.4,
+   "score": 11.644267748687426,
+   "K": 8,
+   "vec": {
+    "micro-math": 20.0,
+    "micro-code": 100.0,
+    "micro-reason": 23.3,
+    "micro-lang": 79.2
+   },
+   "components": [
+    "math_channel_group_1c45d4",
+    "math_channel_group_f05b7a",
+    "math_channel_group_ded708",
+    "math_channel_group_a2b156",
+    "math_channel_group_892e12",
+    "math_channel_group_7b4402",
+    "math_channel_group_5efabd",
+    "math_channel_group_26692e"
+   ]
+  }
+ ]
+}

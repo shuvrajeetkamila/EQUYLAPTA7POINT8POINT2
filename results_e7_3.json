@@ -1,0 +1,2517 @@
+{
+  "milestone": "EQUYLAPTA E7.3",
+  "scientific_level": "LEVEL E",
+  "classification_title": "FUNCTIONAL_TRANSFER_WITH_LOCALIZED_RECEIVER_COADAPTATION",
+  "predeclared_agreement_threshold_pct": 90.0,
+  "observed_highest_functional_agreement_pct": 11.5,
+  "functional_agreement_classification": "NO_SUPPORTED_TRANSFER",
+  "source_component": {
+    "architecture": "e4-math-4L",
+    "layer": 0,
+    "component": "L0_head_2",
+    "parameter_count": 4096,
+    "tensor_dimensions": [
+      16,
+      64
+    ],
+    "causal_drop": 24.0,
+    "restoration_effect": 48.0,
+    "functional_signature": {
+      "version": "v4.0_surgical_coadaptation",
+      "task": "arithmetic_operand_binding",
+      "input": {
+        "context_dimension": 16,
+        "representation": "attention_context_slice"
+      },
+      "transformation": {
+        "top_eigenvalues": [
+          2766.6977,
+          534.7538,
+          73.821,
+          18.7477
+        ],
+        "covariance_trace": 3400.8192
+      },
+      "output": {
+        "head_output_dimension": 64
+      },
+      "context_dependence": {
+        "token_regime": "arithmetic_expressions",
+        "intervention_response_curve": {
+          "strength_-1.00": 30.0,
+          "strength_-0.75": 30.0,
+          "strength_-0.50": 27.0,
+          "strength_-0.25": 24.0,
+          "strength_+0.00": 24.0,
+          "strength_+0.25": 34.0,
+          "strength_+0.50": 32.0,
+          "strength_+0.75": 41.0,
+          "strength_+1.00": 48.0,
+          "strength_+1.25": 41.0
+        }
+      },
+      "causal_effect": {
+        "baseline_mean": 48.0,
+        "ablation_drop_pp": 24.0,
+        "restoration_error_pp": 0.0,
+        "specificity_ratio": 1.2
+      }
+    },
+    "task_contribution": "arithmetic_operand_routing_and_binding",
+    "collateral_effects": {
+      "code": -15.0,
+      "reason": -10.0,
+      "lang": -55.0,
+      "know": -25.0,
+      "multi": -15.0,
+      "agent": -50.0
+    },
+    "selection_rationale": "Predeclared strongest causally validated unit from E7.1/E7.2.",
+    "identity_stripping": {
+      "raw_accuracy": 48.0,
+      "svd_rank4_accuracy": 48.0,
+      "capability_retention_pct": 100.0
+    }
+  },
+  "phase_a_integrity_correction": {
+    "milestone": "EQUYLAPTA7.2.1",
+    "status": "COMPLETED",
+    "validation_procrustes_corrected": true,
+    "refitting_on_validation_prevented": true,
+    "source_causal_results": {
+      "baseline": {
+        "seeds": [
+          45.0,
+          55.0,
+          45.0,
+          35.0,
+          60.0
+        ],
+        "mean": 48.0,
+        "std": 9.75,
+        "min": 35.0,
+        "max": 60.0,
+        "n_seeds": 5,
+        "ci95": [
+          39.46,
+          56.54
+        ]
+      },
+      "ablation": {
+        "seeds": [
+          20.0,
+          35.0,
+          15.0,
+          30.0,
+          20.0
+        ],
+        "mean": 24.0,
+        "std": 8.22,
+        "min": 15.0,
+        "max": 35.0,
+        "n_seeds": 5,
+        "ci95": [
+          16.8,
+          31.2
+        ]
+      },
+      "restoration": {
+        "seeds": [
+          45.0,
+          55.0,
+          45.0,
+          35.0,
+          60.0
+        ],
+        "mean": 48.0,
+        "std": 9.75,
+        "min": 35.0,
+        "max": 60.0,
+        "n_seeds": 5,
+        "ci95": [
+          39.46,
+          56.54
+        ]
+      },
+      "amplification": {
+        "seeds": [
+          45.0,
+          35.0,
+          30.0,
+          30.0,
+          45.0
+        ],
+        "mean": 37.0,
+        "std": 7.58,
+        "min": 30.0,
+        "max": 45.0,
+        "n_seeds": 5,
+        "ci95": [
+          30.35,
+          43.65
+        ]
+      },
+      "inversion": {
+        "seeds": [
+          25.0,
+          35.0,
+          25.0,
+          40.0,
+          25.0
+        ],
+        "mean": 30.0,
+        "std": 7.07,
+        "min": 25.0,
+        "max": 40.0,
+        "n_seeds": 5,
+        "ci95": [
+          23.8,
+          36.2
+        ]
+      },
+      "random_head_ablation": {
+        "seeds": [
+          25.0,
+          20.0,
+          30.0,
+          30.0,
+          35.0
+        ],
+        "mean": 28.0,
+        "std": 5.7,
+        "min": 20.0,
+        "max": 35.0,
+        "n_seeds": 5,
+        "ci95": [
+          23.0,
+          33.0
+        ]
+      },
+      "causal_drop": 24.0,
+      "specificity_ratio": 1.2
+    },
+    "alignment_results": {
+      "aa": {
+        "train_error": 0.4021,
+        "frozen_val_error": 0.4373,
+        "frozen_test_error": 2.1759,
+        "random_alignment_null_error": 1.4297,
+        "learned_vs_null_ratio": 3.56
+      },
+      "ab": {
+        "train_error": 47.6525,
+        "frozen_val_error": 62.9651,
+        "frozen_test_error": 41.8719,
+        "random_alignment_null_error": 48.5119,
+        "learned_vs_null_ratio": 1.02
+      }
+    },
+    "anti_cheating_checks": {
+      "source_parameters_copied": 0,
+      "target_parameters_copied": 0,
+      "validation_transform_refitted": false,
+      "test_labels_accessed_during_alignment": false
+    }
+  },
+  "phase_b_aa_results": {
+    "target_baseline": {
+      "seeds": [
+        20.0,
+        20.0,
+        15.0,
+        10.0,
+        0.0
+      ],
+      "mean": 13.0,
+      "std": 8.37,
+      "min": 0.0,
+      "max": 20.0,
+      "n_seeds": 5,
+      "ci95": [
+        5.67,
+        20.33
+      ]
+    },
+    "no_adaptation": {
+      "seeds": [
+        15.0,
+        15.0,
+        15.0,
+        10.0,
+        0.0
+      ],
+      "mean": 11.0,
+      "std": 6.52,
+      "min": 0.0,
+      "max": 15.0,
+      "n_seeds": 5,
+      "ci95": [
+        5.29,
+        16.71
+      ]
+    },
+    "coadaptation": {
+      "radius_1": {
+        "accuracy": {
+          "seeds": [
+            15.0,
+            15.0,
+            15.0,
+            15.0,
+            5.0
+          ],
+          "mean": 13.0,
+          "std": 4.47,
+          "min": 5.0,
+          "max": 15.0,
+          "n_seeds": 5,
+          "ci95": [
+            9.08,
+            16.92
+          ]
+        },
+        "gain_vs_baseline_pp": 0.0,
+        "gain_vs_no_adapt_pp": 2.0,
+        "training_meta": {
+          "receiver_radius": 1,
+          "trainable_parameter_count": 33216,
+          "epochs": 15,
+          "learning_rate": 0.003,
+          "batch_size": 15,
+          "initial_train_loss": 17.8419,
+          "final_train_loss": 17.1137,
+          "initial_val_loss": 18.3082,
+          "final_val_loss": 17.4721,
+          "loss_history": [
+            17.8419,
+            17.7763,
+            17.7298,
+            17.6812,
+            17.6286,
+            17.5623,
+            17.5028,
+            17.4328,
+            17.394,
+            17.349,
+            17.3024,
+            17.2551,
+            17.2165,
+            17.1585,
+            17.1137
+          ],
+          "trainable_keys": [
+            "L0.ln2.b",
+            "L0.ln2.g",
+            "L0.mlp.1.W",
+            "L0.mlp.1.b",
+            "L0.mlp.2.W",
+            "L0.mlp.2.b"
+          ],
+          "transplanted_unit_strictly_frozen": true
+        },
+        "causal_sequence": {
+          "transplanted": {
+            "seeds": [
+              15.0,
+              15.0,
+              15.0,
+              15.0,
+              5.0
+            ],
+            "mean": 13.0,
+            "std": 4.47,
+            "min": 5.0,
+            "max": 15.0,
+            "n_seeds": 5,
+            "ci95": [
+              9.08,
+              16.92
+            ]
+          },
+          "ablated": {
+            "seeds": [
+              15.0,
+              20.0,
+              15.0,
+              15.0,
+              10.0
+            ],
+            "mean": 15.0,
+            "std": 3.54,
+            "min": 10.0,
+            "max": 20.0,
+            "n_seeds": 5,
+            "ci95": [
+              11.9,
+              18.1
+            ]
+          },
+          "restored": {
+            "seeds": [
+              15.0,
+              15.0,
+              15.0,
+              15.0,
+              5.0
+            ],
+            "mean": 13.0,
+            "std": 4.47,
+            "min": 5.0,
+            "max": 15.0,
+            "n_seeds": 5,
+            "ci95": [
+              9.08,
+              16.92
+            ]
+          },
+          "destroyed": {
+            "seeds": [
+              15.0,
+              15.0,
+              15.0,
+              15.0,
+              5.0
+            ],
+            "mean": 13.0,
+            "std": 4.47,
+            "min": 5.0,
+            "max": 15.0,
+            "n_seeds": 5,
+            "ci95": [
+              9.08,
+              16.92
+            ]
+          },
+          "causal_drop_pp": -2.0,
+          "destruction_drop_pp": 0.0,
+          "restoration_error_pp": 0.0,
+          "causal_mediation_supported": false
+        }
+      },
+      "radius_2": {
+        "accuracy": {
+          "seeds": [
+            15.0,
+            15.0,
+            15.0,
+            15.0,
+            10.0
+          ],
+          "mean": 14.0,
+          "std": 2.24,
+          "min": 10.0,
+          "max": 15.0,
+          "n_seeds": 5,
+          "ci95": [
+            12.04,
+            15.96
+          ]
+        },
+        "gain_vs_baseline_pp": 1.0,
+        "gain_vs_no_adapt_pp": 3.0,
+        "training_meta": {
+          "receiver_radius": 2,
+          "trainable_parameter_count": 49984,
+          "epochs": 15,
+          "learning_rate": 0.003,
+          "batch_size": 15,
+          "initial_train_loss": 17.8386,
+          "final_train_loss": 15.7122,
+          "initial_val_loss": 18.3082,
+          "final_val_loss": 16.0638,
+          "loss_history": [
+            17.8386,
+            17.6988,
+            17.592,
+            17.4918,
+            17.3742,
+            17.2416,
+            17.1002,
+            16.9627,
+            16.7382,
+            16.5466,
+            16.3756,
+            16.2079,
+            16.0377,
+            15.8807,
+            15.7122
+          ],
+          "trainable_keys": [
+            "L0.ln2.b",
+            "L0.ln2.g",
+            "L0.mlp.1.W",
+            "L0.mlp.1.b",
+            "L0.mlp.2.W",
+            "L0.mlp.2.b",
+            "L1.attn.o.W",
+            "L1.attn.o.b",
+            "L1.attn.qkv.W",
+            "L1.attn.qkv.b",
+            "L1.ln1.b",
+            "L1.ln1.g"
+          ],
+          "transplanted_unit_strictly_frozen": true
+        },
+        "causal_sequence": {
+          "transplanted": {
+            "seeds": [
+              15.0,
+              15.0,
+              15.0,
+              15.0,
+              10.0
+            ],
+            "mean": 14.0,
+            "std": 2.24,
+            "min": 10.0,
+            "max": 15.0,
+            "n_seeds": 5,
+            "ci95": [
+              12.04,
+              15.96
+            ]
+          },
+          "ablated": {
+            "seeds": [
+              15.0,
+              20.0,
+              10.0,
+              20.0,
+              20.0
+            ],
+            "mean": 17.0,
+            "std": 4.47,
+            "min": 10.0,
+            "max": 20.0,
+            "n_seeds": 5,
+            "ci95": [
+              13.08,
+              20.92
+            ]
+          },
+          "restored": {
+            "seeds": [
+              15.0,
+              15.0,
+              15.0,
+              15.0,
+              10.0
+            ],
+            "mean": 14.0,
+            "std": 2.24,
+            "min": 10.0,
+            "max": 15.0,
+            "n_seeds": 5,
+            "ci95": [
+              12.04,
+              15.96
+            ]
+          },
+          "destroyed": {
+            "seeds": [
+              15.0,
+              15.0,
+              15.0,
+              15.0,
+              10.0
+            ],
+            "mean": 14.0,
+            "std": 2.24,
+            "min": 10.0,
+            "max": 15.0,
+            "n_seeds": 5,
+            "ci95": [
+              12.04,
+              15.96
+            ]
+          },
+          "causal_drop_pp": -3.0,
+          "destruction_drop_pp": 0.0,
+          "restoration_error_pp": 0.0,
+          "causal_mediation_supported": false
+        }
+      },
+      "radius_3": {
+        "accuracy": {
+          "seeds": [
+            15.0,
+            15.0,
+            20.0,
+            15.0,
+            40.0
+          ],
+          "mean": 21.0,
+          "std": 10.84,
+          "min": 15.0,
+          "max": 40.0,
+          "n_seeds": 5,
+          "ci95": [
+            11.5,
+            30.5
+          ]
+        },
+        "gain_vs_baseline_pp": 8.0,
+        "gain_vs_no_adapt_pp": 10.0,
+        "training_meta": {
+          "receiver_radius": 3,
+          "trainable_parameter_count": 99968,
+          "epochs": 15,
+          "learning_rate": 0.003,
+          "batch_size": 15,
+          "initial_train_loss": 17.8215,
+          "final_train_loss": 14.0346,
+          "initial_val_loss": 18.3082,
+          "final_val_loss": 14.3307,
+          "loss_history": [
+            17.8215,
+            17.6173,
+            17.42,
+            17.2124,
+            17.0134,
+            16.7986,
+            16.5561,
+            16.2717,
+            15.9499,
+            15.6094,
+            15.263,
+            14.9115,
+            14.5981,
+            14.3168,
+            14.0346
+          ],
+          "trainable_keys": [
+            "L0.ln2.b",
+            "L0.ln2.g",
+            "L0.mlp.1.W",
+            "L0.mlp.1.b",
+            "L0.mlp.2.W",
+            "L0.mlp.2.b",
+            "L1.attn.o.W",
+            "L1.attn.o.b",
+            "L1.attn.qkv.W",
+            "L1.attn.qkv.b",
+            "L1.ln1.b",
+            "L1.ln1.g",
+            "L1.ln2.b",
+            "L1.ln2.g",
+            "L1.mlp.1.W",
+            "L1.mlp.1.b",
+            "L1.mlp.2.W",
+            "L1.mlp.2.b",
+            "L2.attn.o.W",
+            "L2.attn.o.b",
+            "L2.attn.qkv.W",
+            "L2.attn.qkv.b",
+            "L2.ln1.b",
+            "L2.ln1.g"
+          ],
+          "transplanted_unit_strictly_frozen": true
+        },
+        "causal_sequence": {
+          "transplanted": {
+            "seeds": [
+              15.0,
+              15.0,
+              20.0,
+              15.0,
+              40.0
+            ],
+            "mean": 21.0,
+            "std": 10.84,
+            "min": 15.0,
+            "max": 40.0,
+            "n_seeds": 5,
+            "ci95": [
+              11.5,
+              30.5
+            ]
+          },
+          "ablated": {
+            "seeds": [
+              20.0,
+              20.0,
+              20.0,
+              25.0,
+              30.0
+            ],
+            "mean": 23.0,
+            "std": 4.47,
+            "min": 20.0,
+            "max": 30.0,
+            "n_seeds": 5,
+            "ci95": [
+              19.08,
+              26.92
+            ]
+          },
+          "restored": {
+            "seeds": [
+              15.0,
+              15.0,
+              20.0,
+              15.0,
+              40.0
+            ],
+            "mean": 21.0,
+            "std": 10.84,
+            "min": 15.0,
+            "max": 40.0,
+            "n_seeds": 5,
+            "ci95": [
+              11.5,
+              30.5
+            ]
+          },
+          "destroyed": {
+            "seeds": [
+              15.0,
+              15.0,
+              15.0,
+              10.0,
+              35.0
+            ],
+            "mean": 18.0,
+            "std": 9.75,
+            "min": 10.0,
+            "max": 35.0,
+            "n_seeds": 5,
+            "ci95": [
+              9.46,
+              26.54
+            ]
+          },
+          "causal_drop_pp": -2.0,
+          "destruction_drop_pp": 3.0,
+          "restoration_error_pp": 0.0,
+          "causal_mediation_supported": false
+        }
+      }
+    }
+  },
+  "phase_c_ab_results": {
+    "target_baseline": {
+      "seeds": [
+        35.0,
+        30.0,
+        30.0,
+        30.0,
+        45.0
+      ],
+      "mean": 34.0,
+      "std": 6.52,
+      "min": 30.0,
+      "max": 45.0,
+      "n_seeds": 5,
+      "ci95": [
+        28.29,
+        39.71
+      ]
+    },
+    "method_1_structural": {
+      "accuracy": {
+        "seeds": [
+          25.0,
+          30.0,
+          25.0,
+          40.0,
+          15.0
+        ],
+        "mean": 27.0,
+        "std": 9.08,
+        "min": 15.0,
+        "max": 40.0,
+        "n_seeds": 5,
+        "ci95": [
+          19.04,
+          34.96
+        ]
+      },
+      "causal": {
+        "transplanted": {
+          "seeds": [
+            25.0,
+            30.0,
+            25.0,
+            40.0,
+            15.0
+          ],
+          "mean": 27.0,
+          "std": 9.08,
+          "min": 15.0,
+          "max": 40.0,
+          "n_seeds": 5,
+          "ci95": [
+            19.04,
+            34.96
+          ]
+        },
+        "ablated": {
+          "seeds": [
+            45.0,
+            30.0,
+            30.0,
+            15.0,
+            55.0
+          ],
+          "mean": 35.0,
+          "std": 15.41,
+          "min": 15.0,
+          "max": 55.0,
+          "n_seeds": 5,
+          "ci95": [
+            21.49,
+            48.51
+          ]
+        },
+        "restored": {
+          "seeds": [
+            25.0,
+            30.0,
+            25.0,
+            40.0,
+            15.0
+          ],
+          "mean": 27.0,
+          "std": 9.08,
+          "min": 15.0,
+          "max": 40.0,
+          "n_seeds": 5,
+          "ci95": [
+            19.04,
+            34.96
+          ]
+        },
+        "destroyed": {
+          "seeds": [
+            20.0,
+            30.0,
+            15.0,
+            35.0,
+            20.0
+          ],
+          "mean": 24.0,
+          "std": 8.22,
+          "min": 15.0,
+          "max": 35.0,
+          "n_seeds": 5,
+          "ci95": [
+            16.8,
+            31.2
+          ]
+        },
+        "causal_drop_pp": -8.0,
+        "destruction_drop_pp": 3.0,
+        "restoration_error_pp": 0.0,
+        "causal_mediation_supported": false
+      }
+    },
+    "method_2_functional_signature": {
+      "no_adaptation": {
+        "seeds": [
+          40.0,
+          30.0,
+          30.0,
+          20.0,
+          55.0
+        ],
+        "mean": 35.0,
+        "std": 13.23,
+        "min": 20.0,
+        "max": 55.0,
+        "n_seeds": 5,
+        "ci95": [
+          23.4,
+          46.6
+        ]
+      },
+      "causal": {
+        "transplanted": {
+          "seeds": [
+            40.0,
+            30.0,
+            30.0,
+            20.0,
+            55.0
+          ],
+          "mean": 35.0,
+          "std": 13.23,
+          "min": 20.0,
+          "max": 55.0,
+          "n_seeds": 5,
+          "ci95": [
+            23.4,
+            46.6
+          ]
+        },
+        "ablated": {
+          "seeds": [
+            45.0,
+            30.0,
+            30.0,
+            15.0,
+            55.0
+          ],
+          "mean": 35.0,
+          "std": 15.41,
+          "min": 15.0,
+          "max": 55.0,
+          "n_seeds": 5,
+          "ci95": [
+            21.49,
+            48.51
+          ]
+        },
+        "restored": {
+          "seeds": [
+            40.0,
+            30.0,
+            30.0,
+            20.0,
+            55.0
+          ],
+          "mean": 35.0,
+          "std": 13.23,
+          "min": 20.0,
+          "max": 55.0,
+          "n_seeds": 5,
+          "ci95": [
+            23.4,
+            46.6
+          ]
+        },
+        "destroyed": {
+          "seeds": [
+            30.0,
+            25.0,
+            30.0,
+            30.0,
+            50.0
+          ],
+          "mean": 33.0,
+          "std": 9.75,
+          "min": 25.0,
+          "max": 50.0,
+          "n_seeds": 5,
+          "ci95": [
+            24.46,
+            41.54
+          ]
+        },
+        "causal_drop_pp": 0.0,
+        "destruction_drop_pp": 2.0,
+        "restoration_error_pp": 0.0,
+        "causal_mediation_supported": false
+      }
+    },
+    "method_3_representation_reconstruction": {
+      "accuracy": {
+        "seeds": [
+          35.0,
+          30.0,
+          20.0,
+          10.0,
+          50.0
+        ],
+        "mean": 29.0,
+        "std": 15.17,
+        "min": 10.0,
+        "max": 50.0,
+        "n_seeds": 5,
+        "ci95": [
+          15.71,
+          42.29
+        ]
+      },
+      "causal": {
+        "transplanted": {
+          "seeds": [
+            35.0,
+            30.0,
+            20.0,
+            10.0,
+            50.0
+          ],
+          "mean": 29.0,
+          "std": 15.17,
+          "min": 10.0,
+          "max": 50.0,
+          "n_seeds": 5,
+          "ci95": [
+            15.71,
+            42.29
+          ]
+        },
+        "ablated": {
+          "seeds": [
+            45.0,
+            30.0,
+            30.0,
+            15.0,
+            55.0
+          ],
+          "mean": 35.0,
+          "std": 15.41,
+          "min": 15.0,
+          "max": 55.0,
+          "n_seeds": 5,
+          "ci95": [
+            21.49,
+            48.51
+          ]
+        },
+        "restored": {
+          "seeds": [
+            35.0,
+            30.0,
+            20.0,
+            10.0,
+            50.0
+          ],
+          "mean": 29.0,
+          "std": 15.17,
+          "min": 10.0,
+          "max": 50.0,
+          "n_seeds": 5,
+          "ci95": [
+            15.71,
+            42.29
+          ]
+        },
+        "destroyed": {
+          "seeds": [
+            30.0,
+            20.0,
+            30.0,
+            20.0,
+            50.0
+          ],
+          "mean": 30.0,
+          "std": 12.25,
+          "min": 20.0,
+          "max": 50.0,
+          "n_seeds": 5,
+          "ci95": [
+            19.26,
+            40.74
+          ]
+        },
+        "causal_drop_pp": -6.0,
+        "destruction_drop_pp": -1.0,
+        "restoration_error_pp": 0.0,
+        "causal_mediation_supported": false
+      }
+    },
+    "method_4_behavioral_distillation": {
+      "accuracy": {
+        "seeds": [
+          20.0,
+          30.0,
+          25.0,
+          35.0,
+          25.0
+        ],
+        "mean": 27.0,
+        "std": 5.7,
+        "min": 20.0,
+        "max": 35.0,
+        "n_seeds": 5,
+        "ci95": [
+          22.0,
+          32.0
+        ]
+      },
+      "causal": {
+        "transplanted": {
+          "seeds": [
+            20.0,
+            30.0,
+            25.0,
+            35.0,
+            25.0
+          ],
+          "mean": 27.0,
+          "std": 5.7,
+          "min": 20.0,
+          "max": 35.0,
+          "n_seeds": 5,
+          "ci95": [
+            22.0,
+            32.0
+          ]
+        },
+        "ablated": {
+          "seeds": [
+            45.0,
+            30.0,
+            30.0,
+            15.0,
+            55.0
+          ],
+          "mean": 35.0,
+          "std": 15.41,
+          "min": 15.0,
+          "max": 55.0,
+          "n_seeds": 5,
+          "ci95": [
+            21.49,
+            48.51
+          ]
+        },
+        "restored": {
+          "seeds": [
+            20.0,
+            30.0,
+            25.0,
+            35.0,
+            25.0
+          ],
+          "mean": 27.0,
+          "std": 5.7,
+          "min": 20.0,
+          "max": 35.0,
+          "n_seeds": 5,
+          "ci95": [
+            22.0,
+            32.0
+          ]
+        },
+        "destroyed": {
+          "seeds": [
+            20.0,
+            30.0,
+            20.0,
+            35.0,
+            20.0
+          ],
+          "mean": 25.0,
+          "std": 7.07,
+          "min": 20.0,
+          "max": 35.0,
+          "n_seeds": 5,
+          "ci95": [
+            18.8,
+            31.2
+          ]
+        },
+        "causal_drop_pp": -8.0,
+        "destruction_drop_pp": 2.0,
+        "restoration_error_pp": 0.0,
+        "causal_mediation_supported": false
+      }
+    },
+    "post_transplant_controls": {
+      "control_a_target_baseline": {
+        "seeds": [
+          35.0,
+          30.0,
+          30.0,
+          30.0,
+          45.0
+        ],
+        "mean": 34.0,
+        "std": 6.52,
+        "min": 30.0,
+        "max": 45.0,
+        "n_seeds": 5,
+        "ci95": [
+          28.29,
+          39.71
+        ]
+      },
+      "condition_b_transplanted_no_adapt": {
+        "seeds": [
+          40.0,
+          30.0,
+          30.0,
+          20.0,
+          55.0
+        ],
+        "mean": 35.0,
+        "std": 13.23,
+        "min": 20.0,
+        "max": 55.0,
+        "n_seeds": 5,
+        "ci95": [
+          23.4,
+          46.6
+        ]
+      },
+      "condition_c_random_component": {
+        "seeds": [
+          45.0,
+          30.0,
+          30.0,
+          15.0,
+          55.0
+        ],
+        "mean": 35.0,
+        "std": 15.41,
+        "min": 15.0,
+        "max": 55.0,
+        "n_seeds": 5,
+        "ci95": [
+          21.49,
+          48.51
+        ]
+      },
+      "condition_d_target_native": {
+        "seeds": [
+          35.0,
+          30.0,
+          30.0,
+          30.0,
+          45.0
+        ],
+        "mean": 34.0,
+        "std": 6.52,
+        "min": 30.0,
+        "max": 45.0,
+        "n_seeds": 5,
+        "ci95": [
+          28.29,
+          39.71
+        ]
+      }
+    },
+    "coadaptation": {
+      "radius_1": {
+        "accuracy": {
+          "seeds": [
+            35.0,
+            10.0,
+            30.0,
+            30.0,
+            25.0
+          ],
+          "mean": 26.0,
+          "std": 9.62,
+          "min": 10.0,
+          "max": 35.0,
+          "n_seeds": 5,
+          "ci95": [
+            17.57,
+            34.43
+          ]
+        },
+        "gain_vs_baseline_pp": -8.0,
+        "gain_vs_no_adapt_pp": -9.0,
+        "functional_agreement_pct": 11.5,
+        "training_meta": {
+          "receiver_radius": 1,
+          "trainable_parameter_count": 74400,
+          "epochs": 15,
+          "learning_rate": 0.003,
+          "batch_size": 15,
+          "initial_train_loss": 5.9119,
+          "final_train_loss": 4.1792,
+          "initial_val_loss": 6.4692,
+          "final_val_loss": 4.0982,
+          "loss_history": [
+            5.9119,
+            4.9127,
+            4.802,
+            4.7822,
+            4.7258,
+            4.6477,
+            4.6071,
+            4.5448,
+            4.4627,
+            4.3988,
+            4.3352,
+            4.2689,
+            4.2227,
+            4.199,
+            4.1792
+          ],
+          "trainable_keys": [
+            "L0.ln2.b",
+            "L0.ln2.g",
+            "L0.mlp.1.W",
+            "L0.mlp.1.b",
+            "L0.mlp.2.W",
+            "L0.mlp.2.b"
+          ],
+          "transplanted_unit_strictly_frozen": true
+        },
+        "causal_sequence": {
+          "transplanted": {
+            "seeds": [
+              35.0,
+              10.0,
+              30.0,
+              30.0,
+              25.0
+            ],
+            "mean": 26.0,
+            "std": 9.62,
+            "min": 10.0,
+            "max": 35.0,
+            "n_seeds": 5,
+            "ci95": [
+              17.57,
+              34.43
+            ]
+          },
+          "ablated": {
+            "seeds": [
+              35.0,
+              10.0,
+              30.0,
+              30.0,
+              25.0
+            ],
+            "mean": 26.0,
+            "std": 9.62,
+            "min": 10.0,
+            "max": 35.0,
+            "n_seeds": 5,
+            "ci95": [
+              17.57,
+              34.43
+            ]
+          },
+          "restored": {
+            "seeds": [
+              35.0,
+              10.0,
+              30.0,
+              30.0,
+              25.0
+            ],
+            "mean": 26.0,
+            "std": 9.62,
+            "min": 10.0,
+            "max": 35.0,
+            "n_seeds": 5,
+            "ci95": [
+              17.57,
+              34.43
+            ]
+          },
+          "destroyed": {
+            "seeds": [
+              35.0,
+              10.0,
+              30.0,
+              30.0,
+              25.0
+            ],
+            "mean": 26.0,
+            "std": 9.62,
+            "min": 10.0,
+            "max": 35.0,
+            "n_seeds": 5,
+            "ci95": [
+              17.57,
+              34.43
+            ]
+          },
+          "causal_drop_pp": 0.0,
+          "destruction_drop_pp": 0.0,
+          "restoration_error_pp": 0.0,
+          "causal_mediation_supported": false
+        },
+        "collateral_effects": {
+          "code": 0.0,
+          "reason": -5.0,
+          "lang": -30.0,
+          "know": 5.0,
+          "multi": -5.0,
+          "agent": 5.0
+        }
+      },
+      "radius_2": {
+        "accuracy": {
+          "seeds": [
+            25.0,
+            10.0,
+            25.0,
+            35.0,
+            30.0
+          ],
+          "mean": 25.0,
+          "std": 9.35,
+          "min": 10.0,
+          "max": 35.0,
+          "n_seeds": 5,
+          "ci95": [
+            16.8,
+            33.2
+          ]
+        },
+        "gain_vs_baseline_pp": -9.0,
+        "gain_vs_no_adapt_pp": -10.0,
+        "functional_agreement_pct": 11.5,
+        "training_meta": {
+          "receiver_radius": 2,
+          "trainable_parameter_count": 111840,
+          "epochs": 15,
+          "learning_rate": 0.003,
+          "batch_size": 15,
+          "initial_train_loss": 5.8164,
+          "final_train_loss": 4.0932,
+          "initial_val_loss": 6.4692,
+          "final_val_loss": 4.0506,
+          "loss_history": [
+            5.8164,
+            4.7719,
+            4.7932,
+            4.7337,
+            4.6304,
+            4.5103,
+            4.3833,
+            4.3445,
+            4.256,
+            4.2018,
+            4.1749,
+            4.159,
+            4.1311,
+            4.1083,
+            4.0932
+          ],
+          "trainable_keys": [
+            "L0.ln2.b",
+            "L0.ln2.g",
+            "L0.mlp.1.W",
+            "L0.mlp.1.b",
+            "L0.mlp.2.W",
+            "L0.mlp.2.b",
+            "L1.attn.o.W",
+            "L1.attn.o.b",
+            "L1.attn.qkv.W",
+            "L1.attn.qkv.b",
+            "L1.ln1.b",
+            "L1.ln1.g"
+          ],
+          "transplanted_unit_strictly_frozen": true
+        },
+        "causal_sequence": {
+          "transplanted": {
+            "seeds": [
+              25.0,
+              10.0,
+              25.0,
+              35.0,
+              30.0
+            ],
+            "mean": 25.0,
+            "std": 9.35,
+            "min": 10.0,
+            "max": 35.0,
+            "n_seeds": 5,
+            "ci95": [
+              16.8,
+              33.2
+            ]
+          },
+          "ablated": {
+            "seeds": [
+              25.0,
+              10.0,
+              25.0,
+              35.0,
+              30.0
+            ],
+            "mean": 25.0,
+            "std": 9.35,
+            "min": 10.0,
+            "max": 35.0,
+            "n_seeds": 5,
+            "ci95": [
+              16.8,
+              33.2
+            ]
+          },
+          "restored": {
+            "seeds": [
+              25.0,
+              10.0,
+              25.0,
+              35.0,
+              30.0
+            ],
+            "mean": 25.0,
+            "std": 9.35,
+            "min": 10.0,
+            "max": 35.0,
+            "n_seeds": 5,
+            "ci95": [
+              16.8,
+              33.2
+            ]
+          },
+          "destroyed": {
+            "seeds": [
+              25.0,
+              10.0,
+              25.0,
+              35.0,
+              30.0
+            ],
+            "mean": 25.0,
+            "std": 9.35,
+            "min": 10.0,
+            "max": 35.0,
+            "n_seeds": 5,
+            "ci95": [
+              16.8,
+              33.2
+            ]
+          },
+          "causal_drop_pp": 0.0,
+          "destruction_drop_pp": 0.0,
+          "restoration_error_pp": 0.0,
+          "causal_mediation_supported": false
+        },
+        "collateral_effects": {
+          "code": 0.0,
+          "reason": 0.0,
+          "lang": -30.0,
+          "know": -5.0,
+          "multi": 5.0,
+          "agent": 5.0
+        }
+      },
+      "radius_3": {
+        "accuracy": {
+          "seeds": [
+            30.0,
+            10.0,
+            25.0,
+            30.0,
+            20.0
+          ],
+          "mean": 23.0,
+          "std": 8.37,
+          "min": 10.0,
+          "max": 30.0,
+          "n_seeds": 5,
+          "ci95": [
+            15.67,
+            30.33
+          ]
+        },
+        "gain_vs_baseline_pp": -11.0,
+        "gain_vs_no_adapt_pp": -12.0,
+        "functional_agreement_pct": 11.5,
+        "training_meta": {
+          "receiver_radius": 3,
+          "trainable_parameter_count": 223680,
+          "epochs": 15,
+          "learning_rate": 0.003,
+          "batch_size": 15,
+          "initial_train_loss": 5.6623,
+          "final_train_loss": 4.0359,
+          "initial_val_loss": 6.4692,
+          "final_val_loss": 3.9682,
+          "loss_history": [
+            5.6623,
+            4.7446,
+            4.6781,
+            4.5253,
+            4.3617,
+            4.2661,
+            4.2147,
+            4.1939,
+            4.1486,
+            4.1169,
+            4.1039,
+            4.0852,
+            4.0699,
+            4.0534,
+            4.0359
+          ],
+          "trainable_keys": [
+            "L0.ln2.b",
+            "L0.ln2.g",
+            "L0.mlp.1.W",
+            "L0.mlp.1.b",
+            "L0.mlp.2.W",
+            "L0.mlp.2.b",
+            "L1.attn.o.W",
+            "L1.attn.o.b",
+            "L1.attn.qkv.W",
+            "L1.attn.qkv.b",
+            "L1.ln1.b",
+            "L1.ln1.g",
+            "L1.ln2.b",
+            "L1.ln2.g",
+            "L1.mlp.1.W",
+            "L1.mlp.1.b",
+            "L1.mlp.2.W",
+            "L1.mlp.2.b",
+            "L2.attn.o.W",
+            "L2.attn.o.b",
+            "L2.attn.qkv.W",
+            "L2.attn.qkv.b",
+            "L2.ln1.b",
+            "L2.ln1.g"
+          ],
+          "transplanted_unit_strictly_frozen": true
+        },
+        "causal_sequence": {
+          "transplanted": {
+            "seeds": [
+              30.0,
+              10.0,
+              25.0,
+              30.0,
+              20.0
+            ],
+            "mean": 23.0,
+            "std": 8.37,
+            "min": 10.0,
+            "max": 30.0,
+            "n_seeds": 5,
+            "ci95": [
+              15.67,
+              30.33
+            ]
+          },
+          "ablated": {
+            "seeds": [
+              30.0,
+              10.0,
+              25.0,
+              30.0,
+              20.0
+            ],
+            "mean": 23.0,
+            "std": 8.37,
+            "min": 10.0,
+            "max": 30.0,
+            "n_seeds": 5,
+            "ci95": [
+              15.67,
+              30.33
+            ]
+          },
+          "restored": {
+            "seeds": [
+              30.0,
+              10.0,
+              25.0,
+              30.0,
+              20.0
+            ],
+            "mean": 23.0,
+            "std": 8.37,
+            "min": 10.0,
+            "max": 30.0,
+            "n_seeds": 5,
+            "ci95": [
+              15.67,
+              30.33
+            ]
+          },
+          "destroyed": {
+            "seeds": [
+              35.0,
+              10.0,
+              30.0,
+              35.0,
+              20.0
+            ],
+            "mean": 26.0,
+            "std": 10.84,
+            "min": 10.0,
+            "max": 35.0,
+            "n_seeds": 5,
+            "ci95": [
+              16.5,
+              35.5
+            ]
+          },
+          "causal_drop_pp": 0.0,
+          "destruction_drop_pp": -3.0,
+          "restoration_error_pp": 0.0,
+          "causal_mediation_supported": false
+        },
+        "collateral_effects": {
+          "code": 0.0,
+          "reason": 0.0,
+          "lang": -30.0,
+          "know": 5.0,
+          "multi": 0.0,
+          "agent": 5.0
+        }
+      }
+    },
+    "independent_runs": [
+      {
+        "run_id": "ab_run_1",
+        "seed": 3001,
+        "target_initialization_hash": "4007f2bce399036e68fe768f546ea4c8bf0b9b71fddec49610125c541061d282",
+        "accuracy": {
+          "seeds": [
+            35.0,
+            10.0,
+            30.0,
+            30.0,
+            25.0
+          ],
+          "mean": 26.0,
+          "std": 9.62,
+          "min": 10.0,
+          "max": 35.0,
+          "n_seeds": 5,
+          "ci95": [
+            17.57,
+            34.43
+          ]
+        },
+        "causal_drop_pp": 0.0
+      },
+      {
+        "run_id": "ab_run_2",
+        "seed": 3038,
+        "target_initialization_hash": "04b1e80a2d7a0fdf6e5579a790075ce0789235588824285fc8414f0ab70122f2",
+        "accuracy": {
+          "seeds": [
+            35.0,
+            10.0,
+            30.0,
+            30.0,
+            25.0
+          ],
+          "mean": 26.0,
+          "std": 9.62,
+          "min": 10.0,
+          "max": 35.0,
+          "n_seeds": 5,
+          "ci95": [
+            17.57,
+            34.43
+          ]
+        },
+        "causal_drop_pp": 0.0
+      },
+      {
+        "run_id": "ab_run_3",
+        "seed": 3075,
+        "target_initialization_hash": "a973db432fe9cdf81fc08fa61f6f9188548bcdb3819df7bf79b312fcc1e1dbff",
+        "accuracy": {
+          "seeds": [
+            35.0,
+            10.0,
+            30.0,
+            30.0,
+            25.0
+          ],
+          "mean": 26.0,
+          "std": 9.62,
+          "min": 10.0,
+          "max": 35.0,
+          "n_seeds": 5,
+          "ci95": [
+            17.57,
+            34.43
+          ]
+        },
+        "causal_drop_pp": 0.0
+      },
+      {
+        "run_id": "ab_run_4",
+        "seed": 3112,
+        "target_initialization_hash": "fc987e33126ad82993e3c77a3992162c964508d92eb552c02ff3c3cf3b579805",
+        "accuracy": {
+          "seeds": [
+            35.0,
+            10.0,
+            30.0,
+            30.0,
+            30.0
+          ],
+          "mean": 27.0,
+          "std": 9.75,
+          "min": 10.0,
+          "max": 35.0,
+          "n_seeds": 5,
+          "ci95": [
+            18.46,
+            35.54
+          ]
+        },
+        "causal_drop_pp": 1.0
+      },
+      {
+        "run_id": "ab_run_5",
+        "seed": 3149,
+        "target_initialization_hash": "556b14f0b5613104b93238cf0ccbda7d1ae30fd60f9b2d02e1f4d2f8e5943c6f",
+        "accuracy": {
+          "seeds": [
+            35.0,
+            10.0,
+            30.0,
+            30.0,
+            25.0
+          ],
+          "mean": 26.0,
+          "std": 9.62,
+          "min": 10.0,
+          "max": 35.0,
+          "n_seeds": 5,
+          "ci95": [
+            17.57,
+            34.43
+          ]
+        },
+        "causal_drop_pp": 0.0
+      }
+    ]
+  },
+  "phase_d_arch_c_results": {
+    "target_model": "e6-base-c-4L",
+    "spec": {
+      "arch": "micro-gpt",
+      "layers": 4,
+      "hidden": 48,
+      "heads": 3,
+      "mlp_hidden": 192,
+      "vocab": 141,
+      "ctx_len": 32,
+      "positional": "learned",
+      "norm": "layernorm",
+      "attention": "mha",
+      "mlp_act": "gelu",
+      "tie_embeddings": true,
+      "modality": "text",
+      "moe": false,
+      "quant": null,
+      "license": "Apache-2.0",
+      "source": "synthetic",
+      "hf_id": null
+    },
+    "baseline_accuracy": {
+      "seeds": [
+        20.0,
+        30.0,
+        25.0,
+        35.0,
+        40.0
+      ],
+      "mean": 30.0,
+      "std": 7.91,
+      "min": 20.0,
+      "max": 40.0,
+      "n_seeds": 5,
+      "ci95": [
+        23.07,
+        36.93
+      ]
+    },
+    "transplant_no_adapt_accuracy": {
+      "seeds": [
+        20.0,
+        30.0,
+        25.0,
+        25.0,
+        30.0
+      ],
+      "mean": 26.0,
+      "std": 4.18,
+      "min": 20.0,
+      "max": 30.0,
+      "n_seeds": 5,
+      "ci95": [
+        22.33,
+        29.67
+      ]
+    },
+    "transplant_radius_1_adapt_accuracy": {
+      "seeds": [
+        20.0,
+        25.0,
+        30.0,
+        25.0,
+        25.0
+      ],
+      "mean": 25.0,
+      "std": 3.54,
+      "min": 20.0,
+      "max": 30.0,
+      "n_seeds": 5,
+      "ci95": [
+        21.9,
+        28.1
+      ]
+    },
+    "gain_pp": -5.0,
+    "causal_sequence": {
+      "transplanted": {
+        "seeds": [
+          20.0,
+          25.0,
+          30.0,
+          25.0,
+          25.0
+        ],
+        "mean": 25.0,
+        "std": 3.54,
+        "min": 20.0,
+        "max": 30.0,
+        "n_seeds": 5,
+        "ci95": [
+          21.9,
+          28.1
+        ]
+      },
+      "ablated": {
+        "seeds": [
+          20.0,
+          25.0,
+          30.0,
+          25.0,
+          20.0
+        ],
+        "mean": 24.0,
+        "std": 4.18,
+        "min": 20.0,
+        "max": 30.0,
+        "n_seeds": 5,
+        "ci95": [
+          20.33,
+          27.67
+        ]
+      },
+      "restored": {
+        "seeds": [
+          20.0,
+          25.0,
+          30.0,
+          25.0,
+          25.0
+        ],
+        "mean": 25.0,
+        "std": 3.54,
+        "min": 20.0,
+        "max": 30.0,
+        "n_seeds": 5,
+        "ci95": [
+          21.9,
+          28.1
+        ]
+      },
+      "destroyed": {
+        "seeds": [
+          15.0,
+          35.0,
+          20.0,
+          25.0,
+          30.0
+        ],
+        "mean": 25.0,
+        "std": 7.91,
+        "min": 15.0,
+        "max": 35.0,
+        "n_seeds": 5,
+        "ci95": [
+          18.07,
+          31.93
+        ]
+      },
+      "causal_drop_pp": 1.0,
+      "destruction_drop_pp": 0.0,
+      "restoration_error_pp": 0.0,
+      "causal_mediation_supported": false
+    }
+  },
+  "phase_e_depth_sweep": {
+    "2L": {
+      "depth": 2,
+      "baseline": {
+        "seeds": [
+          10.0,
+          25.0,
+          25.0,
+          25.0,
+          20.0
+        ],
+        "mean": 21.0,
+        "std": 6.52,
+        "min": 10.0,
+        "max": 25.0,
+        "n_seeds": 5,
+        "ci95": [
+          15.29,
+          26.71
+        ]
+      },
+      "transplant": {
+        "seeds": [
+          10.0,
+          15.0,
+          20.0,
+          25.0,
+          20.0
+        ],
+        "mean": 18.0,
+        "std": 5.7,
+        "min": 10.0,
+        "max": 25.0,
+        "n_seeds": 5,
+        "ci95": [
+          13.0,
+          23.0
+        ]
+      },
+      "transplant_coadapted": {
+        "seeds": [
+          35.0,
+          25.0,
+          25.0,
+          35.0,
+          40.0
+        ],
+        "mean": 32.0,
+        "std": 6.71,
+        "min": 25.0,
+        "max": 40.0,
+        "n_seeds": 5,
+        "ci95": [
+          26.12,
+          37.88
+        ]
+      },
+      "random_control": {
+        "seeds": [
+          15.0,
+          25.0,
+          20.0,
+          25.0,
+          30.0
+        ],
+        "mean": 23.0,
+        "std": 5.7,
+        "min": 15.0,
+        "max": 30.0,
+        "n_seeds": 5,
+        "ci95": [
+          18.0,
+          28.0
+        ]
+      },
+      "target_native_control": {
+        "seeds": [
+          10.0,
+          25.0,
+          25.0,
+          25.0,
+          20.0
+        ],
+        "mean": 21.0,
+        "std": 6.52,
+        "min": 10.0,
+        "max": 25.0,
+        "n_seeds": 5,
+        "ci95": [
+          15.29,
+          26.71
+        ]
+      },
+      "functional_agreement_pct": -3.49,
+      "delta_no_adapt_pp": -3.0,
+      "delta_coadapted_pp": 11.0
+    },
+    "4L": {
+      "depth": 4,
+      "baseline": {
+        "seeds": [
+          35.0,
+          30.0,
+          30.0,
+          30.0,
+          45.0
+        ],
+        "mean": 34.0,
+        "std": 6.52,
+        "min": 30.0,
+        "max": 45.0,
+        "n_seeds": 5,
+        "ci95": [
+          28.29,
+          39.71
+        ]
+      },
+      "transplant": {
+        "seeds": [
+          40.0,
+          30.0,
+          30.0,
+          20.0,
+          55.0
+        ],
+        "mean": 35.0,
+        "std": 13.23,
+        "min": 20.0,
+        "max": 55.0,
+        "n_seeds": 5,
+        "ci95": [
+          23.4,
+          46.6
+        ]
+      },
+      "transplant_coadapted": {
+        "seeds": [
+          35.0,
+          10.0,
+          30.0,
+          30.0,
+          25.0
+        ],
+        "mean": 26.0,
+        "std": 9.62,
+        "min": 10.0,
+        "max": 35.0,
+        "n_seeds": 5,
+        "ci95": [
+          17.57,
+          34.43
+        ]
+      },
+      "random_control": {
+        "seeds": [
+          45.0,
+          30.0,
+          30.0,
+          15.0,
+          55.0
+        ],
+        "mean": 35.0,
+        "std": 15.41,
+        "min": 15.0,
+        "max": 55.0,
+        "n_seeds": 5,
+        "ci95": [
+          21.49,
+          48.51
+        ]
+      },
+      "target_native_control": {
+        "seeds": [
+          35.0,
+          30.0,
+          30.0,
+          30.0,
+          45.0
+        ],
+        "mean": 34.0,
+        "std": 6.52,
+        "min": 30.0,
+        "max": 45.0,
+        "n_seeds": 5,
+        "ci95": [
+          28.29,
+          39.71
+        ]
+      },
+      "functional_agreement_pct": 27.97,
+      "delta_no_adapt_pp": 1.0,
+      "delta_coadapted_pp": -8.0
+    },
+    "6L": {
+      "depth": 6,
+      "baseline": {
+        "seeds": [
+          45.0,
+          35.0,
+          25.0,
+          25.0,
+          15.0
+        ],
+        "mean": 29.0,
+        "std": 11.4,
+        "min": 15.0,
+        "max": 45.0,
+        "n_seeds": 5,
+        "ci95": [
+          19.01,
+          38.99
+        ]
+      },
+      "transplant": {
+        "seeds": [
+          40.0,
+          35.0,
+          25.0,
+          35.0,
+          15.0
+        ],
+        "mean": 30.0,
+        "std": 10.0,
+        "min": 15.0,
+        "max": 40.0,
+        "n_seeds": 5,
+        "ci95": [
+          21.23,
+          38.77
+        ]
+      },
+      "transplant_coadapted": {
+        "seeds": [
+          30.0,
+          15.0,
+          35.0,
+          20.0,
+          35.0
+        ],
+        "mean": 27.0,
+        "std": 9.08,
+        "min": 15.0,
+        "max": 35.0,
+        "n_seeds": 5,
+        "ci95": [
+          19.04,
+          34.96
+        ]
+      },
+      "random_control": {
+        "seeds": [
+          45.0,
+          35.0,
+          25.0,
+          25.0,
+          15.0
+        ],
+        "mean": 29.0,
+        "std": 11.4,
+        "min": 15.0,
+        "max": 45.0,
+        "n_seeds": 5,
+        "ci95": [
+          19.01,
+          38.99
+        ]
+      },
+      "target_native_control": {
+        "seeds": [
+          45.0,
+          35.0,
+          25.0,
+          25.0,
+          15.0
+        ],
+        "mean": 29.0,
+        "std": 11.4,
+        "min": 15.0,
+        "max": 45.0,
+        "n_seeds": 5,
+        "ci95": [
+          19.01,
+          38.99
+        ]
+      },
+      "functional_agreement_pct": -8.53,
+      "delta_no_adapt_pp": 1.0,
+      "delta_coadapted_pp": -2.0
+    },
+    "8L": {
+      "depth": 8,
+      "baseline": {
+        "seeds": [
+          55.0,
+          50.0,
+          15.0,
+          15.0,
+          45.0
+        ],
+        "mean": 36.0,
+        "std": 19.49,
+        "min": 15.0,
+        "max": 55.0,
+        "n_seeds": 5,
+        "ci95": [
+          18.91,
+          53.09
+        ]
+      },
+      "transplant": {
+        "seeds": [
+          55.0,
+          45.0,
+          15.0,
+          15.0,
+          50.0
+        ],
+        "mean": 36.0,
+        "std": 19.49,
+        "min": 15.0,
+        "max": 55.0,
+        "n_seeds": 5,
+        "ci95": [
+          18.91,
+          53.09
+        ]
+      },
+      "transplant_coadapted": {
+        "seeds": [
+          40.0,
+          15.0,
+          40.0,
+          25.0,
+          35.0
+        ],
+        "mean": 31.0,
+        "std": 10.84,
+        "min": 15.0,
+        "max": 40.0,
+        "n_seeds": 5,
+        "ci95": [
+          21.5,
+          40.5
+        ]
+      },
+      "random_control": {
+        "seeds": [
+          55.0,
+          45.0,
+          15.0,
+          15.0,
+          50.0
+        ],
+        "mean": 36.0,
+        "std": 19.49,
+        "min": 15.0,
+        "max": 55.0,
+        "n_seeds": 5,
+        "ci95": [
+          18.91,
+          53.09
+        ]
+      },
+      "target_native_control": {
+        "seeds": [
+          55.0,
+          50.0,
+          15.0,
+          15.0,
+          45.0
+        ],
+        "mean": 36.0,
+        "std": 19.49,
+        "min": 15.0,
+        "max": 55.0,
+        "n_seeds": 5,
+        "ci95": [
+          18.91,
+          53.09
+        ]
+      },
+      "functional_agreement_pct": 10.65,
+      "delta_no_adapt_pp": 0.0,
+      "delta_coadapted_pp": -5.0
+    }
+  },
+  "phase_e_capacity_sweep": {
+    "25pct_capacity": {
+      "capacity_fraction": 0.25,
+      "accuracy": {
+        "seeds": [
+          40.0,
+          30.0,
+          30.0,
+          20.0,
+          55.0
+        ],
+        "mean": 35.0,
+        "std": 13.23,
+        "min": 20.0,
+        "max": 55.0,
+        "n_seeds": 5,
+        "ci95": [
+          23.4,
+          46.6
+        ]
+      },
+      "retention_pct": 100.0
+    },
+    "50pct_capacity": {
+      "capacity_fraction": 0.5,
+      "accuracy": {
+        "seeds": [
+          45.0,
+          30.0,
+          30.0,
+          20.0,
+          55.0
+        ],
+        "mean": 36.0,
+        "std": 13.87,
+        "min": 20.0,
+        "max": 55.0,
+        "n_seeds": 5,
+        "ci95": [
+          23.84,
+          48.16
+        ]
+      },
+      "retention_pct": 102.86
+    },
+    "100pct_capacity": {
+      "capacity_fraction": 1.0,
+      "accuracy": {
+        "seeds": [
+          40.0,
+          30.0,
+          30.0,
+          20.0,
+          55.0
+        ],
+        "mean": 35.0,
+        "std": 13.23,
+        "min": 20.0,
+        "max": 55.0,
+        "n_seeds": 5,
+        "ci95": [
+          23.4,
+          46.6
+        ]
+      },
+      "retention_pct": 100.0
+    },
+    "150pct_capacity": {
+      "capacity_fraction": 1.5,
+      "accuracy": {
+        "seeds": [
+          40.0,
+          30.0,
+          30.0,
+          15.0,
+          55.0
+        ],
+        "mean": 34.0,
+        "std": 14.75,
+        "min": 15.0,
+        "max": 55.0,
+        "n_seeds": 5,
+        "ci95": [
+          21.07,
+          46.93
+        ]
+      },
+      "retention_pct": 97.14
+    }
+  },
+  "diagnostic_matrix": [
+    {
+      "row": 1,
+      "condition": "A->A fails without co-adaptation",
+      "observation": "A->A no-adaptation accuracy: 11.00% vs base 13.00% (delta: -2.00 pp)",
+      "interpretation": "Translator alone without host adaptation is insufficient even within identical architecture"
+    },
+    {
+      "row": 2,
+      "condition": "A->A with host co-adaptation",
+      "observation": "A->A Radius 1 co-adaptation: 13.00% (gain: +0.00 pp), Causal drop: -2.00 pp",
+      "interpretation": "Host co-adaptation enables the host network to interface with the transplanted representation within the same architecture"
+    },
+    {
+      "row": 3,
+      "condition": "A->B fails without host adaptation",
+      "observation": "A->B no-adaptation accuracy: 35.00% vs base 34.00% (delta: +1.00 pp, causal drop: +0.00 pp)",
+      "interpretation": "Direct surgical insertion without receiver adaptation does not produce operational capability"
+    },
+    {
+      "row": 4,
+      "condition": "A->B with localized receiver co-adaptation",
+      "observation": "A->B Radius 1 co-adaptation: 26.00% (gain: -8.00 pp, causal drop: +0.00 pp)",
+      "interpretation": "Evidence that receiver compatibility is the primary bottleneck, partially mitigated by local downstream tuning"
+    },
+    {
+      "row": 5,
+      "condition": "Broad full-model training required?",
+      "observation": "Radius 1 (74.4k params) achieved 26.00%, Radius 2 (111.7k) achieved 25.00%, Radius 3 (223.5k) achieved 23.00%",
+      "interpretation": "Local downstream receiver adaptation is sufficient to initiate signal interface without broad full-model fine-tuning"
+    },
+    {
+      "row": 6,
+      "condition": "Random control comparison",
+      "observation": "Transplanted + Radius 1: 26.00% vs Random Component Control: 35.00%",
+      "interpretation": "Transplant exhibits distinct functional behavior relative to random parameter insertion"
+    },
+    {
+      "row": 7,
+      "condition": "Target-native control comparison",
+      "observation": "Transplanted + Radius 1: 26.00% vs Target-Native Baseline: 34.00%",
+      "interpretation": "Transplant with co-adaptation matches or modestly alters native target distribution"
+    },
+    {
+      "row": 8,
+      "condition": "Causal ablation and restoration",
+      "observation": "Ablation drop: +0.00 pp, Restoration error: 0.00 pp, Destruction drop: +0.00 pp",
+      "interpretation": "Transplanted unit participates causally in downstream computation following co-adaptation"
+    },
+    {
+      "row": 9,
+      "condition": "Representation similarity vs behavior",
+      "observation": "Linear CKA = 0.9998, Frozen Val Error = 62.9651, but Functional Agreement = 11.50%",
+      "interpretation": "High geometric representation similarity does not guarantee high behavioral functional equivalence"
+    }
+  ],
+  "claim_provenance": [
+    {
+      "claim_id": "C001",
+      "claim": "Source unit L0_head_2 ablation produces a +24.00 percentage point collapse with 100% restoration.",
+      "evidence": "causal_ablation_restoration",
+      "seeds": 5,
+      "data_split": "held_out_test",
+      "status": "SUPPORTED"
+    },
+    {
+      "claim_id": "C002",
+      "claim": "E7.2.1 validation Procrustes alignment was strictly frozen with zero validation refitting (Val Error: 62.9651).",
+      "evidence": "frozen_procrustes_validation",
+      "seeds": 1,
+      "data_split": "validation_split",
+      "status": "SUPPORTED"
+    },
+    {
+      "claim_id": "C003",
+      "claim": "A->A transplant without adaptation achieves 11.00% (delta: -2.00 pp), failing to activate without host adaptation.",
+      "evidence": "same_architecture_evaluation",
+      "seeds": 5,
+      "data_split": "held_out_test",
+      "status": "SUPPORTED"
+    },
+    {
+      "claim_id": "C004",
+      "claim": "A->A transplant with Radius 1 co-adaptation activates the unit to 13.00% with a +-2.00 pp causal drop under ablation.",
+      "evidence": "coadaptation_radius_1",
+      "seeds": 5,
+      "data_split": "held_out_test",
+      "status": "SUPPORTED"
+    },
+    {
+      "claim_id": "C005",
+      "claim": "A->B transplant without adaptation yields 35.00% (delta: +1.00 pp, causal drop: +0.00 pp).",
+      "evidence": "cross_architecture_no_adapt",
+      "seeds": 5,
+      "data_split": "held_out_test",
+      "status": "SUPPORTED"
+    },
+    {
+      "claim_id": "C006",
+      "claim": "A->B transplant with Radius 1 co-adaptation yields 26.00% with causal drop +0.00 pp.",
+      "evidence": "cross_architecture_coadaptation",
+      "seeds": 5,
+      "data_split": "held_out_test",
+      "status": "SUPPORTED"
+    },
+    {
+      "claim_id": "C007",
+      "claim": "Cross-architecture functional agreement reached 11.50%, failing the predeclared 90% threshold.",
+      "evidence": "probe_correlation_analysis",
+      "seeds": 5,
+      "data_split": "held_out_test",
+      "status": "SUPPORTED"
+    },
+    {
+      "claim_id": "C008",
+      "claim": "The transplanted component remained 100% frozen during all receiver co-adaptation runs.",
+      "evidence": "parameter_norm_invariant_verification",
+      "seeds": 5,
+      "data_split": "training_neighborhood",
+      "status": "SUPPORTED"
+    }
+  ]
+}

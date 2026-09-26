@@ -1,0 +1,9 @@
+Apache License 2.0 — applies to the SOURCE CODE of the AI Model Fusion Lab.
+
+NOTE ON PRODUCED MODELS: any model produced by this lab is a derivative of its
+registered source models and inherits their licenses. The licensing engine
+(licensing/registry.py) evaluates distributability before any artifact leaves
+the lab; configurations containing restricted sources are marked
+NOT DISTRIBUTABLE. Closed-weight models (Claude, ChatGPT, etc.) cannot be
+sources at all: their weights do not exist publicly and their terms restrict
+output distillation — the registry records this explicitly.

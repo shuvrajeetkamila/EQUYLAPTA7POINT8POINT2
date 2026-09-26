@@ -1,0 +1,35 @@
+{
+  "milestone": "EQUYLAPTA_7.8.2",
+  "claims": [
+    {
+      "claim_id": "CLAIM_1_MULTI_BRANCH_OPTIMIZATION",
+      "statement": "All declared adapter parameters were actively optimized via exact analytical functional effect gradients.",
+      "verified": true,
+      "source_file": "adapter_update_audit.json"
+    },
+    {
+      "claim_id": "CLAIM_2_ACTIVATION_PATCHING_DIVERGENCE",
+      "statement": "Validation improvement was not retained on held-out data",
+      "verified": true,
+      "source_file": "activation_patch_results.json"
+    },
+    {
+      "claim_id": "CLAIM_3_OVERSIZED_CIRCUIT_EMPIRICAL",
+      "statement": "The 8-node oversized circuit produced +25.0 pp validation drop but showed no additional gain over the 2-node nucleus on held-out test data.",
+      "verified": true,
+      "source_file": "results.json:size_sweep"
+    },
+    {
+      "claim_id": "CLAIM_4_REPLICATION_VARIABILITY",
+      "statement": "Seed replication status is MIXED_SIGN_VARIABILITY across seeds [-5.0, 10.0, 15.0, 35.0, 10.0].",
+      "verified": true,
+      "source_file": "results.json:replication_5_seeds"
+    },
+    {
+      "claim_id": "CLAIM_5_RANDOM_CONTROL_PERFORMANCE",
+      "statement": "Random matched control achieved 45.0% held-out active accuracy but exhibited negative causal drop (-8.0 pp).",
+      "verified": true,
+      "source_file": "results.json:heldout_seed_999"
+    }
+  ]
+}

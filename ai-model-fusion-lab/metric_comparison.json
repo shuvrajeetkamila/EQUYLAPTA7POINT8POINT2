@@ -1,0 +1,100 @@
+{
+  "level1_token_agreement": {
+    "metric": "next_token_argmax_top1",
+    "agreement_pct": 17.5,
+    "matching_tokens": 7,
+    "total_tokens": 40,
+    "status": "CEILING_RANGE (13-17%)"
+  },
+  "level2_representation_similarity": {
+    "logit_cosine_similarity": 0.2365,
+    "layer0_residual_linear_cka": 0.4631
+  },
+  "level3_behavioral_agreement": {
+    "metric": "task_answer_choice_agreement",
+    "stats": {
+      "seeds": [
+        28.0,
+        16.0,
+        24.0,
+        36.0,
+        24.0
+      ],
+      "mean": 25.6,
+      "std": 6.5,
+      "min": 16.0,
+      "max": 36.0,
+      "n_seeds": 5,
+      "ci95": [
+        19.9,
+        31.3
+      ]
+    },
+    "contrast_vs_token": "25.60% vs 17.50% (+8.10%)"
+  },
+  "level4_task_success": {
+    "source_accuracy": {
+      "seeds": [
+        44.0,
+        52.0,
+        44.0,
+        32.0,
+        60.0
+      ],
+      "mean": 46.4,
+      "std": 9.33,
+      "min": 32.0,
+      "max": 60.0,
+      "n_seeds": 5,
+      "ci95": [
+        38.22,
+        54.58
+      ]
+    },
+    "target_baseline_accuracy": {
+      "seeds": [
+        28.0,
+        28.0,
+        28.0,
+        28.0,
+        36.0
+      ],
+      "mean": 29.6,
+      "std": 3.2,
+      "min": 28.0,
+      "max": 36.0,
+      "n_seeds": 5,
+      "ci95": [
+        26.8,
+        32.4
+      ]
+    },
+    "target_translated_accuracy": {
+      "seeds": [
+        24.0,
+        16.0,
+        28.0,
+        16.0,
+        16.0
+      ],
+      "mean": 20.0,
+      "std": 5.06,
+      "min": 16.0,
+      "max": 28.0,
+      "n_seeds": 5,
+      "ci95": [
+        15.57,
+        24.43
+      ]
+    },
+    "gain_over_baseline": -9.6
+  },
+  "level5_causal_functionality": {
+    "baseline": 29.6,
+    "translated": 20.0,
+    "destroyed": 22.4,
+    "restored": 20.0,
+    "causal_effect": -9.6,
+    "functional_wiring_effect": -2.4
+  }
+}

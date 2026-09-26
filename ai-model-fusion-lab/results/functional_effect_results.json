@@ -1,0 +1,14 @@
+{
+  "metric": "downstream_delta_logits_cosine_similarity",
+  "vocabulary_dim": 141,
+  "source_mean_effect_norm": 64.14,
+  "condition_agreements": {
+    "c1_transplant_only": 44.0,
+    "c2_input_only": 39.27,
+    "c3_output_only": 32.63,
+    "c4_bidirectional": 40.78,
+    "c5_coadaptation": 3.53,
+    "aa_same_arch": 0.75,
+    "ac_arch_c": 46.36
+  }
+}

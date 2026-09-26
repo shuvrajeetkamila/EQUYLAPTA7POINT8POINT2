@@ -1,0 +1,28 @@
+# Large Data & Weights
+fusionlab_data/*.npz
+fusionlab_data/
+*.bin
+*.pt
+*.pth
+*.onnx
+
+# Python Bytecode & Cache
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+
+# Virtual Environments
+venv/
+.venv/
+env/
+.env
+
+# Logs and Audit Dumps
+*.log
+report_logs/
+*.out
+
+# System Files
+.DS_Store
+Thumbs.db

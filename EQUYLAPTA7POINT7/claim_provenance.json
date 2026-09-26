@@ -1,0 +1,74 @@
+{
+  "CLM-E77-01": {
+    "claim": "native_causal_localization_verified",
+    "status": "SUPPORTED",
+    "source": "results.json",
+    "key": "native_localization.causal_drop_pp",
+    "value": 25.0,
+    "evidence": "L0_head_2 in e4-math-4L exhibited a +25.0 pp drop under ablation with 100% restoration."
+  },
+  "CLM-E77-02": {
+    "claim": "downstream_dependencies_discovered",
+    "status": "SUPPORTED",
+    "source": "results.json",
+    "key": "dependency_discovery.candidate_dependencies",
+    "value": 6,
+    "evidence": "Mapped downstream dependencies: L0_mlp (+20 pp), L1_head_1 (+15 pp), L2_head_3 (+20 pp)."
+  },
+  "CLM-E77-03": {
+    "claim": "minimal_fdc_identified_in_donor",
+    "status": "SUPPORTED",
+    "source": "results.json",
+    "key": "minimal_circuit_search.minimal_fdc_elements",
+    "value": 4,
+    "evidence": "Discovered 4-element Minimal FDC in donor achieving 100% causal capability recovery."
+  },
+  "CLM-E77-04": {
+    "claim": "two_branch_gradient_exactness_verified",
+    "status": "SUPPORTED",
+    "source": "results.json",
+    "key": "gradient_check.gradient_check_passed",
+    "value": true,
+    "evidence": "Analytical gradient matches finite differences with relative error < 0.05."
+  },
+  "CLM-E77-05": {
+    "claim": "fdc_transfer_implemented_across_families",
+    "status": "SUPPORTED",
+    "source": "results.json",
+    "key": "conditions.Condition_D_Minimal_FDC.elements",
+    "value": 4,
+    "evidence": "Implanted 4-element FDC into recipient e6-base-4L with frozen donor parameters."
+  },
+  "CLM-E77-06": {
+    "claim": "recipient_causal_necessity_demonstrated",
+    "status": "NOT_SUPPORTED",
+    "source": "results.json",
+    "key": "conditions.Condition_D_Minimal_FDC.causal_ablation.full_circuit_causal_drop_pp",
+    "value": 5.0,
+    "evidence": "Ablating the transferred FDC in recipient yielded +5.00 pp drop; target does not collapse."
+  },
+  "CLM-E77-07": {
+    "claim": "host_only_learning_superiority",
+    "status": "SUPPORTED",
+    "source": "results.json",
+    "key": "conditions.Condition_H_Host_Only_Adaptation.math_performance.mean",
+    "value": 29.0,
+    "evidence": "Recipient trained natively without transplants reached 29.0% vs FDC 25.0%."
+  },
+  "CLM-E77-08": {
+    "claim": "predeclared_90_percent_threshold_achieved",
+    "status": "NOT_SUPPORTED",
+    "source": "results.json",
+    "key": "threshold_met",
+    "value": false,
+    "evidence": "Peak behavioral agreement was 0.00%, failing the 90.0% threshold."
+  },
+  "CLM-E77-09": {
+    "claim": "scientific_level_strictly_level_b",
+    "status": "SUPPORTED",
+    "source": "results.json",
+    "key": "scientific_level",
+    "value": "LEVEL B: REPRESENTATIONAL_ALIGNMENT_ONLY",
+    "evidence": "Absence of positive recipient causal necessity bounds defensible level strictly to Level B."
+  }
+}

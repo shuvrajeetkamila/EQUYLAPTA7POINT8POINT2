@@ -1,0 +1,14 @@
+SPECIALIST CONSTRUCTION REPORT — EQUYLAPTA-coding [REJECTED]
+
+Sources: code-smith, generalist, logic-owl, math-wiz, polyglot, weak-base
+Components considered: L0 (generalist), L0.attn (generalist), L1.attn (logic-owl), L0.attn.head0 (logic-owl)
+Parent scores on micro-code: math-wiz=52%, code-smith=100%, logic-owl=100%, polyglot=88%, generalist=100%, weak-base=85%
+Best parent: code-smith (100%)
+  attempt EXP-00581 transplant generalist:L0 A=100% B=100% C=30% gain=-70.0
+  attempt EXP-00582 transplant generalist:L0.attn A=100% B=100% C=65% gain=-35.0
+  attempt EXP-00583 transplant logic-owl:L1.attn A=100% B=100% C=85% gain=-15.0
+  attempt EXP-00584 transplant logic-owl:L0.attn.head0 A=100% B=100% C=68% gain=-32.5
+  attempt EXP-00585 WEIGHT_MERGE accuracy=80% coef=0.5
+Specialist score: 100.0%
+Chosen: {'model': 'code-smith', 'mechanism': 'PARENT_FALLBACK'}
+Reason: best attempt did not beat best parent

@@ -1,0 +1,25 @@
+{
+  "_comment": "Registry seed: known model families for compatibility + license analysis. Weights are NEVER bundled; ids are resolved at runtime.",
+  "families": [
+    {"id": "Qwen/Qwen2.5-0.5B",   "family": "Qwen",     "license": "Apache-2.0",       "params": "0.5B"},
+    {"id": "Qwen/Qwen2.5-7B",     "family": "Qwen",     "license": "Apache-2.0",       "params": "7B"},
+    {"id": "deepseek-ai/DeepSeek-R1-Distill-Qwen-7B", "family": "DeepSeek", "license": "MIT", "params": "7B"},
+    {"id": "mistralai/Mistral-7B-v0.3", "family": "Mistral", "license": "Apache-2.0",   "params": "7B"},
+    {"id": "meta-llama/Llama-3.1-8B",   "family": "Llama",   "license": "llama-community", "params": "8B"},
+    {"id": "google/gemma-2-9b",         "family": "Gemma",   "license": "gemma",           "params": "9B"},
+    {"id": "microsoft/phi-3",           "family": "Phi",     "license": "MIT",             "params": "3.8B"},
+    {"id": "allenai/OLMo-2-7B",         "family": "OLMo",    "license": "Apache-2.0",      "params": "7B"},
+    {"id": "ibm-granite/granite-3.0-8b","family": "Granite", "license": "Apache-2.0",      "params": "8B"},
+    {"id": "nvidia/Nemotron-4-340B",    "family": "Nemotron","license": "nemotron",        "params": "340B"},
+    {"id": "THUDM/glm-4-9b",            "family": "GLM",     "license": "glm",             "params": "9B"},
+    {"id": "moonshotai/Moonlight-16B-A3B", "family": "Kimi", "license": "kimi",            "params": "16B"},
+    {"id": "internlm/internlm2_5-7b",   "family": "InternLM","license": "internlm",        "params": "7B"},
+    {"id": "openbmb/MiniCPM3-4B",       "family": "MiniCPM", "license": "minicpm",         "params": "4B"},
+    {"id": "tiiuae/falcon-7b",          "family": "Falcon",  "license": "falcon",          "params": "7B"},
+    {"id": "bigscience/bloom-7b1",      "family": "BLOOM",   "license": "bigscience-openrail", "params": "7B"},
+    {"id": "EleutherAI/pythia-70m",     "family": "Pythia",  "license": "Apache-2.0",      "params": "70M"},
+    {"id": "EleutherAI/gpt-neox-20b",   "family": "GPT-NeoX","license": "Apache-2.0",      "params": "20B"},
+    {"id": "claude",  "family": "Anthropic", "license": "proprietary-closed", "params": "n/a", "note": "no public weights; output distillation restricted by ToS"},
+    {"id": "chatgpt", "family": "OpenAI",   "license": "proprietary-closed", "params": "n/a", "note": "no public weights; output distillation restricted by ToS"}
+  ]
+}

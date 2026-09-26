@@ -1,0 +1,50 @@
+[
+  {
+    "claim_id": "CLM-E74-01",
+    "claim": "Common functional effect space compares downstream delta logits F(x) = Logits(intact) - Logits(ablated) in shared 141-token vocabulary space.",
+    "evidence": "common_effect_metric_formulation",
+    "status": "SUPPORTED"
+  },
+  {
+    "claim_id": "CLM-E74-02",
+    "claim": "Transplanted component W_comp remained 100% frozen across all 5 interface conditions (norm invariant verified: 17.4793).",
+    "evidence": "parameter_norm_invariant_check",
+    "status": "SUPPORTED"
+  },
+  {
+    "claim_id": "CLM-E74-03",
+    "claim": "Condition 4 Bidirectional Bridge achieved 30.00% accuracy with 40.78% functional agreement.",
+    "evidence": "condition_4_evaluation",
+    "status": "SUPPORTED"
+  },
+  {
+    "claim_id": "CLM-E74-04",
+    "claim": "Causal pathway ablation of W_comp in Condition 4 produced -5.00 pp drop (restoration error: 0.00 pp).",
+    "evidence": "causal_pathway_battery",
+    "status": "SUPPORTED"
+  },
+  {
+    "claim_id": "CLM-E74-05",
+    "claim": "Condition 5 Bridge + Co-adaptation achieved 25.00% accuracy with causal drop -10.00 pp.",
+    "evidence": "condition_5_evaluation",
+    "status": "SUPPORTED"
+  },
+  {
+    "claim_id": "CLM-E74-06",
+    "claim": "Predeclared 90.0% functional agreement threshold was NOT met (observed peak: 46.36%).",
+    "evidence": "functional_agreement_comparison",
+    "status": "SUPPORTED"
+  },
+  {
+    "claim_id": "CLM-E74-07",
+    "claim": "A->A same-architecture bridge achieved 18.00% accuracy (agreement: 0.75%, causal drop: -1.00 pp).",
+    "evidence": "aa_pipeline_evaluation",
+    "status": "SUPPORTED"
+  },
+  {
+    "claim_id": "CLM-E74-08",
+    "claim": "Classification is strictly bounded at LEVEL B due to non-positive causal mediation in target model.",
+    "evidence": "scientific_classification_audit",
+    "status": "SUPPORTED"
+  }
+]

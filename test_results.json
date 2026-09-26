@@ -1,0 +1,53 @@
+{
+  "milestone": "EQUYLAPTA_7.8.2",
+  "test_framework": "pytest-9.0.3",
+  "python_version": "3.13.14",
+  "total_tests": 8,
+  "passed": 8,
+  "failed": 0,
+  "skipped": 0,
+  "overall_status": "PASS",
+  "test_suite_execution_seconds": 1.26,
+  "tests": [
+    {
+      "test_name": "tests/test_data_split.py::test_strict_disjoint_splits",
+      "status": "PASS",
+      "purpose": "Verifies 0 token/sequence prompt overlap across characterization, validation, and held-out test splits"
+    },
+    {
+      "test_name": "tests/test_dependency_integrity.py::test_dependency_integrity",
+      "status": "PASS",
+      "purpose": "Verifies parameter counts (18688 trainable, 34112 frozen), frozen hashes, and surgical ablation isolation"
+    },
+    {
+      "test_name": "tests/test_gradient.py::test_multi_branch_gradients",
+      "status": "PASS",
+      "purpose": "Validates exact two-branch analytical gradients vs central finite differences across >=10 coords per branch (max_err <= 0.05, mean_err <= 0.02)"
+    },
+    {
+      "test_name": "tests/test_objective.py::test_functional_objective_properties",
+      "status": "PASS",
+      "purpose": "Verifies non-negativity, zero loss on matched delta, non-zero gradient on divergence, and tensor shape invariants"
+    },
+    {
+      "test_name": "tests/test_parameter_update.py::test_parameter_update_norm",
+      "status": "PASS",
+      "purpose": "Verifies strictly non-zero update norm ||theta_final - theta_initial|| > 0 for all declared trainable adapters"
+    },
+    {
+      "test_name": "tests/test_provenance.py::TestParameterProvenance::test_frozen_invariants",
+      "status": "PASS",
+      "purpose": "Verifies SHA-256 frozen parameter invariants and absence of unauthorized weight modifications"
+    },
+    {
+      "test_name": "tests/test_report_consistency.py::test_report_consistency",
+      "status": "PASS",
+      "purpose": "Verifies zero discrepancies between report text and results.json / adapter_update_audit.json / claim_provenance.json"
+    },
+    {
+      "test_name": "tests/test_trainable_parameter_consistency.py::test_parameter_consistency",
+      "status": "PASS",
+      "purpose": "Verifies 100% agreement among Declared, Optimizer, Gradient-bearing, and Changed parameter sets"
+    }
+  ]
+}

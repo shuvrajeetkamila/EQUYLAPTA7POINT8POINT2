@@ -1,0 +1,78 @@
+{
+  "target_functional_unit_id": "L0_head_0",
+  "baseline_score": {
+    "seeds": [
+      55.0,
+      30.0,
+      25.0,
+      20.0,
+      35.0
+    ],
+    "mean": 33.0,
+    "std": 13.51,
+    "min": 20.0,
+    "max": 55.0,
+    "n_seeds": 5,
+    "ci95": [
+      21.16,
+      44.84
+    ]
+  },
+  "reconstructed_score": {
+    "seeds": [
+      55.0,
+      30.0,
+      25.0,
+      20.0,
+      35.0
+    ],
+    "mean": 33.0,
+    "std": 13.51,
+    "min": 20.0,
+    "max": 55.0,
+    "n_seeds": 5,
+    "ci95": [
+      21.16,
+      44.84
+    ]
+  },
+  "ablated_score": {
+    "seeds": [
+      45.0,
+      30.0,
+      30.0,
+      15.0,
+      55.0
+    ],
+    "mean": 35.0,
+    "std": 15.41,
+    "min": 15.0,
+    "max": 55.0,
+    "n_seeds": 5,
+    "ci95": [
+      21.49,
+      48.51
+    ]
+  },
+  "restored_score": {
+    "seeds": [
+      55.0,
+      30.0,
+      25.0,
+      20.0,
+      35.0
+    ],
+    "mean": 33.0,
+    "std": 13.51,
+    "min": 20.0,
+    "max": 55.0,
+    "n_seeds": 5,
+    "ci95": [
+      21.16,
+      44.84
+    ]
+  },
+  "causal_drop_from_reconstruction": -2.0,
+  "restoration_error": 0.0,
+  "causal_effect_demonstrated": false
+}

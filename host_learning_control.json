@@ -1,0 +1,71 @@
+{
+  "milestone": "EQUYLAPTA_7.6",
+  "description": "Recipient given equivalent training capacity with NO transplanted components",
+  "host_only_performance": {
+    "math": {
+      "mean": 29.0,
+      "std": 18.51,
+      "ci95_low": 12.78,
+      "ci95_high": 45.22,
+      "min": 5.0,
+      "max": 50.0,
+      "raw_seeds": [
+        50.0,
+        20.0,
+        25.0,
+        5.0,
+        45.0
+      ]
+    },
+    "reason": {
+      "mean": 11.0,
+      "std": 8.22,
+      "ci95_low": 3.8,
+      "ci95_high": 18.2,
+      "min": 0.0,
+      "max": 20.0,
+      "raw_seeds": [
+        15.0,
+        15.0,
+        20.0,
+        5.0,
+        0.0
+      ]
+    },
+    "code": {
+      "mean": 0.0,
+      "std": 0.0,
+      "ci95_low": 0.0,
+      "ci95_high": 0.0,
+      "min": 0.0,
+      "max": 0.0,
+      "raw_seeds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "lang": {
+      "mean": 40.0,
+      "std": 11.73,
+      "ci95_low": 29.72,
+      "ci95_high": 50.28,
+      "min": 30.0,
+      "max": 60.0,
+      "raw_seeds": [
+        40.0,
+        60.0,
+        35.0,
+        30.0,
+        35.0
+      ]
+    }
+  },
+  "comparison_with_true_composite": {
+    "math_diff_pp": -6.0,
+    "reason_diff_pp": 0.0,
+    "code_diff_pp": 0.0
+  }
+}

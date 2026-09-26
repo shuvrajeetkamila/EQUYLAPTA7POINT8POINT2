@@ -1,0 +1,151 @@
+"""discovery/path_patching.py
+
+Executes causal path-patching across the 6 mandated conditions in donor e4-math-4L.
+"""
+from __future__ import annotations
+
+import os
+import sys
+from typing import Dict, Any, List
+import numpy as np
+
+WORKSPACE = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
+sys.path.append(os.path.join(WORKSPACE, "ai-model-fusion-lab"))
+
+from models.synthetic import load_model, MicroTransformer
+from benchmarking.suites import micro_suite
+from benchmarking.harness import eval_suite
+
+
+def evaluate_with_activation_patch(model: MicroTransformer, suite: Any,
+                                   source_head: tuple = (0, 2),
+                                   patch_layer: int = 0,
+                                   patch_type: str = "mlp_out") -> float:
+    """Evaluates suite accuracy when source head is ablated but downstream patch_type is clamped to intact activation."""
+    correct = 0
+    for it in suite.items:
+        p_ids = model.tokenizer.encode(it.prompt)
+        scores = []
+        for o in it.options:
+            o_ids = model.tokenizer.encode(" " + o, max_len=8)
+            ids = np.concatenate([p_ids, o_ids])[None, :]
+
+            # 1. Collect intact activation
+            model.head_mask = None
+            model.skip_modules = {}
+            model.patch = {}
+            _, c_int = model.forward(ids, collect=True)
+            if patch_type == "resid":
+                intact_act = c_int["hiddens"][patch_layer]
+                patch_key = ("resid", patch_layer + 1)
+            else:
+                intact_act = c_int[patch_type][patch_layer]
+                patch_key = (patch_type, patch_layer)
+
+            # 2. Ablate source head and patch mediator
+            model.head_mask = np.ones((model.spec.layers, model.spec.heads), dtype=np.float32)
+            model.head_mask[source_head[0], source_head[1]] = 0.0
+            model.patch = {patch_key: intact_act}
+            logits, _ = model.forward(ids)
+
+            # Cleanup
+            model.patch = {}
+            model.head_mask = None
+
+            # Calculate option log-probability
+            lp = 0.0
+            n = len(o_ids)
+            for i in range(n):
+                pos = ids.shape[1] - n + i - 1
+                row = logits[0, pos] - logits[0, pos].max()
+                logz = np.log(np.exp(row).sum())
+                lp += float(row[o_ids[i]] - logz)
+            scores.append(lp / n)
+
+        if int(np.argmax(scores)) == it.answer:
+            correct += 1
+
+    return (correct / len(suite.items)) * 100.0
+
+
+def run_path_patching_battery(model_name: str = "e4-math-4L", domain: str = "math",
+                              val_seed: int = 888) -> Dict[str, Any]:
+    """Runs all 6 path-patching conditions in donor model."""
+    model = load_model(model_name)
+    suite = micro_suite(domain, n=20, seed=val_seed)
+
+    # Condition 1: Normal Intact Path
+    model.head_mask = None
+    model.skip_modules = {}
+    model.patch = {}
+    r1 = eval_suite(model, suite, max_items=20)
+    acc_c1_intact = float(r1["accuracy"]) * 100.0
+
+    # Condition 2: Source Intervention (A = L0_head_2 ablated)
+    model.head_mask = np.ones((model.spec.layers, model.spec.heads), dtype=np.float32)
+    model.head_mask[0, 2] = 0.0
+    r2 = eval_suite(model, suite, max_items=20)
+    acc_c2_source_ablated = float(r2["accuracy"]) * 100.0
+
+    # Condition 3: Source Intervention + Mediator B (L0_mlp) Blocked
+    model.head_mask = np.ones((model.spec.layers, model.spec.heads), dtype=np.float32)
+    model.head_mask[0, 2] = 0.0
+    model.skip_modules = {0: ["mlp"]}
+    r3 = eval_suite(model, suite, max_items=20)
+    acc_c3_mediator_blocked = float(r3["accuracy"]) * 100.0
+    model.skip_modules = {}
+
+    # Condition 4: Source Intervention + Mediator Restored via intact activation patch
+    acc_c4_mediator_restored = evaluate_with_activation_patch(model, suite, source_head=(0, 2),
+                                                               patch_layer=0, patch_type="resid")
+
+    # Condition 5: Alternate Path Blocked (Only A active at Layer 0, other L0 heads masked)
+    model.head_mask = np.zeros((model.spec.layers, model.spec.heads), dtype=np.float32)
+    model.head_mask[0, 2] = 1.0  # Only A active at Layer 0
+    model.head_mask[1:, :] = 1.0 # Layers 1..3 fully intact
+    r5 = eval_suite(model, suite, max_items=20)
+    acc_c5_alternate_blocked = float(r5["accuracy"]) * 100.0
+
+    # Condition 6: Target Path Patched (A ablated, but downstream L1 attention patched with intact activation)
+    acc_c6_target_patched = evaluate_with_activation_patch(model, suite, source_head=(0, 2),
+                                                            patch_layer=1, patch_type="attn_out")
+
+    return {
+        "model_name": model_name,
+        "conditions": {
+            "condition_1_intact": {
+                "description": "Normal intact path (all nodes active)",
+                "accuracy": round(acc_c1_intact, 2)
+            },
+            "condition_2_source_intervention": {
+                "description": "Source intervention (A=L0_head_2 ablated)",
+                "accuracy": round(acc_c2_source_ablated, 2),
+                "drop_from_intact_pp": round(acc_c1_intact - acc_c2_source_ablated, 2)
+            },
+            "condition_3_mediator_blocked": {
+                "description": "Source intervention + mediator B=L0_mlp blocked",
+                "accuracy": round(acc_c3_mediator_blocked, 2),
+                "drop_from_intact_pp": round(acc_c1_intact - acc_c3_mediator_blocked, 2)
+            },
+            "condition_4_mediator_restored": {
+                "description": "Source intervention + mediator B=L0_mlp intact-activation restored",
+                "accuracy": round(acc_c4_mediator_restored, 2),
+                "recovery_over_source_ablated_pp": round(acc_c4_mediator_restored - acc_c2_source_ablated, 2)
+            },
+            "condition_5_alternate_path_blocked": {
+                "description": "Alternate paths at Layer 0 blocked (only A active at L0)",
+                "accuracy": round(acc_c5_alternate_blocked, 2)
+            },
+            "condition_6_target_path_patched": {
+                "description": "Source intervention + downstream L1 attention patched with intact",
+                "accuracy": round(acc_c6_target_patched, 2)
+            }
+        }
+    }
+
+
+if __name__ == "__main__":
+    out = run_path_patching_battery()
+    print("Path patching completed successfully:")
+    for k, v in out["conditions"].items():
+        print(f"  {k}: {v['accuracy']}%")

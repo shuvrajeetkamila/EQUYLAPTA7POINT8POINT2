@@ -1,0 +1,24 @@
+{
+  "milestone": "EQUYLAPTA_7.8.1",
+  "title": "Causal Objective Correction, True Functional-Loss Optimization & Transfer Validation",
+  "donor_model": "e4-math-4L",
+  "recipient_model": "e6-base-4L",
+  "predeclared_threshold_pct": 90.0,
+  "optimization": {
+    "epochs": 15,
+    "lr": 0.003,
+    "weight_decay": 0.0001,
+    "optimizer": "Adam",
+    "gradient_clipping": [-5.0, 5.0]
+  },
+  "seeds": {
+    "characterization": 777,
+    "validation": 888,
+    "heldout": 999,
+    "replication": [9001, 9002, 9003, 9004, 9005]
+  },
+  "sweeps": {
+    "depths": ["2L", "4L", "6L", "8L"],
+    "circuit_sizes": [1, 2, 3, 4, 8]
+  }
+}

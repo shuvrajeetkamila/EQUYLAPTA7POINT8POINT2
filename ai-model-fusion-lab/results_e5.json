@@ -1,0 +1,1073 @@
+{
+ "meta": {
+  "milestone": "EQUYLAPTA5",
+  "question": "what exactly is being transferred when a circuit transfer succeeds?",
+  "primary_object": {
+   "circuit_id": "e4-math-4L-convergence-01",
+   "members": [
+    {
+     "level": "HEAD",
+     "layer": 0,
+     "module": "attn",
+     "index": 0
+    },
+    {
+     "level": "HEAD",
+     "layer": 0,
+     "module": "attn",
+     "index": 1
+    },
+    {
+     "level": "HEAD",
+     "layer": 0,
+     "module": "attn",
+     "index": 2
+    },
+    {
+     "level": "HEAD",
+     "layer": 0,
+     "module": "attn",
+     "index": 3
+    },
+    {
+     "level": "MODULE",
+     "layer": 0,
+     "module": "attn"
+    }
+   ],
+   "pack_path": "/home/user/ai-model-fusion-lab/../fusionlab_data/e4_circuits/e4-math-4L-convergence-01_4L.npz",
+   "gain": 3.33,
+   "class": "CAPABILITY_TRANSFER",
+   "reproduced": true,
+   "interference": {
+    "micro-code": -20.8,
+    "micro-know": -47.9,
+    "micro-agent": -18.7
+   },
+   "recovered_from_artifacts": true
+  },
+  "smoke": false,
+  "wrong_layers": [
+   1,
+   2,
+   3
+  ],
+  "random_location_seeds": [
+   21,
+   22,
+   23
+  ],
+  "heldout_seeds": [
+   1,
+   2,
+   3
+  ],
+  "calib_seed": 400
+ },
+ "audit": {
+  "model_definitions": "models/synthetic.py micro-transformers (d64/h4)",
+  "source_model": "e4-math-4L (4 layers, fine-tuned math specialist)",
+  "target_model": "e4-base-4L (4 layers, same-init base, math deficit)",
+  "depth_sweep": [
+   2,
+   4,
+   6,
+   8
+  ],
+  "circuits_discovered": 36,
+  "circuit_extraction_code": "pattern_genome/extraction.py (CircuitPack)",
+  "causal_ablation": "pattern_genome/intervention.py (batteries)",
+  "restoration": "pattern_genome/intervention.py (restoration_battery)",
+  "transfer": "pattern_genome/transfer.py (15-ladder + controls)",
+  "alignment": "component_transfer/ (ridge align + refit + calibrate)",
+  "random_controls": "RANDOM_STRUCTURE_CONTROL (untrained) + CAPACITY (trained param-matched)",
+  "shuffled_control": "SHUFFLED_CIRCUIT_CONTROL (E4 step 14)",
+  "heldout_eval": "eval suites seeds 9001-9003; never used for search",
+  "minimality": "pattern_genome/intervention.minimal_unit_search + E4 transfer-side minimality ladder",
+  "negative_transfer": "E4 stage 4 (math circuit -> lang endpoint)",
+  "multi_circuit": "E4 stage 6 (composition: interference observed)",
+  "report_generation": "demo/run_equylapta4.py render_report",
+  "size_check": "tools/check_release_size.py + in-runner size block"
+ },
+ "A_ladder": {
+  "run_id": "PTR-2e5b6c55",
+  "circuit_id": "e4-math-4L-convergence-01",
+  "pattern_ids": [
+   "P024"
+  ],
+  "kind": "convergence",
+  "source": "e4-math-4L",
+  "target": "e4-base-4L",
+  "capability": "math",
+  "heldout": "micro-math",
+  "members": [
+   "L0.h0",
+   "L0.h1",
+   "L0.h2",
+   "L0.h3",
+   "L0.attn"
+  ],
+  "arms": {
+   "TARGET_BASELINE": {
+    "mean": 21.67,
+    "std": 4.25,
+    "per_seed": [
+     27.5,
+     17.5,
+     20.0
+    ]
+   },
+   "RAW_STRUCTURE": {
+    "mean": 24.17,
+    "std": 3.12,
+    "per_seed": [
+     25.0,
+     20.0,
+     27.5
+    ]
+   },
+   "ALIGNED_STRUCTURE": {
+    "mean": 25.0,
+    "std": 2.04,
+    "per_seed": [
+     25.0,
+     22.5,
+     27.5
+    ]
+   },
+   "REFITTED_STRUCTURE": {
+    "mean": 22.5,
+    "std": 5.4,
+    "per_seed": [
+     20.0,
+     30.0,
+     17.5
+    ]
+   },
+   "CALIBRATED_STRUCTURE": {
+    "mean": 22.5,
+    "std": 5.4,
+    "per_seed": [
+     20.0,
+     30.0,
+     17.5
+    ]
+   },
+   "RANDOM_STRUCTURE_CONTROL": {
+    "mean": 20.0,
+    "std": 5.0,
+    "per_seed": [
+     25.0,
+     15.0
+    ]
+   },
+   "CAPACITY_CONTROL": {
+    "mean": 20.0,
+    "std": 5.0,
+    "per_seed": [
+     25.0,
+     15.0
+    ]
+   },
+   "SHUFFLED_CIRCUIT_CONTROL": {
+    "mean": 17.5,
+    "std": 0.0,
+    "per_seed": [
+     17.5,
+     17.5
+    ]
+   }
+  },
+  "failures": [],
+  "verdict": {
+   "baseline": 21.67,
+   "final_arm": "ALIGNED_STRUCTURE",
+   "transferred": 25.0,
+   "delta": 3.33,
+   "std": 2.04,
+   "sig_floor": 5.0,
+   "consistent_across_seeds": true,
+   "random_control": 20.0,
+   "capacity_control": 20.0,
+   "beats_random": true,
+   "beats_capacity": true,
+   "non_target_regressions": {
+    "micro-code": -20.8,
+    "micro-know": -47.9,
+    "micro-agent": -18.7
+   },
+   "status": "INSUFFICIENT_EVIDENCE+INTERFERENCE"
+  },
+  "n_items": 40,
+  "eval_seeds": [
+   1,
+   2,
+   3
+  ],
+  "baseline_vector": {
+   "micro-code": 72.9,
+   "micro-reason": 12.5,
+   "micro-lang": 83.3,
+   "micro-know": 100.0,
+   "micro-multi": 58.3,
+   "micro-agent": 81.2
+  },
+  "impedance_scale": 1.0785,
+  "refit": {
+   "method": "component_only",
+   "trainable_params": 16640,
+   "steps": 150,
+   "lr": 0.002,
+   "seed": 7,
+   "initial_loss": 16.492252349853516,
+   "final_loss": 9.173308372497559,
+   "loss_curve": [
+    16.4923,
+    14.7342,
+    13.9191,
+    12.8929,
+    12.6318,
+    11.1774,
+    10.7678,
+    9.5926,
+    9.7158,
+    9.4412
+   ],
+   "seconds": 7.6,
+   "note": "masked-gradient training: only inserted slices trainable",
+   "sites": 32
+  },
+  "calibration": {
+   "method": "residual_gate",
+   "params_changed": 4096,
+   "loss_before": 7.899823568805286,
+   "loss_after": 7.899823568805286,
+   "gate": 1.0,
+   "note": "single scalar gate g=1.0 (1 effective dof, scaled 4096 params)"
+  },
+  "calibrated_vector": {
+   "micro-code": 52.1,
+   "micro-reason": 6.2,
+   "micro-lang": 81.2,
+   "micro-know": 52.1,
+   "micro-multi": 56.2,
+   "micro-agent": 62.5
+  },
+  "capacity_control_trainable": 24928,
+  "transfer_score": {
+   "held_out_gain": 3.33,
+   "random_control_gain": 5.0,
+   "capacity_control_gain": 5.0,
+   "interference_penalty": 0.874,
+   "composite": -7.544,
+   "alignment_cost": 0.0785,
+   "parameter_cost": 33216,
+   "architecture_dependency": "LOW",
+   "reproducibility": "UNTESTED"
+  }
+ },
+ "arm_compare_e4_e5": {
+  "TARGET_BASELINE": {
+   "e5": 21.67,
+   "e4": 21.67
+  },
+  "RAW_STRUCTURE": {
+   "e5": 24.17,
+   "e4": 24.17
+  },
+  "ALIGNED_STRUCTURE": {
+   "e5": 25.0,
+   "e4": 25.0
+  },
+  "REFITTED_STRUCTURE": {
+   "e5": 22.5,
+   "e4": 22.5
+  },
+  "CALIBRATED_STRUCTURE": {
+   "e5": 22.5,
+   "e4": 22.5
+  },
+  "RANDOM_STRUCTURE_CONTROL": {
+   "e5": 20.0,
+   "e4": 20.0
+  },
+  "CAPACITY_CONTROL": {
+   "e5": 20.0,
+   "e4": 20.0
+  },
+  "SHUFFLED_CIRCUIT_CONTROL": {
+   "e5": 17.5,
+   "e4": 17.5
+  }
+ },
+ "cells": {
+  "baseline0": {
+   "label": "baseline_no_insertion",
+   "accs_mean": 21.67,
+   "accs_std": 4.25,
+   "accs_min": 17.5,
+   "accs_max": 27.5,
+   "n_seeds": 3,
+   "per_seed": [
+    27.5,
+    17.5,
+    20.0
+   ],
+   "vector": {
+    "math": 27.5,
+    "code": 75.0,
+    "reason": 12.5,
+    "lang": 70.0,
+    "know": 100.0,
+    "multi": 62.5,
+    "agent": 72.5
+   }
+  },
+  "A_real_correct": {
+   "label": "A_real_correct_location",
+   "accs_mean": 24.17,
+   "accs_std": 3.12,
+   "accs_min": 20.0,
+   "accs_max": 27.5,
+   "n_seeds": 3,
+   "per_seed": [
+    25.0,
+    20.0,
+    27.5
+   ],
+   "vector": {
+    "math": 25.0,
+    "code": 65.0,
+    "reason": 20.0,
+    "lang": 85.0,
+    "know": 100.0,
+    "multi": 62.5,
+    "agent": 72.5
+   },
+   "gain_vs_baseline": 2.5,
+   "specificity": {
+    "target_delta": -2.5,
+    "other_deltas": {
+     "code": -10.0,
+     "reason": 7.5,
+     "lang": 15.0,
+     "know": 0.0,
+     "multi": 0.0,
+     "agent": 0.0
+    },
+    "worst_regression": -10.0,
+    "class": "NO_TARGET_EFFECT"
+   }
+  },
+  "B_real_wrong_L1": {
+   "label": "B_real_wrong_L1",
+   "accs_mean": 15.83,
+   "accs_std": 4.25,
+   "accs_min": 10.0,
+   "accs_max": 20.0,
+   "n_seeds": 3,
+   "per_seed": [
+    20.0,
+    10.0,
+    17.5
+   ],
+   "vector": {
+    "math": 20.0,
+    "code": 77.5,
+    "reason": 25.0,
+    "lang": 85.0,
+    "know": 82.5,
+    "multi": 62.5,
+    "agent": 57.5
+   },
+   "gain_vs_baseline": -5.84,
+   "specificity": {
+    "target_delta": -7.5,
+    "other_deltas": {
+     "code": 2.5,
+     "reason": 12.5,
+     "lang": 15.0,
+     "know": -17.5,
+     "multi": 0.0,
+     "agent": -15.0
+    },
+    "worst_regression": -17.5,
+    "class": "INTERFERENCE"
+   }
+  },
+  "B_real_wrong_L2": {
+   "label": "B_real_wrong_L2",
+   "accs_mean": 23.33,
+   "accs_std": 6.56,
+   "accs_min": 17.5,
+   "accs_max": 32.5,
+   "n_seeds": 3,
+   "per_seed": [
+    32.5,
+    17.5,
+    20.0
+   ],
+   "vector": {
+    "math": 32.5,
+    "code": 77.5,
+    "reason": 12.5,
+    "lang": 55.0,
+    "know": 82.5,
+    "multi": 62.5,
+    "agent": 57.5
+   },
+   "gain_vs_baseline": 1.66
+  },
+  "B_real_wrong_L3": {
+   "label": "B_real_wrong_L3",
+   "accs_mean": 20.0,
+   "accs_std": 2.04,
+   "accs_min": 17.5,
+   "accs_max": 22.5,
+   "n_seeds": 3,
+   "per_seed": [
+    20.0,
+    22.5,
+    17.5
+   ],
+   "vector": {
+    "math": 20.0,
+    "code": 85.0,
+    "reason": 15.0,
+    "lang": 20.0,
+    "know": 37.5,
+    "multi": 60.0,
+    "agent": 75.0
+   },
+   "gain_vs_baseline": -1.67
+  },
+  "C_real_randloc_s21": {
+   "label": "C_real_randloc_s21",
+   "accs_mean": 13.33,
+   "accs_std": 6.56,
+   "accs_min": 7.5,
+   "accs_max": 22.5,
+   "n_seeds": 3,
+   "per_seed": [
+    22.5,
+    10.0,
+    7.5
+   ],
+   "vector": {
+    "math": 22.5,
+    "code": 85.0,
+    "reason": 17.5,
+    "lang": 60.0,
+    "know": 62.5,
+    "multi": 62.5,
+    "agent": 57.5
+   },
+   "gain_vs_baseline": -8.34,
+   "specificity": {
+    "target_delta": -5.0,
+    "other_deltas": {
+     "code": 10.0,
+     "reason": 5.0,
+     "lang": -10.0,
+     "know": -37.5,
+     "multi": 0.0,
+     "agent": -15.0
+    },
+    "worst_regression": -37.5,
+    "class": "INTERFERENCE"
+   }
+  },
+  "C_real_randloc_s22": {
+   "label": "C_real_randloc_s22",
+   "accs_mean": 20.83,
+   "accs_std": 7.73,
+   "accs_min": 10.0,
+   "accs_max": 27.5,
+   "n_seeds": 3,
+   "per_seed": [
+    27.5,
+    10.0,
+    25.0
+   ],
+   "vector": {
+    "math": 27.5,
+    "code": 85.0,
+    "reason": 17.5,
+    "lang": 57.5,
+    "know": 40.0,
+    "multi": 57.5,
+    "agent": 45.0
+   },
+   "gain_vs_baseline": -0.84
+  },
+  "C_real_randloc_s23": {
+   "label": "C_real_randloc_s23",
+   "accs_mean": 14.17,
+   "accs_std": 3.12,
+   "accs_min": 10.0,
+   "accs_max": 17.5,
+   "n_seeds": 3,
+   "per_seed": [
+    17.5,
+    10.0,
+    15.0
+   ],
+   "vector": {
+    "math": 17.5,
+    "code": 85.0,
+    "reason": 25.0,
+    "lang": 47.5,
+    "know": 100.0,
+    "multi": 62.5,
+    "agent": 45.0
+   },
+   "gain_vs_baseline": -7.5
+  },
+  "D_random_correct": {
+   "label": "D_random_circuit_correct_location",
+   "accs_mean": 23.33,
+   "accs_std": 2.36,
+   "accs_min": 20.0,
+   "accs_max": 25.0,
+   "n_seeds": 3,
+   "per_seed": [
+    20.0,
+    25.0,
+    25.0
+   ],
+   "vector": {
+    "math": 20.0,
+    "code": 27.5,
+    "reason": 30.0,
+    "lang": 35.0,
+    "know": 22.5,
+    "multi": 37.5,
+    "agent": 17.5
+   },
+   "gain_vs_baseline": 1.66,
+   "specificity": {
+    "target_delta": -7.5,
+    "other_deltas": {
+     "code": -47.5,
+     "reason": 17.5,
+     "lang": -35.0,
+     "know": -77.5,
+     "multi": -25.0,
+     "agent": -55.0
+    },
+    "worst_regression": -77.5,
+    "class": "INTERFERENCE"
+   }
+  },
+  "E_random_wrong_L1": {
+   "label": "E_random_wrong_L1",
+   "accs_mean": 19.17,
+   "accs_std": 6.24,
+   "accs_min": 12.5,
+   "accs_max": 27.5,
+   "n_seeds": 3,
+   "per_seed": [
+    27.5,
+    12.5,
+    17.5
+   ],
+   "vector": {
+    "math": 27.5,
+    "code": 77.5,
+    "reason": 15.0,
+    "lang": 82.5,
+    "know": 100.0,
+    "multi": 62.5,
+    "agent": 57.5
+   },
+   "gain_vs_baseline": -2.5
+  },
+  "E_random_wrong_L2": {
+   "label": "E_random_wrong_L2",
+   "accs_mean": 16.67,
+   "accs_std": 3.12,
+   "accs_min": 12.5,
+   "accs_max": 20.0,
+   "n_seeds": 3,
+   "per_seed": [
+    20.0,
+    12.5,
+    17.5
+   ],
+   "vector": {
+    "math": 20.0,
+    "code": 75.0,
+    "reason": 12.5,
+    "lang": 67.5,
+    "know": 92.5,
+    "multi": 62.5,
+    "agent": 67.5
+   },
+   "gain_vs_baseline": -5.0
+  },
+  "E_random_wrong_L3": {
+   "label": "E_random_wrong_L3",
+   "accs_mean": 20.83,
+   "accs_std": 3.12,
+   "accs_min": 17.5,
+   "accs_max": 25.0,
+   "n_seeds": 3,
+   "per_seed": [
+    25.0,
+    20.0,
+    17.5
+   ],
+   "vector": {
+    "math": 25.0,
+    "code": 85.0,
+    "reason": 17.5,
+    "lang": 32.5,
+    "know": 27.5,
+    "multi": 60.0,
+    "agent": 57.5
+   },
+   "gain_vs_baseline": -0.84
+  },
+  "F_topology_only": {
+   "label": "F_topology_only",
+   "accs_mean": 17.5,
+   "accs_std": 5.4,
+   "accs_min": 12.5,
+   "accs_max": 25.0,
+   "n_seeds": 3,
+   "per_seed": [
+    15.0,
+    25.0,
+    12.5
+   ],
+   "vector": {
+    "math": 15.0,
+    "code": 0.0,
+    "reason": 7.5,
+    "lang": 30.0,
+    "know": 5.0,
+    "multi": 25.0,
+    "agent": 30.0
+   },
+   "gain_vs_baseline": -4.17,
+   "specificity": {
+    "target_delta": -12.5,
+    "other_deltas": {
+     "code": -75.0,
+     "reason": -5.0,
+     "lang": -40.0,
+     "know": -95.0,
+     "multi": -37.5,
+     "agent": -42.5
+    },
+    "worst_regression": -95.0,
+    "class": "INTERFERENCE"
+   }
+  },
+  "G_weight_stats_only": {
+   "label": "G_weight_statistics_only",
+   "accs_mean": 20.83,
+   "accs_std": 4.71,
+   "accs_min": 17.5,
+   "accs_max": 27.5,
+   "n_seeds": 3,
+   "per_seed": [
+    17.5,
+    17.5,
+    27.5
+   ],
+   "vector": {
+    "math": 17.5,
+    "code": 0.0,
+    "reason": 12.5,
+    "lang": 37.5,
+    "know": 35.0,
+    "multi": 12.5,
+    "agent": 30.0
+   },
+   "gain_vs_baseline": -0.84,
+   "specificity": {
+    "target_delta": -10.0,
+    "other_deltas": {
+     "code": -75.0,
+     "reason": 0.0,
+     "lang": -32.5,
+     "know": -65.0,
+     "multi": -50.0,
+     "agent": -42.5
+    },
+    "worst_regression": -75.0,
+    "class": "INTERFERENCE"
+   }
+  },
+  "H_representation_scrambled": {
+   "label": "H_representation_scrambled",
+   "accs_mean": 15.0,
+   "accs_std": 6.12,
+   "accs_min": 7.5,
+   "accs_max": 22.5,
+   "n_seeds": 3,
+   "per_seed": [
+    22.5,
+    15.0,
+    7.5
+   ],
+   "vector": {
+    "math": 22.5,
+    "code": 15.0,
+    "reason": 20.0,
+    "lang": 50.0,
+    "know": 12.5,
+    "multi": 15.0,
+    "agent": 37.5
+   },
+   "gain_vs_baseline": -6.67,
+   "specificity": {
+    "target_delta": -5.0,
+    "other_deltas": {
+     "code": -60.0,
+     "reason": 7.5,
+     "lang": -20.0,
+     "know": -87.5,
+     "multi": -47.5,
+     "agent": -35.0
+    },
+    "worst_regression": -87.5,
+    "class": "INTERFERENCE"
+   }
+  },
+  "I_recon_matched": {
+   "label": "I_recon_matched",
+   "accs_mean": 25.0,
+   "accs_std": 2.04,
+   "accs_min": 22.5,
+   "accs_max": 27.5,
+   "n_seeds": 3,
+   "per_seed": [
+    27.5,
+    25.0,
+    22.5
+   ],
+   "vector": {
+    "math": 27.5,
+    "code": 10.0,
+    "reason": 10.0,
+    "lang": 40.0,
+    "know": 20.0,
+    "multi": 27.5,
+    "agent": 30.0
+   },
+   "gain_vs_baseline": 3.33
+  },
+  "I_recon_best": {
+   "label": "I_recon_best",
+   "accs_mean": 19.17,
+   "accs_std": 3.12,
+   "accs_min": 15.0,
+   "accs_max": 22.5,
+   "n_seeds": 3,
+   "per_seed": [
+    22.5,
+    15.0,
+    20.0
+   ],
+   "vector": {
+    "math": 22.5,
+    "code": 0.0,
+    "reason": 25.0,
+    "lang": 15.0,
+    "know": 30.0,
+    "multi": 25.0,
+    "agent": 22.5
+   },
+   "gain_vs_baseline": -2.5,
+   "specificity": {
+    "target_delta": -5.0,
+    "other_deltas": {
+     "code": -75.0,
+     "reason": 12.5,
+     "lang": -55.0,
+     "know": -70.0,
+     "multi": -37.5,
+     "agent": -50.0
+    },
+    "worst_regression": -75.0,
+    "class": "INTERFERENCE"
+   }
+  },
+  "J_function_destroyed": {
+   "label": "J_function_destroyed",
+   "accs_mean": 14.17,
+   "accs_std": 6.24,
+   "accs_min": 7.5,
+   "accs_max": 22.5,
+   "n_seeds": 3,
+   "per_seed": [
+    12.5,
+    7.5,
+    22.5
+   ],
+   "vector": {
+    "math": 12.5,
+    "code": 27.5,
+    "reason": 22.5,
+    "lang": 47.5,
+    "know": 20.0,
+    "multi": 22.5,
+    "agent": 30.0
+   },
+   "gain_vs_baseline": -7.5,
+   "specificity": {
+    "target_delta": -15.0,
+    "other_deltas": {
+     "code": -47.5,
+     "reason": 10.0,
+     "lang": -22.5,
+     "know": -80.0,
+     "multi": -40.0,
+     "agent": -42.5
+    },
+    "worst_regression": -80.0,
+    "class": "INTERFERENCE"
+   }
+  },
+  "K_function_restored": {
+   "label": "K_function_restored",
+   "accs_mean": 19.17,
+   "accs_std": 3.12,
+   "accs_min": 15.0,
+   "accs_max": 22.5,
+   "n_seeds": 3,
+   "per_seed": [
+    22.5,
+    15.0,
+    20.0
+   ],
+   "vector": {
+    "math": 22.5,
+    "code": 0.0,
+    "reason": 25.0,
+    "lang": 15.0,
+    "know": 30.0,
+    "multi": 25.0,
+    "agent": 22.5
+   },
+   "gain_vs_baseline": -2.5
+  }
+ },
+ "reconstruction": {
+  "matched": {
+   "steps": 150,
+   "loss": [
+    16.97689437866211,
+    11.610539436340332
+   ]
+  },
+  "best": {
+   "steps": 600,
+   "loss": [
+    16.685035705566406,
+    7.70375919342041
+   ]
+  },
+  "surrogate_path": "fusionlab_data/e5_circuits/surrogate_4L.npz"
+ },
+ "functional_equivalence": {
+  "real_acc_calib": 60.0,
+  "ablated_acc_calib": 22.5,
+  "surrogate_acc_calib": 32.5,
+  "top1_agreement_pct": 13.33,
+  "n_agreement_texts": 60,
+  "threshold_declared": "match if agreement>=90 AND |surro-real|<=2",
+  "functional_match": false
+ },
+ "minimality": {
+  "curve": [
+   {
+    "fraction": 1.0,
+    "kept": [
+     "L0.h0",
+     "L0.h1",
+     "L0.h2",
+     "L0.attn",
+     "L0.h3"
+    ],
+    "real_calib": 22.5,
+    "random_calib": [
+     22.5,
+     22.5,
+     22.5
+    ],
+    "random_mean": 22.5,
+    "shuffled_calib": 17.5
+   },
+   {
+    "fraction": 0.75,
+    "kept": [
+     "L0.h0",
+     "L0.h1",
+     "L0.h2",
+     "L0.attn"
+    ],
+    "real_calib": 22.5,
+    "random_calib": [
+     22.5,
+     22.5,
+     22.5
+    ],
+    "random_mean": 22.5,
+    "shuffled_calib": 20.0
+   },
+   {
+    "fraction": 0.5,
+    "kept": [
+     "L0.h0",
+     "L0.h1"
+    ],
+    "real_calib": 20.0,
+    "random_calib": [
+     22.5,
+     25.0,
+     20.0
+    ],
+    "random_mean": 22.5,
+    "shuffled_calib": 17.5
+   },
+   {
+    "fraction": 0.25,
+    "kept": [
+     "L0.h0"
+    ],
+    "real_calib": 22.5,
+    "random_calib": [
+     12.5,
+     22.5,
+     22.5
+    ],
+    "random_mean": 19.17,
+    "shuffled_calib": 22.5
+   },
+   {
+    "fraction": 0.1,
+    "kept": [
+     "L0.h0"
+    ],
+    "real_calib": 22.5,
+    "random_calib": [
+     12.5,
+     22.5,
+     22.5
+    ],
+    "random_mean": 19.17,
+    "shuffled_calib": 22.5
+   }
+  ],
+  "heldout_10pct": {
+   "kept_real": [
+    "L0.h0"
+   ],
+   "real": 22.5,
+   "random_seeds": [
+    22.5,
+    25.0,
+    25.0
+   ],
+   "note": "one-shot held-out (seed 9001); subsets chosen on calibration split only"
+  }
+ },
+ "matrix": {
+  "real": {
+   "correct": 24.17,
+   "wrong_mean": 19.72,
+   "wrong_per_layer": {
+    "1": 15.83,
+    "2": 23.33,
+    "3": 20.0
+   },
+   "random_mean": 16.11,
+   "random_per_seed": {
+    "21": 13.33,
+    "22": 20.83,
+    "23": 14.17
+   }
+  },
+  "random_circuit": {
+   "correct": 23.33,
+   "wrong_mean": 18.89,
+   "wrong_per_layer": {
+    "1": 19.17,
+    "2": 16.67,
+    "3": 20.83
+   }
+  },
+  "surrogate": {
+   "correct": 19.17,
+   "wrong_L1": null,
+   "note": "surrogate-wrong cells not pre-registered; omitted rather than improvised"
+  },
+  "surrogate_destroyed": {
+   "correct": 14.17
+  },
+  "surrogate_restored": {
+   "correct": 19.17
+  }
+ },
+ "scorecard": {
+  "1_correct_location_advantage": {
+   "verdict": "YES",
+   "detail": "condition met"
+  },
+  "2_wrong_location_degradation": {
+   "verdict": "YES",
+   "detail": "condition met"
+  },
+  "3_random_control_separation": {
+   "verdict": "YES",
+   "detail": "condition met"
+  },
+  "4_topology_control_separation": {
+   "verdict": "YES",
+   "detail": "condition met"
+  },
+  "5_weight_control_separation": {
+   "verdict": "YES",
+   "detail": "condition met"
+  },
+  "6_representation_scrambling_effect": {
+   "verdict": "YES",
+   "detail": "condition met"
+  },
+  "7_reconstruction_agreement": {
+   "verdict": "NO",
+   "detail": "not met"
+  },
+  "8_destroyed_function_degradation": {
+   "verdict": "YES",
+   "detail": "condition met"
+  },
+  "9_function_restoration_recovery": {
+   "verdict": "YES",
+   "detail": "condition met"
+  },
+  "10_heldout_replication": {
+   "verdict": "YES",
+   "detail": "condition met"
+  },
+  "11_capability_specificity": {
+   "verdict": "NO",
+   "detail": "not met"
+  },
+  "12_cross_seed_replication": {
+   "verdict": "YES",
+   "detail": "condition met"
+  }
+ },
+ "ladder_rungs": {
+  "L8_functional_reconstruction": false,
+  "L9_function_destroy_loss": true,
+  "L10_function_restore_recovery": true,
+  "L11_transfer_with_location_control": true,
+  "L12_cross_architecture": false
+ },
+ "final_classification": "PARTIAL_FUNCTIONAL_EVIDENCE"
+}

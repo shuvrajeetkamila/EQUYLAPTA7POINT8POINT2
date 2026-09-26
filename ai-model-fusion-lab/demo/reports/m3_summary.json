@@ -1,0 +1,423 @@
+{
+ "headline": {
+  "run_id": "XFER-10b111fe",
+  "source": "A-math",
+  "target": "nomath-base",
+  "capability": "math",
+  "heldout": "micro-math",
+  "arms": {
+   "TARGET_BASELINE": {
+    "mean": 20.83,
+    "std": 7.17,
+    "per_seed": [
+     20.0,
+     30.0,
+     12.5
+    ],
+    "n": 40,
+    "seeds": [
+     1,
+     2,
+     3
+    ]
+   },
+   "DIRECT_TRANSFER": {
+    "mean": 21.67,
+    "std": 7.17,
+    "per_seed": [
+     22.5,
+     30.0,
+     12.5
+    ],
+    "n": 40,
+    "seeds": [
+     1,
+     2,
+     3
+    ]
+   },
+   "ALIGNED_INSERT": {
+    "mean": 21.67,
+    "std": 7.17,
+    "per_seed": [
+     22.5,
+     30.0,
+     12.5
+    ],
+    "n": 40,
+    "seeds": [
+     1,
+     2,
+     3
+    ]
+   },
+   "REFITTED_TRANSFER": {
+    "mean": 21.67,
+    "std": 7.17,
+    "per_seed": [
+     30.0,
+     22.5,
+     12.5
+    ],
+    "n": 40,
+    "seeds": [
+     1,
+     2,
+     3
+    ]
+   },
+   "CALIBRATED": {
+    "mean": 25.0,
+    "std": 7.07,
+    "per_seed": [
+     35.0,
+     20.0,
+     20.0
+    ],
+    "n": 40,
+    "seeds": [
+     1,
+     2,
+     3
+    ]
+   },
+   "ADAPTER_TRANSFER": {
+    "mean": 21.67,
+    "std": 7.17,
+    "per_seed": [
+     22.5,
+     30.0,
+     12.5
+    ],
+    "n": 40,
+    "seeds": [
+     1,
+     2,
+     3
+    ]
+   },
+   "ADAPTER_REFITTED": {
+    "mean": 18.33,
+    "std": 5.14,
+    "per_seed": [
+     25.0,
+     17.5,
+     12.5
+    ],
+    "n": 40,
+    "seeds": [
+     1,
+     2,
+     3
+    ]
+   },
+   "RANDOM_HARVEST_CONTROL": {
+    "mean": 33.33,
+    "std": 8.25,
+    "per_seed": [
+     45.0,
+     27.5,
+     27.5
+    ],
+    "n": 40,
+    "seeds": [
+     1,
+     2,
+     3
+    ]
+   },
+   "CAPACITY_CONTROL": {
+    "mean": 30.83,
+    "std": 5.14,
+    "per_seed": [
+     37.5,
+     25.0,
+     30.0
+    ],
+    "n": 40,
+    "seeds": [
+     1,
+     2,
+     3
+    ]
+   }
+  },
+  "failures": [],
+  "n_items": 40,
+  "eval_seeds": [
+   1,
+   2,
+   3
+  ],
+  "verdict": {
+   "baseline": 20.83,
+   "calibrated": 25.0,
+   "delta": 4.17,
+   "final_arm": "CALIBRATED",
+   "random_control": 33.33,
+   "capacity_control": 30.83,
+   "positive": true,
+   "beats_random": false,
+   "beats_capacity": false,
+   "consistent_across_seeds": false,
+   "sig_floor": 14.14,
+   "n_per_seed": 40,
+   "std": 7.07,
+   "non_target_regressions": {
+    "micro-code": -29.2,
+    "micro-lang": -18.0,
+    "micro-know": -34.7
+   },
+   "status": "NO_EVIDENCE_OF_SPECIALIZED_TRANSFER+INTERFERENCE"
+  },
+  "label": "REFITTED_TRANSFER",
+  "baseline_vector": {
+   "micro-code": 100.0,
+   "micro-reason": 18.1,
+   "micro-lang": 84.7,
+   "micro-know": 100.0,
+   "micro-multi": 55.6,
+   "micro-agent": 75.0
+  },
+  "direct_vector": {
+   "micro-code": 100.0,
+   "micro-reason": 18.1,
+   "micro-lang": 84.7,
+   "micro-know": 100.0,
+   "micro-multi": 55.6,
+   "micro-agent": 75.0
+  },
+  "refit": {
+   "method": "component_only",
+   "trainable_params": 4144,
+   "steps": 150,
+   "lr": 0.002,
+   "seed": 7,
+   "initial_loss": 14.57610034942627,
+   "final_loss": 11.537461280822754,
+   "loss_curve": [
+    14.5761,
+    13.949,
+    14.1168,
+    13.5544,
+    13.963,
+    12.95,
+    12.6597,
+    11.4753,
+    11.8124,
+    11.5929
+   ],
+   "seconds": 3.8,
+   "note": "masked-gradient training: only inserted slices trainable"
+  },
+  "calibration": {
+   "method": "residual_gate",
+   "params_changed": 1024,
+   "loss_before": 9.612785667155908,
+   "loss_after": 8.896442416543808,
+   "gate": 2.0,
+   "note": "single scalar gate g=2.0 (1 effective dof, scaled 1024 params)"
+  },
+  "calibrated_vector": {
+   "micro-code": 70.8,
+   "micro-reason": 20.8,
+   "micro-lang": 66.7,
+   "micro-know": 65.3,
+   "micro-multi": 45.8,
+   "micro-agent": 75.0
+  },
+  "adapter": {
+   "mechanism": "task_arithmetic (1-g)*W_t + g*W_s",
+   "gate": 1.0,
+   "grid": [
+    0.0,
+    0.1,
+    0.2,
+    0.3,
+    0.4,
+    0.5,
+    0.6,
+    0.8,
+    1.0
+   ],
+   "guard": "general-text CE damage penalty (probe split)",
+   "gate_search": {
+    "0.0": {
+     "target_ce": 12.5956,
+     "guard_damage": 0.0,
+     "score": 12.5956
+    },
+    "0.1": {
+     "target_ce": 12.5549,
+     "guard_damage": 0.0001,
+     "score": 12.555
+    },
+    "0.2": {
+     "target_ce": 12.51,
+     "guard_damage": 0.0004,
+     "score": 12.5104
+    },
+    "0.3": {
+     "target_ce": 12.4722,
+     "guard_damage": 0.0008,
+     "score": 12.4731
+    },
+    "0.4": {
+     "target_ce": 12.4694,
+     "guard_damage": 0.0015,
+     "score": 12.4708
+    },
+    "0.5": {
+     "target_ce": 12.4578,
+     "guard_damage": 0.0023,
+     "score": 12.4601
+    },
+    "0.6": {
+     "target_ce": 12.4377,
+     "guard_damage": 0.0028,
+     "score": 12.4405
+    },
+    "0.8": {
+     "target_ce": 12.414,
+     "guard_damage": 0.0044,
+     "score": 12.4184
+    },
+    "1.0": {
+     "target_ce": 12.3917,
+     "guard_damage": 0.0058,
+     "score": 12.3975
+    }
+   }
+  },
+  "adapter_vector": {
+   "micro-code": 100.0,
+   "micro-reason": 18.1,
+   "micro-lang": 84.7,
+   "micro-know": 100.0,
+   "micro-multi": 55.6,
+   "micro-agent": 75.0
+  },
+  "adapter_refit": {
+   "method": "component_only",
+   "trainable_params": 4144,
+   "steps": 150,
+   "lr": 0.002,
+   "seed": 8,
+   "initial_loss": 14.898284912109375,
+   "final_loss": 11.428874969482422,
+   "loss_curve": [
+    14.8983,
+    14.262,
+    14.0961,
+    14.3899,
+    11.4949,
+    11.6887,
+    13.2675,
+    12.2837,
+    12.4901,
+    11.2565
+   ],
+   "seconds": 3.1,
+   "note": "masked-gradient training: only inserted slices trainable",
+   "gate": 1.0
+  },
+  "adapter_refit_vector": {
+   "micro-code": 70.8,
+   "micro-reason": 22.2,
+   "micro-lang": 81.9,
+   "micro-know": 100.0,
+   "micro-multi": 55.6,
+   "micro-agent": 75.0
+  },
+  "random_control_refit_final_loss": 8.38235855102539,
+  "capacity_control_refit_final_loss": 8.611959457397461,
+  "final_arm": "CALIBRATED"
+ },
+ "matrix": [
+  {
+   "source": "A-math",
+   "target": "nomath-base",
+   "capability": "math",
+   "component": "math_head_205d6f",
+   "specificity": 22.5,
+   "baseline": 25.0,
+   "transferred": 32.5,
+   "delta": 7.5,
+   "random_control": 31.25,
+   "capacity_control": 31.25,
+   "status": "INSUFFICIENT_EVIDENCE",
+   "method": "specificity-screened; aligned+refit+calibrated"
+  },
+  {
+   "source": "A-code",
+   "target": "nomath-base",
+   "capability": "coding",
+   "component": "coding_module_attn_373b65",
+   "specificity": 30.0,
+   "baseline": 100.0,
+   "transferred": 100.0,
+   "delta": 0.0,
+   "random_control": 10.0,
+   "capacity_control": 10.0,
+   "status": "NO_TRANSFER",
+   "method": "specificity-screened; aligned+refit+calibrated"
+  },
+  {
+   "source": "A-reason",
+   "target": "nomath-base",
+   "capability": "reasoning",
+   "component": "reasoning_head_515c4f",
+   "specificity": 7.5,
+   "baseline": 21.25,
+   "transferred": 20.0,
+   "delta": -1.25,
+   "random_control": 15.0,
+   "capacity_control": 15.0,
+   "status": "NO_TRANSFER",
+   "method": "specificity-screened; aligned+refit+calibrated"
+  },
+  {
+   "source": "A-math",
+   "target": "A-code",
+   "capability": "math",
+   "component": "math_head_205d6f",
+   "specificity": 22.5,
+   "baseline": 23.75,
+   "transferred": 30.0,
+   "delta": 6.25,
+   "random_control": 20.0,
+   "capacity_control": 28.75,
+   "status": "SPECIALIZED_TRANSFER_EVIDENCE",
+   "method": "specificity-screened; aligned+refit+calibrated"
+  },
+  {
+   "source": "math-wiz",
+   "target": "nomath-base",
+   "capability": "math",
+   "component": "math_head_9b2a1a",
+   "specificity": 17.5,
+   "baseline": 25.0,
+   "transferred": 35.0,
+   "delta": 10.0,
+   "random_control": 31.25,
+   "capacity_control": 31.25,
+   "status": "INSUFFICIENT_EVIDENCE+INTERFERENCE",
+   "method": "specificity-screened; aligned+refit+calibrated"
+  },
+  {
+   "source": "A-math",
+   "target": "weak-base",
+   "capability": "math",
+   "component": "math_head_205d6f",
+   "specificity": 22.5,
+   "baseline": 37.5,
+   "transferred": 37.5,
+   "delta": 0.0,
+   "random_control": 35.0,
+   "capacity_control": 33.75,
+   "status": "NO_TRANSFER+INTERFERENCE",
+   "method": "specificity-screened; aligned+refit+calibrated"
+  }
+ ],
+ "library_count": 44
+}

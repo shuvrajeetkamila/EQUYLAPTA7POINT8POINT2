@@ -1,0 +1,135 @@
+{
+  "control1_random_target_circuit": {
+    "seeds": [
+      30.0,
+      30.0,
+      25.0,
+      30.0,
+      40.0
+    ],
+    "mean": 31.0,
+    "std": 5.48,
+    "min": 25.0,
+    "max": 40.0,
+    "n_seeds": 5,
+    "ci95": [
+      26.2,
+      35.8
+    ]
+  },
+  "control2_random_alignment": {
+    "seeds": [
+      40.0,
+      30.0,
+      30.0,
+      15.0,
+      55.0
+    ],
+    "mean": 34.0,
+    "std": 14.75,
+    "min": 15.0,
+    "max": 55.0,
+    "n_seeds": 5,
+    "ci95": [
+      21.07,
+      46.93
+    ]
+  },
+  "control3_target_local_trained": {
+    "seeds": [
+      35.0,
+      30.0,
+      30.0,
+      30.0,
+      45.0
+    ],
+    "mean": 34.0,
+    "std": 6.52,
+    "min": 30.0,
+    "max": 45.0,
+    "n_seeds": 5,
+    "ci95": [
+      28.29,
+      39.71
+    ],
+    "training_meta": {
+      "method": "CONTROL_3_TARGET_LOCAL_ANALYTICAL_TRAINING",
+      "initial_loss": 0.0,
+      "final_loss": 0.0,
+      "steps": 30,
+      "trainable_parameters": 1536
+    }
+  },
+  "control4_shuffled_functional_signature": {
+    "seeds": [
+      45.0,
+      30.0,
+      30.0,
+      20.0,
+      55.0
+    ],
+    "mean": 36.0,
+    "std": 13.87,
+    "min": 20.0,
+    "max": 55.0,
+    "n_seeds": 5,
+    "ci95": [
+      23.84,
+      48.16
+    ]
+  },
+  "control5_unrelated_source_signature": {
+    "seeds": [
+      45.0,
+      30.0,
+      25.0,
+      20.0,
+      55.0
+    ],
+    "mean": 35.0,
+    "std": 14.58,
+    "min": 20.0,
+    "max": 55.0,
+    "n_seeds": 5,
+    "ci95": [
+      22.22,
+      47.78
+    ]
+  },
+  "control6_randomized_functional_signature": {
+    "seeds": [
+      45.0,
+      30.0,
+      30.0,
+      20.0,
+      55.0
+    ],
+    "mean": 36.0,
+    "std": 13.87,
+    "min": 20.0,
+    "max": 55.0,
+    "n_seeds": 5,
+    "ci95": [
+      23.84,
+      48.16
+    ]
+  },
+  "control7_structurally_matched_random": {
+    "seeds": [
+      45.0,
+      30.0,
+      25.0,
+      20.0,
+      55.0
+    ],
+    "mean": 35.0,
+    "std": 14.58,
+    "min": 20.0,
+    "max": 55.0,
+    "n_seeds": 5,
+    "ci95": [
+      22.22,
+      47.78
+    ]
+  }
+}

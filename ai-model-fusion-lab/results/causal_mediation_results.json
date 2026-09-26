@@ -1,0 +1,786 @@
+{
+  "condition_4_pathway": {
+    "active": {
+      "seeds": [
+        30.0,
+        20.0,
+        30.0,
+        35.0,
+        35.0
+      ],
+      "mean": 30.0,
+      "std": 6.12,
+      "min": 20.0,
+      "max": 35.0,
+      "n_seeds": 5,
+      "ci95": [
+        24.63,
+        35.37
+      ]
+    },
+    "functional_agreement_active_pct": 29.51,
+    "pearson_r_active": 0.271,
+    "no_transplanted_component": {
+      "seeds": [
+        45.0,
+        30.0,
+        30.0,
+        15.0,
+        55.0
+      ],
+      "mean": 35.0,
+      "std": 15.41,
+      "min": 15.0,
+      "max": 55.0,
+      "n_seeds": 5,
+      "ci95": [
+        21.49,
+        48.51
+      ]
+    },
+    "restored_transplanted_component": {
+      "seeds": [
+        30.0,
+        20.0,
+        30.0,
+        35.0,
+        35.0
+      ],
+      "mean": 30.0,
+      "std": 6.12,
+      "min": 20.0,
+      "max": 35.0,
+      "n_seeds": 5,
+      "ci95": [
+        24.63,
+        35.37
+      ]
+    },
+    "no_input_bridge": {
+      "seeds": [
+        45.0,
+        30.0,
+        30.0,
+        15.0,
+        55.0
+      ],
+      "mean": 35.0,
+      "std": 15.41,
+      "min": 15.0,
+      "max": 55.0,
+      "n_seeds": 5,
+      "ci95": [
+        21.49,
+        48.51
+      ]
+    },
+    "no_output_bridge": {
+      "seeds": [
+        45.0,
+        30.0,
+        30.0,
+        15.0,
+        55.0
+      ],
+      "mean": 35.0,
+      "std": 15.41,
+      "min": 15.0,
+      "max": 55.0,
+      "n_seeds": 5,
+      "ci95": [
+        21.49,
+        48.51
+      ]
+    },
+    "random_matched_component": {
+      "seeds": [
+        20.0,
+        20.0,
+        25.0,
+        30.0,
+        20.0
+      ],
+      "mean": 23.0,
+      "std": 4.47,
+      "min": 20.0,
+      "max": 30.0,
+      "n_seeds": 5,
+      "ci95": [
+        19.08,
+        26.92
+      ]
+    },
+    "amplified_component": {
+      "seeds": [
+        25.0,
+        25.0,
+        25.0,
+        40.0,
+        30.0
+      ],
+      "mean": 29.0,
+      "std": 6.52,
+      "min": 25.0,
+      "max": 40.0,
+      "n_seeds": 5,
+      "ci95": [
+        23.29,
+        34.71
+      ]
+    },
+    "inverted_component": {
+      "seeds": [
+        35.0,
+        50.0,
+        30.0,
+        20.0,
+        30.0
+      ],
+      "mean": 33.0,
+      "std": 10.95,
+      "min": 20.0,
+      "max": 50.0,
+      "n_seeds": 5,
+      "ci95": [
+        23.4,
+        42.6
+      ]
+    },
+    "causal_effect_pp": -5.0,
+    "restoration_error_pp": 0.0,
+    "input_bridge_causal_drop_pp": -5.0,
+    "output_bridge_causal_drop_pp": -5.0,
+    "causal_pathway_table": [
+      {
+        "intervention": "Remove transplanted component",
+        "expected": "decrease",
+        "observed": "-5.00 pp",
+        "supports_pathway": false
+      },
+      {
+        "intervention": "Restore transplanted component",
+        "expected": "recovery",
+        "observed": "err 0.00 pp",
+        "supports_pathway": true
+      },
+      {
+        "intervention": "Remove input bridge",
+        "expected": "decrease",
+        "observed": "-5.00 pp",
+        "supports_pathway": false
+      },
+      {
+        "intervention": "Remove output bridge",
+        "expected": "decrease",
+        "observed": "-5.00 pp",
+        "supports_pathway": false
+      },
+      {
+        "intervention": "Random component",
+        "expected": "no equivalent effect",
+        "observed": "diff +7.00 pp",
+        "supports_pathway": true
+      },
+      {
+        "intervention": "Amplify transplanted component",
+        "expected": "predictable change",
+        "observed": "-1.00 pp",
+        "supports_pathway": true
+      },
+      {
+        "intervention": "Invert transplanted component",
+        "expected": "predictable change",
+        "observed": "+3.00 pp",
+        "supports_pathway": true
+      }
+    ]
+  },
+  "condition_5_pathway": {
+    "active": {
+      "seeds": [
+        15.0,
+        20.0,
+        30.0,
+        35.0,
+        25.0
+      ],
+      "mean": 25.0,
+      "std": 7.91,
+      "min": 15.0,
+      "max": 35.0,
+      "n_seeds": 5,
+      "ci95": [
+        18.07,
+        31.93
+      ]
+    },
+    "functional_agreement_active_pct": 7.84,
+    "pearson_r_active": 0.0428,
+    "no_transplanted_component": {
+      "seeds": [
+        30.0,
+        20.0,
+        35.0,
+        35.0,
+        55.0
+      ],
+      "mean": 35.0,
+      "std": 12.75,
+      "min": 20.0,
+      "max": 55.0,
+      "n_seeds": 5,
+      "ci95": [
+        23.83,
+        46.17
+      ]
+    },
+    "restored_transplanted_component": {
+      "seeds": [
+        15.0,
+        20.0,
+        30.0,
+        35.0,
+        25.0
+      ],
+      "mean": 25.0,
+      "std": 7.91,
+      "min": 15.0,
+      "max": 35.0,
+      "n_seeds": 5,
+      "ci95": [
+        18.07,
+        31.93
+      ]
+    },
+    "no_input_bridge": {
+      "seeds": [
+        30.0,
+        20.0,
+        35.0,
+        35.0,
+        55.0
+      ],
+      "mean": 35.0,
+      "std": 12.75,
+      "min": 20.0,
+      "max": 55.0,
+      "n_seeds": 5,
+      "ci95": [
+        23.83,
+        46.17
+      ]
+    },
+    "no_output_bridge": {
+      "seeds": [
+        30.0,
+        20.0,
+        35.0,
+        35.0,
+        55.0
+      ],
+      "mean": 35.0,
+      "std": 12.75,
+      "min": 20.0,
+      "max": 55.0,
+      "n_seeds": 5,
+      "ci95": [
+        23.83,
+        46.17
+      ]
+    },
+    "random_matched_component": {
+      "seeds": [
+        20.0,
+        35.0,
+        30.0,
+        40.0,
+        45.0
+      ],
+      "mean": 34.0,
+      "std": 9.62,
+      "min": 20.0,
+      "max": 45.0,
+      "n_seeds": 5,
+      "ci95": [
+        25.57,
+        42.43
+      ]
+    },
+    "amplified_component": {
+      "seeds": [
+        15.0,
+        20.0,
+        30.0,
+        35.0,
+        25.0
+      ],
+      "mean": 25.0,
+      "std": 7.91,
+      "min": 15.0,
+      "max": 35.0,
+      "n_seeds": 5,
+      "ci95": [
+        18.07,
+        31.93
+      ]
+    },
+    "inverted_component": {
+      "seeds": [
+        35.0,
+        50.0,
+        5.0,
+        15.0,
+        40.0
+      ],
+      "mean": 29.0,
+      "std": 18.51,
+      "min": 5.0,
+      "max": 50.0,
+      "n_seeds": 5,
+      "ci95": [
+        12.78,
+        45.22
+      ]
+    },
+    "causal_effect_pp": -10.0,
+    "restoration_error_pp": 0.0,
+    "input_bridge_causal_drop_pp": -10.0,
+    "output_bridge_causal_drop_pp": -10.0,
+    "causal_pathway_table": [
+      {
+        "intervention": "Remove transplanted component",
+        "expected": "decrease",
+        "observed": "-10.00 pp",
+        "supports_pathway": false
+      },
+      {
+        "intervention": "Restore transplanted component",
+        "expected": "recovery",
+        "observed": "err 0.00 pp",
+        "supports_pathway": true
+      },
+      {
+        "intervention": "Remove input bridge",
+        "expected": "decrease",
+        "observed": "-10.00 pp",
+        "supports_pathway": false
+      },
+      {
+        "intervention": "Remove output bridge",
+        "expected": "decrease",
+        "observed": "-10.00 pp",
+        "supports_pathway": false
+      },
+      {
+        "intervention": "Random component",
+        "expected": "no equivalent effect",
+        "observed": "diff -9.00 pp",
+        "supports_pathway": false
+      },
+      {
+        "intervention": "Amplify transplanted component",
+        "expected": "predictable change",
+        "observed": "+0.00 pp",
+        "supports_pathway": true
+      },
+      {
+        "intervention": "Invert transplanted component",
+        "expected": "predictable change",
+        "observed": "+4.00 pp",
+        "supports_pathway": true
+      }
+    ]
+  },
+  "aa_pathway": {
+    "active": {
+      "seeds": [
+        15.0,
+        20.0,
+        20.0,
+        15.0,
+        20.0
+      ],
+      "mean": 18.0,
+      "std": 2.74,
+      "min": 15.0,
+      "max": 20.0,
+      "n_seeds": 5,
+      "ci95": [
+        15.6,
+        20.4
+      ]
+    },
+    "functional_agreement_active_pct": 16.43,
+    "pearson_r_active": 0.1186,
+    "no_transplanted_component": {
+      "seeds": [
+        15.0,
+        10.0,
+        20.0,
+        30.0,
+        20.0
+      ],
+      "mean": 19.0,
+      "std": 7.42,
+      "min": 10.0,
+      "max": 30.0,
+      "n_seeds": 5,
+      "ci95": [
+        12.5,
+        25.5
+      ]
+    },
+    "restored_transplanted_component": {
+      "seeds": [
+        15.0,
+        20.0,
+        20.0,
+        15.0,
+        20.0
+      ],
+      "mean": 18.0,
+      "std": 2.74,
+      "min": 15.0,
+      "max": 20.0,
+      "n_seeds": 5,
+      "ci95": [
+        15.6,
+        20.4
+      ]
+    },
+    "no_input_bridge": {
+      "seeds": [
+        15.0,
+        10.0,
+        20.0,
+        30.0,
+        20.0
+      ],
+      "mean": 19.0,
+      "std": 7.42,
+      "min": 10.0,
+      "max": 30.0,
+      "n_seeds": 5,
+      "ci95": [
+        12.5,
+        25.5
+      ]
+    },
+    "no_output_bridge": {
+      "seeds": [
+        15.0,
+        10.0,
+        20.0,
+        30.0,
+        20.0
+      ],
+      "mean": 19.0,
+      "std": 7.42,
+      "min": 10.0,
+      "max": 30.0,
+      "n_seeds": 5,
+      "ci95": [
+        12.5,
+        25.5
+      ]
+    },
+    "random_matched_component": {
+      "seeds": [
+        20.0,
+        10.0,
+        20.0,
+        20.0,
+        10.0
+      ],
+      "mean": 16.0,
+      "std": 5.48,
+      "min": 10.0,
+      "max": 20.0,
+      "n_seeds": 5,
+      "ci95": [
+        11.2,
+        20.8
+      ]
+    },
+    "amplified_component": {
+      "seeds": [
+        15.0,
+        25.0,
+        20.0,
+        5.0,
+        15.0
+      ],
+      "mean": 16.0,
+      "std": 7.42,
+      "min": 5.0,
+      "max": 25.0,
+      "n_seeds": 5,
+      "ci95": [
+        9.5,
+        22.5
+      ]
+    },
+    "inverted_component": {
+      "seeds": [
+        10.0,
+        25.0,
+        15.0,
+        15.0,
+        10.0
+      ],
+      "mean": 15.0,
+      "std": 6.12,
+      "min": 10.0,
+      "max": 25.0,
+      "n_seeds": 5,
+      "ci95": [
+        9.63,
+        20.37
+      ]
+    },
+    "causal_effect_pp": -1.0,
+    "restoration_error_pp": 0.0,
+    "input_bridge_causal_drop_pp": -1.0,
+    "output_bridge_causal_drop_pp": -1.0,
+    "causal_pathway_table": [
+      {
+        "intervention": "Remove transplanted component",
+        "expected": "decrease",
+        "observed": "-1.00 pp",
+        "supports_pathway": false
+      },
+      {
+        "intervention": "Restore transplanted component",
+        "expected": "recovery",
+        "observed": "err 0.00 pp",
+        "supports_pathway": true
+      },
+      {
+        "intervention": "Remove input bridge",
+        "expected": "decrease",
+        "observed": "-1.00 pp",
+        "supports_pathway": false
+      },
+      {
+        "intervention": "Remove output bridge",
+        "expected": "decrease",
+        "observed": "-1.00 pp",
+        "supports_pathway": false
+      },
+      {
+        "intervention": "Random component",
+        "expected": "no equivalent effect",
+        "observed": "diff +2.00 pp",
+        "supports_pathway": true
+      },
+      {
+        "intervention": "Amplify transplanted component",
+        "expected": "predictable change",
+        "observed": "-2.00 pp",
+        "supports_pathway": true
+      },
+      {
+        "intervention": "Invert transplanted component",
+        "expected": "predictable change",
+        "observed": "-3.00 pp",
+        "supports_pathway": true
+      }
+    ]
+  },
+  "ac_pathway": {
+    "active": {
+      "seeds": [
+        35.0,
+        15.0,
+        30.0,
+        40.0,
+        30.0
+      ],
+      "mean": 30.0,
+      "std": 9.35,
+      "min": 15.0,
+      "max": 40.0,
+      "n_seeds": 5,
+      "ci95": [
+        21.8,
+        38.2
+      ]
+    },
+    "functional_agreement_active_pct": 30.98,
+    "pearson_r_active": 0.3043,
+    "no_transplanted_component": {
+      "seeds": [
+        20.0,
+        25.0,
+        25.0,
+        25.0,
+        25.0
+      ],
+      "mean": 24.0,
+      "std": 2.24,
+      "min": 20.0,
+      "max": 25.0,
+      "n_seeds": 5,
+      "ci95": [
+        22.04,
+        25.96
+      ]
+    },
+    "restored_transplanted_component": {
+      "seeds": [
+        35.0,
+        15.0,
+        30.0,
+        40.0,
+        30.0
+      ],
+      "mean": 30.0,
+      "std": 9.35,
+      "min": 15.0,
+      "max": 40.0,
+      "n_seeds": 5,
+      "ci95": [
+        21.8,
+        38.2
+      ]
+    },
+    "no_input_bridge": {
+      "seeds": [
+        20.0,
+        25.0,
+        25.0,
+        25.0,
+        25.0
+      ],
+      "mean": 24.0,
+      "std": 2.24,
+      "min": 20.0,
+      "max": 25.0,
+      "n_seeds": 5,
+      "ci95": [
+        22.04,
+        25.96
+      ]
+    },
+    "no_output_bridge": {
+      "seeds": [
+        20.0,
+        25.0,
+        25.0,
+        25.0,
+        25.0
+      ],
+      "mean": 24.0,
+      "std": 2.24,
+      "min": 20.0,
+      "max": 25.0,
+      "n_seeds": 5,
+      "ci95": [
+        22.04,
+        25.96
+      ]
+    },
+    "random_matched_component": {
+      "seeds": [
+        30.0,
+        35.0,
+        30.0,
+        35.0,
+        20.0
+      ],
+      "mean": 30.0,
+      "std": 6.12,
+      "min": 20.0,
+      "max": 35.0,
+      "n_seeds": 5,
+      "ci95": [
+        24.63,
+        35.37
+      ]
+    },
+    "amplified_component": {
+      "seeds": [
+        30.0,
+        15.0,
+        30.0,
+        35.0,
+        30.0
+      ],
+      "mean": 28.0,
+      "std": 7.58,
+      "min": 15.0,
+      "max": 35.0,
+      "n_seeds": 5,
+      "ci95": [
+        21.35,
+        34.65
+      ]
+    },
+    "inverted_component": {
+      "seeds": [
+        20.0,
+        20.0,
+        15.0,
+        10.0,
+        20.0
+      ],
+      "mean": 17.0,
+      "std": 4.47,
+      "min": 10.0,
+      "max": 20.0,
+      "n_seeds": 5,
+      "ci95": [
+        13.08,
+        20.92
+      ]
+    },
+    "causal_effect_pp": 6.0,
+    "restoration_error_pp": 0.0,
+    "input_bridge_causal_drop_pp": 6.0,
+    "output_bridge_causal_drop_pp": 6.0,
+    "causal_pathway_table": [
+      {
+        "intervention": "Remove transplanted component",
+        "expected": "decrease",
+        "observed": "+6.00 pp",
+        "supports_pathway": true
+      },
+      {
+        "intervention": "Restore transplanted component",
+        "expected": "recovery",
+        "observed": "err 0.00 pp",
+        "supports_pathway": true
+      },
+      {
+        "intervention": "Remove input bridge",
+        "expected": "decrease",
+        "observed": "+6.00 pp",
+        "supports_pathway": true
+      },
+      {
+        "intervention": "Remove output bridge",
+        "expected": "decrease",
+        "observed": "+6.00 pp",
+        "supports_pathway": true
+      },
+      {
+        "intervention": "Random component",
+        "expected": "no equivalent effect",
+        "observed": "diff +0.00 pp",
+        "supports_pathway": false
+      },
+      {
+        "intervention": "Amplify transplanted component",
+        "expected": "predictable change",
+        "observed": "-2.00 pp",
+        "supports_pathway": true
+      },
+      {
+        "intervention": "Invert transplanted component",
+        "expected": "predictable change",
+        "observed": "-13.00 pp",
+        "supports_pathway": true
+      }
+    ]
+  }
+}

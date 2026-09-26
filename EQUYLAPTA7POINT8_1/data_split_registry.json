@@ -1,0 +1,30 @@
+{
+  "milestone": "EQUYLAPTA_7.8.1",
+  "domain": "mathematics",
+  "leakage_prevention_protocol": "STRICT_DISJOINT_THREE_WAY_PARTITIONING",
+  "splits": {
+    "characterization_split": {
+      "seed": 777,
+      "n_items": 20,
+      "purpose": "Donor circuit discovery, native causal localization, recipient pathway probing",
+      "allowed_usage": ["localization", "subset_discovery", "path_probing"],
+      "leakage_boundary": "Must NOT be used to report final transfer accuracy or generalization"
+    },
+    "validation_split": {
+      "seed": 888,
+      "n_items": 20,
+      "purpose": "Hyperparameter optimization, two-branch adapter training, finite-difference verification",
+      "allowed_usage": ["adapter_training", "loss_convergence", "gradient_checking"],
+      "leakage_boundary": "Must NOT be used to choose final transfer claim thresholds"
+    },
+    "heldout_test_split": {
+      "seed": 999,
+      "n_items": 20,
+      "purpose": "Final out-of-distribution transfer evaluation, exact token agreement, restoration tests",
+      "allowed_usage": ["final_benchmark_evaluation_only"],
+      "leakage_boundary": "NEVER touched during training, circuit selection, or tuning"
+    }
+  },
+  "replication_seeds": [9001, 9002, 9003, 9004, 9005],
+  "disjointness_guarantee": "Each split is seeded with independent RNG streams ensuring zero token/sequence overlap."
+}

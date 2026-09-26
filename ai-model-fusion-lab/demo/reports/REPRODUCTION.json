@@ -1,0 +1,115 @@
+[
+ {
+  "source": "A-math",
+  "target": "A-code",
+  "capability": "math",
+  "component": "math_head_5236c5",
+  "why": "REPRODUCTION of the single SPECIALIZED_TRANSFER_EVIDENCE cell from the canonical matrix",
+  "verdict": {
+   "baseline": 21.67,
+   "calibrated": 25.83,
+   "delta": 4.16,
+   "final_arm": "ADAPTER_TRANSFER",
+   "random_control": 26.67,
+   "capacity_control": 24.17,
+   "positive": true,
+   "beats_random": false,
+   "beats_capacity": true,
+   "consistent_across_seeds": false,
+   "sig_floor": 12.48,
+   "n_per_seed": 40,
+   "std": 6.24,
+   "non_target_regressions": {},
+   "status": "NO_EVIDENCE_OF_SPECIALIZED_TRANSFER"
+  },
+  "arms": {
+   "TARGET_BASELINE": 21.67,
+   "DIRECT_TRANSFER": 25.83,
+   "ALIGNED_INSERT": 25.83,
+   "REFITTED_TRANSFER": 20.83,
+   "CALIBRATED": 18.33,
+   "ADAPTER_TRANSFER": 25.83,
+   "ADAPTER_REFITTED": 17.5,
+   "RANDOM_HARVEST_CONTROL": 26.67,
+   "CAPACITY_CONTROL": 24.17
+  }
+ },
+ {
+  "source": "A-math",
+  "target": "nomath-base",
+  "capability": "math",
+  "component": "math_head_287f94",
+  "why": "headline pair, full seed set for comparison",
+  "verdict": {
+   "baseline": 20.83,
+   "calibrated": 25.0,
+   "delta": 4.17,
+   "final_arm": "CALIBRATED",
+   "random_control": 33.33,
+   "capacity_control": 30.83,
+   "positive": true,
+   "beats_random": false,
+   "beats_capacity": false,
+   "consistent_across_seeds": false,
+   "sig_floor": 14.14,
+   "n_per_seed": 40,
+   "std": 7.07,
+   "non_target_regressions": {
+    "micro-code": -29.2,
+    "micro-lang": -18.0,
+    "micro-know": -34.7
+   },
+   "status": "NO_EVIDENCE_OF_SPECIALIZED_TRANSFER+INTERFERENCE"
+  },
+  "arms": {
+   "TARGET_BASELINE": 20.83,
+   "DIRECT_TRANSFER": 21.67,
+   "ALIGNED_INSERT": 21.67,
+   "REFITTED_TRANSFER": 21.67,
+   "CALIBRATED": 25.0,
+   "ADAPTER_TRANSFER": 21.67,
+   "ADAPTER_REFITTED": 18.33,
+   "RANDOM_HARVEST_CONTROL": 33.33,
+   "CAPACITY_CONTROL": 30.83
+  }
+ },
+ {
+  "source": "math-wiz",
+  "target": "nomath-base",
+  "capability": "math",
+  "component": "math_head_beb231",
+  "why": "borderline INSUFFICIENT cell (independent lineage)",
+  "verdict": {
+   "baseline": 20.83,
+   "calibrated": 31.67,
+   "delta": 10.84,
+   "final_arm": "CALIBRATED",
+   "random_control": 33.33,
+   "capacity_control": 30.83,
+   "positive": true,
+   "beats_random": false,
+   "beats_capacity": true,
+   "consistent_across_seeds": true,
+   "sig_floor": 8.5,
+   "n_per_seed": 40,
+   "std": 4.25,
+   "non_target_regressions": {
+    "micro-code": -12.5,
+    "micro-lang": -19.4,
+    "micro-agent": -27.8
+   },
+   "status": "NO_EVIDENCE_OF_SPECIALIZED_TRANSFER+INTERFERENCE"
+  },
+  "arms": {
+   "TARGET_BASELINE": 20.83,
+   "DIRECT_TRANSFER": 21.67,
+   "ALIGNED_INSERT": 21.67,
+   "REFITTED_TRANSFER": 29.17,
+   "CALIBRATED": 31.67,
+   "ADAPTER_TRANSFER": 20.83,
+   "ADAPTER_REFITTED": 23.33,
+   "RANDOM_HARVEST_CONTROL": 33.33,
+   "CAPACITY_CONTROL": 30.83
+  }
+ }
+]

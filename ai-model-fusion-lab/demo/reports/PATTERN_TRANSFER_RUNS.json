@@ -1,0 +1,3201 @@
+{
+ "circuits": [
+  {
+   "circuit_id": "A-math-convergence-01",
+   "pattern_ids": [
+    "P024",
+    "P026",
+    "P037",
+    "P064",
+    "P071",
+    "P098"
+   ],
+   "model": "A-math",
+   "capability": "math",
+   "members": [
+    {
+     "level": "HEAD",
+     "layer": 0,
+     "module": "attn",
+     "index": 0
+    },
+    {
+     "level": "HEAD",
+     "layer": 0,
+     "module": "attn",
+     "index": 1
+    },
+    {
+     "level": "HEAD",
+     "layer": 0,
+     "module": "attn",
+     "index": 2
+    },
+    {
+     "level": "HEAD",
+     "layer": 0,
+     "module": "attn",
+     "index": 3
+    },
+    {
+     "level": "MODULE",
+     "layer": 0,
+     "module": "attn"
+    }
+   ],
+   "kind": "convergence",
+   "detection": {
+    "significant": true,
+    "stat": 4,
+    "p": 0.02,
+    "null_median": 1.0,
+    "null_effect_median": 8.33,
+    "circuit_effect_vs_null_p": 0.23076923076923078
+   },
+   "task_correlation": {
+    "selectivity": 15.36,
+    "n_members_with_profile": 4,
+    "significant": true
+   },
+   "ablation": {
+    "level_names": {
+     "1": "NODE",
+     "2": "COMPONENT",
+     "3": "COMPONENT_GROUP",
+     "4": "PATH",
+     "5": "SUBGRAPH",
+     "6": "ACTIVATION_SUBSPACE",
+     "7": "ENTIRE_CIRCUIT"
+    },
+    "baseline": 50.0,
+    "full_circuit": 25.0,
+    "effect": 25.0,
+    "effect_direction": "degrades",
+    "significant": true,
+    "floor": 5.0,
+    "per_member_effect": {
+     "L0.h0": 33.33,
+     "L0.h1": 33.33,
+     "L0.h2": 16.67,
+     "L0.h3": 25.0,
+     "L0.attn": 25.0
+    },
+    "max_single": 33.33,
+    "leave_one_out_effect": {
+     "L0.h0": 25.0,
+     "L0.h1": 25.0,
+     "L0.h2": 25.0,
+     "L0.h3": 25.0,
+     "L0.attn": 12.5
+    },
+    "joint_vs_sum": -108.33,
+    "other_domain_effects": {
+     "code": 62.5,
+     "reason": 12.5
+    },
+    "specificity": -12.5,
+    "effect_specific": false
+   },
+   "restoration": {
+    "clean_acc": 50.0,
+    "ablated_acc": 31.25,
+    "full_restore_acc": 50.0,
+    "recovered_pct": 100.0,
+    "graded_restore_acc": {
+     "L0.attn": 50.0
+    },
+    "note": "patched slot = clean activations of the removed module output; mediation proof + graded per-member mediation"
+   },
+   "positive_intervention": {
+    "baseline": 37.5,
+    "arms": {
+     "x1.5": 62.5,
+     "x2.0": 41.67
+    },
+    "significant": true,
+    "max_abs_change": 25.0
+   },
+   "interaction": {},
+   "minimal_unit": {
+    "minimal_unit": [
+     "L0.h3"
+    ],
+    "rho": 0.8,
+    "full_circuit_effect": 25.0,
+    "minimal_effect": 25.0,
+    "retention_pct": 100.0,
+    "target_effect": 20.0,
+    "n_members_full": 5,
+    "n_members_minimal": 1,
+    "search_steps": [
+     {
+      "kept": [
+       "L0.h0",
+       "L0.h1",
+       "L0.h2",
+       "L0.h3",
+       "L0.attn"
+      ],
+      "effect": 25.0
+     },
+     {
+      "kept": [
+       "L0.h1",
+       "L0.h2",
+       "L0.h3",
+       "L0.attn"
+      ],
+      "effect": 25.0,
+      "removed": "L0.h0"
+     },
+     {
+      "kept": [
+       "L0.h1",
+       "L0.h2",
+       "L0.h3"
+      ],
+      "effect": 29.17,
+      "removed": "L0.attn"
+     },
+     {
+      "kept": [
+       "L0.h2",
+       "L0.h3"
+      ],
+      "effect": 29.17,
+      "removed": "L0.h1"
+     },
+     {
+      "kept": [
+       "L0.h3"
+      ],
+      "effect": 25.0,
+      "removed": "L0.h2"
+     }
+    ],
+    "verified": true
+   },
+   "transfer": {},
+   "evidence_level": 5,
+   "status": "PROMISING",
+   "notes": "",
+   "created": "2026-09-18 17:34:12"
+  },
+  {
+   "circuit_id": "A-math-convergence-02",
+   "pattern_ids": [
+    "P024",
+    "P026",
+    "P064",
+    "P098"
+   ],
+   "model": "A-math",
+   "capability": "math",
+   "members": [
+    {
+     "level": "MODULE",
+     "layer": 0,
+     "module": "attn"
+    },
+    {
+     "level": "HEAD",
+     "layer": 0,
+     "module": "attn",
+     "index": 0
+    },
+    {
+     "level": "HEAD",
+     "layer": 0,
+     "module": "attn",
+     "index": 1
+    },
+    {
+     "level": "HEAD",
+     "layer": 0,
+     "module": "attn",
+     "index": 2
+    },
+    {
+     "level": "HEAD",
+     "layer": 0,
+     "module": "attn",
+     "index": 3
+    },
+    {
+     "level": "MODULE",
+     "layer": 0,
+     "module": "mlp"
+    }
+   ],
+   "kind": "convergence",
+   "detection": {
+    "significant": true,
+    "stat": 5,
+    "p": 0.02,
+    "null_median": 1.0,
+    "null_effect_median": 8.33,
+    "circuit_effect_vs_null_p": 0.23076923076923078
+   },
+   "task_correlation": {
+    "selectivity": 15.36,
+    "n_members_with_profile": 4,
+    "significant": true
+   },
+   "ablation": {
+    "level_names": {
+     "1": "NODE",
+     "2": "COMPONENT",
+     "3": "COMPONENT_GROUP",
+     "4": "PATH",
+     "5": "SUBGRAPH",
+     "6": "ACTIVATION_SUBSPACE",
+     "7": "ENTIRE_CIRCUIT"
+    },
+    "baseline": 50.0,
+    "full_circuit": 29.17,
+    "effect": 20.83,
+    "effect_direction": "degrades",
+    "significant": true,
+    "floor": 5.0,
+    "per_member_effect": {
+     "L0.attn": 25.0,
+     "L0.h0": 33.33,
+     "L0.h1": 33.33,
+     "L0.h2": 16.67,
+     "L0.h3": 25.0,
+     "L0.mlp": 8.33
+    },
+    "max_single": 33.33,
+    "leave_one_out_effect": {
+     "L0.attn": 33.33,
+     "L0.h0": 20.83,
+     "L0.h1": 20.83,
+     "L0.h2": 20.83,
+     "L0.h3": 20.83,
+     "L0.mlp": 25.0
+    },
+    "joint_vs_sum": -120.83,
+    "other_domain_effects": {
+     "code": 87.5,
+     "reason": 18.75
+    },
+    "specificity": -32.3,
+    "effect_specific": false
+   },
+   "restoration": {
+    "clean_acc": 50.0,
+    "ablated_acc": 25.0,
+    "full_restore_acc": 50.0,
+    "recovered_pct": 100.0,
+    "graded_restore_acc": {
+     "L0.attn": 43.75,
+     "L0.mlp": 18.75
+    },
+    "note": "patched slot = clean activations of the removed module output; mediation proof + graded per-member mediation"
+   },
+   "positive_intervention": {
+    "baseline": 16.67,
+    "arms": {
+     "x1.5": 58.33,
+     "x2.0": 29.17
+    },
+    "significant": true,
+    "max_abs_change": 41.66
+   },
+   "interaction": {},
+   "minimal_unit": {
+    "minimal_unit": [
+     "L0.h3"
+    ],
+    "rho": 0.8,
+    "full_circuit_effect": 20.83,
+    "minimal_effect": 25.0,
+    "retention_pct": 120.0,
+    "target_effect": 16.66,
+    "n_members_full": 6,
+    "n_members_minimal": 1,
+    "search_steps": [
+     {
+      "kept": [
+       "L0.attn",
+       "L0.h0",
+       "L0.h1",
+       "L0.h2",
+       "L0.h3",
+       "L0.mlp"
+      ],
+      "effect": 20.83
+     },
+     {
+      "kept": [
+       "L0.h0",
+       "L0.h1",
+       "L0.h2",
+       "L0.h3",
+       "L0.mlp"
+      ],
+      "effect": 33.33,
+      "removed": "L0.attn"
+     },
+     {
+      "kept": [
+       "L0.h1",
+       "L0.h2",
+       "L0.h3",
+       "L0.mlp"
+      ],
+      "effect": 33.33,
+      "removed": "L0.h0"
+     },
+     {
+      "kept": [
+       "L0.h1",
+       "L0.h2",
+       "L0.h3"
+      ],
+      "effect": 29.17,
+      "removed": "L0.mlp"
+     },
+     {
+      "kept": [
+       "L0.h2",
+       "L0.h3"
+      ],
+      "effect": 29.17,
+      "removed": "L0.h1"
+     },
+     {
+      "kept": [
+       "L0.h3"
+      ],
+      "effect": 25.0,
+      "removed": "L0.h2"
+     }
+    ],
+    "verified": true
+   },
+   "transfer": {},
+   "evidence_level": 5,
+   "status": "PROMISING",
+   "notes": "",
+   "created": "2026-09-18 17:34:16"
+  },
+  {
+   "circuit_id": "A-math-divergence-03",
+   "pattern_ids": [
+    "P025",
+    "P063"
+   ],
+   "model": "A-math",
+   "capability": "math",
+   "members": [
+    {
+     "level": "MODULE",
+     "layer": 0,
+     "module": "mlp"
+    },
+    {
+     "level": "MODULE",
+     "layer": 1,
+     "module": "attn"
+    }
+   ],
+   "kind": "divergence",
+   "detection": {
+    "significant": false,
+    "stat": 2,
+    "p": 0.02,
+    "null_median": 1.0,
+    "null_effect_median": 8.33,
+    "circuit_effect_vs_null_p": 1.0
+   },
+   "task_correlation": {
+    "selectivity": 0.0,
+    "n_members_with_profile": 0,
+    "significant": false
+   },
+   "ablation": {
+    "level_names": {
+     "1": "NODE",
+     "2": "COMPONENT",
+     "3": "COMPONENT_GROUP",
+     "4": "PATH",
+     "5": "SUBGRAPH",
+     "6": "ACTIVATION_SUBSPACE",
+     "7": "ENTIRE_CIRCUIT"
+    },
+    "baseline": 50.0,
+    "full_circuit": 45.83,
+    "effect": 4.17,
+    "effect_direction": "degrades",
+    "significant": false,
+    "floor": 5.0,
+    "per_member_effect": {
+     "L0.mlp": 8.33,
+     "L1.attn": 16.67
+    },
+    "max_single": 16.67,
+    "leave_one_out_effect": {
+     "L0.mlp": 16.67,
+     "L1.attn": 8.33
+    },
+    "joint_vs_sum": -20.83,
+    "other_domain_effects": {
+     "code": 75.0,
+     "reason": 12.5
+    },
+    "specificity": -39.58,
+    "effect_specific": false
+   },
+   "restoration": {
+    "clean_acc": 50.0,
+    "ablated_acc": 56.25,
+    "full_restore_acc": 50.0,
+    "recovered_pct": null,
+    "graded_restore_acc": {
+     "L0.mlp": 43.75,
+     "L1.attn": 43.75
+    },
+    "note": "patched slot = clean activations of the removed module output; mediation proof + graded per-member mediation"
+   },
+   "positive_intervention": {
+    "baseline": 58.33,
+    "arms": {
+     "x1.5": 37.5,
+     "x2.0": 33.33
+    },
+    "significant": true,
+    "max_abs_change": 25.0
+   },
+   "interaction": {},
+   "minimal_unit": null,
+   "transfer": {},
+   "evidence_level": 0,
+   "status": "NOT_TESTED",
+   "notes": "",
+   "created": "2026-09-18 17:34:19"
+  },
+  {
+   "circuit_id": "A-math-divergence-04",
+   "pattern_ids": [
+    "P025",
+    "P063"
+   ],
+   "model": "A-math",
+   "capability": "math",
+   "members": [
+    {
+     "level": "MODULE",
+     "layer": 0,
+     "module": "attn"
+    },
+    {
+     "level": "MODULE",
+     "layer": 0,
+     "module": "mlp"
+    }
+   ],
+   "kind": "divergence",
+   "detection": {
+    "significant": true,
+    "stat": 2,
+    "p": 0.02,
+    "null_median": 1.0,
+    "null_effect_median": 8.33,
+    "circuit_effect_vs_null_p": 0.23076923076923078
+   },
+   "task_correlation": {
+    "selectivity": 0.0,
+    "n_members_with_profile": 0,
+    "significant": false
+   },
+   "ablation": {
+    "level_names": {
+     "1": "NODE",
+     "2": "COMPONENT",
+     "3": "COMPONENT_GROUP",
+     "4": "PATH",
+     "5": "SUBGRAPH",
+     "6": "ACTIVATION_SUBSPACE",
+     "7": "ENTIRE_CIRCUIT"
+    },
+    "baseline": 50.0,
+    "full_circuit": 29.17,
+    "effect": 20.83,
+    "effect_direction": "degrades",
+    "significant": true,
+    "floor": 5.0,
+    "per_member_effect": {
+     "L0.attn": 25.0,
+     "L0.mlp": 8.33
+    },
+    "max_single": 25.0,
+    "leave_one_out_effect": {
+     "L0.attn": 8.33,
+     "L0.mlp": 25.0
+    },
+    "joint_vs_sum": -12.5,
+    "other_domain_effects": {
+     "code": 87.5,
+     "reason": 18.75
+    },
+    "specificity": -32.3,
+    "effect_specific": false
+   },
+   "restoration": {
+    "clean_acc": 50.0,
+    "ablated_acc": 25.0,
+    "full_restore_acc": 50.0,
+    "recovered_pct": 100.0,
+    "graded_restore_acc": {
+     "L0.attn": 43.75,
+     "L0.mlp": 18.75
+    },
+    "note": "patched slot = clean activations of the removed module output; mediation proof + graded per-member mediation"
+   },
+   "positive_intervention": {
+    "baseline": 16.67,
+    "arms": {
+     "x1.5": 50.0,
+     "x2.0": 50.0
+    },
+    "significant": true,
+    "max_abs_change": 33.33
+   },
+   "interaction": {},
+   "minimal_unit": {
+    "minimal_unit": [
+     "L0.attn"
+    ],
+    "rho": 0.8,
+    "full_circuit_effect": 20.83,
+    "minimal_effect": 25.0,
+    "retention_pct": 120.0,
+    "target_effect": 16.66,
+    "n_members_full": 2,
+    "n_members_minimal": 1,
+    "search_steps": [
+     {
+      "kept": [
+       "L0.attn",
+       "L0.mlp"
+      ],
+      "effect": 20.83
+     },
+     {
+      "kept": [
+       "L0.attn"
+      ],
+      "effect": 25.0,
+      "removed": "L0.mlp"
+     }
+    ],
+    "verified": true
+   },
+   "transfer": {},
+   "evidence_level": 1,
+   "status": "UNSUPPORTED",
+   "notes": "",
+   "created": "2026-09-18 17:34:21"
+  },
+  {
+   "circuit_id": "A-math-hub_and_spokes-05",
+   "pattern_ids": [
+    "P023",
+    "P030",
+    "P035",
+    "P091",
+    "P098"
+   ],
+   "model": "A-math",
+   "capability": "math",
+   "members": [
+    {
+     "level": "MODULE",
+     "layer": 0,
+     "module": "attn"
+    },
+    {
+     "level": "MODULE",
+     "layer": 0,
+     "module": "mlp"
+    },
+    {
+     "level": "MODULE",
+     "layer": 1,
+     "module": "attn"
+    }
+   ],
+   "kind": "hub_and_spokes",
+   "detection": {
+    "significant": true,
+    "stat": 1,
+    "p": 0.03,
+    "null_median": 0.4,
+    "null_effect_median": 8.33,
+    "circuit_effect_vs_null_p": 0.07692307692307693
+   },
+   "task_correlation": {
+    "selectivity": 0.0,
+    "n_members_with_profile": 0,
+    "significant": false
+   },
+   "ablation": {
+    "level_names": {
+     "1": "NODE",
+     "2": "COMPONENT",
+     "3": "COMPONENT_GROUP",
+     "4": "PATH",
+     "5": "SUBGRAPH",
+     "6": "ACTIVATION_SUBSPACE",
+     "7": "ENTIRE_CIRCUIT"
+    },
+    "baseline": 50.0,
+    "full_circuit": 20.83,
+    "effect": 29.17,
+    "effect_direction": "degrades",
+    "significant": true,
+    "floor": 5.0,
+    "per_member_effect": {
+     "L0.attn": 25.0,
+     "L0.mlp": 8.33,
+     "L1.attn": 16.67
+    },
+    "max_single": 25.0,
+    "leave_one_out_effect": {
+     "L0.attn": 4.17,
+     "L0.mlp": 37.5,
+     "L1.attn": 20.83
+    },
+    "joint_vs_sum": -20.83,
+    "other_domain_effects": {
+     "code": 93.75,
+     "reason": 0.0
+    },
+    "specificity": -17.71,
+    "effect_specific": false
+   },
+   "restoration": {
+    "clean_acc": 50.0,
+    "ablated_acc": 18.75,
+    "full_restore_acc": 50.0,
+    "recovered_pct": 100.0,
+    "graded_restore_acc": {
+     "L0.attn": 56.25,
+     "L0.mlp": 31.25,
+     "L1.attn": 12.5
+    },
+    "note": "patched slot = clean activations of the removed module output; mediation proof + graded per-member mediation"
+   },
+   "positive_intervention": {
+    "baseline": 25.0,
+    "arms": {
+     "x1.5": 54.17,
+     "x2.0": 45.83
+    },
+    "significant": true,
+    "max_abs_change": 29.17
+   },
+   "interaction": {},
+   "minimal_unit": {
+    "minimal_unit": [
+     "L0.attn"
+    ],
+    "rho": 0.8,
+    "full_circuit_effect": 29.17,
+    "minimal_effect": 25.0,
+    "retention_pct": 85.7,
+    "target_effect": 23.34,
+    "n_members_full": 3,
+    "n_members_minimal": 1,
+    "search_steps": [
+     {
+      "kept": [
+       "L0.attn",
+       "L0.mlp",
+       "L1.attn"
+      ],
+      "effect": 29.17
+     },
+     {
+      "kept": [
+       "L0.attn",
+       "L1.attn"
+      ],
+      "effect": 37.5,
+      "removed": "L0.mlp"
+     },
+     {
+      "kept": [
+       "L0.attn"
+      ],
+      "effect": 25.0,
+      "removed": "L1.attn"
+     }
+    ],
+    "verified": true
+   },
+   "transfer": {},
+   "evidence_level": 1,
+   "status": "UNSUPPORTED",
+   "notes": "",
+   "created": "2026-09-18 17:34:24"
+  },
+  {
+   "circuit_id": "A-math-redundant_paths-06",
+   "pattern_ids": [
+    "P038",
+    "P040",
+    "P062",
+    "P093"
+   ],
+   "model": "A-math",
+   "capability": "math",
+   "members": [
+    {
+     "level": "MODULE",
+     "layer": 0,
+     "module": "attn"
+    }
+   ],
+   "kind": "redundant_paths",
+   "detection": {
+    "significant": false,
+    "stat": 1,
+    "p": 0.04,
+    "null_median": 1.0,
+    "null_effect_median": 8.33,
+    "circuit_effect_vs_null_p": 0.23076923076923078
+   },
+   "task_correlation": {
+    "selectivity": 0.0,
+    "n_members_with_profile": 0,
+    "significant": false
+   },
+   "ablation": {
+    "level_names": {
+     "1": "NODE",
+     "2": "COMPONENT",
+     "3": "COMPONENT_GROUP",
+     "4": "PATH",
+     "5": "SUBGRAPH",
+     "6": "ACTIVATION_SUBSPACE",
+     "7": "ENTIRE_CIRCUIT"
+    },
+    "baseline": 50.0,
+    "full_circuit": 25.0,
+    "effect": 25.0,
+    "effect_direction": "degrades",
+    "significant": true,
+    "floor": 5.0,
+    "per_member_effect": {
+     "L0.attn": 25.0
+    },
+    "max_single": 25.0,
+    "leave_one_out_effect": {
+     "L0.attn": 0.0
+    },
+    "joint_vs_sum": 0.0,
+    "other_domain_effects": {
+     "code": 62.5,
+     "reason": 12.5
+    },
+    "specificity": -12.5,
+    "effect_specific": false
+   },
+   "restoration": {
+    "clean_acc": 50.0,
+    "ablated_acc": 31.25,
+    "full_restore_acc": 50.0,
+    "recovered_pct": 100.0,
+    "graded_restore_acc": {
+     "L0.attn": 50.0
+    },
+    "note": "patched slot = clean activations of the removed module output; mediation proof + graded per-member mediation"
+   },
+   "positive_intervention": {
+    "baseline": 37.5,
+    "arms": {
+     "x1.5": 62.5,
+     "x2.0": 62.5
+    },
+    "significant": true,
+    "max_abs_change": 25.0
+   },
+   "interaction": {},
+   "minimal_unit": null,
+   "transfer": {},
+   "evidence_level": 0,
+   "status": "NOT_TESTED",
+   "notes": "",
+   "created": "2026-09-18 17:34:26"
+  },
+  {
+   "circuit_id": "A-math-fork_recombine-07",
+   "pattern_ids": [
+    "P091",
+    "P098",
+    "P023"
+   ],
+   "model": "A-math",
+   "capability": "math",
+   "members": [
+    {
+     "level": "HEAD",
+     "layer": 0,
+     "module": "attn",
+     "index": 0
+    },
+    {
+     "level": "MODULE",
+     "layer": 0,
+     "module": "attn"
+    },
+    {
+     "level": "MODULE",
+     "layer": 0,
+     "module": "mlp"
+    }
+   ],
+   "kind": "fork_recombine",
+   "detection": {
+    "significant": true,
+    "stat": 2,
+    "p": 0.03,
+    "null_median": 0.5,
+    "null_effect_median": 8.33,
+    "circuit_effect_vs_null_p": 0.23076923076923078
+   },
+   "task_correlation": {
+    "selectivity": 27.08,
+    "n_members_with_profile": 1,
+    "significant": true
+   },
+   "ablation": {
+    "level_names": {
+     "1": "NODE",
+     "2": "COMPONENT",
+     "3": "COMPONENT_GROUP",
+     "4": "PATH",
+     "5": "SUBGRAPH",
+     "6": "ACTIVATION_SUBSPACE",
+     "7": "ENTIRE_CIRCUIT"
+    },
+    "baseline": 50.0,
+    "full_circuit": 29.17,
+    "effect": 20.83,
+    "effect_direction": "degrades",
+    "significant": true,
+    "floor": 5.0,
+    "per_member_effect": {
+     "L0.h0": 33.33,
+     "L0.attn": 25.0,
+     "L0.mlp": 8.33
+    },
+    "max_single": 33.33,
+    "leave_one_out_effect": {
+     "L0.h0": 20.83,
+     "L0.attn": 12.5,
+     "L0.mlp": 25.0
+    },
+    "joint_vs_sum": -45.83,
+    "other_domain_effects": {
+     "code": 87.5,
+     "reason": 18.75
+    },
+    "specificity": -32.3,
+    "effect_specific": false
+   },
+   "restoration": {
+    "clean_acc": 50.0,
+    "ablated_acc": 25.0,
+    "full_restore_acc": 50.0,
+    "recovered_pct": 100.0,
+    "graded_restore_acc": {
+     "L0.attn": 43.75,
+     "L0.mlp": 18.75
+    },
+    "note": "patched slot = clean activations of the removed module output; mediation proof + graded per-member mediation"
+   },
+   "positive_intervention": {
+    "baseline": 16.67,
+    "arms": {
+     "x1.5": 58.33,
+     "x2.0": 50.0
+    },
+    "significant": true,
+    "max_abs_change": 41.66
+   },
+   "interaction": {},
+   "minimal_unit": {
+    "minimal_unit": [
+     "L0.h0"
+    ],
+    "rho": 0.8,
+    "full_circuit_effect": 20.83,
+    "minimal_effect": 33.33,
+    "retention_pct": 160.0,
+    "target_effect": 16.66,
+    "n_members_full": 3,
+    "n_members_minimal": 1,
+    "search_steps": [
+     {
+      "kept": [
+       "L0.h0",
+       "L0.attn",
+       "L0.mlp"
+      ],
+      "effect": 20.83
+     },
+     {
+      "kept": [
+       "L0.h0",
+       "L0.attn"
+      ],
+      "effect": 25.0,
+      "removed": "L0.mlp"
+     },
+     {
+      "kept": [
+       "L0.h0"
+      ],
+      "effect": 33.33,
+      "removed": "L0.attn"
+     }
+    ],
+    "verified": true
+   },
+   "transfer": {},
+   "evidence_level": 5,
+   "status": "PROMISING",
+   "notes": "",
+   "created": "2026-09-18 17:34:28"
+  },
+  {
+   "circuit_id": "A-math-community-08",
+   "pattern_ids": [
+    "P036",
+    "P048",
+    "P097"
+   ],
+   "model": "A-math",
+   "capability": "math",
+   "members": [
+    {
+     "level": "HEAD",
+     "layer": 0,
+     "module": "attn",
+     "index": 0
+    },
+    {
+     "level": "HEAD",
+     "layer": 0,
+     "module": "attn",
+     "index": 1
+    },
+    {
+     "level": "HEAD",
+     "layer": 0,
+     "module": "attn",
+     "index": 2
+    },
+    {
+     "level": "HEAD",
+     "layer": 0,
+     "module": "attn",
+     "index": 3
+    }
+   ],
+   "kind": "community",
+   "detection": {
+    "significant": false,
+    "stat": 1,
+    "p": 0.05,
+    "null_median": 0.5,
+    "null_effect_median": 8.33,
+    "circuit_effect_vs_null_p": 0.3076923076923077
+   },
+   "task_correlation": {
+    "selectivity": 15.36,
+    "n_members_with_profile": 4,
+    "significant": true
+   },
+   "ablation": {
+    "level_names": {
+     "1": "NODE",
+     "2": "COMPONENT",
+     "3": "COMPONENT_GROUP",
+     "4": "PATH",
+     "5": "SUBGRAPH",
+     "6": "ACTIVATION_SUBSPACE",
+     "7": "ENTIRE_CIRCUIT"
+    },
+    "baseline": 50.0,
+    "full_circuit": 37.5,
+    "effect": 12.5,
+    "effect_direction": "degrades",
+    "significant": true,
+    "floor": 5.0,
+    "per_member_effect": {
+     "L0.h0": 33.33,
+     "L0.h1": 33.33,
+     "L0.h2": 16.67,
+     "L0.h3": 25.0
+    },
+    "max_single": 33.33,
+    "leave_one_out_effect": {
+     "L0.h0": 29.17,
+     "L0.h1": 20.83,
+     "L0.h2": 25.0,
+     "L0.h3": 33.33
+    },
+    "joint_vs_sum": -95.83,
+    "other_domain_effects": {
+     "code": 68.75,
+     "reason": 12.5
+    },
+    "specificity": -28.12,
+    "effect_specific": false
+   },
+   "restoration": {
+    "recovered_pct": null,
+    "reason": "no MODULE members to patch (heads/chan not collection points)"
+   },
+   "positive_intervention": {
+    "baseline": 37.5,
+    "arms": {
+     "x1.5": 62.5,
+     "x2.0": 62.5
+    },
+    "significant": true,
+    "max_abs_change": 25.0
+   },
+   "interaction": {},
+   "minimal_unit": {
+    "minimal_unit": [
+     "L0.h1"
+    ],
+    "rho": 0.8,
+    "full_circuit_effect": 12.5,
+    "minimal_effect": 33.33,
+    "retention_pct": 266.6,
+    "target_effect": 10.0,
+    "n_members_full": 4,
+    "n_members_minimal": 1,
+    "search_steps": [
+     {
+      "kept": [
+       "L0.h0",
+       "L0.h1",
+       "L0.h2",
+       "L0.h3"
+      ],
+      "effect": 12.5
+     },
+     {
+      "kept": [
+       "L0.h0",
+       "L0.h1",
+       "L0.h2"
+      ],
+      "effect": 33.33,
+      "removed": "L0.h3"
+     },
+     {
+      "kept": [
+       "L0.h0",
+       "L0.h1"
+      ],
+      "effect": 37.5,
+      "removed": "L0.h2"
+     },
+     {
+      "kept": [
+       "L0.h1"
+      ],
+      "effect": 33.33,
+      "removed": "L0.h0"
+     }
+    ],
+    "verified": true
+   },
+   "transfer": {},
+   "evidence_level": 0,
+   "status": "NOT_TESTED",
+   "notes": "",
+   "created": "2026-09-18 17:34:30"
+  },
+  {
+   "circuit_id": "A-math-routing-09",
+   "pattern_ids": [
+    "P079",
+    "P080"
+   ],
+   "model": "A-math",
+   "capability": "math",
+   "members": [
+    {
+     "level": "MODULE",
+     "layer": 0,
+     "module": "attn"
+    },
+    {
+     "level": "MODULE",
+     "layer": 0,
+     "module": "attn"
+    }
+   ],
+   "kind": "routing",
+   "detection": {
+    "significant": true,
+    "stat": 0.358,
+    "p": 0.04,
+    "null_median": 0.02,
+    "null_effect_median": 8.33,
+    "circuit_effect_vs_null_p": 0.23076923076923078
+   },
+   "task_correlation": {
+    "selectivity": 0.0,
+    "n_members_with_profile": 0,
+    "significant": false
+   },
+   "ablation": {
+    "level_names": {
+     "1": "NODE",
+     "2": "COMPONENT",
+     "3": "COMPONENT_GROUP",
+     "4": "PATH",
+     "5": "SUBGRAPH",
+     "6": "ACTIVATION_SUBSPACE",
+     "7": "ENTIRE_CIRCUIT"
+    },
+    "baseline": 50.0,
+    "full_circuit": 25.0,
+    "effect": 25.0,
+    "effect_direction": "degrades",
+    "significant": true,
+    "floor": 5.0,
+    "per_member_effect": {
+     "L0.attn": 25.0
+    },
+    "max_single": 25.0,
+    "leave_one_out_effect": {
+     "L0.attn": 0.0
+    },
+    "joint_vs_sum": 0.0,
+    "other_domain_effects": {
+     "code": 62.5,
+     "reason": 12.5
+    },
+    "specificity": -12.5,
+    "effect_specific": false
+   },
+   "restoration": {
+    "clean_acc": 50.0,
+    "ablated_acc": 31.25,
+    "full_restore_acc": 50.0,
+    "recovered_pct": 100.0,
+    "graded_restore_acc": {
+     "L0.attn": 50.0
+    },
+    "note": "patched slot = clean activations of the removed module output; mediation proof + graded per-member mediation"
+   },
+   "positive_intervention": {
+    "baseline": 37.5,
+    "arms": {
+     "x1.5": 62.5,
+     "x2.0": 41.67
+    },
+    "significant": true,
+    "max_abs_change": 25.0
+   },
+   "interaction": {},
+   "minimal_unit": {
+    "minimal_unit": [
+     "L0.attn",
+     "L0.attn"
+    ],
+    "rho": 0.8,
+    "full_circuit_effect": 25.0,
+    "minimal_effect": 25.0,
+    "retention_pct": 100.0,
+    "target_effect": 20.0,
+    "n_members_full": 2,
+    "n_members_minimal": 2,
+    "search_steps": [
+     {
+      "kept": [
+       "L0.attn",
+       "L0.attn"
+      ],
+      "effect": 25.0
+     }
+    ],
+    "verified": true
+   },
+   "transfer": {},
+   "evidence_level": 1,
+   "status": "UNSUPPORTED",
+   "notes": "",
+   "created": "2026-09-18 17:34:33"
+  },
+  {
+   "circuit_id": "deep-math-convergence-01",
+   "pattern_ids": [
+    "P024",
+    "P026",
+    "P037",
+    "P064",
+    "P071",
+    "P098"
+   ],
+   "model": "deep-math",
+   "capability": "math",
+   "members": [
+    {
+     "level": "HEAD",
+     "layer": 0,
+     "module": "attn",
+     "index": 0
+    },
+    {
+     "level": "HEAD",
+     "layer": 0,
+     "module": "attn",
+     "index": 1
+    },
+    {
+     "level": "HEAD",
+     "layer": 0,
+     "module": "attn",
+     "index": 2
+    },
+    {
+     "level": "HEAD",
+     "layer": 0,
+     "module": "attn",
+     "index": 3
+    },
+    {
+     "level": "MODULE",
+     "layer": 0,
+     "module": "attn"
+    }
+   ],
+   "kind": "convergence",
+   "detection": {
+    "significant": true,
+    "stat": 4,
+    "p": 0.02,
+    "null_median": 1.0,
+    "null_effect_median": 29.16,
+    "circuit_effect_vs_null_p": 0.15384615384615385
+   },
+   "task_correlation": {
+    "selectivity": 38.54,
+    "n_members_with_profile": 4,
+    "significant": true
+   },
+   "ablation": {
+    "level_names": {
+     "1": "NODE",
+     "2": "COMPONENT",
+     "3": "COMPONENT_GROUP",
+     "4": "PATH",
+     "5": "SUBGRAPH",
+     "6": "ACTIVATION_SUBSPACE",
+     "7": "ENTIRE_CIRCUIT"
+    },
+    "baseline": 70.83,
+    "full_circuit": 25.0,
+    "effect": 45.83,
+    "effect_direction": "degrades",
+    "significant": true,
+    "floor": 5.0,
+    "per_member_effect": {
+     "L0.h0": 58.33,
+     "L0.h1": 54.16,
+     "L0.h2": 54.16,
+     "L0.h3": 37.5,
+     "L0.attn": 45.83
+    },
+    "max_single": 58.33,
+    "leave_one_out_effect": {
+     "L0.h0": 45.83,
+     "L0.h1": 45.83,
+     "L0.h2": 45.83,
+     "L0.h3": 45.83,
+     "L0.attn": 45.83
+    },
+    "joint_vs_sum": -204.15,
+    "other_domain_effects": {
+     "code": 68.75,
+     "reason": 6.25
+    },
+    "specificity": 8.33,
+    "effect_specific": true
+   },
+   "restoration": {
+    "clean_acc": 75.0,
+    "ablated_acc": 25.0,
+    "full_restore_acc": 75.0,
+    "recovered_pct": 100.0,
+    "graded_restore_acc": {
+     "L0.attn": 75.0
+    },
+    "note": "patched slot = clean activations of the removed module output; mediation proof + graded per-member mediation"
+   },
+   "positive_intervention": {
+    "baseline": 29.17,
+    "arms": {
+     "x1.5": 20.83,
+     "x2.0": 16.67
+    },
+    "significant": true,
+    "max_abs_change": 12.5
+   },
+   "interaction": {},
+   "minimal_unit": {
+    "minimal_unit": [
+     "L0.h2"
+    ],
+    "rho": 0.8,
+    "full_circuit_effect": 45.83,
+    "minimal_effect": 54.16,
+    "retention_pct": 118.2,
+    "target_effect": 36.66,
+    "n_members_full": 5,
+    "n_members_minimal": 1,
+    "search_steps": [
+     {
+      "kept": [
+       "L0.h0",
+       "L0.h1",
+       "L0.h2",
+       "L0.h3",
+       "L0.attn"
+      ],
+      "effect": 45.83
+     },
+     {
+      "kept": [
+       "L0.h1",
+       "L0.h2",
+       "L0.h3",
+       "L0.attn"
+      ],
+      "effect": 45.83,
+      "removed": "L0.h0"
+     },
+     {
+      "kept": [
+       "L0.h1",
+       "L0.h2",
+       "L0.h3"
+      ],
+      "effect": 50.0,
+      "removed": "L0.attn"
+     },
+     {
+      "kept": [
+       "L0.h1",
+       "L0.h2"
+      ],
+      "effect": 50.0,
+      "removed": "L0.h3"
+     },
+     {
+      "kept": [
+       "L0.h2"
+      ],
+      "effect": 54.16,
+      "removed": "L0.h1"
+     }
+    ],
+    "verified": true
+   },
+   "transfer": {},
+   "evidence_level": 5,
+   "status": "PROMISING",
+   "notes": "",
+   "created": "2026-09-18 17:34:52"
+  },
+  {
+   "circuit_id": "deep-math-convergence-02",
+   "pattern_ids": [
+    "P024",
+    "P026",
+    "P064",
+    "P098"
+   ],
+   "model": "deep-math",
+   "capability": "math",
+   "members": [
+    {
+     "level": "MODULE",
+     "layer": 0,
+     "module": "attn"
+    },
+    {
+     "level": "HEAD",
+     "layer": 0,
+     "module": "attn",
+     "index": 0
+    },
+    {
+     "level": "HEAD",
+     "layer": 0,
+     "module": "attn",
+     "index": 1
+    },
+    {
+     "level": "HEAD",
+     "layer": 0,
+     "module": "attn",
+     "index": 2
+    },
+    {
+     "level": "HEAD",
+     "layer": 0,
+     "module": "attn",
+     "index": 3
+    },
+    {
+     "level": "MODULE",
+     "layer": 0,
+     "module": "mlp"
+    }
+   ],
+   "kind": "convergence",
+   "detection": {
+    "significant": true,
+    "stat": 5,
+    "p": 0.02,
+    "null_median": 1.0,
+    "null_effect_median": 29.16,
+    "circuit_effect_vs_null_p": 0.15384615384615385
+   },
+   "task_correlation": {
+    "selectivity": 38.54,
+    "n_members_with_profile": 4,
+    "significant": true
+   },
+   "ablation": {
+    "level_names": {
+     "1": "NODE",
+     "2": "COMPONENT",
+     "3": "COMPONENT_GROUP",
+     "4": "PATH",
+     "5": "SUBGRAPH",
+     "6": "ACTIVATION_SUBSPACE",
+     "7": "ENTIRE_CIRCUIT"
+    },
+    "baseline": 70.83,
+    "full_circuit": 16.67,
+    "effect": 54.16,
+    "effect_direction": "degrades",
+    "significant": true,
+    "floor": 5.0,
+    "per_member_effect": {
+     "L0.attn": 45.83,
+     "L0.h0": 58.33,
+     "L0.h1": 54.16,
+     "L0.h2": 54.16,
+     "L0.h3": 37.5,
+     "L0.mlp": 29.16
+    },
+    "max_single": 58.33,
+    "leave_one_out_effect": {
+     "L0.attn": 54.16,
+     "L0.h0": 54.16,
+     "L0.h1": 54.16,
+     "L0.h2": 54.16,
+     "L0.h3": 54.16,
+     "L0.mlp": 45.83
+    },
+    "joint_vs_sum": -224.98,
+    "other_domain_effects": {
+     "code": 68.75,
+     "reason": -6.25
+    },
+    "specificity": 22.91,
+    "effect_specific": true
+   },
+   "restoration": {
+    "clean_acc": 75.0,
+    "ablated_acc": 12.5,
+    "full_restore_acc": 75.0,
+    "recovered_pct": 100.0,
+    "graded_restore_acc": {
+     "L0.attn": 43.75,
+     "L0.mlp": 6.25
+    },
+    "note": "patched slot = clean activations of the removed module output; mediation proof + graded per-member mediation"
+   },
+   "positive_intervention": {
+    "baseline": 16.67,
+    "arms": {
+     "x1.5": 16.67,
+     "x2.0": 12.5
+    },
+    "significant": false,
+    "max_abs_change": 4.17
+   },
+   "interaction": {},
+   "minimal_unit": {
+    "minimal_unit": [
+     "L0.h2"
+    ],
+    "rho": 0.8,
+    "full_circuit_effect": 54.16,
+    "minimal_effect": 54.16,
+    "retention_pct": 100.0,
+    "target_effect": 43.33,
+    "n_members_full": 6,
+    "n_members_minimal": 1,
+    "search_steps": [
+     {
+      "kept": [
+       "L0.attn",
+       "L0.h0",
+       "L0.h1",
+       "L0.h2",
+       "L0.h3",
+       "L0.mlp"
+      ],
+      "effect": 54.16
+     },
+     {
+      "kept": [
+       "L0.h0",
+       "L0.h1",
+       "L0.h2",
+       "L0.h3",
+       "L0.mlp"
+      ],
+      "effect": 54.16,
+      "removed": "L0.attn"
+     },
+     {
+      "kept": [
+       "L0.h0",
+       "L0.h1",
+       "L0.h2",
+       "L0.mlp"
+      ],
+      "effect": 54.16,
+      "removed": "L0.h3"
+     },
+     {
+      "kept": [
+       "L0.h1",
+       "L0.h2",
+       "L0.mlp"
+      ],
+      "effect": 54.16,
+      "removed": "L0.h0"
+     },
+     {
+      "kept": [
+       "L0.h2",
+       "L0.mlp"
+      ],
+      "effect": 54.16,
+      "removed": "L0.h1"
+     },
+     {
+      "kept": [
+       "L0.h2"
+      ],
+      "effect": 54.16,
+      "removed": "L0.mlp"
+     }
+    ],
+    "verified": true
+   },
+   "transfer": {},
+   "evidence_level": 4,
+   "status": "PROMISING",
+   "notes": "",
+   "created": "2026-09-18 17:34:58"
+  },
+  {
+   "circuit_id": "deep-math-divergence-03",
+   "pattern_ids": [
+    "P025",
+    "P063"
+   ],
+   "model": "deep-math",
+   "capability": "math",
+   "members": [
+    {
+     "level": "MODULE",
+     "layer": 0,
+     "module": "mlp"
+    },
+    {
+     "level": "MODULE",
+     "layer": 1,
+     "module": "attn"
+    }
+   ],
+   "kind": "divergence",
+   "detection": {
+    "significant": true,
+    "stat": 2,
+    "p": 0.02,
+    "null_median": 1.0,
+    "null_effect_median": 29.16,
+    "circuit_effect_vs_null_p": 0.15384615384615385
+   },
+   "task_correlation": {
+    "selectivity": 0.0,
+    "n_members_with_profile": 0,
+    "significant": false
+   },
+   "ablation": {
+    "level_names": {
+     "1": "NODE",
+     "2": "COMPONENT",
+     "3": "COMPONENT_GROUP",
+     "4": "PATH",
+     "5": "SUBGRAPH",
+     "6": "ACTIVATION_SUBSPACE",
+     "7": "ENTIRE_CIRCUIT"
+    },
+    "baseline": 70.83,
+    "full_circuit": 20.83,
+    "effect": 50.0,
+    "effect_direction": "degrades",
+    "significant": true,
+    "floor": 5.0,
+    "per_member_effect": {
+     "L0.mlp": 29.16,
+     "L1.attn": 37.5
+    },
+    "max_single": 37.5,
+    "leave_one_out_effect": {
+     "L0.mlp": 37.5,
+     "L1.attn": 29.16
+    },
+    "joint_vs_sum": -16.66,
+    "other_domain_effects": {
+     "code": 18.75,
+     "reason": 6.25
+    },
+    "specificity": 37.5,
+    "effect_specific": true
+   },
+   "restoration": {
+    "clean_acc": 75.0,
+    "ablated_acc": 18.75,
+    "full_restore_acc": 75.0,
+    "recovered_pct": 100.0,
+    "graded_restore_acc": {
+     "L0.mlp": 43.75,
+     "L1.attn": 50.0
+    },
+    "note": "patched slot = clean activations of the removed module output; mediation proof + graded per-member mediation"
+   },
+   "positive_intervention": {
+    "baseline": 20.83,
+    "arms": {
+     "x1.5": 50.0,
+     "x2.0": 37.5
+    },
+    "significant": true,
+    "max_abs_change": 29.17
+   },
+   "interaction": {},
+   "minimal_unit": {
+    "minimal_unit": [
+     "L0.mlp",
+     "L1.attn"
+    ],
+    "rho": 0.8,
+    "full_circuit_effect": 50.0,
+    "minimal_effect": 50.0,
+    "retention_pct": 100.0,
+    "target_effect": 40.0,
+    "n_members_full": 2,
+    "n_members_minimal": 2,
+    "search_steps": [
+     {
+      "kept": [
+       "L0.mlp",
+       "L1.attn"
+      ],
+      "effect": 50.0
+     }
+    ],
+    "verified": true
+   },
+   "transfer": {},
+   "evidence_level": 1,
+   "status": "UNSUPPORTED",
+   "notes": "",
+   "created": "2026-09-18 17:35:04"
+  },
+  {
+   "circuit_id": "deep-math-divergence-04",
+   "pattern_ids": [
+    "P025",
+    "P063"
+   ],
+   "model": "deep-math",
+   "capability": "math",
+   "members": [
+    {
+     "level": "MODULE",
+     "layer": 0,
+     "module": "attn"
+    },
+    {
+     "level": "MODULE",
+     "layer": 0,
+     "module": "mlp"
+    }
+   ],
+   "kind": "divergence",
+   "detection": {
+    "significant": true,
+    "stat": 2,
+    "p": 0.02,
+    "null_median": 1.0,
+    "null_effect_median": 29.16,
+    "circuit_effect_vs_null_p": 0.15384615384615385
+   },
+   "task_correlation": {
+    "selectivity": 0.0,
+    "n_members_with_profile": 0,
+    "significant": false
+   },
+   "ablation": {
+    "level_names": {
+     "1": "NODE",
+     "2": "COMPONENT",
+     "3": "COMPONENT_GROUP",
+     "4": "PATH",
+     "5": "SUBGRAPH",
+     "6": "ACTIVATION_SUBSPACE",
+     "7": "ENTIRE_CIRCUIT"
+    },
+    "baseline": 70.83,
+    "full_circuit": 16.67,
+    "effect": 54.16,
+    "effect_direction": "degrades",
+    "significant": true,
+    "floor": 5.0,
+    "per_member_effect": {
+     "L0.attn": 45.83,
+     "L0.mlp": 29.16
+    },
+    "max_single": 45.83,
+    "leave_one_out_effect": {
+     "L0.attn": 29.16,
+     "L0.mlp": 45.83
+    },
+    "joint_vs_sum": -20.83,
+    "other_domain_effects": {
+     "code": 68.75,
+     "reason": -6.25
+    },
+    "specificity": 22.91,
+    "effect_specific": true
+   },
+   "restoration": {
+    "clean_acc": 75.0,
+    "ablated_acc": 12.5,
+    "full_restore_acc": 75.0,
+    "recovered_pct": 100.0,
+    "graded_restore_acc": {
+     "L0.attn": 43.75,
+     "L0.mlp": 6.25
+    },
+    "note": "patched slot = clean activations of the removed module output; mediation proof + graded per-member mediation"
+   },
+   "positive_intervention": {
+    "baseline": 16.67,
+    "arms": {
+     "x1.5": 37.5,
+     "x2.0": 12.5
+    },
+    "significant": true,
+    "max_abs_change": 20.83
+   },
+   "interaction": {},
+   "minimal_unit": {
+    "minimal_unit": [
+     "L0.attn"
+    ],
+    "rho": 0.8,
+    "full_circuit_effect": 54.16,
+    "minimal_effect": 45.83,
+    "retention_pct": 84.6,
+    "target_effect": 43.33,
+    "n_members_full": 2,
+    "n_members_minimal": 1,
+    "search_steps": [
+     {
+      "kept": [
+       "L0.attn",
+       "L0.mlp"
+      ],
+      "effect": 54.16
+     },
+     {
+      "kept": [
+       "L0.attn"
+      ],
+      "effect": 45.83,
+      "removed": "L0.mlp"
+     }
+    ],
+    "verified": true
+   },
+   "transfer": {},
+   "evidence_level": 1,
+   "status": "UNSUPPORTED",
+   "notes": "",
+   "created": "2026-09-18 17:35:08"
+  },
+  {
+   "circuit_id": "deep-math-hub_and_spokes-05",
+   "pattern_ids": [
+    "P023",
+    "P030",
+    "P035",
+    "P091",
+    "P098"
+   ],
+   "model": "deep-math",
+   "capability": "math",
+   "members": [
+    {
+     "level": "MODULE",
+     "layer": 0,
+     "module": "attn"
+    },
+    {
+     "level": "MODULE",
+     "layer": 0,
+     "module": "mlp"
+    },
+    {
+     "level": "MODULE",
+     "layer": 1,
+     "module": "attn"
+    }
+   ],
+   "kind": "hub_and_spokes",
+   "detection": {
+    "significant": true,
+    "stat": 1,
+    "p": 0.03,
+    "null_median": 0.4,
+    "null_effect_median": 29.16,
+    "circuit_effect_vs_null_p": 0.15384615384615385
+   },
+   "task_correlation": {
+    "selectivity": 0.0,
+    "n_members_with_profile": 0,
+    "significant": false
+   },
+   "ablation": {
+    "level_names": {
+     "1": "NODE",
+     "2": "COMPONENT",
+     "3": "COMPONENT_GROUP",
+     "4": "PATH",
+     "5": "SUBGRAPH",
+     "6": "ACTIVATION_SUBSPACE",
+     "7": "ENTIRE_CIRCUIT"
+    },
+    "baseline": 70.83,
+    "full_circuit": 29.17,
+    "effect": 41.66,
+    "effect_direction": "degrades",
+    "significant": true,
+    "floor": 5.0,
+    "per_member_effect": {
+     "L0.attn": 45.83,
+     "L0.mlp": 29.16,
+     "L1.attn": 37.5
+    },
+    "max_single": 45.83,
+    "leave_one_out_effect": {
+     "L0.attn": 50.0,
+     "L0.mlp": 50.0,
+     "L1.attn": 54.16
+    },
+    "joint_vs_sum": -70.83,
+    "other_domain_effects": {
+     "code": 43.75,
+     "reason": 18.75
+    },
+    "specificity": 10.41,
+    "effect_specific": true
+   },
+   "restoration": {
+    "clean_acc": 75.0,
+    "ablated_acc": 31.25,
+    "full_restore_acc": 75.0,
+    "recovered_pct": 100.0,
+    "graded_restore_acc": {
+     "L0.attn": 18.75,
+     "L0.mlp": 6.25,
+     "L1.attn": 31.25
+    },
+    "note": "patched slot = clean activations of the removed module output; mediation proof + graded per-member mediation"
+   },
+   "positive_intervention": {
+    "baseline": 20.83,
+    "arms": {
+     "x1.5": 37.5,
+     "x2.0": 33.33
+    },
+    "significant": true,
+    "max_abs_change": 16.67
+   },
+   "interaction": {},
+   "minimal_unit": {
+    "minimal_unit": [
+     "L0.attn"
+    ],
+    "rho": 0.8,
+    "full_circuit_effect": 41.66,
+    "minimal_effect": 45.83,
+    "retention_pct": 110.0,
+    "target_effect": 33.33,
+    "n_members_full": 3,
+    "n_members_minimal": 1,
+    "search_steps": [
+     {
+      "kept": [
+       "L0.attn",
+       "L0.mlp",
+       "L1.attn"
+      ],
+      "effect": 41.66
+     },
+     {
+      "kept": [
+       "L0.attn",
+       "L0.mlp"
+      ],
+      "effect": 54.16,
+      "removed": "L1.attn"
+     },
+     {
+      "kept": [
+       "L0.attn"
+      ],
+      "effect": 45.83,
+      "removed": "L0.mlp"
+     }
+    ],
+    "verified": true
+   },
+   "transfer": {},
+   "evidence_level": 1,
+   "status": "UNSUPPORTED",
+   "notes": "",
+   "created": "2026-09-18 17:35:12"
+  },
+  {
+   "circuit_id": "deep-math-redundant_paths-06",
+   "pattern_ids": [
+    "P040",
+    "P062",
+    "P079",
+    "P080",
+    "P093"
+   ],
+   "model": "deep-math",
+   "capability": "math",
+   "members": [
+    {
+     "level": "MODULE",
+     "layer": 0,
+     "module": "attn"
+    },
+    {
+     "level": "MODULE",
+     "layer": 2,
+     "module": "attn"
+    }
+   ],
+   "kind": "redundant_paths",
+   "detection": {
+    "significant": false,
+    "stat": 1,
+    "p": 0.04,
+    "null_median": 1.0,
+    "null_effect_median": 29.16,
+    "circuit_effect_vs_null_p": 0.15384615384615385
+   },
+   "task_correlation": {
+    "selectivity": 0.0,
+    "n_members_with_profile": 0,
+    "significant": false
+   },
+   "ablation": {
+    "level_names": {
+     "1": "NODE",
+     "2": "COMPONENT",
+     "3": "COMPONENT_GROUP",
+     "4": "PATH",
+     "5": "SUBGRAPH",
+     "6": "ACTIVATION_SUBSPACE",
+     "7": "ENTIRE_CIRCUIT"
+    },
+    "baseline": 70.83,
+    "full_circuit": 12.5,
+    "effect": 58.33,
+    "effect_direction": "degrades",
+    "significant": true,
+    "floor": 5.0,
+    "per_member_effect": {
+     "L0.attn": 45.83,
+     "L2.attn": 12.5
+    },
+    "max_single": 45.83,
+    "leave_one_out_effect": {
+     "L0.attn": 12.5,
+     "L2.attn": 45.83
+    },
+    "joint_vs_sum": 0.0,
+    "other_domain_effects": {
+     "code": 68.75,
+     "reason": 6.25
+    },
+    "specificity": 20.83,
+    "effect_specific": true
+   },
+   "restoration": {
+    "clean_acc": 75.0,
+    "ablated_acc": 6.25,
+    "full_restore_acc": 75.0,
+    "recovered_pct": 100.0,
+    "graded_restore_acc": {
+     "L0.attn": 68.75,
+     "L2.attn": 25.0
+    },
+    "note": "patched slot = clean activations of the removed module output; mediation proof + graded per-member mediation"
+   },
+   "positive_intervention": {
+    "baseline": 8.33,
+    "arms": {
+     "x1.5": 25.0,
+     "x2.0": 25.0
+    },
+    "significant": true,
+    "max_abs_change": 16.67
+   },
+   "interaction": {},
+   "minimal_unit": {
+    "minimal_unit": [
+     "L0.attn",
+     "L2.attn"
+    ],
+    "rho": 0.8,
+    "full_circuit_effect": 58.33,
+    "minimal_effect": 58.33,
+    "retention_pct": 100.0,
+    "target_effect": 46.66,
+    "n_members_full": 2,
+    "n_members_minimal": 2,
+    "search_steps": [
+     {
+      "kept": [
+       "L0.attn",
+       "L2.attn"
+      ],
+      "effect": 58.33
+     }
+    ],
+    "verified": true
+   },
+   "transfer": {},
+   "evidence_level": 0,
+   "status": "NOT_TESTED",
+   "notes": "",
+   "created": "2026-09-18 17:35:16"
+  },
+  {
+   "circuit_id": "deep-math-fork_recombine-07",
+   "pattern_ids": [
+    "P091",
+    "P098",
+    "P023"
+   ],
+   "model": "deep-math",
+   "capability": "math",
+   "members": [
+    {
+     "level": "HEAD",
+     "layer": 0,
+     "module": "attn",
+     "index": 0
+    },
+    {
+     "level": "MODULE",
+     "layer": 0,
+     "module": "attn"
+    },
+    {
+     "level": "MODULE",
+     "layer": 0,
+     "module": "mlp"
+    }
+   ],
+   "kind": "fork_recombine",
+   "detection": {
+    "significant": true,
+    "stat": 2,
+    "p": 0.03,
+    "null_median": 0.5,
+    "null_effect_median": 29.16,
+    "circuit_effect_vs_null_p": 0.15384615384615385
+   },
+   "task_correlation": {
+    "selectivity": 30.2,
+    "n_members_with_profile": 1,
+    "significant": true
+   },
+   "ablation": {
+    "level_names": {
+     "1": "NODE",
+     "2": "COMPONENT",
+     "3": "COMPONENT_GROUP",
+     "4": "PATH",
+     "5": "SUBGRAPH",
+     "6": "ACTIVATION_SUBSPACE",
+     "7": "ENTIRE_CIRCUIT"
+    },
+    "baseline": 70.83,
+    "full_circuit": 16.67,
+    "effect": 54.16,
+    "effect_direction": "degrades",
+    "significant": true,
+    "floor": 5.0,
+    "per_member_effect": {
+     "L0.h0": 58.33,
+     "L0.attn": 45.83,
+     "L0.mlp": 29.16
+    },
+    "max_single": 58.33,
+    "leave_one_out_effect": {
+     "L0.h0": 54.16,
+     "L0.attn": 25.0,
+     "L0.mlp": 45.83
+    },
+    "joint_vs_sum": -79.16,
+    "other_domain_effects": {
+     "code": 68.75,
+     "reason": -6.25
+    },
+    "specificity": 22.91,
+    "effect_specific": true
+   },
+   "restoration": {
+    "clean_acc": 75.0,
+    "ablated_acc": 12.5,
+    "full_restore_acc": 75.0,
+    "recovered_pct": 100.0,
+    "graded_restore_acc": {
+     "L0.attn": 43.75,
+     "L0.mlp": 6.25
+    },
+    "note": "patched slot = clean activations of the removed module output; mediation proof + graded per-member mediation"
+   },
+   "positive_intervention": {
+    "baseline": 16.67,
+    "arms": {
+     "x1.5": 16.67,
+     "x2.0": 16.67
+    },
+    "significant": false,
+    "max_abs_change": 0.0
+   },
+   "interaction": {},
+   "minimal_unit": {
+    "minimal_unit": [
+     "L0.attn"
+    ],
+    "rho": 0.8,
+    "full_circuit_effect": 54.16,
+    "minimal_effect": 45.83,
+    "retention_pct": 84.6,
+    "target_effect": 43.33,
+    "n_members_full": 3,
+    "n_members_minimal": 1,
+    "search_steps": [
+     {
+      "kept": [
+       "L0.h0",
+       "L0.attn",
+       "L0.mlp"
+      ],
+      "effect": 54.16
+     },
+     {
+      "kept": [
+       "L0.attn",
+       "L0.mlp"
+      ],
+      "effect": 54.16,
+      "removed": "L0.h0"
+     },
+     {
+      "kept": [
+       "L0.attn"
+      ],
+      "effect": 45.83,
+      "removed": "L0.mlp"
+     }
+    ],
+    "verified": true
+   },
+   "transfer": {},
+   "evidence_level": 4,
+   "status": "PROMISING",
+   "notes": "",
+   "created": "2026-09-18 17:35:20"
+  },
+  {
+   "circuit_id": "deep-math-community-08",
+   "pattern_ids": [
+    "P036",
+    "P048",
+    "P097"
+   ],
+   "model": "deep-math",
+   "capability": "math",
+   "members": [
+    {
+     "level": "MODULE",
+     "layer": 0,
+     "module": "attn"
+    },
+    {
+     "level": "MODULE",
+     "layer": 0,
+     "module": "mlp"
+    },
+    {
+     "level": "HEAD",
+     "layer": 1,
+     "module": "attn",
+     "index": 0
+    },
+    {
+     "level": "HEAD",
+     "layer": 1,
+     "module": "attn",
+     "index": 1
+    },
+    {
+     "level": "HEAD",
+     "layer": 1,
+     "module": "attn",
+     "index": 2
+    },
+    {
+     "level": "HEAD",
+     "layer": 1,
+     "module": "attn",
+     "index": 3
+    }
+   ],
+   "kind": "community",
+   "detection": {
+    "significant": true,
+    "stat": 1,
+    "p": 0.05,
+    "null_median": 0.5,
+    "null_effect_median": 29.16,
+    "circuit_effect_vs_null_p": 0.15384615384615385
+   },
+   "task_correlation": {
+    "selectivity": 8.85,
+    "n_members_with_profile": 4,
+    "significant": true
+   },
+   "ablation": {
+    "level_names": {
+     "1": "NODE",
+     "2": "COMPONENT",
+     "3": "COMPONENT_GROUP",
+     "4": "PATH",
+     "5": "SUBGRAPH",
+     "6": "ACTIVATION_SUBSPACE",
+     "7": "ENTIRE_CIRCUIT"
+    },
+    "baseline": 70.83,
+    "full_circuit": 33.33,
+    "effect": 37.5,
+    "effect_direction": "degrades",
+    "significant": true,
+    "floor": 5.0,
+    "per_member_effect": {
+     "L0.attn": 45.83,
+     "L0.mlp": 29.16,
+     "L1.h0": 12.5,
+     "L1.h1": 12.5,
+     "L1.h2": 0.0,
+     "L1.h3": 16.66
+    },
+    "max_single": 45.83,
+    "leave_one_out_effect": {
+     "L0.attn": 50.0,
+     "L0.mlp": 50.0,
+     "L1.h0": 37.5,
+     "L1.h1": 54.16,
+     "L1.h2": 41.66,
+     "L1.h3": 41.66
+    },
+    "joint_vs_sum": -79.15,
+    "other_domain_effects": {
+     "code": 68.75,
+     "reason": 18.75
+    },
+    "specificity": -6.25,
+    "effect_specific": false
+   },
+   "restoration": {
+    "clean_acc": 75.0,
+    "ablated_acc": 31.25,
+    "full_restore_acc": 43.75,
+    "recovered_pct": 28.6,
+    "graded_restore_acc": {
+     "L0.attn": 43.75,
+     "L0.mlp": 6.25
+    },
+    "note": "patched slot = clean activations of the removed module output; mediation proof + graded per-member mediation"
+   },
+   "positive_intervention": {
+    "baseline": 25.0,
+    "arms": {
+     "x1.5": 37.5,
+     "x2.0": 33.33
+    },
+    "significant": true,
+    "max_abs_change": 12.5
+   },
+   "interaction": {},
+   "minimal_unit": {
+    "minimal_unit": [
+     "L0.attn"
+    ],
+    "rho": 0.8,
+    "full_circuit_effect": 37.5,
+    "minimal_effect": 45.83,
+    "retention_pct": 122.2,
+    "target_effect": 30.0,
+    "n_members_full": 6,
+    "n_members_minimal": 1,
+    "search_steps": [
+     {
+      "kept": [
+       "L0.attn",
+       "L0.mlp",
+       "L1.h0",
+       "L1.h1",
+       "L1.h2",
+       "L1.h3"
+      ],
+      "effect": 37.5
+     },
+     {
+      "kept": [
+       "L0.attn",
+       "L0.mlp",
+       "L1.h0",
+       "L1.h2",
+       "L1.h3"
+      ],
+      "effect": 54.16,
+      "removed": "L1.h1"
+     },
+     {
+      "kept": [
+       "L0.attn",
+       "L1.h0",
+       "L1.h2",
+       "L1.h3"
+      ],
+      "effect": 54.16,
+      "removed": "L0.mlp"
+     },
+     {
+      "kept": [
+       "L0.attn",
+       "L1.h0",
+       "L1.h3"
+      ],
+      "effect": 62.5,
+      "removed": "L1.h2"
+     },
+     {
+      "kept": [
+       "L0.attn",
+       "L1.h0"
+      ],
+      "effect": 54.16,
+      "removed": "L1.h3"
+     },
+     {
+      "kept": [
+       "L0.attn"
+      ],
+      "effect": 45.83,
+      "removed": "L1.h0"
+     }
+    ],
+    "verified": true
+   },
+   "transfer": {},
+   "evidence_level": 3,
+   "status": "PROMISING",
+   "notes": "",
+   "created": "2026-09-18 17:35:25"
+  },
+  {
+   "circuit_id": "deep-math-bridge-09",
+   "pattern_ids": [
+    "P038"
+   ],
+   "model": "deep-math",
+   "capability": "math",
+   "members": [
+    {
+     "level": "MODULE",
+     "layer": 0,
+     "module": "attn"
+    }
+   ],
+   "kind": "bridge",
+   "detection": {
+    "significant": true,
+    "stat": 1.0,
+    "p": 0.05,
+    "null_median": 0.25,
+    "null_effect_median": 29.16,
+    "circuit_effect_vs_null_p": 0.15384615384615385
+   },
+   "task_correlation": {
+    "selectivity": 0.0,
+    "n_members_with_profile": 0,
+    "significant": false
+   },
+   "ablation": {
+    "level_names": {
+     "1": "NODE",
+     "2": "COMPONENT",
+     "3": "COMPONENT_GROUP",
+     "4": "PATH",
+     "5": "SUBGRAPH",
+     "6": "ACTIVATION_SUBSPACE",
+     "7": "ENTIRE_CIRCUIT"
+    },
+    "baseline": 70.83,
+    "full_circuit": 25.0,
+    "effect": 45.83,
+    "effect_direction": "degrades",
+    "significant": true,
+    "floor": 5.0,
+    "per_member_effect": {
+     "L0.attn": 45.83
+    },
+    "max_single": 45.83,
+    "leave_one_out_effect": {
+     "L0.attn": 0.0
+    },
+    "joint_vs_sum": 0.0,
+    "other_domain_effects": {
+     "code": 68.75,
+     "reason": 6.25
+    },
+    "specificity": 8.33,
+    "effect_specific": true
+   },
+   "restoration": {
+    "clean_acc": 75.0,
+    "ablated_acc": 25.0,
+    "full_restore_acc": 75.0,
+    "recovered_pct": 100.0,
+    "graded_restore_acc": {
+     "L0.attn": 75.0
+    },
+    "note": "patched slot = clean activations of the removed module output; mediation proof + graded per-member mediation"
+   },
+   "positive_intervention": {
+    "baseline": 29.17,
+    "arms": {
+     "x1.5": 33.33,
+     "x2.0": 20.83
+    },
+    "significant": true,
+    "max_abs_change": 8.34
+   },
+   "interaction": {},
+   "minimal_unit": null,
+   "transfer": {},
+   "evidence_level": 1,
+   "status": "UNSUPPORTED",
+   "notes": "",
+   "created": "2026-09-18 17:35:31"
+  },
+  {
+   "circuit_id": "compound-A-math-convergence-01+A-math-convergence-02",
+   "pattern_ids": [
+    "P024",
+    "P026",
+    "P064",
+    "P098"
+   ],
+   "model": "A-math",
+   "capability": "math",
+   "members": [
+    {
+     "layer": 0,
+     "level": "MODULE",
+     "module": "mlp"
+    },
+    {
+     "index": 3,
+     "layer": 0,
+     "level": "HEAD",
+     "module": "attn"
+    },
+    {
+     "index": 0,
+     "layer": 0,
+     "level": "HEAD",
+     "module": "attn"
+    },
+    {
+     "index": 1,
+     "layer": 0,
+     "level": "HEAD",
+     "module": "attn"
+    },
+    {
+     "layer": 0,
+     "level": "MODULE",
+     "module": "attn"
+    },
+    {
+     "index": 2,
+     "layer": 0,
+     "level": "HEAD",
+     "module": "attn"
+    }
+   ],
+   "kind": "compound",
+   "detection": {
+    "significant": true,
+    "stat": 2,
+    "p": 0.02
+   },
+   "task_correlation": {},
+   "ablation": {
+    "level_names": {
+     "1": "NODE",
+     "2": "COMPONENT",
+     "3": "COMPONENT_GROUP",
+     "4": "PATH",
+     "5": "SUBGRAPH",
+     "6": "ACTIVATION_SUBSPACE",
+     "7": "ENTIRE_CIRCUIT"
+    },
+    "baseline": 50.0,
+    "full_circuit": 25.0,
+    "effect": 25.0,
+    "effect_direction": "degrades",
+    "significant": true,
+    "floor": 5.0,
+    "per_member_effect": {
+     "L0.mlp": 6.25,
+     "L0.h3": 25.0,
+     "L0.h0": 37.5,
+     "L0.h1": 37.5,
+     "L0.attn": 18.75,
+     "L0.h2": 6.25
+    },
+    "max_single": 37.5,
+    "leave_one_out_effect": {
+     "L0.mlp": 18.75,
+     "L0.h3": 25.0,
+     "L0.h0": 25.0,
+     "L0.h1": 25.0,
+     "L0.attn": 31.25,
+     "L0.h2": 25.0
+    },
+    "joint_vs_sum": -106.25,
+    "other_domain_effects": {
+     "code": 87.5
+    },
+    "specificity": -62.5,
+    "effect_specific": false
+   },
+   "restoration": {},
+   "positive_intervention": {},
+   "interaction": {},
+   "minimal_unit": null,
+   "transfer": {},
+   "evidence_level": 3,
+   "status": "PROMISING",
+   "notes": "compound motif = union of two top-evidence circuits",
+   "created": "2026-09-18 17:36:52"
+  }
+ ],
+ "transfer_runs": [
+  {
+   "run_id": "PTR-37c0489a",
+   "circuit_id": "A-math-convergence-01",
+   "pattern_ids": [
+    "P024",
+    "P026",
+    "P037",
+    "P064",
+    "P071",
+    "P098"
+   ],
+   "kind": "convergence",
+   "source": "A-math",
+   "target": "nomath-base",
+   "capability": "math",
+   "heldout": "micro-math",
+   "members": [
+    "L0.h0",
+    "L0.h1",
+    "L0.h2",
+    "L0.h3",
+    "L0.attn"
+   ],
+   "arms": {
+    "TARGET_BASELINE": {
+     "mean": 20.83,
+     "std": 7.17,
+     "per_seed": [
+      20.0,
+      30.0,
+      12.5
+     ]
+    },
+    "RAW_STRUCTURE": {
+     "mean": 25.0,
+     "std": 9.35,
+     "per_seed": [
+      22.5,
+      37.5,
+      15.0
+     ]
+    },
+    "ALIGNED_STRUCTURE": {
+     "mean": 24.17,
+     "std": 8.25,
+     "per_seed": [
+      22.5,
+      35.0,
+      15.0
+     ]
+    },
+    "REFITTED_STRUCTURE": {
+     "mean": 20.0,
+     "std": 7.07,
+     "per_seed": [
+      30.0,
+      15.0,
+      15.0
+     ]
+    },
+    "CALIBRATED_STRUCTURE": {
+     "mean": 20.0,
+     "std": 7.07,
+     "per_seed": [
+      30.0,
+      15.0,
+      15.0
+     ]
+    },
+    "RANDOM_STRUCTURE_CONTROL": {
+     "mean": 26.25,
+     "std": 8.75,
+     "per_seed": [
+      35.0,
+      17.5
+     ]
+    },
+    "CAPACITY_CONTROL": {
+     "mean": 35.0,
+     "std": 5.0,
+     "per_seed": [
+      40.0,
+      30.0
+     ]
+    }
+   },
+   "failures": [],
+   "verdict": {
+    "baseline": 20.83,
+    "final_arm": "RAW_STRUCTURE",
+    "transferred": 25.0,
+    "delta": 4.17,
+    "std": 9.35,
+    "sig_floor": 18.7,
+    "consistent_across_seeds": false,
+    "random_control": 26.25,
+    "capacity_control": 35.0,
+    "beats_random": false,
+    "beats_capacity": false,
+    "non_target_regressions": {
+     "micro-know": -16.7,
+     "micro-agent": -31.2
+    },
+    "status": "NO_EVIDENCE_OF_SPECIALIZED_TRANSFER+INTERFERENCE"
+   },
+   "n_items": 40,
+   "eval_seeds": [
+    1,
+    2,
+    3
+   ],
+   "baseline_vector": {
+    "micro-code": 100.0,
+    "micro-reason": 12.5,
+    "micro-lang": 89.6,
+    "micro-know": 100.0,
+    "micro-multi": 58.3,
+    "micro-agent": 81.2
+   },
+   "impedance_scale": 1.1726,
+   "refit": {
+    "method": "component_only",
+    "trainable_params": 16640,
+    "steps": 150,
+    "lr": 0.002,
+    "seed": 7,
+    "initial_loss": 13.517105102539062,
+    "final_loss": 5.18366003036499,
+    "loss_curve": [
+     13.5171,
+     11.5016,
+     10.6403,
+     8.7129,
+     9.0969,
+     7.4948,
+     7.3818,
+     6.1538,
+     5.8102,
+     6.0995
+    ],
+    "seconds": 4.4,
+    "note": "masked-gradient training: only inserted slices trainable",
+    "sites": 32
+   },
+   "calibration": {
+    "method": "residual_gate",
+    "params_changed": 4096,
+    "loss_before": 3.80765667781171,
+    "loss_after": 3.80765667781171,
+    "gate": 1.0,
+    "note": "single scalar gate g=1.0 (1 effective dof, scaled 4096 params)"
+   },
+   "calibrated_vector": {
+    "micro-code": 100.0,
+    "micro-reason": 18.8,
+    "micro-lang": 89.6,
+    "micro-know": 83.3,
+    "micro-multi": 58.3,
+    "micro-agent": 50.0
+   },
+   "capacity_control_trainable": 24928,
+   "transfer_score": {
+    "held_out_gain": 4.17,
+    "random_control_gain": -1.25,
+    "capacity_control_gain": -10.0,
+    "interference_penalty": 0.479,
+    "composite": 14.941,
+    "alignment_cost": 0.1726,
+    "parameter_cost": 33216,
+    "architecture_dependency": "LOW",
+    "reproducibility": "UNTESTED"
+   }
+  },
+  {
+   "run_id": "PTR-6c821154",
+   "circuit_id": "deep-math-convergence-01",
+   "pattern_ids": [
+    "P024",
+    "P026",
+    "P037",
+    "P064",
+    "P071",
+    "P098"
+   ],
+   "kind": "convergence",
+   "source": "deep-math",
+   "target": "deep-base",
+   "capability": "math",
+   "heldout": "micro-math",
+   "members": [
+    "L0.h0",
+    "L0.h1",
+    "L0.h2",
+    "L0.h3",
+    "L0.attn"
+   ],
+   "arms": {
+    "TARGET_BASELINE": {
+     "mean": 21.67,
+     "std": 4.25,
+     "per_seed": [
+      27.5,
+      17.5,
+      20.0
+     ]
+    },
+    "RAW_STRUCTURE": {
+     "mean": 24.17,
+     "std": 3.12,
+     "per_seed": [
+      25.0,
+      20.0,
+      27.5
+     ]
+    },
+    "ALIGNED_STRUCTURE": {
+     "mean": 25.0,
+     "std": 2.04,
+     "per_seed": [
+      25.0,
+      22.5,
+      27.5
+     ]
+    },
+    "REFITTED_STRUCTURE": {
+     "mean": 22.5,
+     "std": 5.4,
+     "per_seed": [
+      20.0,
+      30.0,
+      17.5
+     ]
+    },
+    "CALIBRATED_STRUCTURE": {
+     "mean": 22.5,
+     "std": 5.4,
+     "per_seed": [
+      20.0,
+      30.0,
+      17.5
+     ]
+    },
+    "RANDOM_STRUCTURE_CONTROL": {
+     "mean": 20.0,
+     "std": 5.0,
+     "per_seed": [
+      25.0,
+      15.0
+     ]
+    },
+    "CAPACITY_CONTROL": {
+     "mean": 20.0,
+     "std": 5.0,
+     "per_seed": [
+      25.0,
+      15.0
+     ]
+    }
+   },
+   "failures": [],
+   "verdict": {
+    "baseline": 21.67,
+    "final_arm": "ALIGNED_STRUCTURE",
+    "transferred": 25.0,
+    "delta": 3.33,
+    "std": 2.04,
+    "sig_floor": 5.0,
+    "consistent_across_seeds": true,
+    "random_control": 20.0,
+    "capacity_control": 20.0,
+    "beats_random": true,
+    "beats_capacity": true,
+    "non_target_regressions": {
+     "micro-code": -20.8,
+     "micro-know": -47.9,
+     "micro-agent": -18.7
+    },
+    "status": "INSUFFICIENT_EVIDENCE+INTERFERENCE"
+   },
+   "n_items": 40,
+   "eval_seeds": [
+    1,
+    2,
+    3
+   ],
+   "baseline_vector": {
+    "micro-code": 72.9,
+    "micro-reason": 12.5,
+    "micro-lang": 83.3,
+    "micro-know": 100.0,
+    "micro-multi": 58.3,
+    "micro-agent": 81.2
+   },
+   "impedance_scale": 1.0785,
+   "refit": {
+    "method": "component_only",
+    "trainable_params": 16640,
+    "steps": 150,
+    "lr": 0.002,
+    "seed": 7,
+    "initial_loss": 16.492252349853516,
+    "final_loss": 9.173308372497559,
+    "loss_curve": [
+     16.4923,
+     14.7342,
+     13.9191,
+     12.8929,
+     12.6318,
+     11.1774,
+     10.7678,
+     9.5926,
+     9.7158,
+     9.4412
+    ],
+    "seconds": 9.7,
+    "note": "masked-gradient training: only inserted slices trainable",
+    "sites": 32
+   },
+   "calibration": {
+    "method": "residual_gate",
+    "params_changed": 4096,
+    "loss_before": 7.899823568805286,
+    "loss_after": 7.899823568805286,
+    "gate": 1.0,
+    "note": "single scalar gate g=1.0 (1 effective dof, scaled 4096 params)"
+   },
+   "calibrated_vector": {
+    "micro-code": 52.1,
+    "micro-reason": 6.2,
+    "micro-lang": 81.2,
+    "micro-know": 52.1,
+    "micro-multi": 56.2,
+    "micro-agent": 62.5
+   },
+   "capacity_control_trainable": 24928,
+   "transfer_score": {
+    "held_out_gain": 3.33,
+    "random_control_gain": 5.0,
+    "capacity_control_gain": 5.0,
+    "interference_penalty": 0.874,
+    "composite": -7.544,
+    "alignment_cost": 0.0785,
+    "parameter_cost": 33216,
+    "architecture_dependency": "LOW",
+    "reproducibility": "UNTESTED"
+   }
+  },
+  {
+   "run_id": "PTR-eeaf6efe",
+   "circuit_id": "A-math-convergence-01",
+   "pattern_ids": [
+    "P024",
+    "P026",
+    "P037",
+    "P064",
+    "P071",
+    "P098"
+   ],
+   "kind": "convergence",
+   "source": "math-wiz",
+   "target": "nomath-base",
+   "capability": "math",
+   "heldout": "micro-math",
+   "members": [
+    "L0.h0",
+    "L0.h1",
+    "L0.h2",
+    "L0.h3",
+    "L0.attn"
+   ],
+   "arms": {
+    "TARGET_BASELINE": {
+     "mean": 20.83,
+     "std": 7.17,
+     "per_seed": [
+      20.0,
+      30.0,
+      12.5
+     ]
+    },
+    "RAW_STRUCTURE": {
+     "mean": 20.0,
+     "std": 6.12,
+     "per_seed": [
+      20.0,
+      27.5,
+      12.5
+     ]
+    },
+    "ALIGNED_STRUCTURE": {
+     "mean": 20.0,
+     "std": 6.12,
+     "per_seed": [
+      20.0,
+      27.5,
+      12.5
+     ]
+    },
+    "REFITTED_STRUCTURE": {
+     "mean": 27.5,
+     "std": 2.04,
+     "per_seed": [
+      27.5,
+      30.0,
+      25.0
+     ]
+    },
+    "CALIBRATED_STRUCTURE": {
+     "mean": 26.67,
+     "std": 3.12,
+     "per_seed": [
+      27.5,
+      30.0,
+      22.5
+     ]
+    },
+    "RANDOM_STRUCTURE_CONTROL": {
+     "mean": 26.25,
+     "std": 8.75,
+     "per_seed": [
+      35.0,
+      17.5
+     ]
+    },
+    "CAPACITY_CONTROL": {
+     "mean": 35.0,
+     "std": 5.0,
+     "per_seed": [
+      40.0,
+      30.0
+     ]
+    }
+   },
+   "failures": [],
+   "verdict": {
+    "baseline": 20.83,
+    "final_arm": "REFITTED_STRUCTURE",
+    "transferred": 27.5,
+    "delta": 6.67,
+    "std": 2.04,
+    "sig_floor": 5.0,
+    "consistent_across_seeds": true,
+    "random_control": 26.25,
+    "capacity_control": 35.0,
+    "beats_random": true,
+    "beats_capacity": false,
+    "non_target_regressions": {
+     "micro-code": -50.0,
+     "micro-lang": -70.8,
+     "micro-know": -64.6,
+     "micro-multi": -31.2,
+     "micro-agent": -39.5
+    },
+    "status": "PARTIAL_TRANSFER+INTERFERENCE"
+   },
+   "n_items": 40,
+   "eval_seeds": [
+    1,
+    2,
+    3
+   ],
+   "baseline_vector": {
+    "micro-code": 100.0,
+    "micro-reason": 12.5,
+    "micro-lang": 89.6,
+    "micro-know": 100.0,
+    "micro-multi": 58.3,
+    "micro-agent": 81.2
+   },
+   "impedance_scale": 0.9507,
+   "refit": {
+    "method": "component_only",
+    "trainable_params": 16640,
+    "steps": 150,
+    "lr": 0.002,
+    "seed": 7,
+    "initial_loss": 12.089016914367676,
+    "final_loss": 4.256160259246826,
+    "loss_curve": [
+     12.089,
+     9.1463,
+     7.5362,
+     6.2349,
+     5.8756,
+     5.0659,
+     5.0623,
+     4.5883,
+     4.4885,
+     4.6584
+    ],
+    "seconds": 4.0,
+    "note": "masked-gradient training: only inserted slices trainable",
+    "sites": 32
+   },
+   "calibration": {
+    "method": "residual_gate",
+    "params_changed": 4096,
+    "loss_before": 4.107896992812763,
+    "loss_after": 4.099859994504265,
+    "gate": 1.25,
+    "note": "single scalar gate g=1.25 (1 effective dof, scaled 4096 params)"
+   },
+   "calibrated_vector": {
+    "micro-code": 50.0,
+    "micro-reason": 35.4,
+    "micro-lang": 18.8,
+    "micro-know": 35.4,
+    "micro-multi": 27.1,
+    "micro-agent": 41.7
+   },
+   "capacity_control_trainable": 24928,
+   "transfer_score": {
+    "held_out_gain": 6.67,
+    "random_control_gain": 1.25,
+    "capacity_control_gain": -7.5,
+    "interference_penalty": 2.561,
+    "composite": 10.359,
+    "alignment_cost": -0.0493,
+    "parameter_cost": 33216,
+    "architecture_dependency": "LOW",
+    "reproducibility": "UNTESTED"
+   }
+  }
+ ],
+ "reproduction": [
+  {
+   "run_id": "PTR-eeaf6efe",
+   "reproduced": true,
+   "first_delta": 6.67,
+   "first_status": "PARTIAL_TRANSFER+INTERFERENCE",
+   "second_delta": 6.67,
+   "second_status": "PARTIAL_TRANSFER+INTERFERENCE",
+   "second_beats_random": true,
+   "second_beats_capacity": false,
+   "second_arms": {
+    "TARGET_BASELINE": 20.83,
+    "RAW_STRUCTURE": 20.0,
+    "ALIGNED_STRUCTURE": 20.0,
+    "REFITTED_STRUCTURE": 27.5,
+    "CALIBRATED_STRUCTURE": 26.67,
+    "RANDOM_STRUCTURE_CONTROL": 26.25,
+    "CAPACITY_CONTROL": 35.0
+   },
+   "criterion": "same status class + positive + beats_random + |delta1-delta2| <= sig_floor"
+  }
+ ]
+}

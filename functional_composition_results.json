@@ -1,0 +1,935 @@
+{
+  "milestone": "EQUYLAPTA_7.6",
+  "configurations": {
+    "Recipient baseline": {
+      "math": {
+        "mean": 34.0,
+        "std": 6.52,
+        "ci95_low": 28.29,
+        "ci95_high": 39.71,
+        "min": 30.0,
+        "max": 45.0,
+        "raw_seeds": [
+          35.0,
+          30.0,
+          30.0,
+          30.0,
+          45.0
+        ]
+      },
+      "reason": {
+        "mean": 12.0,
+        "std": 7.58,
+        "ci95_low": 5.35,
+        "ci95_high": 18.65,
+        "min": 5.0,
+        "max": 20.0,
+        "raw_seeds": [
+          20.0,
+          20.0,
+          10.0,
+          5.0,
+          5.0
+        ]
+      },
+      "code": {
+        "mean": 0.0,
+        "std": 0.0,
+        "ci95_low": 0.0,
+        "ci95_high": 0.0,
+        "min": 0.0,
+        "max": 0.0,
+        "raw_seeds": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "lang": {
+        "mean": 37.0,
+        "std": 12.55,
+        "ci95_low": 26.0,
+        "ci95_high": 48.0,
+        "min": 25.0,
+        "max": 55.0,
+        "raw_seeds": [
+          45.0,
+          55.0,
+          30.0,
+          30.0,
+          25.0
+        ]
+      },
+      "know": {
+        "mean": 26.0,
+        "std": 8.94,
+        "ci95_low": 18.16,
+        "ci95_high": 33.84,
+        "min": 15.0,
+        "max": 40.0,
+        "raw_seeds": [
+          25.0,
+          25.0,
+          25.0,
+          40.0,
+          15.0
+        ]
+      },
+      "multi": {
+        "mean": 30.0,
+        "std": 10.0,
+        "ci95_low": 21.23,
+        "ci95_high": 38.77,
+        "min": 20.0,
+        "max": 45.0,
+        "raw_seeds": [
+          25.0,
+          25.0,
+          20.0,
+          45.0,
+          35.0
+        ]
+      },
+      "agent": {
+        "mean": 22.0,
+        "std": 6.71,
+        "ci95_low": 16.12,
+        "ci95_high": 27.88,
+        "min": 15.0,
+        "max": 30.0,
+        "raw_seeds": [
+          15.0,
+          15.0,
+          25.0,
+          25.0,
+          30.0
+        ]
+      }
+    },
+    "+ Math component": {
+      "math": {
+        "mean": 21.0,
+        "std": 9.62,
+        "ci95_low": 12.57,
+        "ci95_high": 29.43,
+        "min": 5.0,
+        "max": 30.0,
+        "raw_seeds": [
+          25.0,
+          5.0,
+          25.0,
+          30.0,
+          20.0
+        ]
+      },
+      "reason": {
+        "mean": 11.0,
+        "std": 8.22,
+        "ci95_low": 3.8,
+        "ci95_high": 18.2,
+        "min": 0.0,
+        "max": 20.0,
+        "raw_seeds": [
+          15.0,
+          15.0,
+          20.0,
+          5.0,
+          0.0
+        ]
+      },
+      "code": {
+        "mean": 0.0,
+        "std": 0.0,
+        "ci95_low": 0.0,
+        "ci95_high": 0.0,
+        "min": 0.0,
+        "max": 0.0,
+        "raw_seeds": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "lang": {
+        "mean": 25.0,
+        "std": 10.61,
+        "ci95_low": 15.7,
+        "ci95_high": 34.3,
+        "min": 10.0,
+        "max": 40.0,
+        "raw_seeds": [
+          10.0,
+          25.0,
+          25.0,
+          25.0,
+          40.0
+        ]
+      },
+      "know": {
+        "mean": 39.0,
+        "std": 17.82,
+        "ci95_low": 23.38,
+        "ci95_high": 54.62,
+        "min": 25.0,
+        "max": 65.0,
+        "raw_seeds": [
+          30.0,
+          50.0,
+          25.0,
+          25.0,
+          65.0
+        ]
+      },
+      "multi": {
+        "mean": 31.0,
+        "std": 8.94,
+        "ci95_low": 23.16,
+        "ci95_high": 38.84,
+        "min": 25.0,
+        "max": 45.0,
+        "raw_seeds": [
+          25.0,
+          45.0,
+          35.0,
+          25.0,
+          25.0
+        ]
+      },
+      "agent": {
+        "mean": 8.0,
+        "std": 7.58,
+        "ci95_low": 1.35,
+        "ci95_high": 14.65,
+        "min": 0.0,
+        "max": 20.0,
+        "raw_seeds": [
+          10.0,
+          5.0,
+          20.0,
+          0.0,
+          5.0
+        ]
+      }
+    },
+    "+ Reasoning component": {
+      "math": {
+        "mean": 20.0,
+        "std": 11.73,
+        "ci95_low": 9.72,
+        "ci95_high": 30.28,
+        "min": 10.0,
+        "max": 35.0,
+        "raw_seeds": [
+          15.0,
+          30.0,
+          10.0,
+          35.0,
+          10.0
+        ]
+      },
+      "reason": {
+        "mean": 18.0,
+        "std": 7.58,
+        "ci95_low": 11.35,
+        "ci95_high": 24.65,
+        "min": 10.0,
+        "max": 30.0,
+        "raw_seeds": [
+          20.0,
+          30.0,
+          15.0,
+          10.0,
+          15.0
+        ]
+      },
+      "code": {
+        "mean": 0.0,
+        "std": 0.0,
+        "ci95_low": 0.0,
+        "ci95_high": 0.0,
+        "min": 0.0,
+        "max": 0.0,
+        "raw_seeds": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "lang": {
+        "mean": 25.0,
+        "std": 10.61,
+        "ci95_low": 15.7,
+        "ci95_high": 34.3,
+        "min": 10.0,
+        "max": 40.0,
+        "raw_seeds": [
+          10.0,
+          25.0,
+          25.0,
+          25.0,
+          40.0
+        ]
+      },
+      "know": {
+        "mean": 21.0,
+        "std": 9.62,
+        "ci95_low": 12.57,
+        "ci95_high": 29.43,
+        "min": 10.0,
+        "max": 35.0,
+        "raw_seeds": [
+          10.0,
+          20.0,
+          15.0,
+          25.0,
+          35.0
+        ]
+      },
+      "multi": {
+        "mean": 35.0,
+        "std": 14.58,
+        "ci95_low": 22.22,
+        "ci95_high": 47.78,
+        "min": 15.0,
+        "max": 50.0,
+        "raw_seeds": [
+          50.0,
+          40.0,
+          15.0,
+          25.0,
+          45.0
+        ]
+      },
+      "agent": {
+        "mean": 28.0,
+        "std": 10.37,
+        "ci95_low": 18.91,
+        "ci95_high": 37.09,
+        "min": 20.0,
+        "max": 45.0,
+        "raw_seeds": [
+          20.0,
+          25.0,
+          45.0,
+          30.0,
+          20.0
+        ]
+      }
+    },
+    "+ Coding component": {
+      "math": {
+        "mean": 28.0,
+        "std": 5.7,
+        "ci95_low": 23.0,
+        "ci95_high": 33.0,
+        "min": 20.0,
+        "max": 35.0,
+        "raw_seeds": [
+          20.0,
+          30.0,
+          25.0,
+          35.0,
+          30.0
+        ]
+      },
+      "reason": {
+        "mean": 12.0,
+        "std": 6.71,
+        "ci95_low": 6.12,
+        "ci95_high": 17.88,
+        "min": 5.0,
+        "max": 20.0,
+        "raw_seeds": [
+          15.0,
+          15.0,
+          20.0,
+          5.0,
+          5.0
+        ]
+      },
+      "code": {
+        "mean": 0.0,
+        "std": 0.0,
+        "ci95_low": 0.0,
+        "ci95_high": 0.0,
+        "min": 0.0,
+        "max": 0.0,
+        "raw_seeds": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "lang": {
+        "mean": 25.0,
+        "std": 10.61,
+        "ci95_low": 15.7,
+        "ci95_high": 34.3,
+        "min": 10.0,
+        "max": 40.0,
+        "raw_seeds": [
+          10.0,
+          25.0,
+          25.0,
+          25.0,
+          40.0
+        ]
+      },
+      "know": {
+        "mean": 21.0,
+        "std": 10.84,
+        "ci95_low": 11.5,
+        "ci95_high": 30.5,
+        "min": 15.0,
+        "max": 40.0,
+        "raw_seeds": [
+          20.0,
+          15.0,
+          15.0,
+          15.0,
+          40.0
+        ]
+      },
+      "multi": {
+        "mean": 32.0,
+        "std": 8.37,
+        "ci95_low": 24.67,
+        "ci95_high": 39.33,
+        "min": 25.0,
+        "max": 45.0,
+        "raw_seeds": [
+          30.0,
+          45.0,
+          35.0,
+          25.0,
+          25.0
+        ]
+      },
+      "agent": {
+        "mean": 20.0,
+        "std": 7.91,
+        "ci95_low": 13.07,
+        "ci95_high": 26.93,
+        "min": 10.0,
+        "max": 30.0,
+        "raw_seeds": [
+          30.0,
+          15.0,
+          20.0,
+          10.0,
+          25.0
+        ]
+      }
+    },
+    "+ Math + Reasoning": {
+      "math": {
+        "mean": 19.0,
+        "std": 6.52,
+        "ci95_low": 13.29,
+        "ci95_high": 24.71,
+        "min": 15.0,
+        "max": 30.0,
+        "raw_seeds": [
+          20.0,
+          15.0,
+          15.0,
+          30.0,
+          15.0
+        ]
+      },
+      "reason": {
+        "mean": 18.0,
+        "std": 7.58,
+        "ci95_low": 11.35,
+        "ci95_high": 24.65,
+        "min": 10.0,
+        "max": 30.0,
+        "raw_seeds": [
+          20.0,
+          30.0,
+          15.0,
+          10.0,
+          15.0
+        ]
+      },
+      "code": {
+        "mean": 0.0,
+        "std": 0.0,
+        "ci95_low": 0.0,
+        "ci95_high": 0.0,
+        "min": 0.0,
+        "max": 0.0,
+        "raw_seeds": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "lang": {
+        "mean": 25.0,
+        "std": 10.61,
+        "ci95_low": 15.7,
+        "ci95_high": 34.3,
+        "min": 10.0,
+        "max": 40.0,
+        "raw_seeds": [
+          10.0,
+          25.0,
+          25.0,
+          25.0,
+          40.0
+        ]
+      },
+      "know": {
+        "mean": 21.0,
+        "std": 9.62,
+        "ci95_low": 12.57,
+        "ci95_high": 29.43,
+        "min": 10.0,
+        "max": 35.0,
+        "raw_seeds": [
+          10.0,
+          25.0,
+          15.0,
+          20.0,
+          35.0
+        ]
+      },
+      "multi": {
+        "mean": 35.0,
+        "std": 14.58,
+        "ci95_low": 22.22,
+        "ci95_high": 47.78,
+        "min": 15.0,
+        "max": 50.0,
+        "raw_seeds": [
+          50.0,
+          45.0,
+          40.0,
+          15.0,
+          25.0
+        ]
+      },
+      "agent": {
+        "mean": 28.0,
+        "std": 10.37,
+        "ci95_low": 18.91,
+        "ci95_high": 37.09,
+        "min": 20.0,
+        "max": 45.0,
+        "raw_seeds": [
+          20.0,
+          25.0,
+          45.0,
+          30.0,
+          20.0
+        ]
+      }
+    },
+    "+ Math + Coding": {
+      "math": {
+        "mean": 24.0,
+        "std": 5.48,
+        "ci95_low": 19.2,
+        "ci95_high": 28.8,
+        "min": 15.0,
+        "max": 30.0,
+        "raw_seeds": [
+          15.0,
+          25.0,
+          25.0,
+          30.0,
+          25.0
+        ]
+      },
+      "reason": {
+        "mean": 13.0,
+        "std": 5.7,
+        "ci95_low": 8.0,
+        "ci95_high": 18.0,
+        "min": 5.0,
+        "max": 20.0,
+        "raw_seeds": [
+          15.0,
+          15.0,
+          20.0,
+          5.0,
+          10.0
+        ]
+      },
+      "code": {
+        "mean": 0.0,
+        "std": 0.0,
+        "ci95_low": 0.0,
+        "ci95_high": 0.0,
+        "min": 0.0,
+        "max": 0.0,
+        "raw_seeds": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "lang": {
+        "mean": 25.0,
+        "std": 10.61,
+        "ci95_low": 15.7,
+        "ci95_high": 34.3,
+        "min": 10.0,
+        "max": 40.0,
+        "raw_seeds": [
+          10.0,
+          25.0,
+          25.0,
+          25.0,
+          40.0
+        ]
+      },
+      "know": {
+        "mean": 21.0,
+        "std": 10.84,
+        "ci95_low": 11.5,
+        "ci95_high": 30.5,
+        "min": 15.0,
+        "max": 40.0,
+        "raw_seeds": [
+          20.0,
+          15.0,
+          15.0,
+          15.0,
+          40.0
+        ]
+      },
+      "multi": {
+        "mean": 31.0,
+        "std": 8.94,
+        "ci95_low": 23.16,
+        "ci95_high": 38.84,
+        "min": 25.0,
+        "max": 45.0,
+        "raw_seeds": [
+          25.0,
+          45.0,
+          35.0,
+          25.0,
+          25.0
+        ]
+      },
+      "agent": {
+        "mean": 20.0,
+        "std": 7.91,
+        "ci95_low": 13.07,
+        "ci95_high": 26.93,
+        "min": 10.0,
+        "max": 30.0,
+        "raw_seeds": [
+          30.0,
+          15.0,
+          20.0,
+          10.0,
+          25.0
+        ]
+      }
+    },
+    "+ Reasoning + Coding": {
+      "math": {
+        "mean": 25.0,
+        "std": 6.12,
+        "ci95_low": 19.63,
+        "ci95_high": 30.37,
+        "min": 20.0,
+        "max": 35.0,
+        "raw_seeds": [
+          25.0,
+          25.0,
+          20.0,
+          35.0,
+          20.0
+        ]
+      },
+      "reason": {
+        "mean": 18.0,
+        "std": 14.4,
+        "ci95_low": 5.37,
+        "ci95_high": 30.63,
+        "min": 0.0,
+        "max": 30.0,
+        "raw_seeds": [
+          30.0,
+          30.0,
+          25.0,
+          5.0,
+          0.0
+        ]
+      },
+      "code": {
+        "mean": 0.0,
+        "std": 0.0,
+        "ci95_low": 0.0,
+        "ci95_high": 0.0,
+        "min": 0.0,
+        "max": 0.0,
+        "raw_seeds": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "lang": {
+        "mean": 25.0,
+        "std": 10.61,
+        "ci95_low": 15.7,
+        "ci95_high": 34.3,
+        "min": 10.0,
+        "max": 40.0,
+        "raw_seeds": [
+          10.0,
+          25.0,
+          25.0,
+          25.0,
+          40.0
+        ]
+      },
+      "know": {
+        "mean": 16.0,
+        "std": 8.22,
+        "ci95_low": 8.8,
+        "ci95_high": 23.2,
+        "min": 10.0,
+        "max": 30.0,
+        "raw_seeds": [
+          10.0,
+          10.0,
+          15.0,
+          15.0,
+          30.0
+        ]
+      },
+      "multi": {
+        "mean": 37.0,
+        "std": 14.4,
+        "ci95_low": 24.37,
+        "ci95_high": 49.63,
+        "min": 20.0,
+        "max": 55.0,
+        "raw_seeds": [
+          55.0,
+          45.0,
+          40.0,
+          20.0,
+          25.0
+        ]
+      },
+      "agent": {
+        "mean": 20.0,
+        "std": 7.91,
+        "ci95_low": 13.07,
+        "ci95_high": 26.93,
+        "min": 10.0,
+        "max": 30.0,
+        "raw_seeds": [
+          30.0,
+          15.0,
+          20.0,
+          10.0,
+          25.0
+        ]
+      }
+    },
+    "+ All three": {
+      "math": {
+        "mean": 23.0,
+        "std": 4.47,
+        "ci95_low": 19.08,
+        "ci95_high": 26.92,
+        "min": 20.0,
+        "max": 30.0,
+        "raw_seeds": [
+          20.0,
+          25.0,
+          20.0,
+          30.0,
+          20.0
+        ]
+      },
+      "reason": {
+        "mean": 11.0,
+        "std": 8.22,
+        "ci95_low": 3.8,
+        "ci95_high": 18.2,
+        "min": 0.0,
+        "max": 20.0,
+        "raw_seeds": [
+          15.0,
+          15.0,
+          20.0,
+          5.0,
+          0.0
+        ]
+      },
+      "code": {
+        "mean": 0.0,
+        "std": 0.0,
+        "ci95_low": 0.0,
+        "ci95_high": 0.0,
+        "min": 0.0,
+        "max": 0.0,
+        "raw_seeds": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "lang": {
+        "mean": 25.0,
+        "std": 10.61,
+        "ci95_low": 15.7,
+        "ci95_high": 34.3,
+        "min": 10.0,
+        "max": 40.0,
+        "raw_seeds": [
+          10.0,
+          25.0,
+          25.0,
+          25.0,
+          40.0
+        ]
+      },
+      "know": {
+        "mean": 21.0,
+        "std": 10.84,
+        "ci95_low": 11.5,
+        "ci95_high": 30.5,
+        "min": 15.0,
+        "max": 40.0,
+        "raw_seeds": [
+          20.0,
+          15.0,
+          15.0,
+          15.0,
+          40.0
+        ]
+      },
+      "multi": {
+        "mean": 34.0,
+        "std": 11.4,
+        "ci95_low": 24.01,
+        "ci95_high": 43.99,
+        "min": 20.0,
+        "max": 45.0,
+        "raw_seeds": [
+          45.0,
+          45.0,
+          35.0,
+          20.0,
+          25.0
+        ]
+      },
+      "agent": {
+        "mean": 20.0,
+        "std": 7.91,
+        "ci95_low": 13.07,
+        "ci95_high": 26.93,
+        "min": 10.0,
+        "max": 30.0,
+        "raw_seeds": [
+          30.0,
+          15.0,
+          20.0,
+          10.0,
+          25.0
+        ]
+      }
+    }
+  },
+  "table": [
+    {
+      "Configuration": "Recipient baseline",
+      "Math": "34.0%",
+      "Reasoning": "12.0%",
+      "Coding": "0.0%",
+      "Language": "37.0%",
+      "Functional_Agreement": "N/A",
+      "Causal_Evidence": "N/A"
+    },
+    {
+      "Configuration": "+ Math component",
+      "Math": "21.0%",
+      "Reasoning": "11.0%",
+      "Coding": "0.0%",
+      "Language": "25.0%",
+      "Functional_Agreement": "21.6%",
+      "Causal_Evidence": "Evaluated"
+    },
+    {
+      "Configuration": "+ Reasoning component",
+      "Math": "20.0%",
+      "Reasoning": "18.0%",
+      "Coding": "0.0%",
+      "Language": "25.0%",
+      "Functional_Agreement": "15.5%",
+      "Causal_Evidence": "Evaluated"
+    },
+    {
+      "Configuration": "+ Coding component",
+      "Math": "28.0%",
+      "Reasoning": "12.0%",
+      "Coding": "0.0%",
+      "Language": "25.0%",
+      "Functional_Agreement": "4.5%",
+      "Causal_Evidence": "Evaluated"
+    },
+    {
+      "Configuration": "+ Math + Reasoning",
+      "Math": "19.0%",
+      "Reasoning": "18.0%",
+      "Coding": "0.0%",
+      "Language": "25.0%",
+      "Functional_Agreement": "37.2%",
+      "Causal_Evidence": "Evaluated"
+    },
+    {
+      "Configuration": "+ Math + Coding",
+      "Math": "24.0%",
+      "Reasoning": "13.0%",
+      "Coding": "0.0%",
+      "Language": "25.0%",
+      "Functional_Agreement": "26.1%",
+      "Causal_Evidence": "Evaluated"
+    },
+    {
+      "Configuration": "+ Reasoning + Coding",
+      "Math": "25.0%",
+      "Reasoning": "18.0%",
+      "Coding": "0.0%",
+      "Language": "25.0%",
+      "Functional_Agreement": "20.1%",
+      "Causal_Evidence": "Evaluated"
+    },
+    {
+      "Configuration": "+ All three",
+      "Math": "23.0%",
+      "Reasoning": "11.0%",
+      "Coding": "0.0%",
+      "Language": "25.0%",
+      "Functional_Agreement": "41.7%",
+      "Causal_Evidence": "Evaluated"
+    }
+  ]
+}

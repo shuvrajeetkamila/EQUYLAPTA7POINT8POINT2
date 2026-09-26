@@ -1,0 +1,111 @@
+{
+  "gradient_method": "analytical_closed_form",
+  "numerical_reference": "central_finite_difference_epsilon_1e-6",
+  "coords_tested": 10,
+  "max_relative_error": 2.009492828837394e-07,
+  "mean_relative_error": 3.736619007613747e-08,
+  "tolerance": 0.05,
+  "passed": true,
+  "coordinate_checks": [
+    {
+      "coord": [
+        0,
+        0
+      ],
+      "analytical_grad": 5.16354112,
+      "finite_difference_grad": 5.16354112,
+      "relative_error": 0.0,
+      "passed": true
+    },
+    {
+      "coord": [
+        2,
+        5
+      ],
+      "analytical_grad": -1.19660614,
+      "finite_difference_grad": -1.19660615,
+      "relative_error": 0.0,
+      "passed": true
+    },
+    {
+      "coord": [
+        7,
+        12
+      ],
+      "analytical_grad": -3.52618069,
+      "finite_difference_grad": -3.52618071,
+      "relative_error": 0.0,
+      "passed": true
+    },
+    {
+      "coord": [
+        11,
+        20
+      ],
+      "analytical_grad": -2.24135706,
+      "finite_difference_grad": -2.24135707,
+      "relative_error": 0.0,
+      "passed": true
+    },
+    {
+      "coord": [
+        15,
+        63
+      ],
+      "analytical_grad": -0.0174747,
+      "finite_difference_grad": -0.01747469,
+      "relative_error": 1.5e-07,
+      "passed": true
+    },
+    {
+      "coord": [
+        1,
+        3
+      ],
+      "analytical_grad": -0.05250981,
+      "finite_difference_grad": -0.05250979,
+      "relative_error": 2e-07,
+      "passed": true
+    },
+    {
+      "coord": [
+        4,
+        8
+      ],
+      "analytical_grad": -0.88696025,
+      "finite_difference_grad": -0.88696027,
+      "relative_error": 1e-08,
+      "passed": true
+    },
+    {
+      "coord": [
+        9,
+        14
+      ],
+      "analytical_grad": 1.94988935,
+      "finite_difference_grad": 1.94988934,
+      "relative_error": 0.0,
+      "passed": true
+    },
+    {
+      "coord": [
+        13,
+        25
+      ],
+      "analytical_grad": 1.44657551,
+      "finite_difference_grad": 1.44657551,
+      "relative_error": 0.0,
+      "passed": true
+    },
+    {
+      "coord": [
+        14,
+        62
+      ],
+      "analytical_grad": -5.94525152,
+      "finite_difference_grad": -5.94525153,
+      "relative_error": 0.0,
+      "passed": true
+    }
+  ]
+}

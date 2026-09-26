@@ -1,0 +1,235 @@
+{
+  "n_reconstructions": 5,
+  "reconstructions": [
+    {
+      "reconstruction_id": "recon_1",
+      "seed": 2001,
+      "target_initialization_hash": "31ccc5a7f7bdc3ba",
+      "target_finalization_hash": "89f9db18324afba0",
+      "hashes_distinct": true,
+      "reconstructed_accuracy": {
+        "seeds": [
+          35.0,
+          30.0,
+          30.0,
+          30.0,
+          45.0
+        ],
+        "mean": 34.0,
+        "std": 6.52,
+        "min": 30.0,
+        "max": 45.0,
+        "n_seeds": 5,
+        "ci95": [
+          28.29,
+          39.71
+        ]
+      },
+      "ablated_accuracy": {
+        "seeds": [
+          45.0,
+          30.0,
+          30.0,
+          15.0,
+          55.0
+        ],
+        "mean": 35.0,
+        "std": 15.41,
+        "min": 15.0,
+        "max": 55.0,
+        "n_seeds": 5,
+        "ci95": [
+          21.49,
+          48.51
+        ]
+      },
+      "causal_drop": -1.0
+    },
+    {
+      "reconstruction_id": "recon_2",
+      "seed": 2032,
+      "target_initialization_hash": "67d41d425d7ee1a3",
+      "target_finalization_hash": "e648c0b5c6fcafa3",
+      "hashes_distinct": true,
+      "reconstructed_accuracy": {
+        "seeds": [
+          35.0,
+          30.0,
+          30.0,
+          30.0,
+          45.0
+        ],
+        "mean": 34.0,
+        "std": 6.52,
+        "min": 30.0,
+        "max": 45.0,
+        "n_seeds": 5,
+        "ci95": [
+          28.29,
+          39.71
+        ]
+      },
+      "ablated_accuracy": {
+        "seeds": [
+          40.0,
+          30.0,
+          30.0,
+          15.0,
+          55.0
+        ],
+        "mean": 34.0,
+        "std": 14.75,
+        "min": 15.0,
+        "max": 55.0,
+        "n_seeds": 5,
+        "ci95": [
+          21.07,
+          46.93
+        ]
+      },
+      "causal_drop": 0.0
+    },
+    {
+      "reconstruction_id": "recon_3",
+      "seed": 2063,
+      "target_initialization_hash": "78c24c536562fa92",
+      "target_finalization_hash": "96bb51a3c22119b9",
+      "hashes_distinct": true,
+      "reconstructed_accuracy": {
+        "seeds": [
+          35.0,
+          30.0,
+          30.0,
+          30.0,
+          45.0
+        ],
+        "mean": 34.0,
+        "std": 6.52,
+        "min": 30.0,
+        "max": 45.0,
+        "n_seeds": 5,
+        "ci95": [
+          28.29,
+          39.71
+        ]
+      },
+      "ablated_accuracy": {
+        "seeds": [
+          45.0,
+          30.0,
+          30.0,
+          15.0,
+          55.0
+        ],
+        "mean": 35.0,
+        "std": 15.41,
+        "min": 15.0,
+        "max": 55.0,
+        "n_seeds": 5,
+        "ci95": [
+          21.49,
+          48.51
+        ]
+      },
+      "causal_drop": -1.0
+    },
+    {
+      "reconstruction_id": "recon_4",
+      "seed": 2094,
+      "target_initialization_hash": "ae95b78470777ed5",
+      "target_finalization_hash": "7b18f392170fca62",
+      "hashes_distinct": true,
+      "reconstructed_accuracy": {
+        "seeds": [
+          35.0,
+          30.0,
+          30.0,
+          30.0,
+          45.0
+        ],
+        "mean": 34.0,
+        "std": 6.52,
+        "min": 30.0,
+        "max": 45.0,
+        "n_seeds": 5,
+        "ci95": [
+          28.29,
+          39.71
+        ]
+      },
+      "ablated_accuracy": {
+        "seeds": [
+          45.0,
+          30.0,
+          30.0,
+          15.0,
+          55.0
+        ],
+        "mean": 35.0,
+        "std": 15.41,
+        "min": 15.0,
+        "max": 55.0,
+        "n_seeds": 5,
+        "ci95": [
+          21.49,
+          48.51
+        ]
+      },
+      "causal_drop": -1.0
+    },
+    {
+      "reconstruction_id": "recon_5",
+      "seed": 2125,
+      "target_initialization_hash": "a4cc8f3693897d6e",
+      "target_finalization_hash": "72dc150b1444c29c",
+      "hashes_distinct": true,
+      "reconstructed_accuracy": {
+        "seeds": [
+          35.0,
+          30.0,
+          30.0,
+          30.0,
+          45.0
+        ],
+        "mean": 34.0,
+        "std": 6.52,
+        "min": 30.0,
+        "max": 45.0,
+        "n_seeds": 5,
+        "ci95": [
+          28.29,
+          39.71
+        ]
+      },
+      "ablated_accuracy": {
+        "seeds": [
+          45.0,
+          30.0,
+          30.0,
+          15.0,
+          55.0
+        ],
+        "mean": 35.0,
+        "std": 15.41,
+        "min": 15.0,
+        "max": 55.0,
+        "n_seeds": 5,
+        "ci95": [
+          21.49,
+          48.51
+        ]
+      },
+      "causal_drop": -1.0
+    }
+  ],
+  "mean_accuracy": 34.0,
+  "std_accuracy": 0.0,
+  "linear_cka": 1.0,
+  "parameter_relative_distance": 0.0522,
+  "parameter_convergence": false,
+  "behavioral_agreement_pct": 100.0,
+  "behavioral_convergence": true,
+  "all_initialization_hashes_distinct": true,
+  "functional_convergence": true,
+  "verdict": "CONVERGED_BEHAVIORALLY"
+}

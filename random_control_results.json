@@ -1,0 +1,70 @@
+{
+  "milestone": "EQUYLAPTA_7.6",
+  "random_composite_performance": {
+    "math": {
+      "mean": 34.0,
+      "std": 20.74,
+      "ci95_low": 15.82,
+      "ci95_high": 52.18,
+      "min": 5.0,
+      "max": 55.0,
+      "raw_seeds": [
+        45.0,
+        45.0,
+        20.0,
+        5.0,
+        55.0
+      ]
+    },
+    "reason": {
+      "mean": 12.0,
+      "std": 7.58,
+      "ci95_low": 5.35,
+      "ci95_high": 18.65,
+      "min": 5.0,
+      "max": 20.0,
+      "raw_seeds": [
+        20.0,
+        20.0,
+        10.0,
+        5.0,
+        5.0
+      ]
+    },
+    "code": {
+      "mean": 0.0,
+      "std": 0.0,
+      "ci95_low": 0.0,
+      "ci95_high": 0.0,
+      "min": 0.0,
+      "max": 0.0,
+      "raw_seeds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "lang": {
+      "mean": 35.0,
+      "std": 15.41,
+      "ci95_low": 21.49,
+      "ci95_high": 48.51,
+      "min": 15.0,
+      "max": 55.0,
+      "raw_seeds": [
+        45.0,
+        55.0,
+        30.0,
+        30.0,
+        15.0
+      ]
+    }
+  },
+  "comparison_with_true_composite": {
+    "math_diff_pp": -11.0,
+    "reason_diff_pp": -1.0,
+    "code_diff_pp": 0.0
+  }
+}

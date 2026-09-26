@@ -1,0 +1,41 @@
+{
+  "milestone": "EQUYLAPTA_7.8.2",
+  "verdict": "FAIL",
+  "rules_triggered": [
+    "RULE_FUNCTIONAL_AGREEMENT_BELOW_90"
+  ],
+  "detailed_justification": "Functional agreement 25.0% fell below the pre-registered 90.0% threshold.",
+  "evidence_provenance": {
+    "functional_agreement_ratio": 0.25,
+    "functional_agreement_threshold": 0.9,
+    "transplanted_causal_drop_pp": 25.0,
+    "random_control_causal_drop_pp": 20.0,
+    "transplanted_active_acc_pct": 40.0,
+    "recipient_baseline_acc_pct": 35.0,
+    "random_control_active_acc_pct": 45.0,
+    "heldout_capability_lift_pp": 5.0,
+    "declared_parameters_count": 4,
+    "zero_update_parameters": [],
+    "all_declared_parameters_updated": true
+  },
+  "replication_classification": {
+    "status": "MIXED_SIGN_VARIABILITY",
+    "seed_values": [
+      -5.0,
+      10.0,
+      15.0,
+      35.0,
+      10.0
+    ],
+    "mean": 13.0,
+    "median": 10.0,
+    "positive_seed_count": 4,
+    "negative_seed_count": 1,
+    "zero_seed_count": 0
+  },
+  "activation_patching_provenance": {
+    "validation_donor_lift_pp": 10.0,
+    "heldout_donor_lift_pp": -10.0,
+    "mandated_narrative_claim": "Validation improvement was not retained on held-out data"
+  }
+}

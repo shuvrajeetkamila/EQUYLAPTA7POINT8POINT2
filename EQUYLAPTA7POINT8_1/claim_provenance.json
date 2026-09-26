@@ -1,0 +1,41 @@
+{
+  "milestone": "EQUYLAPTA_7.8.1",
+  "claims": {
+    "CLAIM_GRADIENT_CORRECTION": {
+      "statement": "Actual adapter training loop implements analytical two-branch functional loss gradient matching finite differences with relative error < 0.05.",
+      "result_key": "gradient_check.max_relative_error",
+      "split": "validation",
+      "seeds": [
+        42
+      ]
+    },
+    "CLAIM_CAUSAL_ACTIVITY_NOT_CAPABILITY_TRANSFER": {
+      "statement": "Transplanted circuit produces positive causal drop upon ablation, but does not achieve donor functional identity (exact agreement < 90%).",
+      "result_key": "scientific_classification.evidence_level",
+      "split": "held_out",
+      "seeds": [
+        9001,
+        9002,
+        9003,
+        9004,
+        9005
+      ]
+    },
+    "CLAIM_OVERSIZED_CONTROL_SATURATION": {
+      "statement": "Oversized 8-node circuit provides zero additional causal gain over minimal functional circuit.",
+      "result_key": "conditions.Condition_H_Oversized_Circuit.validation_causal_drop_pp",
+      "split": "validation",
+      "seeds": [
+        42
+      ]
+    },
+    "CLAIM_HELDOUT_ACTIVATION_PATCH": {
+      "statement": "Donor activation patching improves recipient accuracy by +10.0 pp on both validation and held-out test splits.",
+      "result_key": "activation_patching.heldout_seed_999.donor_lift_over_baseline_pp",
+      "split": "held_out",
+      "seeds": [
+        999
+      ]
+    }
+  }
+}

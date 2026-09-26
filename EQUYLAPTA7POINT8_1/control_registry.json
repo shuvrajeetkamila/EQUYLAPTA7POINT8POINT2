@@ -1,0 +1,162 @@
+{
+  "milestone": "EQUYLAPTA_7.8.1",
+  "registration_policy": "EX_ANTE_PRE_REGISTERED_CONTROLS",
+  "registered_controls": {
+    "Condition_A_Host_Baseline": {
+      "id": "CTRL_HOST_BASELINE",
+      "description": "Unmodified recipient model e6-base-4L in native state",
+      "construction_method": "native_zero_intervention",
+      "transferred_parameter_count": 0,
+      "trainable_parameter_count": 0,
+      "location": "none",
+      "seed": 42,
+      "initialization": "pretrained_host_weights",
+      "training_budget": "zero_budget",
+      "evaluation_protocol": "standard_eval_suite"
+    },
+    "Condition_B_Host_Only_Adaptation": {
+      "id": "CTRL_HOST_ONLY_ADAPTATION",
+      "description": "Recipient Layer 0 MLP adapted directly on task loss with matched compute & parameter budget, without donor weights",
+      "construction_method": "recipient_native_mlp_gradient_descent",
+      "transferred_parameter_count": 0,
+      "trainable_parameter_count": 18688,
+      "location": "recipient.L0.mlp",
+      "seed": 42,
+      "initialization": "recipient_native_weights",
+      "training_budget": "15_epochs_lr_0.003_adam",
+      "evaluation_protocol": "standard_eval_suite"
+    },
+    "Condition_C_Component_Only": {
+      "id": "EXP_COMPONENT_ONLY_7_6",
+      "description": "7.6-style single specialist head transfer (L0_head_2)",
+      "construction_method": "single_head_slot_bridge",
+      "transferred_parameter_count": 1024,
+      "trainable_parameter_count": 6400,
+      "location": "recipient.L0.head_0",
+      "seed": 42,
+      "initialization": "frozen_donor_weights_plus_identity_adapters",
+      "training_budget": "15_epochs_lr_0.003_adam",
+      "evaluation_protocol": "standard_eval_suite"
+    },
+    "Condition_D_Donor_FDC": {
+      "id": "EXP_DONOR_FDC_7_7",
+      "description": "7.7-style 4-node Functional Dependency Circuit (L0_head_2, L0_mlp, L1_head_1, L2_head_3) in donor topology",
+      "construction_method": "cross_architecture_slot_bridges",
+      "transferred_parameter_count": 35840,
+      "trainable_parameter_count": 18688,
+      "location": "recipient.L0_head_0_L0_mlp_L1_head_0_L2_head_0",
+      "seed": 42,
+      "initialization": "frozen_donor_fdc_weights",
+      "training_budget": "15_epochs_lr_0.003_adam",
+      "evaluation_protocol": "standard_eval_suite"
+    },
+    "Condition_E_Recipient_Reconstructed_FDC": {
+      "id": "EXP_RECIPIENT_RECONSTRUCTED_FDC",
+      "description": "Transplanted functional nucleus (L0_head_2, L0_mlp) adapted into discovered recipient native pathway",
+      "construction_method": "recipient_pathway_residual_fusion",
+      "transferred_parameter_count": 33792,
+      "trainable_parameter_count": 12544,
+      "location": "recipient.L0_head_0_L0_mlp",
+      "seed": 42,
+      "initialization": "frozen_donor_weights_plus_residual_fusion",
+      "training_budget": "15_epochs_lr_0.003_adam",
+      "evaluation_protocol": "standard_eval_suite"
+    },
+    "Condition_F_Random_Matched": {
+      "id": "CTRL_RANDOM_MATCHED",
+      "description": "Capacity-matched random Gaussian noise weights inserted in identical topology",
+      "construction_method": "gaussian_noise_tensor_injection",
+      "transferred_parameter_count": 35840,
+      "trainable_parameter_count": 18688,
+      "location": "matched_fdc_slots",
+      "seed": 42,
+      "initialization": "standard_normal_std_0.1",
+      "training_budget": "15_epochs_lr_0.003_adam",
+      "evaluation_protocol": "standard_eval_suite"
+    },
+    "Condition_G1_Shuffled_Node": {
+      "id": "CTRL_SHUFFLED_NODE",
+      "description": "Same node weights, but cross-dependency edges scrambled across slots",
+      "construction_method": "permutation_of_slot_mappings",
+      "transferred_parameter_count": 35840,
+      "trainable_parameter_count": 18688,
+      "location": "scrambled_slots",
+      "seed": 42,
+      "initialization": "frozen_donor_weights_permuted_order",
+      "training_budget": "15_epochs_lr_0.003_adam",
+      "evaluation_protocol": "standard_eval_suite"
+    },
+    "Condition_G2_Shuffled_Path": {
+      "id": "CTRL_SHUFFLED_PATH",
+      "description": "Same node types, but causal layer ordering reversed/scrambled (L2 -> L0 -> L1)",
+      "construction_method": "layer_order_inversion",
+      "transferred_parameter_count": 35840,
+      "trainable_parameter_count": 18688,
+      "location": "inverted_layer_slots",
+      "seed": 42,
+      "initialization": "frozen_donor_weights_inverted_hierarchy",
+      "training_budget": "15_epochs_lr_0.003_adam",
+      "evaluation_protocol": "standard_eval_suite"
+    },
+    "Condition_G3_Parameter_Shuffle": {
+      "id": "CTRL_PARAMETER_SHUFFLE",
+      "description": "Same tensor shapes and parameter count, but internal weight values randomly permuted",
+      "construction_method": "flat_permutation_of_weight_elements",
+      "transferred_parameter_count": 35840,
+      "trainable_parameter_count": 18688,
+      "location": "matched_fdc_slots",
+      "seed": 42,
+      "initialization": "donor_weights_elementwise_permuted",
+      "training_budget": "15_epochs_lr_0.003_adam",
+      "evaluation_protocol": "standard_eval_suite"
+    },
+    "Condition_G4_Location_Matched": {
+      "id": "CTRL_LOCATION_MATCHED",
+      "description": "Transplanted into unrelated recipient target location (Layer 3 instead of Layer 0)",
+      "construction_method": "dislocated_layer_injection",
+      "transferred_parameter_count": 35840,
+      "trainable_parameter_count": 18688,
+      "location": "recipient.L3_slots",
+      "seed": 42,
+      "initialization": "frozen_donor_weights",
+      "training_budget": "15_epochs_lr_0.003_adam",
+      "evaluation_protocol": "standard_eval_suite"
+    },
+    "Condition_H_Oversized_Circuit": {
+      "id": "CTRL_OVERSIZED_8_NODE",
+      "description": "8-node expanded neighborhood (A+B+C+D + L0_head_3 + L1_mlp + L2_mlp + L3_mlp)",
+      "construction_method": "neighborhood_expansion",
+      "transferred_parameter_count": 135168,
+      "trainable_parameter_count": 55552,
+      "location": "recipient.all_layers",
+      "seed": 42,
+      "initialization": "frozen_donor_neighborhood",
+      "training_budget": "15_epochs_lr_0.003_adam",
+      "evaluation_protocol": "standard_eval_suite"
+    },
+    "Condition_I_Interface_Adaptation": {
+      "id": "SEC_INTERFACE_ADAPTATION",
+      "description": "Translated circuit with isolated trainable adapter interface while recipient remains strictly frozen",
+      "construction_method": "interface_only_tuning",
+      "transferred_parameter_count": 33792,
+      "trainable_parameter_count": 12544,
+      "location": "recipient.L0_head_0_L0_mlp",
+      "seed": 42,
+      "initialization": "two_branch_optimized_adapters",
+      "training_budget": "15_epochs_lr_0.003_adam",
+      "evaluation_protocol": "standard_eval_suite"
+    },
+    "Condition_J_Receiver_Coadaptation": {
+      "id": "SEC_RECEIVER_COADAPTATION",
+      "description": "Translated circuit with limited recipient co-adaptation (recipient L0 native weights allowed to co-adapt)",
+      "construction_method": "joint_adapter_and_local_receiver_tuning",
+      "transferred_parameter_count": 33792,
+      "trainable_parameter_count": 61696,
+      "location": "recipient.L0_native_plus_adapters",
+      "seed": 42,
+      "initialization": "joint_coadaptation",
+      "training_budget": "15_epochs_lr_0.001_adam",
+      "evaluation_protocol": "standard_eval_suite"
+    }
+  }
+}
